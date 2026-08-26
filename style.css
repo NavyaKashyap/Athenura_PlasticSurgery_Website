@@ -1,0 +1,7063 @@
+/* =========================================================
+   1. RESET & GLOBAL STYLES
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Federo&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #333333;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font-family: "Poppins", sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
+    background: #318c5c;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   2. NAVBAR
+========================================================= */
+
+.navbar {
+    width: calc(100% - 80px);
+    height: 76px;
+
+    position: fixed;
+    top: 20px;
+    left: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid rgba(49, 140, 92, 0.10);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.06);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-sizing: border-box;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    width: 170px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: left center;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar nav {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.navbar nav a {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    color: #333333;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: #318c5c;
+}
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+.navbar nav a.active {
+    color: #318c5c;
+}
+
+.navbar nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 18px;
+
+    width: 100%;
+    height: 1px;
+
+    background: #318c5c;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.nav-dropdown {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.nav-dropdown > a {
+    height: 100%;
+}
+
+.nav-dropdown span {
+    margin-left: 5px;
+
+    color: #333333;
+
+    font-size: 12px;
+
+    line-height: 1;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.nav-dropdown:hover span {
+    color: #318c5c;
+
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.search-btn {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #333333;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.search-btn:hover {
+    color: #318c5c;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-btn {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #318c5c;
+
+    font-size: 26px;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+/* =========================================================
+   3. HERO SECTION
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 900px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    padding-top: 100px;
+
+    box-sizing: border-box;
+
+    /* Background Image */
+    background-image: url("image/BG.png"); /* Change to your image path */
+    background-size: cover;      /* Fill the section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+}
+
+.hero::before {
+    content: none;
+}
+
+/* =========================================================
+   4. HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+
+    width: 46%;
+
+    padding-left: 8%;
+
+    z-index: 3;
+}
+
+.small-heading {
+    font-family: "Beaufort Pro", "Federo", serif;
+
+    font-weight: 500;
+
+    color: #73787a;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin-bottom: 28px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    color: #318c5c;
+
+    font-size: clamp(60px, 6vw, 92px);
+
+    font-weight: 600;
+
+    line-height: 0.9;
+}
+
+.description {
+    max-width: 520px;
+
+    margin-bottom: 35px;
+
+    color: #666666;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   5. HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.primary-btn {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: #318c5c;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+    background: #246e47;
+
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    display: inline-block;
+
+    padding-bottom: 4px;
+
+    border-bottom: 1px solid #318c5c;
+
+    color: #318c5c;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    color: #246e47;
+
+    border-color: #246e47;
+}
+
+
+/* =========================================================
+   6. HERO IMAGE
+========================================================= */
+
+.hero-image {
+    position: absolute;
+
+    top: 120px;
+    right: 0;
+
+    width: 70%;
+
+    height: calc(100% - 100px);
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.hero-image img {
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    display: block;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+
+
+.decorative-circle {
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    top: 18%;
+
+    right: 5%;
+
+    border-radius: 50%;
+
+    background: rgba(125, 213, 165, 0.22);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   7. SIDE CONTACT BUTTONS
+========================================================= */
+
+.side-buttons {
+    position: fixed;
+
+    top: 42%;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    z-index: 200;
+}
+
+.side-buttons a {
+    padding: 16px 10px;
+
+    border-radius: 5px 0 0 5px;
+
+    background: #318c5c;
+    color: #ffffff;
+
+    writing-mode: vertical-rl;
+
+    font-size: 22px;
+
+    transition: background 0.3s ease;
+}
+
+.side-buttons a:hover {
+    background: #246e47;
+}
+
+
+/* =========================================================
+   8. OFFER POPUP
+========================================================= */
+
+.offer-popup {
+    position: fixed;
+
+    left: 0;
+    bottom: 65px;
+
+    width: 350px;
+
+    padding: 20px 35px;
+
+    background: #444444;
+    color: #ffffff;
+
+    z-index: 300;
+
+    transition: opacity 0.3s ease;
+}
+
+.offer-popup.hide {
+    display: none;
+}
+
+.offer-popup p {
+    margin-bottom: 5px;
+
+    font-size: 15px;
+
+    text-decoration: underline;
+}
+
+.offer-popup strong {
+    font-size: 15px;
+
+    text-decoration: underline;
+}
+
+.close-offer {
+    position: absolute;
+
+    top: 5px;
+    right: 10px;
+
+    border: none;
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   9. BOTTOM ANNOUNCEMENT
+========================================================= */
+
+.announcement {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #318c5c;
+
+    z-index: 250;
+}
+
+.announcement p {
+    padding: 0 20px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   10. CLINIC SECTION
+========================================================= */
+
+.clinic-section {
+    padding: 100px 5%;
+
+    background: #ffffff;
+}
+
+.section-header {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.section-header h2 {
+    margin-bottom: 30px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    color: #318c5c;
+
+    font-size: 54px;
+    font-weight: 600;
+
+    line-height: 1.1;
+}
+
+.section-header p {
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    color: #333333;
+
+    font-size: 18px;
+    line-height: 2;
+}
+
+.section-header span {
+    color: #318c5c;
+    font-weight: 600;
+}
+
+
+/*=====================================================
+PROCEDURES SECTION
+=====================================================*/
+
+.procedure-section {
+    width: 100%;
+    padding: 40px 0 90px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+
+/*=====================================================
+ROW
+=====================================================*/
+
+.procedure-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    min-height: 250px;
+}
+
+.procedure-row:nth-child(2) {
+    grid-template-columns: 65% 35%;
+}
+
+
+/*=====================================================
+GENERAL CARD
+=====================================================*/
+
+.procedure-card {
+    position: relative;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+
+/*=====================================================
+GREEN ACCENT CARD
+=====================================================*/
+
+.beige-card {
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 35px 50px;
+
+    border-top: 1px solid #e7eee9;
+    border-bottom: 1px solid #e7eee9;
+}
+
+.procedure-icon {
+    color: #318c5c;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.beige-card h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+    font-weight: 600;
+
+    margin: 5px 0 12px;
+
+    color: #111111;
+}
+
+.beige-card p {
+    max-width: 350px;
+
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    color: #666666;
+}
+
+
+/*=====================================================
+IMAGE CARD
+=====================================================*/
+
+.image-card {
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid #e7eee9;
+}
+
+
+/*=====================================================
+IMAGE
+=====================================================*/
+
+.procedure-image {
+    width: 48%;
+    height: 250px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.procedure-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    display: block;
+}
+
+
+/*=====================================================
+CONTENT
+=====================================================*/
+
+.procedure-content {
+    width: 52%;
+
+    padding: 30px 45px;
+
+    text-align: center;
+}
+
+.procedure-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+    font-weight: 600;
+
+    margin: 0 0 12px;
+
+    color: #111111;
+}
+
+.procedure-content p {
+    max-width: 380px;
+
+    margin: 0 auto 18px;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    color: #666666;
+}
+
+.procedure-content a {
+    color: #318c5c;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: .3s ease;
+}
+
+.procedure-content a:hover {
+    color: #246e47;
+}
+
+
+/*=====================================================
+GREEN LINE
+=====================================================*/
+
+.procedure-row::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: #e7eee9;
+}
+
+
+
+
+/* =========================================================
+   12. ABOUT SECTION
+========================================================= */
+
+.about-section {
+    position: relative;
+
+    padding: 110px 7%;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    background-image:
+        url("image/Vector.png");
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size: 100% 100%;
+}
+
+
+/* =========================================================
+   ABOUT INTRO
+========================================================= */
+
+.about-intro {
+    position: relative;
+
+    max-width: 1100px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+
+    z-index: 2;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.about-intro.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.about-intro p {
+    color: #222222;
+
+    font-size: 18px;
+
+    line-height: 2.2;
+}
+
+
+/* =========================================================
+   ABOUT CONTAINER
+========================================================= */
+
+.about-container {
+    position: relative;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   ABOUT IMAGE
+========================================================= */
+
+.about-image {
+    position: relative;
+
+    height: 560px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    transform: translateX(-60px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.about-image.show {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+.about-image img {
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center bottom;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   REMOVE OLD CIRCLE SHAPE
+========================================================= */
+
+.about-shape {
+    display: none;
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+========================================================= */
+
+.about-content {
+    position: relative;
+
+    z-index: 3;
+
+    opacity: 0;
+
+    transform: translateX(60px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.about-content.show {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   ABOUT LABEL
+========================================================= */
+
+.about-label {
+    margin-bottom: 12px;
+
+    color: #318c5c;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   ABOUT HEADING
+========================================================= */
+
+.about-content h2 {
+    margin-bottom: 30px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    color: #318c5c;
+
+    font-size: 64px;
+
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   ABOUT TEXT
+========================================================= */
+
+.about-content p:not(.about-label) {
+    max-width: 600px;
+
+    margin-bottom: 18px;
+
+    color: #333333;
+
+    font-size: 16px;
+
+    line-height: 2;
+}
+
+
+/* =========================================================
+   ABOUT BUTTON
+========================================================= */
+
+.about-btn {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 14px 30px;
+
+    border-radius: 3px;
+
+    background: #318c5c;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px rgba(49, 140, 92, 0.18);
+
+    transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+    background: #246e47;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(49, 140, 92, 0.25);
+}
+
+
+/*=====================================================
+BEFORE & AFTER SECTION
+=====================================================*/
+
+.before-after-section {
+    position: relative;
+
+    width: 100%;
+
+    padding: 90px 0;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/*=====================================================
+HEADER
+=====================================================*/
+
+.before-after-section .container {
+    max-width: 1350px;
+
+    margin: 0 auto;
+
+    padding: 0 5%;
+}
+
+.before-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 40px;
+
+    margin-bottom: 50px;
+}
+
+.before-title {
+    max-width: 700px;
+}
+
+.before-title span {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: #318c5c;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+}
+
+.before-title h2 {
+    margin: 0;
+
+    color: #111111;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 64px;
+
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+.before-title em {
+    color: #318c5c;
+
+    font-style: italic;
+
+    font-weight: 500;
+}
+
+
+/*=====================================================
+NAVIGATION
+=====================================================*/
+
+.before-navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.before-prev,
+.before-next {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dce9e2;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #318c5c;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.before-prev:hover,
+.before-next:hover {
+    background: #318c5c;
+
+    border-color: #318c5c;
+
+    color: #ffffff;
+}
+
+
+/*=====================================================
+SWIPER
+=====================================================*/
+
+.beforeAfterSwiper {
+    width: 100vw;
+
+    overflow: visible !important;
+
+    padding-bottom: 60px;
+}
+
+.beforeAfterSwiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.beforeAfterSwiper .swiper-slide {
+    width: 430px !important;
+
+    height: auto;
+
+    display: flex;
+
+    transform: none;
+
+    opacity: 1;
+}
+
+
+/*=====================================================
+BEFORE AFTER CARD
+=====================================================*/
+
+.before-card {
+    width: 430px;
+
+    height: 500px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 3px;
+
+    border: none;
+
+    box-shadow:
+        0 15px 40px rgba(49, 140, 92, 0.10);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.before-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.before-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 22px 50px rgba(49, 140, 92, 0.15);
+}
+
+.before-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/*=====================================================
+PAGINATION
+=====================================================*/
+
+.before-pagination {
+    position: relative !important;
+
+    width: auto !important;
+
+    bottom: auto !important;
+}
+
+.before-pagination .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+
+    margin: 0 4px !important;
+
+    background: #cddbd3;
+
+    opacity: 1;
+}
+
+.before-pagination .swiper-pagination-bullet-active {
+    width: 28px;
+
+    border-radius: 20px;
+
+    background: #318c5c;
+}
+
+
+/*=====================================================
+TABLET
+=====================================================*/
+
+@media (max-width: 992px) {
+
+    .before-title h2 {
+        font-size: 52px;
+    }
+
+    .beforeAfterSwiper .swiper-slide {
+        width: 360px !important;
+    }
+
+    .before-card {
+        width: 360px;
+
+        height: 440px;
+    }
+
+}
+
+
+/*=====================================================
+MOBILE
+=====================================================*/
+
+@media (max-width: 768px) {
+
+    .before-after-section {
+        padding: 70px 0;
+    }
+
+    .before-after-section .container {
+        padding: 0 20px;
+    }
+
+    .before-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        margin-bottom: 40px;
+    }
+
+    .before-title h2 {
+        font-size: 42px;
+    }
+
+    .before-navigation {
+        margin-top: 5px;
+    }
+
+    .beforeAfterSwiper .swiper-slide {
+        width: 82vw !important;
+    }
+
+    .before-card {
+        width: 82vw;
+
+        height: 400px;
+    }
+
+}
+
+
+/*=====================================================
+SMALL MOBILE
+=====================================================*/
+
+@media (max-width: 480px) {
+
+    .before-after-section {
+        padding: 60px 0;
+    }
+
+    .before-after-section .container {
+        padding: 0 15px;
+    }
+
+    .before-title h2 {
+        font-size: 34px;
+    }
+
+    .beforeAfterSwiper .swiper-slide {
+        width: 86vw !important;
+    }
+
+    .before-card {
+        width: 86vw;
+
+        height: 330px;
+    }
+
+    .before-prev,
+    .before-next {
+        width: 42px;
+        height: 42px;
+    }
+
+}
+
+
+/* =========================================================
+   TREATMENTS BY AGE
+   GREEN + WHITE THEME
+========================================================= */
+
+.age-treatment-section {
+    position: relative;
+
+    padding: 75px 6%;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+.age-treatment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.age-treatment-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 35px;
+}
+
+.age-treatment-title {
+    max-width: 700px;
+}
+
+.age-eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #318c5c;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.age-treatment-title h2 {
+    margin: 0;
+
+    color: #1f2923;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 55px;
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.age-treatment-title h2 em {
+    color: #318c5c;
+
+    font-style: italic;
+}
+
+.age-intro {
+    max-width: 280px;
+
+    margin: 0 0 3px;
+
+    color: #6d746f;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   AGE NAVIGATION
+========================================================= */
+
+.age-navigation {
+    display: flex;
+
+    border-top: 1px solid #dce9e1;
+    border-bottom: 1px solid #dce9e1;
+
+    margin-bottom: 25px;
+}
+
+.age-nav {
+    position: relative;
+
+    flex: 1;
+
+    padding: 13px 10px;
+
+    border: 0;
+
+    background: #ffffff;
+
+    color: #8b948e;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease;
+}
+
+.age-nav span {
+    display: inline-block;
+
+    margin-right: 8px;
+
+    color: #aab5ae;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.age-nav::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -1px;
+
+    width: 0;
+    height: 2px;
+
+    background: #318c5c;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.age-nav:hover {
+    color: #318c5c;
+}
+
+.age-nav.active {
+    color: #318c5c;
+}
+
+.age-nav.active::after {
+    width: 55%;
+}
+
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.age-feature {
+    display: grid;
+
+    grid-template-columns: 0.95fr 1.05fr;
+
+    height: 420px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e1ebe5;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.age-feature-image {
+    position: relative;
+
+    height: 420px;
+
+    overflow: hidden;
+
+    background: #edf5f0;
+}
+
+.age-feature-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    opacity: 1;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.7s ease;
+}
+
+.age-feature:hover .age-feature-image img {
+    transform: scale(1.025);
+}
+
+
+/* IMAGE NUMBER */
+
+.age-image-number {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid rgba(255,255,255,0.8);
+
+    border-radius: 50%;
+
+    background: rgba(49,140,92,0.75);
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.age-feature-content {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 35px 55px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* BACKGROUND AGE */
+
+.age-big-number {
+    position: absolute;
+
+    right: -15px;
+    top: -55px;
+
+    color: rgba(49, 140, 92, 0.045);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 210px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* LABEL */
+
+.age-content-label {
+    position: relative;
+
+    margin-bottom: 10px;
+
+    color: #318c5c;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+}
+
+
+/* TITLE */
+
+.age-feature-content h3 {
+    position: relative;
+
+    margin: 0 0 13px;
+
+    color: #202823;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    line-height: 0.98;
+}
+
+.age-feature-content h3 em {
+    color: #318c5c;
+
+    font-style: italic;
+}
+
+
+/* DESCRIPTION */
+
+.age-feature-content > p {
+    position: relative;
+
+    max-width: 430px;
+
+    margin: 0 0 18px;
+
+    color: #707871;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TREATMENTS
+========================================================= */
+
+.age-treatment-list {
+    position: relative;
+
+    max-width: 430px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid #dce9e1;
+}
+
+.age-treatment-list a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #dce9e1;
+
+    color: #3f4943;
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.age-treatment-list a:nth-child(odd) {
+    margin-right: 15px;
+}
+
+.age-treatment-list a:nth-child(even) {
+    padding-left: 15px;
+
+    border-left: 1px solid #dce9e1;
+}
+
+.age-treatment-list a span {
+    color: #318c5c;
+
+    font-size: 8px;
+}
+
+.age-treatment-list a:hover {
+    color: #318c5c;
+
+    padding-left: 5px;
+}
+
+
+/* =========================================================
+   EXPLORE
+========================================================= */
+
+.age-explore {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: fit-content;
+
+    margin-top: 18px;
+
+    color: #202823;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.2px;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+}
+
+.age-arrow {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #318c5c;
+
+    border-radius: 50%;
+
+    color: #318c5c;
+
+    font-size: 14px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.age-explore:hover .age-arrow {
+    background: #318c5c;
+
+    color: #ffffff;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.age-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 12px;
+
+    color: #a0aaa4;
+
+    font-size: 8px;
+
+    letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .age-treatment-section {
+        padding: 65px 5%;
+    }
+
+    .age-treatment-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .age-feature {
+        grid-template-columns: 1fr 1fr;
+
+        height: 380px;
+    }
+
+    .age-feature-image {
+        height: 380px;
+    }
+
+    .age-feature-content {
+        padding: 30px;
+    }
+
+    .age-feature-content h3 {
+        font-size: 35px;
+    }
+
+    .age-big-number {
+        font-size: 170px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .age-treatment-section {
+        padding: 55px 5%;
+    }
+
+    .age-treatment-title h2 {
+        font-size: 43px;
+    }
+
+    .age-intro {
+        max-width: 100%;
+    }
+
+    .age-navigation {
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .age-navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    .age-nav {
+        min-width: 70px;
+
+        padding: 12px 8px;
+    }
+
+    .age-nav span {
+        display: block;
+
+        margin: 0 0 3px;
+    }
+
+    .age-feature {
+        grid-template-columns: 1fr;
+
+        height: auto;
+    }
+
+    .age-feature-image {
+        height: 280px;
+    }
+
+    .age-feature-content {
+        min-height: 390px;
+
+        padding: 30px 25px;
+    }
+
+    .age-feature-content h3 {
+        font-size: 38px;
+    }
+
+    .age-treatment-list {
+        grid-template-columns: 1fr;
+    }
+
+    .age-treatment-list a:nth-child(even) {
+        padding-left: 0;
+
+        border-left: 0;
+    }
+
+    .age-treatment-list a:nth-child(odd) {
+        margin-right: 0;
+    }
+
+    .age-big-number {
+        font-size: 150px;
+    }
+}
+/* =========================================================
+   15. BENEFITS OF PLASTIC SURGERY
+========================================================= */
+
+.benefits-section {
+    position: relative;
+    padding: 80px 7%;
+    overflow: hidden;
+    background: #f7f6f3;
+}
+
+.benefits-container {
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+    gap: 30px;
+}
+
+
+/* =========================================================
+   BENEFITS CONTENT
+========================================================= */
+
+.benefits-content {
+    position: relative;
+    z-index: 3;
+}
+
+.benefits-label {
+    margin: 0 0 14px;
+
+    color: #318c5c;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 3px;
+}
+
+.benefits-content h2 {
+    max-width: 500px;
+
+    margin: 0 0 24px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    color: #333;
+
+    font-size: 58px;
+    font-weight: 600;
+
+    line-height: 0.98;
+}
+
+.benefits-content h2 span {
+    color: #318c5c;
+}
+
+.benefits-description {
+    max-width: 541px;
+
+    margin: 0 0 14px;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.benefits-btn {
+    display: inline-block;
+
+    margin-top: 16px;
+    padding: 13px 27px;
+
+    background: #318c5c;
+    color: #fff;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.benefits-btn:hover {
+    background: #246e47;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BENEFITS IMAGE AREA
+========================================================= */
+
+.benefits-image {
+    position: relative;
+    width: 650px;
+    height: 610px;
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   MAIN MODEL
+========================================================= */
+
+.benefits-main-image {
+    position: absolute;
+
+    width: 500px;
+    height: 650px;
+
+    top: -25px;
+    right: 5px;
+
+    object-fit: contain;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   BENEFIT CIRCLES
+========================================================= */
+
+.benefit-circle {
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    border: 1px solid rgba(49, 140, 92, 0.45);
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+
+    box-sizing: border-box;
+
+    z-index: 5;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   CIRCLE IMAGE
+========================================================= */
+
+.benefit-circle img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.benefit-circle span {
+    position: absolute;
+
+    left: 50%;
+    bottom: -27px;
+
+    transform: translateX(-50%);
+
+    color: #333;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NATURAL CIRCLE ARRANGEMENT
+========================================================= */
+
+/* Waist */
+.circle-one {
+    top: 80px;
+    left: 25px;
+}
+
+/* Thighs */
+.circle-two {
+    top: 105px;
+    left: 205px;
+}
+
+/* Hips */
+.circle-three {
+    top: 255px;
+    left: 25px;
+}
+
+/* Arms */
+.circle-four {
+    top: 320px;
+    left: 205px;
+}
+
+/* Legs */
+.circle-five {
+    top: 455px;
+    left: 25px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .benefits-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .benefits-content {
+        text-align: center;
+    }
+
+    .benefits-content h2,
+    .benefits-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .benefits-image {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .benefits-main-image {
+        right: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .benefits-section {
+        padding: 60px 20px;
+    }
+
+    .benefits-content h2 {
+        font-size: 44px;
+    }
+
+    .benefits-description {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .benefits-image {
+        height: 480px;
+    }
+
+    .benefits-main-image {
+        width: 370px;
+        height: 500px;
+
+        right: -25px;
+        top: 0;
+    }
+
+    .benefit-circle {
+        width: 70px;
+        height: 70px;
+    }
+
+    .benefit-circle span {
+        bottom: -22px;
+        font-size: 13px;
+    }
+
+    .circle-one {
+        top: 100px;
+        left: 5px;
+    }
+
+    .circle-two {
+        top: 115px;
+        left: 100px;
+    }
+
+    .circle-three {
+        top: 195px;
+        left: 5px;
+    }
+
+    .circle-four {
+        top: 275px;
+        left: 100px;
+    }
+
+    .circle-five {
+        top: 340px;
+        left: 5px;
+    }
+}
+
+
+
+
+/* =========================================================
+   16. TREATMENT CATEGORIES
+========================================================= */
+
+.treatment-category-section {
+    padding: 100px 5%;
+    background: #ffffff;
+}
+
+.treatment-category-container {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.category-card {
+    overflow: hidden;
+
+    background: #e7fff2;
+
+    border: 1px solid rgba(49, 140, 92, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.category-image {
+    position: relative;
+
+    height: 450px;
+
+    overflow: hidden;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-image img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   CATEGORY TITLE
+========================================================= */
+
+.category-title {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    padding: 10px 18px;
+
+   
+
+    color: #ffffff;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    border-radius: 0 15px 0 0;
+}
+
+
+/* =========================================================
+   CATEGORY LIST
+========================================================= */
+
+.category-list {
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.category-list a {
+    color: #555555;
+
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+}
+
+.category-list a:hover {
+    color: #318c5c;
+}
+
+
+/* =========================================================
+   17. CONSULTATION / OUR PROCESS SECTION
+========================================================= */
+
+.consultation-section {
+    position: relative;
+    padding: 100px 6%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.consultation-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.consultation-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.consultation-heading span {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    color: #318c5c;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.consultation-heading h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    color: #222222;
+
+    font-size: 58px;
+    font-weight: 600;
+    line-height: 1.05;
+}
+
+.consultation-heading h2 em {
+    color: #318c5c;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.consultation-process {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+
+    align-items: center;
+
+    margin-bottom: 70px;
+}
+
+.process-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.process-number {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #318c5c;
+    color: #ffffff;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.process-item h4 {
+    margin: 0 0 7px;
+
+    color: #222222;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.process-item p {
+    max-width: 230px;
+
+    margin: 0;
+
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.process-line {
+    width: 70px;
+    height: 1px;
+
+    margin: 0 20px;
+
+    background: #d8d8d8;
+}
+
+
+/* =========================================================
+   MAIN CONSULTATION CARD
+========================================================= */
+
+.consultation-card {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    min-height: 520px;
+
+    overflow: hidden;
+
+    background: #f7f6f3;
+    background-image: url("image/Vector.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(49, 140, 92, 0.08);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.consultation-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 55px 60px;
+}
+
+.consultation-form h3 {
+    margin: 0 0 30px;
+
+    font-family: "Cormorant Garamond", serif;
+    color: #318c5c;
+
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.consultation-form form {
+    width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+.consultation-form input,
+.consultation-form select,
+.consultation-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 15px 17px;
+
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #444444;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.consultation-form input,
+.consultation-form select {
+    height: 52px;
+}
+
+.consultation-form textarea {
+    display: block;
+
+    margin-top: 18px;
+
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+.consultation-form input:focus,
+.consultation-form select:focus,
+.consultation-form textarea:focus {
+    border-color: #318c5c;
+
+    box-shadow:
+        0 0 0 3px rgba(49, 140, 92, 0.08);
+}
+
+.consultation-form input::placeholder,
+.consultation-form textarea::placeholder {
+    color: #999999;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.consultation-form button {
+    display: inline-block;
+
+    margin-top: 22px;
+    padding: 15px 30px;
+
+    border: 1px solid #318c5c;
+    border-radius: 0;
+
+    background: #318c5c;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.consultation-form button:hover {
+    background: #ffffff;
+    color: #318c5c;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   DOCTOR IMAGE
+========================================================= */
+
+.consultation-image {
+    height: 100%;
+    min-height: 520px;
+
+    overflow: hidden;
+}
+
+.consultation-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .consultation-section {
+        padding: 80px 5%;
+    }
+
+    .consultation-heading h2 {
+        font-size: 50px;
+    }
+
+    .consultation-process {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .process-line {
+        display: none;
+    }
+
+    .process-item {
+        align-items: center;
+    }
+
+    .process-item p {
+        max-width: 500px;
+    }
+
+    .consultation-card {
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+    .consultation-form {
+        padding: 45px;
+    }
+
+    .consultation-form h3 {
+        font-size: 36px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .consultation-section {
+        padding: 65px 5%;
+    }
+
+    .consultation-heading {
+        margin-bottom: 45px;
+    }
+
+    .consultation-heading h2 {
+        font-size: 42px;
+        line-height: 1.1;
+    }
+
+    .consultation-process {
+        margin-bottom: 50px;
+    }
+
+    .process-item {
+        gap: 14px;
+    }
+
+    .process-number {
+        width: 42px;
+        height: 42px;
+
+        font-size: 19px;
+    }
+
+    .process-item h4 {
+        font-size: 16px;
+    }
+
+    .process-item p {
+        font-size: 13px;
+    }
+
+    .consultation-card {
+        grid-template-columns: 1fr;
+    }
+
+    .consultation-form {
+        padding: 40px 25px;
+    }
+
+    .consultation-form h3 {
+        font-size: 34px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+
+        margin-bottom: 15px;
+    }
+
+    .consultation-form textarea {
+        margin-top: 15px;
+    }
+
+    .consultation-image {
+        height: 350px;
+        min-height: 350px;
+    }
+}
+/* =========================================================
+   18. TESTIMONIALS
+========================================================= */
+
+.testimonial-section {
+
+  padding: 40px 0 70px;
+
+  background: linear-gradient(
+
+    135deg,
+
+    var(--light-background) 0%,
+
+    var(--light-background) 55%,
+
+    var(--card-background) 100%
+
+  );
+
+  overflow: hidden;
+
+}
+
+.testimonial-section .container {
+
+  max-width: 1150px;
+
+  margin: auto;
+
+}
+
+
+/* ===========================
+   Heading
+=========================== */
+
+.testimonial-heading {
+
+  text-align: center;
+
+  margin-bottom: 40px;
+
+}
+
+.testimonial-heading span {
+
+  color: #318c5c;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  font-weight: 600;
+
+  font-size: 15px;
+
+}
+
+.testimonial-heading h2 {
+
+  margin-top: 12px;
+
+  font-size: 40px;
+
+  color: var(--heading-color);
+
+  font-family: var(--heading-font);
+
+  font-weight: 700;
+
+}
+
+
+/* ===========================
+      CARD
+=========================== */
+
+.testimonial-card {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  padding: 35px 40px;
+
+  border: 1px solid #dcebe3;
+
+  box-shadow: 0 18px 45px rgba(49, 140, 92, 0.12);
+
+  min-height: 480px;
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+
+/* Decorative blur */
+
+.testimonial-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+
+  height: 300px;
+
+  background: rgba(49, 140, 92, 0.08);
+
+  border-radius: 50%;
+
+  top: -120px;
+
+  right: -120px;
+
+  filter: blur(20px);
+
+}
+
+
+/* ===========================
+
+LEFT
+
+=========================== */
+
+.testimonial-left {
+
+  width: 46%;
+
+  z-index: 2;
+
+}
+
+
+/* Rating */
+
+.rating {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #d4a04b;
+
+  font-size: 22px;
+
+  margin-bottom: 25px;
+
+}
+
+.rating span {
+
+  margin-left: 15px;
+
+  color: #6b5e5e;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+}
+
+
+/* Quote */
+
+.quote {
+
+  font-size: 55px;
+
+  color: #b9d8c7;
+
+  margin-bottom: 10px;
+
+}
+
+
+/* Review */
+
+.review {
+
+  font-size: 20px;
+
+  line-height: 1.8;
+
+  color: var(--heading-color);
+
+  margin-bottom: 35px;
+
+  max-width: 500px;
+
+  font-family: var(--heading-font);
+
+}
+
+
+/* Author */
+
+.author {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+}
+
+.author img {
+
+  width: 75px;
+
+  height: 75px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 4px solid #fff;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+}
+
+.author h5 {
+
+  margin-bottom: 4px;
+
+  color: var(--heading-color);
+
+  font-size: 22px;
+
+  font-family: var(--heading-font);
+
+}
+
+.author span {
+
+  color: #318c5c;
+
+  font-size: 15px;
+
+}
+
+
+/* ===========================
+
+RIGHT
+
+=========================== */
+
+.testimonial-right {
+
+  width: 42%;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+}
+
+
+/* Patient Transformation Image */
+
+.patient-image {
+
+  width: 100%;
+
+  height: 420px;
+
+  object-fit: cover;
+
+  border-radius: 22px;
+
+  border: 5px solid #edf6f1;
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+
+  transition: 0.45s;
+
+}
+
+
+/* ===========================
+
+Patient Result Circle
+
+=========================== */
+
+.patient-result-circle {
+
+  position: absolute;
+
+  left: -40px;
+
+  bottom: 30px;
+
+  width: 180px;
+
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  padding: 8px;
+
+  box-shadow: 0 15px 30px rgba(49, 140, 92, 0.18);
+
+  transition: 0.45s;
+
+}
+
+.patient-result-circle img {
+
+  width: 150px;
+
+  height: 150px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+}
+
+
+/* ===========================
+
+        SWIPER BUTTONS
+
+=========================== */
+
+
+.testimonialSwiper{
+    width:100%;
+    overflow:hidden;
+    padding-bottom:70px;
+}
+
+.swiper-wrapper{
+    align-items:stretch;
+}
+
+.swiper-slide{
+    display:flex;
+    justify-content:center;
+    height:auto;
+}
+
+.testimonial-card{
+    width:100%;
+    height:100%;
+}
+
+
+/* ===========================
+
+      PAGINATION
+
+=========================== */
+
+.swiper-pagination {
+
+  bottom: 5px !important;
+
+}
+
+.swiper-pagination-bullet {
+
+  width: 12px;
+
+  height: 12px;
+
+  background: #b9d8c7;
+
+  opacity: 1;
+
+  transition: 0.3s;
+
+}
+
+.swiper-pagination-bullet-active {
+
+  width: 35px;
+
+  border-radius: 50px;
+
+  background: #318c5c;
+
+}
+
+
+/* ===========================
+
+      HOVER EFFECT
+
+=========================== */
+
+.testimonial-card {
+
+  transition: 0.4s;
+
+}
+
+.testimonial-card:hover {
+
+  transform: translateY(-8px);
+
+  box-shadow: 0 25px 60px rgba(49, 140, 92, 0.18);
+
+}
+
+.testimonial-card:hover .patient-image {
+
+  transform: scale(1.03);
+
+}
+
+.testimonial-card:hover .patient-result-circle {
+
+  transform: rotate(8deg) scale(1.05);
+
+}
+
+
+/* ===========================
+
+     AUTHOR IMAGE
+
+=========================== */
+
+.author img {
+
+  transition: 0.35s;
+
+  width: 60px;
+
+  height: 60px;
+
+}
+
+.author:hover img {
+
+  transform: scale(1.08);
+
+}
+/*=====================================================
+WELLNESS / BMI SECTION
+=====================================================*/
+
+.wellness-section {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 440px;
+
+    display: grid;
+
+    grid-template-columns: 55% 45%;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/*=====================================================
+SUBTLE BACKGROUND TEXTURE
+=====================================================*/
+
+.wellness-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(49, 140, 92, 0.035),
+            transparent 35%
+        );
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/*=====================================================
+CONTENT
+=====================================================*/
+
+.wellness-content {
+    position: relative;
+    z-index: 2;
+
+    padding: 50px 35px 50px 5%;
+
+    max-width: 780px;
+}
+
+
+/*=====================================================
+SMALL GREEN ACCENT
+=====================================================*/
+
+.wellness-content::before {
+    display: none;
+}
+
+
+/*=====================================================
+HEADING
+=====================================================*/
+
+.wellness-content h2 {
+    margin: 0 0 16px;
+
+    max-width: 650px;
+
+    color: #318c5c;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 34px;
+    font-weight: 500;
+
+    line-height: 1.12;
+    letter-spacing: 0;
+}
+
+/*=====================================================
+DESCRIPTION
+=====================================================*/
+
+.wellness-content p {
+
+    max-width: 470px;
+
+    margin: 0 0 28px;
+
+    color: #222222;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/*=====================================================
+BUTTON
+=====================================================*/
+
+.wellness-content .section-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 215px;
+
+    padding: 14px 28px;
+
+    border-radius: 5px;
+
+    background: #318c5c;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    box-shadow:
+        0 7px 18px rgba(49, 140, 92, 0.18);
+
+    transition: all 0.3s ease;
+}
+
+
+.wellness-content .section-btn:hover {
+
+    background: #246e47;
+
+    transform: translateY(-2px);
+}
+
+
+/*=====================================================
+IMAGE AREA
+=====================================================*/
+
+.wellness-image {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 440px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+/*=====================================================
+IMAGE
+=====================================================*/
+
+.wellness-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border: none;
+}
+
+
+/*=====================================================
+SOFT CIRCLE BEHIND IMAGE
+=====================================================*/
+
+.wellness-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    right: 15%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(49, 140, 92, 0.045);
+
+    z-index: -1;
+}
+
+
+/*=====================================================
+TABLET
+=====================================================*/
+
+@media (max-width: 1100px) {
+
+    .wellness-section {
+
+        grid-template-columns: 55% 45%;
+
+        min-height: 400px;
+    }
+
+    .wellness-content {
+
+        padding-left: 6%;
+    }
+
+    .wellness-content h2 {
+
+        font-size: 34px;
+
+    }
+
+    .wellness-image {
+
+        height: 400px;
+
+    }
+
+}
+
+
+/*=====================================================
+TABLET
+=====================================================*/
+
+@media (max-width: 850px) {
+
+    .wellness-section {
+
+        grid-template-columns: 1fr 0.8fr;
+
+    }
+
+    .wellness-content h2 {
+
+        font-size: 31px;
+
+    }
+
+    .wellness-content p {
+
+        font-size: 14px;
+
+    }
+
+    .wellness-image {
+
+        height: 350px;
+
+    }
+
+}
+
+
+/*=====================================================
+MOBILE
+=====================================================*/
+
+@media (max-width: 700px) {
+
+    .wellness-section {
+
+        display: flex;
+
+        flex-direction: column;
+
+        min-height: auto;
+
+    }
+
+    .wellness-content {
+
+        width: 100%;
+
+        padding: 55px 25px 25px;
+
+    }
+
+    .wellness-content::before {
+
+        left: 25px;
+
+        top: 32px;
+
+    }
+
+    .wellness-content h2 {
+
+        font-size: 36px;
+
+    }
+
+    .wellness-image {
+
+        width: 100%;
+
+        height: 300px;
+
+    }
+
+    .wellness-image::before {
+
+        width: 220px;
+
+        height: 220px;
+
+    }
+
+}
+
+
+/*=====================================================
+SMALL MOBILE
+=====================================================*/
+
+@media (max-width: 480px) {
+
+    .wellness-content {
+
+        padding: 50px 20px 25px;
+
+    }
+
+    .wellness-content::before {
+
+        left: 20px;
+
+    }
+
+    .wellness-content h2 {
+
+        font-size: 31px;
+
+    }
+
+    .wellness-content p {
+
+        font-size: 13px;
+
+    }
+
+    .wellness-content .section-btn {
+
+        width: 100%;
+
+    }
+
+    .wellness-image {
+
+        height: 250px;
+
+    }
+
+}
+
+/* =====================================================
+   VIP PLASTIC SURGERY CLUB
+===================================================== */
+
+.vip-club-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background: #ffffff;
+
+    padding: 65px 6% 50px;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.vip-club-container {
+    max-width: 1320px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 42% 58%;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* =====================================================
+   LEFT VISUAL
+===================================================== */
+
+.vip-visual {
+    position: relative;
+
+    height: 520px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =====================================================
+   GREEN CIRCLE
+===================================================== */
+
+.vip-circle {
+    position: absolute;
+
+    width: 340px;
+    height: 340px;
+
+    border-radius: 50%;
+
+    background: #61aa80;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -48%);
+
+    z-index: 1;
+}
+
+
+/* Outer gold circle */
+
+.vip-circle::before {
+    content: "";
+
+    position: absolute;
+
+    width: 395px;
+    height: 395px;
+
+    border-radius: 50%;
+
+    border: 3px solid #eee1b7;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+.vip-phone {
+    position: relative;
+
+    width: 225px;
+
+    height: 475px;
+
+    border-radius: 34px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    border: 6px solid #202020;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+
+    z-index: 3;
+}
+
+
+.vip-phone img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   FLOATING BADGE
+===================================================== */
+
+.vip-badge {
+    position: absolute;
+
+    bottom: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 280px;
+    min-height: 63px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 9px 18px;
+
+    background: #fff;
+
+    border: 1px solid #eadcae;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.08);
+
+    z-index: 5;
+}
+
+
+.badge-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dce5d6;
+
+    color: #318c5c;
+
+    font-size: 23px;
+}
+
+
+.badge-content {
+    padding-left: 13px;
+}
+
+
+.badge-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    color: #222;
+}
+
+
+.badge-title span {
+    color: #63ad83;
+    font-size: 8px;
+}
+
+
+.badge-content p {
+    margin: 3px 0 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    color: #555;
+}
+
+
+/* =====================================================
+   RIGHT CONTENT
+===================================================== */
+
+.vip-content {
+    text-align: center;
+
+    padding: 0 0 0 20px;
+}
+
+
+/* =====================================================
+   MAIN HEADING
+===================================================== */
+
+.vip-content h2 {
+    margin: 0;
+
+    color: #5da779;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 36px;
+
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    letter-spacing: 0;
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.vip-subtitle {
+    margin: 20px 0 38px;
+
+    color: #151515;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   BENEFITS CARD
+===================================================== */
+
+.vip-benefits-card {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 365px;
+
+    padding: 30px 35px 32px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(255,255,255,0.98),
+            rgba(250,248,240,0.75)
+        );
+
+    box-shadow:
+        0 8px 28px rgba(100, 80, 40, 0.06);
+}
+
+
+/* =====================================================
+   BENEFITS HEADING
+===================================================== */
+
+.benefits-intro {
+    margin: 0 0 11px;
+
+    color: #171717;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+.vip-benefits-card h3 {
+    margin: 0;
+
+    color: #5da779;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 34px;
+
+    font-weight: 600;
+
+    line-height: 1.05;
+}
+
+
+/* =====================================================
+   BENEFITS GRID
+===================================================== */
+
+.benefits-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    margin-top: 34px;
+}
+
+
+/* =====================================================
+   BENEFIT ITEM
+===================================================== */
+
+.benefit-item {
+    position: relative;
+
+    padding: 0 17px;
+
+    text-align: center;
+}
+
+
+.benefit-item:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 17px;
+
+    width: 1px;
+    height: 80px;
+
+    background: #d7d7c8;
+}
+
+
+/* =====================================================
+   BENEFIT ICON
+===================================================== */
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #d9e1d2;
+
+    color: #4da172;
+
+    border: 1px solid #d0d7ca;
+
+    font-size: 21px;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   BENEFIT TITLE
+===================================================== */
+
+.benefit-item h4 {
+    margin: 0 0 8px;
+
+    color: #4e9c70;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.1;
+}
+
+
+/* =====================================================
+   BENEFIT DESCRIPTION
+===================================================== */
+
+.benefit-item p {
+    margin: 0;
+
+    color: #555;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.25;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.vip-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 193px;
+    height: 51px;
+
+    margin-top: 25px;
+
+    padding: 0 25px;
+
+    background: #3d9967;
+
+    color: #fff;
+
+    border-radius: 7px;
+
+    border: 1px solid #318c5c;
+
+    box-shadow:
+        0 3px 8px rgba(49, 140, 92, 0.25);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.vip-button:hover {
+    background: #318c5c;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(49, 140, 92, 0.25);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .vip-club-container {
+        grid-template-columns: 1fr;
+    }
+
+    .vip-visual {
+        height: 500px;
+    }
+
+    .vip-content {
+        padding: 0;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .vip-club-section {
+        padding: 45px 20px;
+    }
+
+    .vip-content h2 {
+        font-size: 30px;
+    }
+
+    .vip-subtitle {
+        font-size: 15px;
+    }
+
+    .vip-benefits-card {
+        padding: 25px 15px 30px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+    }
+
+    .benefit-item:nth-child(2)::after {
+        display: none;
+    }
+
+    .benefit-item:nth-child(3)::after {
+        display: none;
+    }
+
+    .vip-circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .vip-circle::before {
+        width: 325px;
+        height: 325px;
+    }
+
+}
+
+/* =========================================================
+   21. FOOTER
+========================================================= */
+
+.footer {
+    position: relative;
+
+    padding: 55px 7% 20px;
+
+    background: #3a9963;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER MAIN
+========================================================= */
+
+.footer-main {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   LEFT SECTION
+========================================================= */
+
+.footer-left {
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER LOGO
+========================================================= */
+
+.footer-logo {
+    width: 500px;
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   FOOTER DESCRIPTION
+========================================================= */
+
+.footer-description {
+    max-width: 400px;
+
+    margin: 0 auto;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   HOURS OF OPERATION
+========================================================= */
+
+.footer-hours-section {
+    margin-top: 110px;
+}
+
+.footer-hours-section h3 {
+    margin-bottom: 8px;
+
+    color: #ffffff;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.footer-hours-section p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: 25px;
+      margin-left: 153px;
+}
+
+
+/* =========================================================
+   SOCIAL CIRCLE
+========================================================= */
+
+.social-links a {
+    width: 42px;
+    height: 42px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    color: #318c5c;
+
+    text-decoration: none;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* =========================================================
+   ICON BASE
+========================================================= */
+
+.social-links a i {
+    position: absolute;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 1;
+
+    font-style: normal;
+}
+
+
+/* =========================================================
+   GOOGLE
+========================================================= */
+
+.social-links a:nth-child(1) i {
+    font-size: 25px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -52%);
+}
+
+
+/* =========================================================
+   FACEBOOK
+========================================================= */
+
+.social-links a:nth-child(2) i {
+    font-size: 27px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -47%);
+}
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+.social-links a:nth-child(3) i {
+    font-size: 25px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.social-links a:hover {
+    transform: translateY(-3px);
+
+    background: #ffffff;
+
+    color: #246e47;
+}
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column h3 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER LIST
+========================================================= */
+
+.footer-column ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.footer-column li {
+    position: relative;
+
+    margin-bottom: 6px;
+
+    padding-left: 14px;
+}
+
+.footer-column li::before {
+    content: "•";
+
+    position: absolute;
+
+    left: 0;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-column li a {
+    color: #ffffff;
+
+    font-size: 15px;
+
+    text-decoration: none;
+
+    transition: opacity 0.3s ease;
+}
+
+.footer-column li a:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   CONTACT / SERVICES HEADING
+========================================================= */
+
+.footer-subheading {
+    margin-top: 35px !important;
+}
+
+
+/* =========================================================
+   VIEW ALL
+========================================================= */
+
+.view-all {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    margin-left: 14px;
+
+    padding-bottom: 2px;
+
+    border-bottom: 1px solid #ffffff;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    text-decoration: none;
+}
+
+.view-all:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    max-width: 1250px;
+
+    margin: 45px auto 0;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    opacity: 0.9;
+}
+
+
+
+
+
+/* =========================================================
+   22. BACK TO TOP
+========================================================= */
+
+.back-to-top {
+    position: fixed;
+
+    right: 25px;
+    bottom: 90px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #318c5c;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #318c5c;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #318c5c;
+    color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   1. GLOBAL RESPONSIVE FOUNDATION
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    max-width: 100%;
+}
+
+a {
+    max-width: 100%;
+}
+
+
+
+/* =========================================================
+   1. LARGE DESKTOP
+   1440px and below
+========================================================= */
+
+@media (max-width: 1440px) {
+
+    .hero-content {
+        padding-left: 7%;
+    }
+
+    .hero-image {
+        width: 65%;
+    }
+
+    .about-container,
+    .benefits-container,
+    .treatment-category-container,
+    .testimonials-section,
+    .footer-main {
+        max-width: 1200px;
+    }
+
+}
+
+
+/* =========================================================
+   2. LAPTOP
+   1200px and below
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        width: calc(100% - 50px);
+        left: 25px;
+        padding: 0 25px;
+    }
+
+    .navbar nav {
+        gap: 22px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 70px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 750px;
+    }
+
+    .hero-content {
+        width: 50%;
+        padding-left: 6%;
+    }
+
+    .hero h1 {
+        font-size: clamp(55px, 6vw, 78px);
+    }
+
+    .hero-image {
+        width: 60%;
+        height: 650px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-section {
+        padding: 90px 6%;
+    }
+
+    .about-container {
+        gap: 45px;
+    }
+
+    .about-image {
+        height: 500px;
+    }
+
+    .about-content h2 {
+        font-size: 58px;
+    }
+
+
+    /* ---------- BEFORE / AFTER ---------- */
+
+    .before-after-section {
+        padding: 80px 5%;
+    }
+
+    .before-after-container {
+        max-width: 1100px;
+        height: 500px;
+    }
+
+
+    /* ---------- TREATMENTS ---------- */
+
+    .treatments-age-section {
+        padding: 80px 5%;
+    }
+
+    .treatments-age-grid {
+        max-width: 1100px;
+    }
+
+
+    /* ---------- BENEFITS ---------- */
+
+    .benefits-section {
+        padding: 80px 6%;
+    }
+
+    .benefits-container {
+        gap: 45px;
+    }
+
+    .benefits-content h2 {
+        font-size: 55px;
+    }
+
+
+    /* ---------- CATEGORIES ---------- */
+
+    .treatment-category-section {
+        padding: 80px 5%;
+    }
+
+    .category-image {
+        height: 380px;
+    }
+
+
+    /* ---------- VIP ---------- */
+
+    .vip-section {
+        padding: 80px 6%;
+        gap: 50px;
+    }
+
+    .vip-content h2 {
+        font-size: 55px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .footer-main {
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   3. TABLET LANDSCAPE / SMALL LAPTOP
+   1024px and below
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        height: 70px;
+        top: 15px;
+        width: calc(100% - 30px);
+        left: 15px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        width: 145px;
+        height: 65px;
+    }
+
+    .navbar nav {
+        gap: 16px;
+    }
+
+    .navbar nav a {
+        font-size: 11px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 680px;
+    }
+
+    .hero-content {
+        width: 52%;
+        padding-left: 6%;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 6vw, 68px);
+    }
+
+    .description {
+        max-width: 430px;
+        font-size: 14px;
+    }
+
+    .hero-image {
+        width: 55%;
+        height: 590px;
+    }
+
+
+    /* ---------- CLINIC ---------- */
+
+    .clinic-section {
+        padding: 80px 5%;
+    }
+
+    .section-header h2 {
+        font-size: 48px;
+    }
+
+    .section-header p {
+        font-size: 16px;
+    }
+
+
+    /* ---------- PROCEDURES ---------- */
+
+    .procedure-row,
+    .procedure-row:nth-child(2) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .beige-card {
+        padding: 25px;
+    }
+
+    .procedure-content {
+        padding: 20px;
+    }
+
+    .procedure-content h2,
+    .beige-card h2 {
+        font-size: 22px;
+    }
+
+    .procedure-content p,
+    .beige-card p {
+        font-size: 12px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-container {
+        gap: 30px;
+    }
+
+    .about-image {
+        height: 430px;
+    }
+
+    .about-content h2 {
+        font-size: 50px;
+    }
+
+    .about-content p:not(.about-label) {
+        font-size: 14px;
+    }
+
+
+    /* ---------- BEFORE / AFTER ---------- */
+
+    .before-after-container {
+        height: 450px;
+    }
+
+    .before-after-content {
+        padding: 25px;
+    }
+
+    .before-after-content h2 {
+        font-size: 48px;
+    }
+
+
+    /* ---------- TREATMENTS BY AGE ---------- */
+
+    .treatments-age-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 230px);
+    }
+
+    .age-tall {
+        grid-row: span 1;
+    }
+
+
+    /* ---------- BENEFITS ---------- */
+
+    .benefits-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .benefits-content h2 {
+        font-size: 48px;
+    }
+
+    .benefits-image {
+        min-height: 500px;
+    }
+
+
+    /* ---------- CATEGORIES ---------- */
+
+    .treatment-category-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-image {
+        height: 350px;
+    }
+
+
+    /* ---------- CONSULTATION ---------- */
+
+    .consultation-container {
+        max-width: 900px;
+    }
+
+    .consultation-content h2 {
+        font-size: 48px;
+    }
+
+
+    /* ---------- TESTIMONIAL ---------- */
+
+    .testimonials-section {
+        gap: 40px;
+    }
+
+    .testimonial-content h2 {
+        font-size: 48px;
+    }
+
+
+    /* ---------- VIP ---------- */
+
+    .vip-section {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 40px;
+    }
+
+    .vip-content h2 {
+        font-size: 50px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   4. TABLET PORTRAIT
+   900px and below
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        height: 68px;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        padding-top: 68px;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 70px 7% 35px;
+        text-align: center;
+    }
+
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: 480px;
+    }
+
+    .hero-image img {
+        object-fit: contain;
+        object-position: center bottom;
+    }
+
+    .decorative-circle {
+        top: 8%;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+
+    /* ---------- CLINIC ---------- */
+
+    .section-header h2 {
+        font-size: 44px;
+    }
+
+    .section-header p {
+        font-size: 15px;
+    }
+
+
+    /* ---------- PROCEDURES ---------- */
+
+    .procedure-row,
+    .procedure-row:nth-child(2) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-container {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 600px;
+        height: 420px;
+        margin: auto;
+    }
+
+    .about-content {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .about-content p:not(.about-label) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* ---------- BEFORE / AFTER ---------- */
+
+    .before-after-container {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+
+    .before-after-content {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        min-height: 280px;
+    }
+
+    .before-after-image {
+        height: 400px;
+        min-height: 400px;
+    }
+
+
+    /* ---------- BENEFITS ---------- */
+
+    .benefits-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .benefits-content {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .benefits-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .benefits-image {
+        min-height: 550px;
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+    }
+
+
+    /* ---------- CATEGORIES ---------- */
+
+    .treatment-category-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* ---------- CONSULTATION ---------- */
+
+    .consultation-container {
+        height: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .consultation-image {
+        height: 350px;
+    }
+
+    .consultation-content {
+        padding: 50px 30px;
+        text-align: center;
+    }
+
+    .consultation-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* ---------- TESTIMONIAL ---------- */
+
+    .testimonials-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .testimonial-content {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .testimonial-dots {
+        justify-content: center;
+    }
+
+    .testimonial-image {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+
+
+    /* ---------- WELLNESS ---------- */
+
+    .wellness-section {
+        grid-template-columns: 1fr;
+    }
+
+    .wellness-content {
+        padding: 70px 8%;
+        text-align: center;
+    }
+
+    .wellness-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .wellness-image {
+        height: 400px;
+    }
+
+
+    /* ---------- VIP ---------- */
+
+    .vip-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .vip-image {
+        order: 1;
+    }
+
+    .vip-content {
+        order: 2;
+    }
+
+    .vip-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .benefit-grid {
+        text-align: left;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   5. MOBILE
+   768px and below
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    .hero,
+    .clinic-section,
+    .procedure-section,
+    .about-section,
+    .before-after-section,
+    .treatments-age-section,
+    .benefits-section,
+    .treatment-category-section,
+    .consultation-section,
+    .testimonials-section,
+    .wellness-section,
+    .vip-section,
+    .footer {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 64px;
+        border-radius: 0;
+        padding: 0 18px;
+    }
+
+    .logo {
+        width: 130px;
+        height: 58px;
+    }
+
+    .menu-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        padding-top: 64px;
+    }
+
+    .hero-content {
+        padding: 55px 6% 30px;
+    }
+
+    .small-heading {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+        margin-bottom: 20px;
+        font-size: clamp(40px, 10vw, 58px);
+        line-height: 0.98;
+    }
+
+    .description {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .primary-btn {
+        width: min(100%, 300px);
+        text-align: center;
+    }
+
+    .hero-image {
+        height: 360px;
+    }
+
+    .decorative-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+
+    /* ---------- SIDE BUTTONS ---------- */
+
+    .side-buttons {
+        display: none;
+    }
+
+
+    /* ---------- CLINIC ---------- */
+
+    .clinic-section {
+        padding: 65px 6%;
+    }
+
+    .section-header h2 {
+        font-size: clamp(38px, 10vw, 48px);
+    }
+
+    .section-header p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+
+    /* ---------- PROCEDURES ---------- */
+
+    .procedure-section {
+        padding: 15px 0 30px;
+    }
+
+    .procedure-row,
+    .procedure-row:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .procedure-card {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .beige-card {
+        min-height: 220px;
+        padding: 30px 25px;
+    }
+
+    .image-card {
+        min-height: 0;
+        display: flex;
+    }
+
+    .procedure-image {
+        width: 45%;
+        height: 250px;
+    }
+
+    .procedure-content {
+        width: 55%;
+        padding: 25px 15px;
+    }
+
+    .procedure-content h2,
+    .beige-card h2 {
+        font-size: 21px;
+    }
+
+    .procedure-content p,
+    .beige-card p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .procedure-content a {
+        font-size: 14px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-section {
+        padding: 65px 6%;
+    }
+
+    .about-intro {
+        margin-bottom: 45px;
+    }
+
+    .about-intro p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .about-container {
+        gap: 35px;
+    }
+
+    .about-image {
+        height: 340px;
+    }
+
+    .about-content h2 {
+        margin-bottom: 20px;
+        font-size: clamp(40px, 10vw, 52px);
+    }
+
+    .about-content p:not(.about-label) {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .about-btn {
+        width: min(100%, 280px);
+        text-align: center;
+    }
+
+
+    /* ---------- BEFORE / AFTER ---------- */
+
+    .before-after-section {
+        padding: 65px 5%;
+    }
+
+    .before-after-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .before-after-content {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 250px;
+        padding: 35px 20px;
+    }
+
+    .before-after-content h2 {
+        margin-bottom: 25px;
+        font-size: clamp(35px, 10vw, 46px);
+    }
+
+    .before-after-buttons {
+        max-width: 220px;
+        margin: auto;
+    }
+
+    .gallery-btn {
+        width: 100%;
+    }
+
+    .before-after-image {
+        width: 100%;
+        height: 330px;
+        min-height: 330px;
+    }
+
+
+    /* ---------- TREATMENTS BY AGE ---------- */
+
+    .treatments-age-section {
+        padding: 65px 5%;
+    }
+
+    .treatments-age-header {
+        margin-bottom: 35px;
+    }
+
+    .treatments-age-header h2 {
+        font-size: clamp(38px, 10vw, 48px);
+    }
+
+    .treatments-age-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 240px);
+        gap: 15px;
+    }
+
+    .age-tall {
+        grid-row: auto;
+    }
+
+
+    /* ---------- BENEFITS ---------- */
+
+    .benefits-section {
+        padding: 65px 6%;
+    }
+
+    .benefits-content h2 {
+        font-size: clamp(40px, 10vw, 52px);
+    }
+
+    .benefits-description {
+        font-size: 14px;
+    }
+
+    .benefits-image {
+        min-height: 450px;
+    }
+
+    .benefit-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .benefit-circle span {
+        font-size: 15px;
+        bottom: -27px;
+    }
+
+
+    /* ---------- CATEGORIES ---------- */
+
+    .treatment-category-section {
+        padding: 65px 5%;
+    }
+
+    .treatment-category-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .category-image {
+        height: 320px;
+    }
+
+    .category-title {
+        font-size: 30px;
+    }
+
+
+    /* ---------- CONSULTATION ---------- */
+
+    .consultation-section {
+        padding: 65px 5%;
+    }
+
+    .consultation-content {
+        padding: 45px 25px;
+    }
+
+    .consultation-content h2 {
+        font-size: clamp(40px, 10vw, 52px);
+    }
+
+    .consultation-content p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- TESTIMONIALS ---------- */
+
+    .testimonials-section {
+        padding: 65px 6%;
+        gap: 45px;
+    }
+
+    .testimonial-content h2 {
+        font-size: clamp(40px, 10vw, 52px);
+    }
+
+    .testimonial-text {
+        font-size: 14px;
+    }
+
+    .testimonial-image {
+        height: 380px;
+    }
+
+
+    /* ---------- WELLNESS ---------- */
+
+    .wellness-content {
+        padding: 60px 7%;
+    }
+
+    .wellness-content h2 {
+        font-size: 42px;
+    }
+
+    .wellness-content p {
+        font-size: 14px;
+    }
+
+    .wellness-image {
+        height: 350px;
+    }
+
+
+    /* ---------- VIP ---------- */
+
+    .vip-section {
+        padding: 65px 6%;
+        gap: 45px;
+    }
+
+    .vip-content h2 {
+        font-size: clamp(40px, 10vw, 52px);
+    }
+
+    .vip-description {
+        font-size: 14px;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        padding: 55px 6% 20px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-left {
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: min(280px, 100%);
+    }
+
+    .footer-hours-section {
+        margin-top: 40px;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-column li {
+        padding-left: 0;
+    }
+
+    .footer-column li::before {
+        display: none;
+    }
+
+    .view-all {
+        margin-left: 0;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+    }
+
+
+    /* ---------- OFFER ---------- */
+
+    .offer-popup {
+        width: min(350px, 90%);
+        bottom: 60px;
+        padding: 18px 25px;
+    }
+
+    .announcement {
+        height: 60px;
+    }
+
+    .announcement p {
+        font-size: 12px;
+    }
+
+
+    /* ---------- BACK TO TOP ---------- */
+
+    .back-to-top {
+        width: 42px;
+        height: 42px;
+        right: 15px;
+        bottom: 75px;
+        font-size: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   6. SMALL MOBILE
+   600px and below
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        height: 62px;
+        padding: 0 14px;
+    }
+
+    .logo {
+        width: 120px;
+        height: 55px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        padding-top: 62px;
+    }
+
+    .hero-content {
+        padding: 48px 5% 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 11vw, 48px);
+    }
+
+    .description {
+        font-size: 12.5px;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .decorative-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+
+    /* ---------- PROCEDURES ---------- */
+
+    .image-card {
+        flex-direction: column;
+    }
+
+    .procedure-image {
+        width: 100%;
+        height: 220px;
+    }
+
+    .procedure-content {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .procedure-content h2,
+    .beige-card h2 {
+        font-size: 23px;
+    }
+
+    .procedure-content p,
+    .beige-card p {
+        font-size: 12px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-image {
+        height: 290px;
+    }
+
+    .about-content h2 {
+        font-size: 40px;
+    }
+
+    .about-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+
+    /* ---------- BEFORE / AFTER ---------- */
+
+    .before-after-content {
+        min-height: 230px;
+        padding: 30px 15px;
+    }
+
+    .before-after-content h2 {
+        font-size: 36px;
+    }
+
+    .before-after-image {
+        height: 290px;
+        min-height: 290px;
+    }
+
+
+    /* ---------- TREATMENTS ---------- */
+
+    .treatments-age-grid {
+        grid-template-rows: repeat(6, 215px);
+    }
+
+    .age-card::before {
+        left: 18px;
+        bottom: 18px;
+        font-size: 23px;
+    }
+
+
+    /* ---------- CATEGORY ---------- */
+
+    .category-image {
+        height: 280px;
+    }
+
+    .category-title {
+        font-size: 28px;
+    }
+
+
+    /* ---------- BENEFITS ---------- */
+
+    .benefits-image {
+        min-height: 380px;
+    }
+
+    .benefit-circle {
+        width: 75px;
+        height: 75px;
+    }
+
+    .benefit-circle span {
+        font-size: 13px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   7. VERY SMALL PHONES
+   480px and below
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        height: 60px;
+        padding: 0 12px;
+    }
+
+    .logo {
+        width: 110px;
+        height: 52px;
+    }
+
+    .menu-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 23px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero-content {
+        padding: 42px 20px 25px;
+    }
+
+    .small-heading {
+        font-size: 9px;
+        letter-spacing: 1.2px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .description {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .hero-image {
+        height: 260px;
+    }
+
+    .decorative-circle {
+        width: 220px;
+        height: 220px;
+    }
+
+
+    /* ---------- CLINIC ---------- */
+
+    .clinic-section {
+        padding: 50px 20px;
+    }
+
+    .section-header h2 {
+        font-size: 34px;
+    }
+
+    .section-header p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- PROCEDURES ---------- */
+
+    .beige-card {
+        min-height: 200px;
+        padding: 25px 18px;
+    }
+
+    .procedure-icon {
+        font-size: 32px;
+    }
+
+    .beige-card h2 {
+        font-size: 21px;
+    }
+
+    .procedure-image {
+        height: 200px;
+    }
+
+    .procedure-content {
+        padding: 22px 16px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-section {
+        padding: 50px 20px;
+    }
+
+    .about-intro p {
+        font-size: 13px;
+    }
+
+    .about-image {
+        height: 250px;
+    }
+
+    .about-content h2 {
+        font-size: 35px;
+    }
+
+    .about-content p:not(.about-label) {
+        font-size: 13px;
+    }
+
+
+    /* ---------- BEFORE / AFTER ---------- */
+
+    .before-after-section {
+        padding: 50px 20px;
+    }
+
+    .before-after-content {
+        min-height: 215px;
+    }
+
+    .before-after-content h2 {
+        font-size: 31px;
+    }
+
+    .before-after-image {
+        height: 250px;
+        min-height: 250px;
+    }
+
+
+    /* ---------- TREATMENTS ---------- */
+
+    .treatments-age-section {
+        padding: 50px 20px;
+    }
+
+    .treatments-age-header h2 {
+        font-size: 32px;
+    }
+
+    .treatments-age-grid {
+        grid-template-rows: repeat(6, 185px);
+        gap: 12px;
+    }
+
+
+    /* ---------- BENEFITS ---------- */
+
+    .benefits-section {
+        padding: 50px 20px;
+    }
+
+    .benefits-content h2 {
+        font-size: 36px;
+    }
+
+    .benefits-image {
+        min-height: 330px;
+    }
+
+
+    /* ---------- CATEGORY ---------- */
+
+    .treatment-category-section {
+        padding: 50px 20px;
+    }
+
+    .category-image {
+        height: 235px;
+    }
+
+    .category-title {
+        font-size: 25px;
+        padding: 14px;
+    }
+
+
+    /* ---------- CONSULTATION ---------- */
+
+    .consultation-section {
+        padding: 50px 20px;
+    }
+
+    .consultation-content {
+        padding: 35px 20px;
+    }
+
+    .consultation-content h2 {
+        font-size: 36px;
+    }
+
+
+    /* ---------- TESTIMONIAL ---------- */
+
+    .testimonials-section {
+        padding: 50px 20px;
+    }
+
+    .testimonial-content h2 {
+        font-size: 36px;
+    }
+
+    .testimonial-image {
+        height: 300px;
+    }
+
+
+    /* ---------- WELLNESS ---------- */
+
+    .wellness-content {
+        padding: 50px 20px;
+    }
+
+    .wellness-content h2 {
+        font-size: 36px;
+    }
+
+    .wellness-image {
+        height: 280px;
+    }
+
+
+    /* ---------- VIP ---------- */
+
+    .vip-section {
+        padding: 50px 20px;
+    }
+
+    .vip-content h2 {
+        font-size: 36px;
+    }
+
+    .benefit-grid {
+        gap: 20px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-logo {
+        width: 250px;
+        height: 65px;
+    }
+
+    .footer-column h3 {
+        font-size: 23px;
+    }
+
+    .footer-column li a {
+        font-size: 13px;
+    }
+
+    .footer-description {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   8. EXTRA SMALL PHONES
+   360px and below
+========================================================= */
+
+@media (max-width: 360px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        height: 58px;
+        padding: 0 10px;
+    }
+
+    .logo {
+        width: 100px;
+        height: 50px;
+    }
+
+    .menu-btn {
+        font-size: 21px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        padding-top: 58px;
+    }
+
+    .hero-content {
+        padding: 38px 15px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 11.5px;
+    }
+
+    .hero-image {
+        height: 220px;
+    }
+
+    .decorative-circle {
+        width: 190px;
+        height: 190px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-section {
+        padding: 45px 15px;
+    }
+
+    .about-image {
+        height: 210px;
+    }
+
+    .about-content h2 {
+        font-size: 31px;
+    }
+
+
+    /* ---------- BEFORE / AFTER ---------- */
+
+    .before-after-section {
+        padding: 45px 15px;
+    }
+
+    .before-after-content {
+        min-height: 200px;
+        padding: 25px 12px;
+    }
+
+    .before-after-content h2 {
+        font-size: 28px;
+    }
+
+    .before-after-image {
+        height: 215px;
+        min-height: 215px;
+    }
+
+
+    /* ---------- TREATMENTS ---------- */
+
+    .treatments-age-section {
+        padding: 45px 15px;
+    }
+
+    .treatments-age-grid {
+        grid-template-rows: repeat(6, 170px);
+    }
+
+    .age-card::before {
+        font-size: 19px;
+    }
+
+
+    /* ---------- CATEGORY ---------- */
+
+    .treatment-category-section {
+        padding: 45px 15px;
+    }
+
+    .category-image {
+        height: 205px;
+    }
+
+    .category-title {
+        font-size: 23px;
+    }
+
+
+    /* ---------- BENEFITS ---------- */
+
+    .benefits-section {
+        padding: 45px 15px;
+    }
+
+    .benefits-content h2 {
+        font-size: 32px;
+    }
+
+    .benefits-image {
+        min-height: 290px;
+    }
+
+    .benefit-circle {
+        width: 65px;
+        height: 65px;
+    }
+
+    .benefit-circle span {
+        font-size: 11px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        padding: 40px 15px 18px;
+    }
+
+    .footer-logo {
+        width: 220px;
+        height: 60px;
+    }
+
+    .footer-column h3 {
+        font-size: 21px;
+    }
+
+}
+
+
+/* =========================================================
+   9. MOBILE LANDSCAPE
+========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    .hero-content {
+        padding-top: 80px;
+        padding-bottom: 20px;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .about-image {
+        height: 300px;
+    }
+
+    .before-after-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .before-after-content {
+        grid-column: 1 / -1;
+    }
+
+    .before-after-image {
+        height: 280px;
+        min-height: 280px;
+    }
+
+    .treatments-age-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 190px);
+    }
+
+}
+
+
+/* =========================================================
+   10. ACCESSIBILITY / TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .navbar nav a:hover,
+    .primary-btn:hover,
+    .secondary-btn:hover,
+    .about-btn:hover,
+    .gallery-btn:hover,
+    .benefits-btn:hover,
+    .category-card:hover,
+    .age-card:hover img {
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   11. REDUCE ANIMATIONS
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .benefits-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px;
+    }
+
+    .benefits-content h2 {
+        font-size: 52px;
+    }
+
+    .benefit-circle {
+        width: 105px;
+        height: 105px;
+    }
+
+    .benefit-circle span {
+        font-size: 16px;
+        bottom: -28px;
+    }
+
+    .circle-one {
+        left: 5%;
+    }
+
+    .circle-three {
+        left: 5%;
+    }
+
+    .circle-five {
+        left: 8%;
+    }
+
+    .circle-two {
+        right: 2%;
+    }
+
+    .circle-four {
+        right: 2%;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .benefits-section {
+        padding: 70px 5%;
+    }
+
+    .benefits-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .benefits-content {
+        text-align: center;
+    }
+
+    .benefits-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .benefits-content h2 {
+        font-size: 45px;
+    }
+
+    .benefits-image {
+        min-height: 520px;
+    }
+
+    .benefits-main-image {
+        width: 70%;
+        max-width: 350px;
+    }
+
+    .benefit-circle {
+        width: 95px;
+        height: 95px;
+    }
+
+    .benefit-circle span {
+        font-size: 15px;
+        bottom: -27px;
+    }
+
+    .circle-one {
+        top: 8%;
+        left: 5%;
+    }
+
+    .circle-two {
+        top: 23%;
+        right: 2%;
+    }
+
+    .circle-three {
+        top: 47%;
+        left: 2%;
+    }
+
+    .circle-four {
+        top: 52%;
+        right: 2%;
+    }
+
+    .circle-five {
+        bottom: 5%;
+        left: 10%;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .benefits-section {
+        padding: 60px 20px;
+    }
+
+    .benefits-content h2 {
+        font-size: 38px;
+    }
+
+    .benefits-description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .benefits-image {
+        min-height: 430px;
+    }
+
+    .benefits-main-image {
+        width: 65%;
+        max-width: 280px;
+    }
+
+    .benefit-circle {
+        width: 75px;
+        height: 75px;
+    }
+
+    .benefit-circle span {
+        font-size: 13px;
+        bottom: -23px;
+    }
+
+    .circle-one {
+        top: 8%;
+        left: 0;
+    }
+
+    .circle-two {
+        top: 22%;
+        right: 0;
+    }
+
+    .circle-three {
+        top: 47%;
+        left: 0;
+    }
+
+    .circle-four {
+        top: 50%;
+        right: 0;
+    }
+
+    .circle-five {
+        bottom: 4%;
+        left: 8%;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE - LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .benefits-container {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 20px;
+    }
+
+    .benefits-content h2 {
+        font-size: 54px;
+    }
+
+    .benefits-image {
+        height: 560px;
+    }
+
+    .benefits-main-image {
+        width: 430px;
+        height: 560px;
+    }
+
+    .circle-one {
+        left: 0;
+        top: 70px;
+    }
+
+    .circle-two {
+        left: 180px;
+        top: 150px;
+    }
+
+    .circle-three {
+        left: 0;
+        top: 230px;
+    }
+
+    .circle-four {
+        left: 180px;
+        top: 310px;
+    }
+
+    .circle-five {
+        left: 0;
+        top: 390px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .benefits-section {
+        padding: 70px 5%;
+    }
+
+    .benefits-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .benefits-content {
+        text-align: center;
+    }
+
+    .benefits-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .benefits-image {
+        width: 650px;
+        max-width: 100%;
+        height: 600px;
+
+        margin: auto;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .benefits-section {
+        padding: 50px 20px;
+    }
+
+    .benefits-content h2 {
+        font-size: 42px;
+    }
+
+    .benefits-description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .benefits-image {
+        height: 520px;
+        width: 100%;
+    }
+
+    .benefits-main-image {
+        width: 300px;
+        height: 480px;
+
+        right: -20px;
+        top: 20px;
+    }
+
+    .benefit-circle {
+        width: 85px;
+        height: 85px;
+    }
+
+    .benefit-circle span {
+        font-size: 14px;
+        bottom: -25px;
+    }
+
+    /* Waist */
+    .circle-one {
+        top: 60px;
+        left: 0;
+    }
+
+    /* Thighs */
+    .circle-two {
+        top: 120px;
+        left: 100px;
+    }
+
+    /* Hips */
+    .circle-three {
+        top: 210px;
+        left: 0;
+    }
+
+    /* Arms */
+    .circle-four {
+        top: 270px;
+        left: 100px;
+    }
+
+    /* Legs */
+    .circle-five {
+        top: 360px;
+        left: 0;
+    }
+}
+@media (max-width: 1100px) {
+
+    .before-after-card {
+        height: 460px;
+    }
+
+    .before-after-content h2 {
+        font-size: 48px;
+    }
+
+    .before-after-left {
+        width: 330px;
+    }
+
+    .before-after-left img {
+        width: 330px;
+    }
+
+    .before-after-right {
+        width: 370px;
+    }
+
+    .before-after-right img {
+        width: 370px;
+    }
+
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 850px) {
+
+    .before-after-section {
+        padding: 50px 4%;
+    }
+
+    .before-after-card {
+        height: 430px;
+    }
+
+    .before-after-content {
+        width: 380px;
+    }
+
+    .before-after-content h2 {
+        font-size: 42px;
+    }
+
+    .before-after-left {
+        width: 270px;
+    }
+
+    .before-after-left img {
+        width: 280px;
+        left: -20px;
+    }
+
+    .before-after-right {
+        width: 300px;
+    }
+
+    .before-after-right img {
+        width: 310px;
+        right: -25px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .before-after-section {
+        padding: 40px 18px;
+    }
+
+    .before-after-card {
+        height: 500px;
+
+        border-radius: 10px;
+    }
+
+    .before-after-content {
+        width: 90%;
+
+        margin-top: -100px;
+    }
+
+    .before-after-content h2 {
+        font-size: 38px;
+    }
+
+    .before-after-buttons {
+        flex-direction: column;
+
+        gap: 14px;
+
+        margin-top: 28px;
+    }
+
+    .before-after-btn {
+        width: 165px;
+    }
+
+
+    /* Left model */
+
+    .before-after-left {
+        width: 180px;
+
+        height: 230px;
+
+        left: -10px;
+    }
+
+    .before-after-left img {
+        width: 200px;
+
+        left: -5px;
+
+        bottom: 0;
+    }
+
+
+    /* Right model */
+
+    .before-after-right {
+        width: 200px;
+
+        height: 250px;
+
+        right: -10px;
+    }
+
+    .before-after-right img {
+        width: 220px;
+
+        right: -5px;
+
+        bottom: 0;
+    }
+
+}
