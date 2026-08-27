@@ -677,198 +677,450 @@ button {
 
 
 /*=====================================================
-PROCEDURES SECTION
+  CLINIC SECTION
 =====================================================*/
 
-.procedure-section {
-    width: 100%;
-    padding: 40px 0 90px;
-    background: #ffffff;
-    overflow: hidden;
-}
-
-
-/*=====================================================
-ROW
-=====================================================*/
-
-.procedure-row {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 35% 65%;
-    min-height: 250px;
-}
-
-.procedure-row:nth-child(2) {
-    grid-template-columns: 65% 35%;
-}
-
-
-/*=====================================================
-GENERAL CARD
-=====================================================*/
-
-.procedure-card {
+.clinic-section {
     position: relative;
-    min-height: 250px;
+    padding: 80px 6%;
+    background: #f7f6f3;
     overflow: hidden;
 }
 
+.clinic-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
 
 /*=====================================================
-GREEN ACCENT CARD
+  HEADING
 =====================================================*/
 
-.beige-card {
-    background: #ffffff;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+.clinic-heading {
     text-align: center;
-
-    padding: 35px 50px;
-
-    border-top: 1px solid #e7eee9;
-    border-bottom: 1px solid #e7eee9;
+    margin-bottom: 55px;
 }
 
-.procedure-icon {
-    color: #318c5c;
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.beige-card h2 {
+.clinic-heading h2 {
     font-family: "Cormorant Garamond", serif;
-
-    font-size: 30px;
+    font-size: 54px;
     font-weight: 600;
-
-    margin: 5px 0 12px;
-
-    color: #111111;
-}
-
-.beige-card p {
-    max-width: 350px;
-
-    margin: 0;
-
-    font-size: 13px;
-    line-height: 1.7;
-
-    color: #666666;
-}
-
-
-/*=====================================================
-IMAGE CARD
-=====================================================*/
-
-.image-card {
-    background: #ffffff;
-
-    display: flex;
-    align-items: center;
-
-    border-bottom: 1px solid #e7eee9;
-}
-
-
-/*=====================================================
-IMAGE
-=====================================================*/
-
-.procedure-image {
-    width: 48%;
-    height: 250px;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-
-    overflow: hidden;
-}
-
-.procedure-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    object-position: center bottom;
-
-    display: block;
-}
-
-
-/*=====================================================
-CONTENT
-=====================================================*/
-
-.procedure-content {
-    width: 52%;
-
-    padding: 30px 45px;
-
-    text-align: center;
-}
-
-.procedure-content h2 {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 30px;
-    font-weight: 600;
-
-    margin: 0 0 12px;
-
-    color: #111111;
-}
-
-.procedure-content p {
-    max-width: 380px;
-
-    margin: 0 auto 18px;
-
-    font-size: 13px;
-    line-height: 1.7;
-
-    color: #666666;
-}
-
-.procedure-content a {
+    line-height: 1.15;
     color: #318c5c;
-
-    font-size: 14px;
-    font-weight: 500;
-
-    transition: .3s ease;
+    margin-bottom: 25px;
 }
 
-.procedure-content a:hover {
+.clinic-heading p {
+    max-width: 1120px;
+    margin: 0 auto 14px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #555;
+}
+
+.clinic-heading strong {
+    color: #318c5c;
+    font-weight: 600;
+}
+
+.clinic-heading a {
+    color: #318c5c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.clinic-heading a:hover {
     color: #246e47;
 }
 
-
 /*=====================================================
-GREEN LINE
+  ROWS
 =====================================================*/
 
-.procedure-row::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 1px;
-
-    background: #e7eee9;
+.clinic-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
+/*=====================================================
+  CARD
+=====================================================*/
+
+.clinic-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .35s;
+    box-shadow: 0 10px 25px rgba(0,0,0,.05);
+}
+
+.clinic-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,.08);
+}
+
+/*=====================================================
+  ICON CARD
+=====================================================*/
+
+.icon-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 35px;
+}
+
+.clinic-icon {
+    width: 60px;
+    margin-bottom: 22px;
+}
+
+.icon-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.icon-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+}
+
+/*=====================================================
+  IMAGE CARD
+=====================================================*/
+
+.image-card {
+    padding: 0;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*=====================================================
+  TEXT CARD
+=====================================================*/
+
+.text-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+}
+
+.text-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+    color: #111;
+    margin-bottom: 18px;
+}
+
+.text-card p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.text-card a {
+    color: #318c5c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.text-card a:hover {
+    letter-spacing: 1px;
+}
+
+/*=====================================================
+  BOTTOM TEXT
+=====================================================*/
+
+.clinic-bottom-text {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.clinic-bottom-text p {
+    max-width: 1050px;
+    margin: auto;
+    font-size: 17px;
+    color: #555;
+    line-height: 1.9;
+}
+/*=====================================================
+  CARD STYLING
+=====================================================*/
+
+.clinic-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #fff;
+    transition: all .35s ease;
+    box-shadow: 0 12px 30px rgba(0,0,0,.06);
+}
+
+.clinic-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border:1px solid rgba(49,140,92,.08);
+    border-radius:18px;
+    pointer-events:none;
+}
+
+/*=====================================================
+  ALTERNATING BACKGROUNDS
+=====================================================*/
+
+.icon-card{
+    background:#ffffff;
+}
+
+.text-card{
+    background:#f4f8f5;
+}
+
+.image-card{
+    background:#e8efe9;
+}
+
+/*=====================================================
+  ICON CARD
+=====================================================*/
+
+.icon-card{
+    padding:55px 40px;
+}
+
+.icon-card::after{
+    content:"";
+    position:absolute;
+    width:70px;
+    height:3px;
+    background:#318c5c;
+    left:50%;
+    transform:translateX(-50%);
+    top:35px;
+    border-radius:10px;
+}
+
+.clinic-icon{
+    width:70px;
+    height:auto;
+    margin-bottom:25px;
+    transition:.35s;
+}
+
+.icon-card h3{
+    margin-bottom:18px;
+}
+
+.icon-card p{
+    max-width:270px;
+}
+
+/*=====================================================
+  TEXT CARD
+=====================================================*/
+
+.text-card{
+    padding:55px 45px;
+}
+
+.text-card h3{
+    margin-bottom:20px;
+}
+
+.text-card a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:8px;
+    color:#318c5c;
+    font-weight:600;
+}
+
+.text-card a::after{
+    content:"→";
+    transition:.3s;
+}
+
+.text-card:hover a::after{
+    transform:translateX(6px);
+}
+
+/*=====================================================
+  IMAGE CARD
+=====================================================*/
+
+.image-card img{
+    transition:transform .6s ease;
+}
+
+.image-card:hover img{
+    transform:scale(1.08);
+}
+
+/*=====================================================
+  HOVER EFFECTS
+=====================================================*/
+
+.clinic-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.10);
+}
+
+.icon-card:hover .clinic-icon{
+    transform:rotate(-8deg) scale(1.08);
+}
+
+/*=====================================================
+  SECOND ROW
+=====================================================*/
+
+.reverse{
+    direction:rtl;
+}
+
+.reverse > *{
+    direction:ltr;
+}
+
+/*=====================================================
+  SUBTLE DECORATION
+=====================================================*/
+
+.clinic-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,
+        rgba(49,140,92,.08),
+        transparent 70%);
+
+    left:-180px;
+    top:120px;
+
+    pointer-events:none;
+}
+
+.clinic-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,
+        rgba(49,140,92,.05),
+        transparent 70%);
+
+    right:-140px;
+    bottom:80px;
+
+    pointer-events:none;
+}
+
+/*=====================================================
+  TABLET
+=====================================================*/
+
+@media(max-width:1024px){
+
+    .clinic-row{
+
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .reverse{
+        direction:ltr;
+    }
+
+    .clinic-heading h2{
+        font-size:44px;
+    }
+
+    .clinic-card{
+        min-height:300px;
+    }
+
+    .text-card,
+    .icon-card{
+        padding:45px 35px;
+    }
+}
+
+/*=====================================================
+  MOBILE
+=====================================================*/
+
+@media(max-width:768px){
+
+    .clinic-section{
+        padding:60px 20px;
+    }
+
+    .clinic-heading h2{
+        font-size:34px;
+        line-height:1.2;
+    }
+
+    .clinic-heading p{
+        font-size:15px;
+        line-height:1.8;
+    }
+
+    .clinic-card{
+        min-height:auto;
+    }
+
+    .text-card,
+    .icon-card{
+        padding:35px 25px;
+    }
+
+    .icon-card h3,
+    .text-card h3{
+        font-size:30px;
+    }
+
+    .clinic-icon{
+        width:55px;
+    }
+
+    .clinic-bottom-text p{
+        font-size:15px;
+    }
+}
 
 
 
