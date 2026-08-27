@@ -126,7 +126,7 @@ const navbarContainer = document.getElementById("navbar");
 
   });
 
-});
+
 
 // ==================================================
 // CARD SCROLL ANIMATION
