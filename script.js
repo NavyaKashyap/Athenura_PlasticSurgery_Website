@@ -847,7 +847,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- WOMAN IMAGE -->
         <img
-            src="images/cta/cta-woman.png"
+            src="Resources/images/cta/cta-woman.png"
             alt="Woman"
             class="cta-woman"
         >
