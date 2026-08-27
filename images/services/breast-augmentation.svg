@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
+      
+      <rect width="600" height="450" fill="#f6f2ec"/>
+      <!-- Desktop Monitor with Anatomical Diagram (Right) -->
+      <rect x="280" y="50" width="290" height="230" rx="10" fill="#1e293b" stroke="#64748b" stroke-width="6"/>
+      <rect x="290" y="60" width="270" height="210" rx="6" fill="#ffffff"/>
+      <!-- Anatomical Breast Cross Section Diagram on Screen -->
+      <text x="425" y="85" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0e392b" text-anchor="middle">Breast Augmentation</text>
+      <path d="M340,110 C380,110 440,130 450,180 C460,220 400,245 340,245 Z" fill="#fed7aa" stroke="#ea580c" stroke-width="3"/>
+      <!-- Silicone Implant Shape -->
+      <ellipse cx="385" cy="180" rx="35" ry="45" fill="#93c5fd" opacity="0.8" stroke="#2563eb" stroke-width="3"/>
+      <!-- Muscle Band -->
+      <path d="M340,115 C360,130 380,160 375,240" stroke="#dc2626" stroke-width="8" fill="none"/>
+      <!-- Monitor Stand -->
+      <rect x="415" y="280" width="20" height="50" fill="#64748b"/>
+      <rect x="380" y="325" width="90" height="12" rx="4" fill="#475569"/>
+
+      <!-- Doctor in White Coat pointing at screen -->
+      <path d="M240,450 L200,280 C190,240 220,210 260,210 L330,170 L340,185 L280,240 L260,450 Z" fill="#ffffff"/>
+      <circle cx="210" cy="140" r="45" fill="#fbd5be"/>
+      
+      <rect x="20" y="390" width="200" height="40" rx="20" fill="#0e392b" opacity="0.9"/>
+      <text x="120" y="415" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">BREAST AUGMENTATION</text>
+    
+    </svg>
