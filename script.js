@@ -821,11 +821,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!cta) return;
 
-    cta.className = "cta"
+    cta.className = "cta";
+
     cta.innerHTML = `
-        <!-- CTA BACKGROUND + CONTENT -->
+        <!-- CTA CONTAINER -->
         <div class="cta-container">
 
+            <!-- VECTOR BACKGROUND -->
+            <img
+                src="Resources/images/cta/Vector.png"
+                alt=""
+                class="cta-vector"
+            >
+
+            <!-- CTA CONTENT -->
             <div class="cta-content">
 
                 <h2>REQUEST A CONSULTATION</h2>
