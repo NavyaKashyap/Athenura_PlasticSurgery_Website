@@ -44,74 +44,84 @@ button {
 }
 
 
-/* =========================================================
-   2. NAVBAR
-========================================================= */
+/* =================================
+   NAVBAR
+================================= */
 
 .navbar {
-    width: calc(100% - 80px);
-    height: 76px;
-
     position: fixed;
-    top: 20px;
-    left: 40px;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 65px;
+
+    z-index: 1000;
+
+    background: transparent;
+
+    transition:
+        background 0.35s ease,
+        backdrop-filter 0.35s ease,
+        box-shadow 0.35s ease;
+
+    animation: navbarDrop 0.7s ease-out;
+}
+
+
+/* =================================
+   SCROLLED NAVBAR
+================================= */
+
+.navbar.scrolled {
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 1) 40%, transparent);
+    /* background: linear-gradient(to bottom,rgba(141, 225, 177, 0.5) 50%, transparent); */
+}
+
+
+/* =================================
+   NAVBAR CONTAINER
+================================= */
+
+.navbar-container {
+    width: 90%;
+    max-width: 1300px;
+
+    height: 100%;
+    margin: 0 auto;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 30px;
-
-    background: rgba(255, 255, 255, 0.97);
-
-    border: 1px solid rgba(49, 140, 92, 0.10);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.06);
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    box-sizing: border-box;
-
-    z-index: 1000;
 }
 
 
-/* =========================================================
+/* =================================
    LOGO
-========================================================= */
+================================= */
 
-.logo {
-    width: 170px;
-    height: 60px;
-
+.navbar-logo {
     display: flex;
     align-items: center;
 
-    flex-shrink: 0;
+    text-decoration: none;
 }
 
-.logo img {
-    width: 100%;
-    height: 100%;
-
+.navbar-logo img {
     display: block;
 
+    width: 130px;
+    height: auto;
+
     object-fit: contain;
-    object-position: left center;
 }
 
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* =================================
+   NAVIGATION MENU
+================================= */
 
-.navbar nav {
-    height: 100%;
-
+.navbar-menu {
     display: flex;
     align-items: center;
 
@@ -119,108 +129,55 @@ button {
 }
 
 
-/* =========================================================
-   NAVIGATION LINKS
-========================================================= */
+/* =================================
+   NAV LINKS
+================================= */
 
-.navbar nav a {
+.nav-link {
     position: relative;
-
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-
-    color: #333333;
-
-    font-family: "Poppins", sans-serif;
-
-    font-size: 13px;
+    color: #26352d;
+    font-size: 16px;
     font-weight: 400;
-
     text-decoration: none;
-
-    white-space: nowrap;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.navbar nav a:hover {
-    color: #318c5c;
+    transition: color 0.25s ease;
 }
 
 
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
+/* Hover */
 
-.navbar nav a.active {
-    color: #318c5c;
+.nav-link:hover {
+    color: #3b9464;
 }
 
-.navbar nav a.active::after {
+
+/* Active underline */
+
+.nav-link::after {
     content: "";
 
     position: absolute;
 
     left: 0;
-    bottom: 18px;
+    bottom: -7px;
 
+    width: 0;
+    height: 2px;
+
+    background: #3b9464;
+
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
     width: 100%;
-    height: 1px;
-
-    background: #318c5c;
 }
 
 
-/* =========================================================
-   DROPDOWN
-========================================================= */
-
-.nav-dropdown {
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-
-    position: relative;
-}
-
-.nav-dropdown > a {
-    height: 100%;
-}
-
-.nav-dropdown span {
-    margin-left: 5px;
-
-    color: #333333;
-
-    font-size: 12px;
-
-    line-height: 1;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.nav-dropdown:hover span {
-    color: #318c5c;
-
-    transform: translateY(1px);
-}
-
-
-/* =========================================================
+/* =================================
    SEARCH BUTTON
-========================================================= */
+================================= */
 
-.search-btn {
-    width: 36px;
-    height: 36px;
-
+.search-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -228,56 +185,121 @@ button {
     padding: 0;
 
     border: none;
-
     background: transparent;
 
-    color: #333333;
-
-    font-size: 24px;
-
-    line-height: 1;
+    color: #26352d;
 
     cursor: pointer;
 
     transition:
-        color 0.3s ease,
-        transform 0.3s ease;
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.search-btn:hover {
-    color: #318c5c;
+.search-button:hover {
+    color: #3b9464;
 
     transform: scale(1.08);
 }
 
 
-/* =========================================================
+/* =================================
    MOBILE MENU BUTTON
-========================================================= */
+================================= */
 
-.menu-btn {
+.menu-toggle {
     display: none;
 
-    width: 40px;
-    height: 40px;
+    flex-direction: column;
 
-    align-items: center;
     justify-content: center;
 
-    padding: 0;
+    gap: 5px;
+
+    width: 35px;
+    height: 35px;
+
+    padding: 5px;
 
     border: none;
 
     background: transparent;
 
-    color: #318c5c;
-
-    font-size: 26px;
-
-    line-height: 1;
-
     cursor: pointer;
 }
+
+.menu-toggle span {
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    background: #26352d;
+
+    transition: 0.3s ease;
+}
+
+
+/* =================================
+   NAVBAR ANIMATION
+================================= */
+
+.navbar-logo,
+.navbar-menu > * {
+    opacity: 0;
+    transform: translateY(-15px);
+    animation: navItemDrop 0.5s ease-out forwards;
+}
+
+/* HOME */
+.navbar-menu > *:nth-child(1) {
+    animation-delay: 0s;
+}
+
+/* SERVICES */
+.navbar-menu > *:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+/* RESOURCES */
+.navbar-menu > *:nth-child(3) {
+    animation-delay: 0.16s;
+}
+
+/* GALLERY */
+.navbar-menu > *:nth-child(4) {
+    animation-delay: 0.24s;
+}
+
+/* CONTACT */
+.navbar-logo,
+.navbar-menu > *:nth-child(5) {
+    animation-delay: 0.32s;
+}
+
+/* OFFERS */
+.navbar-menu > *:nth-child(6) {
+    animation-delay: 0.40s;
+}
+
+/* SEARCH */
+.navbar-menu > *:nth-child(7) {
+    animation-delay: 0.48s;
+}
+
+
+@keyframes navItemDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* =========================================================
    3. HERO SECTION
