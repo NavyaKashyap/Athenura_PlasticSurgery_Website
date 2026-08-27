@@ -723,7 +723,7 @@ document.addEventListener ("DOMContentLoaded", () => {
           <!-- LEFT COLUMN -->
           <div class="footer-left">
             <a href="../index.html" class="footer-logo">
-              <img src="images/logo/athenura-logo.png" alt="Athenura Logo">
+              <img src="Resources/images/logo/athenura-logo.png" alt="Athenura Logo">
             </a>
 
             <p class="footer-description">
