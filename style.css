@@ -3799,12 +3799,10 @@ SMALL MOBILE
     position: relative;
     width: 100%;
     height: 451px;
-    margin-bottom:100px;
+    margin-bottom: 100px;
     display: flex;
     justify-content: center;
-
     background: #ffffff;
-
     overflow: hidden;
 }
 
@@ -3819,7 +3817,10 @@ SMALL MOBILE
     width: 100%;
     height: 380px;
     border-radius: 7px;
-    background: #eef9f4;
+
+    /* GREENER BACKGROUND */
+    background: #e1f4e9;
+
     z-index: 1;
 }
 
@@ -3830,23 +3831,19 @@ SMALL MOBILE
 
 .cta-content {
     position: absolute;
-
     right: 0;
     top: 0;
-
     width: 50%;
     height: 100%;
 
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 
     text-align: center;
-
     padding: 20px 25px;
-    margin: 50px 50px;
+    margin: 0 50px;
 
     box-sizing: border-box;
     z-index: 3;
@@ -3859,11 +3856,13 @@ SMALL MOBILE
 
 .cta-content h2 {
     margin-bottom: 25px;
+
     font-family: "Playfair Display SC", Georgia, "Times New Roman", serif;
     font-size: 35px;
     line-height: 1;
     font-weight: 700;
-    color: #3a9561;
+
+    color: #328b59;
 }
 
 
@@ -3874,9 +3873,11 @@ SMALL MOBILE
 .cta-content p {
     max-width: 500px;
     margin-bottom: 25px;
+
     font-size: 15px;
     font-weight: 400;
     line-height: 22px;
+
     color: #333;
     text-align: center;
 }
@@ -3888,22 +3889,18 @@ SMALL MOBILE
 
 .cta-button {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
 
     padding: 9px 23px;
 
-    background: #3b9464;
-
+    background: #3a9963;
     color: #ffffff;
 
     border-radius: 8px;
-
     text-decoration: none;
 
     font-size: 18px;
-
     font-weight: 500;
 
     box-shadow: 0 4px 8px rgba(47, 108, 75, 0.25);
@@ -3916,7 +3913,6 @@ SMALL MOBILE
 
 .cta-button:hover {
     background: #2f8055;
-
     transform: translateY(-2px);
 }
 
@@ -3929,11 +3925,12 @@ SMALL MOBILE
     position: absolute;
     left: 150px;
     z-index: 2;
+
     width: 408px;
     height: 450px;
+
     object-fit: contain;
 }
-
 
 /* =================================
    RESPONSIVE
