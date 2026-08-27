@@ -2060,337 +2060,314 @@ SMALL MOBILE
     }
 }
 /* =========================================================
-   15. BENEFITS OF PLASTIC SURGERY
+   BENEFITS OF PLASTIC SURGERY
 ========================================================= */
 
 .benefits-section {
     position: relative;
-    padding: 80px 7%;
-    overflow: hidden;
+    padding: 90px 7%;
     background: #f7f6f3;
+    overflow: hidden;
 }
 
 .benefits-container {
-    max-width: 1250px;
-    margin: 0 auto;
+    max-width: 1300px;
+    margin: auto;
 
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-
+    grid-template-columns: 0.95fr 1.05fr;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
 }
-
 
 /* =========================================================
-   BENEFITS CONTENT
+   LEFT CONTENT
 ========================================================= */
 
-.benefits-content {
-    position: relative;
-    z-index: 3;
+.benefits-content{
+    z-index:10;
 }
 
-.benefits-label {
-    margin: 0 0 14px;
-
-    color: #318c5c;
-
-    font-size: 12px;
-    font-weight: 500;
-
-    letter-spacing: 3px;
+.benefits-label{
+    color:#318c5c;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:3px;
+    margin-bottom:15px;
 }
 
-.benefits-content h2 {
-    max-width: 500px;
-
-    margin: 0 0 24px;
-
-    font-family: "Cormorant Garamond", serif;
-
-    color: #333;
-
-    font-size: 58px;
-    font-weight: 600;
-
-    line-height: 0.98;
+.benefits-content h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:64px;
+    font-weight:600;
+    line-height:0.95;
+    color:#318c5c;
+    margin-bottom:28px;
 }
 
-.benefits-content h2 span {
-    color: #318c5c;
+.benefits-content h2 span{
+    color:#318c5c;
 }
 
-.benefits-description {
-    max-width: 541px;
-
-    margin: 0 0 14px;
-
-    color: #666;
-
-    font-size: 14px;
-    line-height: 1.8;
+.benefits-description{
+    max-width:520px;
+    color:#222;
+    font-size:16px;
+    line-height:2;
+    margin-bottom:40px;
 }
 
-.benefits-btn {
-    display: inline-block;
+.benefits-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    margin-top: 16px;
-    padding: 13px 27px;
+    padding:15px 34px;
 
-    background: #318c5c;
-    color: #fff;
+    background:#318c5c;
+    color:#fff;
 
-    font-size: 13px;
+    border-radius:8px;
 
-    text-decoration: none;
+    text-decoration:none;
+    font-weight:600;
 
-    transition: 0.3s ease;
+    transition:.35s;
 }
 
-.benefits-btn:hover {
-    background: #246e47;
-    transform: translateY(-2px);
+.benefits-btn:hover{
+    background:#246e47;
+    transform:translateY(-3px);
 }
-
 
 /* =========================================================
-   BENEFITS IMAGE AREA
+   RIGHT SIDE
 ========================================================= */
 
-.benefits-image {
-    position: relative;
-    width: 650px;
-    height: 610px;
-    margin-left: auto;
+.benefits-image{
+    position:relative;
+    width:700px;
+    height:680px;
+    margin-left:auto;
 }
 
+/* Background Glow */
+
+.benefits-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:620px;
+    height:620px;
+
+    right:-60px;
+    top:20px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(49,140,92,.12) 0%,
+    rgba(49,140,92,.04) 55%,
+    transparent 78%);
+
+    z-index:0;
+}
 
 /* =========================================================
-   MAIN MODEL
+   MODEL
 ========================================================= */
 
-.benefits-main-image {
-    position: absolute;
+.benefits-main-image{
 
-    width: 500px;
-    height: 650px;
+    position:absolute;
 
-    top: -25px;
-    right: 5px;
+    right:-55px;
+    bottom:-15px;
 
-    object-fit: contain;
+    height:720px;
+    width:auto;
 
-    z-index: 2;
+    object-fit:contain;
+
+    z-index:2;
 }
-
 
 /* =========================================================
-   BENEFIT CIRCLES
+   BENEFIT CIRCLE
 ========================================================= */
 
-.benefit-circle {
-    position: absolute;
+.benefit-circle{
 
-    width: 100px;
-    height: 100px;
+    position:absolute;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width:120px;
+    height:120px;
 
-    padding: 0;
+    border-radius:50%;
 
-    border-radius: 50%;
+    background:#fff;
 
-    background: #fff;
+    border:2px solid rgba(49,140,92,.45);
 
-    border: 1px solid rgba(49, 140, 92, 0.45);
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    overflow:hidden;
 
-    box-sizing: border-box;
+    z-index:5;
 
-    z-index: 5;
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition:.35s;
 }
 
+.benefit-circle:hover{
+
+    transform:translateY(-5px) scale(1.05);
+}
+
+.benefit-circle img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.benefit-circle span{
+
+    position:absolute;
+
+    left:50%;
+    bottom:-34px;
+
+    transform:translateX(-50%);
+
+    font-family:"Cormorant Garamond",serif;
+    font-size:18px;
+    font-weight:700;
+    color:#222;
+}
 
 /* =========================================================
-   CIRCLE IMAGE
+   CIRCLE POSITION
 ========================================================= */
 
-.benefit-circle img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    border-radius: 50%;
-
-    object-fit: cover;
+.circle-one{
+    top:45px;
+    left:30px;
 }
 
+.circle-two{
+    top:160px;
+    left:230px;
+}
+
+.circle-three{
+    top:300px;
+    left:40px;
+}
+
+.circle-four{
+    top:410px;
+    left:220px;
+}
+
+.circle-five{
+    top:545px;
+    left:55px;
+}
 
 /* =========================================================
-   LABEL
+   RESPONSIVE
 ========================================================= */
 
-.benefit-circle span {
-    position: absolute;
+@media(max-width:1100px){
 
-    left: 50%;
-    bottom: -27px;
-
-    transform: translateX(-50%);
-
-    color: #333;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 17px;
-    font-weight: 600;
-
-    white-space: nowrap;
+.benefits-container{
+    grid-template-columns:1fr;
 }
 
-
-/* =========================================================
-   NATURAL CIRCLE ARRANGEMENT
-========================================================= */
-
-/* Waist */
-.circle-one {
-    top: 80px;
-    left: 25px;
+.benefits-content{
+    text-align:center;
 }
 
-/* Thighs */
-.circle-two {
-    top: 105px;
-    left: 205px;
+.benefits-description{
+    margin:auto auto 35px;
 }
 
-/* Hips */
-.circle-three {
-    top: 255px;
-    left: 25px;
+.benefits-image{
+    margin:auto;
 }
 
-/* Arms */
-.circle-four {
-    top: 320px;
-    left: 205px;
 }
 
-/* Legs */
-.circle-five {
-    top: 455px;
-    left: 25px;
+@media(max-width:768px){
+
+.benefits-section{
+    padding:70px 25px;
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .benefits-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .benefits-content {
-        text-align: center;
-    }
-
-    .benefits-content h2,
-    .benefits-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .benefits-image {
-        max-width: 650px;
-        margin: 0 auto;
-    }
-
-    .benefits-main-image {
-        right: 0;
-    }
+.benefits-content h2{
+    font-size:48px;
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .benefits-section {
-        padding: 60px 20px;
-    }
-
-    .benefits-content h2 {
-        font-size: 44px;
-    }
-
-    .benefits-description {
-        font-size: 13px;
-        line-height: 1.7;
-    }
-
-    .benefits-image {
-        height: 480px;
-    }
-
-    .benefits-main-image {
-        width: 370px;
-        height: 500px;
-
-        right: -25px;
-        top: 0;
-    }
-
-    .benefit-circle {
-        width: 70px;
-        height: 70px;
-    }
-
-    .benefit-circle span {
-        bottom: -22px;
-        font-size: 13px;
-    }
-
-    .circle-one {
-        top: 100px;
-        left: 5px;
-    }
-
-    .circle-two {
-        top: 115px;
-        left: 100px;
-    }
-
-    .circle-three {
-        top: 195px;
-        left: 5px;
-    }
-
-    .circle-four {
-        top: 275px;
-        left: 100px;
-    }
-
-    .circle-five {
-        top: 340px;
-        left: 5px;
-    }
+.benefits-description{
+    font-size:15px;
+    line-height:1.8;
 }
 
+.benefits-image{
+
+    width:100%;
+    height:540px;
+}
+
+.benefits-main-image{
+
+    height:540px;
+    right:-20px;
+}
+
+.benefit-circle{
+
+    width:80px;
+    height:80px;
+}
+
+.benefit-circle span{
+
+    font-size:14px;
+    bottom:-24px;
+}
+
+.circle-one{
+    top:40px;
+    left:0;
+}
+
+.circle-two{
+    top:100px;
+    left:120px;
+}
+
+.circle-three{
+    top:190px;
+    left:0;
+}
+
+.circle-four{
+    top:280px;
+    left:120px;
+}
+
+.circle-five{
+    top:370px;
+    left:0;
+}
+
+}
 
 
 
