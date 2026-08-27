@@ -25,7 +25,7 @@ const navbarContainer = document.getElementById("navbar");
 
                 <!-- Athenura Logo -->
                 <a href="index.html" class="navbar-logo">
-                    <img src="images/logo/athenura-logo.png" alt="Athenura">
+                    <img src="Resources/images/logo/athenura-logo.png" alt="Athenura">
                 </a>
 
 
