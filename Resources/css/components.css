@@ -1,0 +1,912 @@
+/* =================================
+   NAVBAR
+================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 65px;
+
+    z-index: 1000;
+
+    background: transparent;
+
+    transition:
+        background 0.35s ease,
+        backdrop-filter 0.35s ease,
+        box-shadow 0.35s ease;
+
+    animation: navbarDrop 0.7s ease-out;
+}
+
+
+/* =================================
+   SCROLLED NAVBAR
+================================= */
+
+.navbar.scrolled {
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 1) 40%, transparent);
+    /* background: linear-gradient(to bottom,rgba(141, 225, 177, 0.5) 50%, transparent); */
+}
+
+
+/* =================================
+   NAVBAR CONTAINER
+================================= */
+
+.navbar-container {
+    width: 90%;
+    max-width: 1300px;
+
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =================================
+   LOGO
+================================= */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.navbar-logo img {
+    display: block;
+
+    width: 130px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =================================
+   NAVIGATION MENU
+================================= */
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* =================================
+   NAV LINKS
+================================= */
+
+.nav-link {
+    position: relative;
+    color: #26352d;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+
+/* Hover */
+
+.nav-link:hover {
+    color: #3b9464;
+}
+
+
+/* Active underline */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #3b9464;
+
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* =================================
+   SEARCH BUTTON
+================================= */
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #26352d;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.search-button:hover {
+    color: #3b9464;
+
+    transform: scale(1.08);
+}
+
+
+/* =================================
+   MOBILE MENU BUTTON
+================================= */
+
+.menu-toggle {
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 35px;
+    height: 35px;
+
+    padding: 5px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    background: #26352d;
+
+    transition: 0.3s ease;
+}
+
+
+/* =================================
+   NAVBAR ANIMATION
+================================= */
+
+.navbar-logo,
+.navbar-menu > * {
+    opacity: 0;
+    transform: translateY(-15px);
+    animation: navItemDrop 0.5s ease-out forwards;
+}
+
+/* HOME */
+.navbar-menu > *:nth-child(1) {
+    animation-delay: 0s;
+}
+
+/* SERVICES */
+.navbar-menu > *:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+/* RESOURCES */
+.navbar-menu > *:nth-child(3) {
+    animation-delay: 0.16s;
+}
+
+/* GALLERY */
+.navbar-menu > *:nth-child(4) {
+    animation-delay: 0.24s;
+}
+
+/* CONTACT */
+.navbar-logo,
+.navbar-menu > *:nth-child(5) {
+    animation-delay: 0.32s;
+}
+
+/* OFFERS */
+.navbar-menu > *:nth-child(6) {
+    animation-delay: 0.40s;
+}
+
+/* SEARCH */
+.navbar-menu > *:nth-child(7) {
+    animation-delay: 0.48s;
+}
+
+
+@keyframes navItemDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================
+   BACK TO TOP
+================================= */
+
+.back-to-top {
+
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    border: 2px solid #3b9866;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #3b9866;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Appears after scrolling */
+
+.back-to-top.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* Hover */
+
+.back-to-top:hover {
+
+    transform: translateY(-4px);
+
+}
+
+/* ============
+Resource Card
+=============== */
+
+.resource-card {
+    flex: 0 0 380px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #e7eee9;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(47, 108, 75, 0.06);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(47, 108, 75, 0.13);
+}
+
+
+/* Card image */
+
+.card-image {
+    position: relative;
+    height: 225px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.resource-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+
+/* Category */
+
+.card-category {
+    position: absolute;
+
+    top: 16px;
+    left: 16px;
+
+    padding: 7px 12px;
+
+    background: #ffffff;
+
+    color: #3b9464;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* Card content */
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-date {
+    color: #9aa29d;
+
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+}
+
+.card-content h3 {
+    margin-top: 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+
+    line-height: 1.35;
+
+    font-weight: 500;
+
+    color: #26352d;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.card-content p {
+    margin: 13px 0px;
+    color: #707a73;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Read more */
+
+.read-more {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: auto;
+
+    text-decoration: none;
+
+    color: #3b9464;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: gap 0.3s ease;
+}
+
+.read-more:hover {
+    gap: 12px;
+}
+
+.read-more span {
+    font-size: 18px;
+}
+
+
+
+/* =================================
+   CTA SECTION
+================================= */
+
+.cta {
+    position: relative;
+    width: 80%;
+    height: 451px;
+    margin-bottom:100px;
+    display: flex;
+    justify-content: center;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =================================
+   CTA CONTAINER
+================================= */
+
+.cta-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 380px;
+    border-radius: 7px;
+    background: #eef9f4;
+    z-index: 1;
+}
+
+
+/* =================================
+   CTA CONTENT
+================================= */
+
+.cta-content {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px 25px;
+    margin: 0px 50px;
+
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+
+/* =================================
+   CTA HEADING
+================================= */
+
+.cta-content h2 {
+    margin-bottom: 25px;
+    font-family: "Playfair Display SC", Georgia, "Times New Roman", serif;
+    font-size: 35px;
+    line-height: 1;
+    font-weight: 700;
+    color: #3a9561;
+}
+
+
+/* =================================
+   CTA TEXT
+================================= */
+
+.cta-content p {
+    max-width: 500px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333;
+    text-align: center;
+}
+
+
+/* =================================
+   CTA BUTTON
+================================= */
+
+.cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 23px;
+
+    background: #3b9464;
+
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    box-shadow: 0 4px 8px rgba(47, 108, 75, 0.25);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.cta-button:hover {
+    background: #2f8055;
+
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   WOMAN IMAGE
+================================= */
+
+.cta-woman {
+    position: absolute;
+    left: 150px;
+    z-index: 2;
+    width: 408px;
+    height: 450px;
+    object-fit: contain;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+
+    .cta-container {
+        width: 90%;
+    }
+
+    .cta-woman {
+        left: 5%;
+        width: 40%;
+        height: auto;
+    }
+
+    .cta-content {
+        width: 55%;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .cta {
+        height: auto;
+
+        min-height: 600px;
+
+        padding: 40px 20px;
+    }
+
+
+    .cta-container {
+        position: relative;
+
+        top: 0;
+
+        width: 100%;
+        height: 500px;
+    }
+
+
+    .cta-woman {
+        width: 280px;
+        height: auto;
+
+        left: 50%;
+
+        bottom: 230px;
+
+        transform: translateX(-50%);
+    }
+
+
+    .cta-content {
+        top: auto;
+        bottom: 0;
+
+        width: 100%;
+        height: 230px;
+
+        padding: 20px;
+    }
+
+
+    .cta-content h2 {
+        font-size: 23px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .cta {
+        min-height: 560px;
+    }
+
+
+    .cta-container {
+        height: 470px;
+    }
+
+
+    .cta-woman {
+        width: 240px;
+
+        bottom: 220px;
+    }
+
+
+    .cta-content {
+        height: 220px;
+    }
+
+
+    .cta-content h2 {
+        font-size: 20px;
+    }
+
+}
+
+
+/* ==========================================
+   FOOTER 
+========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Platypi:wght@600&family=Poppins:wght@500&display=swap');
+
+/* ==========================================
+   FOOTER COMPONENT STYLES
+========================================== */
+.footer {
+  background-color: #3a9963;
+  color: #ffffff;
+  /* padding: 60px 0 30px 0; */
+  position: relative;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 100%;
+}
+
+.footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 60px 40px 0px;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 150px;
+}
+
+/* LEFT COLUMN STYLES */
+.footer-left {
+  flex: 0 0 340px;
+  max-width: 340px;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.footer-logo img {
+  width: 250px;
+  height: auto;
+  display: block;
+  background: radial-gradient(ellipse farthest-corner at center,  #8cf1b8, transparent 60%);
+}
+
+.footer-description {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 60px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.footer-hours-section {
+  margin-bottom: 25px;
+}
+
+/* FIGMA HEADINGS STYLE (Platypi 600 SemiBold 22px) */
+.footer-title {
+  font-family: 'Platypi', serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 100%;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.footer-hours-section .footer-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-hours-section .hours-text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 100%;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* SOCIAL LINKS */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.social-links a {
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  color: #3b9468;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-4px);
+  opacity: 0.9;
+}
+
+/* RIGHT COLUMNS GRID */
+.footer-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* gap: 30px; */
+}
+
+.footer-column .subheading {
+  margin-top: 36px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.footer-column ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: -6px;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 100%;
+}
+
+.footer-column ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.view-all {
+  display: inline-block;
+  margin-top: 14px;
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* BOTTOM SECTION (copyright) */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 30px;
+  padding: 25px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-left {
+    max-width: 100%;
+  }
+
+  .footer-grid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
