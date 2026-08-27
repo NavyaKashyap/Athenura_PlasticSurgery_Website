@@ -2194,17 +2194,22 @@ SMALL MOBILE
 
     z-index:2;
 }
+/* =========================================================
+   BENEFIT CIRCLES
+========================================================= */
 
-/* Circle */
+/* REPLACE YOUR OLD .benefit-circle WITH THIS */
+
 .benefit-circle{
     position:absolute;
     width:120px;
     height:120px;
     border-radius:50%;
-    overflow:visible;          /* allows text outside circle */
+    overflow:visible;      /* allows label below */
 }
 
-/* Image */
+/* REPLACE YOUR OLD .benefit-circle img */
+
 .benefit-circle img{
     width:100%;
     height:100%;
@@ -2213,11 +2218,12 @@ SMALL MOBILE
     display:block;
 }
 
-/* Label below the circle */
+/* REPLACE YOUR OLD .benefit-circle span */
+
 .benefit-circle span{
     position:absolute;
     left:50%;
-    top:calc(100% + 10px);     /* 10px below circle */
+    top:calc(100% + 10px);
     transform:translateX(-50%);
 
     width:max-content;
