@@ -6,7 +6,9 @@ const resources = [
         title: "How to Prepare Your Skin Before Treatment",
         description:
             "Simple steps to help your skin stay healthy before an aesthetic procedure.",
-        image: "images/articles/article1.png"
+        image_card: "images/articles/article1.png",
+        image: "images/articles/article1_img.png"
+        // image: "images/articles/article1_img.png"
     },
 
     {
@@ -16,7 +18,8 @@ const resources = [
         title: "What to Know Before a Cosmetic Procedure",
         description:
             "Understand the consultation process and what questions you should ask your specialist.",
-        image: "images/articles/article2.png"
+        image_card: "images/articles/article2_img.png",
+        image: "images/articles/article2_img.png"
     },
 
     {
@@ -26,7 +29,7 @@ const resources = [
         title: "Your Guide to Post-Treatment Care",
         description:
             "Helpful aftercare tips to support a smooth and comfortable recovery.",
-        image: "images/articles/article3.png"
+        image: "images/articles/article3_img.png"
     },
 
     {

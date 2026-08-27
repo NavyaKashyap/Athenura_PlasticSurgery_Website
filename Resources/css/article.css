@@ -10,21 +10,35 @@ body {
     color: #26352d;
 }
 
-.article-hero {
-    width: 100%;
-    min-height: 650px;
-    margin-bottom: 65px;
-    padding: 60px 20px;
-    /* background-image: url("../images/articles/article1.png"); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid green;
-    position: relative;
+
+/* ====================
+    hero
+====================== */
+/* =================================
+   ARTICLE CATEGORY & DATE
+================================= */
+
+.article-category {
+    display: inline-block;
+    margin-right: 18px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #3a9561;
+    text-transform: uppercase;
+}
+
+.article-date {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 
-/* article-section */
+/* ====================
+    article-section 
+====================== */
 
 .article-section {
     width: 90%;

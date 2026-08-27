@@ -1,3 +1,7 @@
+// ==============================
+// Taking ID from URL
+// ==============================
+
 const urlParams = new URLSearchParams(window.location.search);
 
 const resourceId = Number(urlParams.get("id"));
@@ -10,21 +14,23 @@ const selectedResource = resources.find(function (resource) {
 
 console.log(selectedResource);
 
+// ==============================
+// Hero of article
+// ==============================
 
 const categoryElement = document.getElementById("article-category");
 const dateElement = document.getElementById("article-date");
 const titleElement = document.getElementById("article-title");
-const descriptionElement = document.getElementById("article-description");
-const articleHero = document.querySelector(".article-hero");
+// const descriptionElement = document.getElementById("article-description");
+const imageElement = document.getElementById("article-image");
 
 
 categoryElement.textContent = selectedResource.category;
 dateElement.textContent = selectedResource.date;
 titleElement.textContent = selectedResource.title;
-descriptionElement.textContent = selectedResource.description;
-articleHero.style.backgroundImage = `url("${selectedResource.image}")`;
-
-// Hero of article
+// descriptionElement.textContent = selectedResource.description;
+imageElement.src = selectedResource.image;
+imageElement.alt = selectedResource.title;
 
 
 
