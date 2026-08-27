@@ -827,12 +827,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- CTA CONTAINER -->
         <div class="cta-container">
 
-            <!-- VECTOR BACKGROUND -->
+            <!-- VECTOR BACKGROUND 
             <img
                 src="image/vector2.png"
                 alt=""
                 class="cta-vector"
-            >
+            >-->
 
             <!-- CTA CONTENT -->
             <div class="cta-content">
