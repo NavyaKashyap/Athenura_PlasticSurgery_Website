@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Center For SmartLipo & Plastic Surgery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary-green: #24824d;
+      --primary-hover: #1b633a;
+      --accent-soft: #f2f7f4;
+      --text-dark: #1e2621;
+      --text-muted: #5e6d64;
+      --bg-cream: #fbfbfa;
+      --white: #ffffff;
+      --border-color: #dbe4df;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Floating Side Action Tabs */
+    .floating-tabs {
+      position: fixed;
+      right: 0;
+      top: 40%;
+      transform: translateY(-50%);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .side-tab {
+      background-color: var(--primary-green);
+      color: var(--white);
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      padding: 18px 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 6px 0 0 6px;
+      box-shadow: -2px 4px 10px rgba(0,0,0,0.12);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .side-tab:hover {
+      background-color: var(--primary-hover);
+      transform: translateX(-4px);
+    }
+
+    /* Navbar */
+   
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(14, 38, 24, 0.75), rgba(14, 38, 24, 0.85)),
+                  url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 160px 8% 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-container {
+      max-width: 850px;
+      margin: 0 auto;
+      color: var(--white);
+    }
+
+    .hero-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #d1e7dd;
+      font-weight: 500;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      line-height: 1.1;
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .hero-text .subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #e2ede7;
+      margin-bottom: 34px;
+    }
+
+    .btn-appointment {
+      display: inline-block;
+      background: var(--primary-green);
+      color: var(--white);
+      padding: 15px 34px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-appointment:hover {
+      background: #1b633a;
+      transform: translateY(-2px);
+    }
+
+    /* Offer Banner */
+    .offer-banner {
+      background-color: var(--primary-green);
+      color: var(--white);
+      padding: 18px 8%;
+      text-align: center;
+    }
+
+    .offer-banner-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .offer-badge {
+      background: #195232;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .offer-text {
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    /* Section Tag Badge */
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eaf5ee;
+      color: var(--primary-green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      border: 1px solid #d2e8db;
+    }
+
+    /* Stats Section */
+    .contact-channels {
+      max-width: 1200px;
+      margin: 70px auto 50px;
+      padding: 0 20px;
+    }
+
+    .stats-strip {
+      background: linear-gradient(135deg, #1b633a 0%, #24824d 100%);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 30px 40px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-bottom: 45px;
+      box-shadow: 0 10px 25px rgba(36, 130, 77, 0.2);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      opacity: 0.9;
+      font-weight: 600;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 35px;
+    }
+
+    .section-header-center h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .section-header-center h2 span {
+      color: var(--primary-green);
+    }
+
+    .section-header-center p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .channel-card {
+      background: var(--white);
+      padding: 35px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .channel-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+      border-color: #bad2c3;
+    }
+
+    .channel-icon {
+      width: 54px;
+      height: 54px;
+      background: #eaf5ee;
+      color: var(--primary-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.25rem;
+    }
+
+    .channel-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .channel-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .channel-main-info {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-green);
+      margin-bottom: 6px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .channel-timing {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Contact Form Section */
+    .contact-section {
+      max-width: 1200px;
+      margin: 60px auto 80px;
+      padding: 0 20px;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+      border: 1px solid var(--border-color);
+    }
+
+    /* DARK SURGERY THEME IMAGE PANEL (photo-1516549655169-df83a0774514) */
+    .info-panel {
+      position: relative;
+      background: linear-gradient(150deg, rgba(8, 22, 15, 0.88) 0%, rgba(14, 38, 25, 0.92) 100%),
+                  url('https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid #1c472d;
+    }
+
+    .info-panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.3rem;
+      margin-bottom: 24px;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .info-item {
+      margin-bottom: 24px;
+    }
+
+    .info-item h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #52e38e;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .info-item p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #e5f3ec;
+      font-weight: 400;
+    }
+
+    .form-panel {
+      padding: 50px 45px;
+    }
+
+    .form-header {
+      margin-bottom: 22px;
+    }
+
+    .form-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.1rem;
+      color: var(--text-dark);
+    }
+
+    .form-header h2 span {
+      color: var(--primary-green);
+    }
+
+    .form-header p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 18px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: #fafafa;
+      color: var(--text-dark);
+      transition: all 0.2s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-green);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(36, 130, 77, 0.1);
+    }
+
+    .submit-btn {
+      background-color: var(--primary-green);
+      color: var(--white);
+      border: none;
+      padding: 14px 28px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .alert-box {
+      display: none;
+      background: #dff0d8;
+      border: 1px solid #d6e9c6;
+      color: #3c763d;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 18px;
+      font-size: 0.88rem;
+    }
+
+    /* Map Section */
+    .map-section {
+      max-width: 1200px;
+      margin: 0 auto 90px;
+      padding: 0 20px;
+    }
+
+    .map-layout-card {
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      display: grid;
+      grid-template-columns: 0.9fr 1.3fr;
+    }
+
+    .map-sidebar {
+      padding: 45px 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .map-sidebar h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .map-sidebar h2 span {
+      color: var(--primary-green);
+    }
+
+    .map-sidebar p.sub {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 25px;
+    }
+
+    .facility-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .facility-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .facility-item i {
+      color: var(--primary-green);
+      font-size: 1.1rem;
+      margin-top: 3px;
+    }
+
+    .facility-item strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+
+    .facility-item span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .btn-directions {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #f2f8f4;
+      color: var(--primary-green);
+      border: 1px solid #cce2d5;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-directions:hover {
+      background: var(--primary-green);
+      color: var(--white);
+    }
+
+    .map-frame-container {
+      position: relative;
+      min-height: 420px;
+      height: 100%;
+      background: #eee;
+    }
+
+    .map-frame-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #1b2620;
+      color: #b0c0b8;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .channels-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .map-layout-card {
+        grid-template-columns: 1fr;
+      }
+      .map-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .map-frame-container {
+        height: 380px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .navbar nav {
+        display: none;
+      }
+      .hero-text h1 {
+        font-size: 2.6rem;
+      }
+      .channels-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+      .offer-banner-content {
+        justify-content: center;
+        text-align: center;
+      }
+      .stat-divider {
+        display: none;
+      }
+      .stats-strip {
+        flex-direction: column;
+        gap: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Side Floating Buttons -->
+  <div class="floating-tabs">
+    <a href="#contact" class="side-tab">Contact</a>
+    <a href="#location" class="side-tab">Direction</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h2>Center For</h2>
+        <h1>SmartLipo</h1>
+        <h2>& Plastic Surgery</h2>
+        <p class="subtitle">Laser Hair Removal & Body Contouring</p>
+        <a href="#contact" class="btn-appointment">Request An Appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer Banner -->
+  <section class="offer-banner" id="offers">
+    <div class="offer-banner-content">
+      <div class="offer-badge">Unlock Your Dream Shape: Save 15% on Athenura!</div>
+      <div class="offer-text">
+        Experience an unmatched SmartLipo experience. <u>Dr. Patel has completed more than 1,500 procedures and counting.</u>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="contact-channels" id="reach-us">
+    <div class="stats-strip">
+      <div class="stat-item">
+        <div class="stat-number"><span class="counter" data-target="5000">0</span>+</div>
+        <div class="stat-label">Happy Patients</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number"><span class="counter" data-target="98">0</span>%</div>
+        <div class="stat-label">Satisfaction Rate</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number"><span class="counter" data-target="15">0</span>+</div>
+        <div class="stat-label">Years of Trust</div>
+      </div>
+    </div>
+
+    <!-- Section Heading -->
+    <div class="section-header-center">
+      <div class="section-tag"><i class="fa-solid fa-headset"></i> Fast Support</div>
+      <h2>Connect With <span>Our Specialists</span></h2>
+      <p>Choose your preferred communication channel for instant assistance, confidential queries, or appointments.</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="channels-grid">
+      <div class="channel-card">
+        <div class="channel-icon">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <h3>Call Us</h3>
+        <p class="channel-subtitle">Emergency / Instant Help</p>
+        <a href="tel:+919876543210" class="channel-main-info">+91 98765 43210</a>
+        <p class="channel-timing">Mon–Sat • 9 AM – 9 PM</p>
+      </div>
+
+      <div class="channel-card">
+        <div class="channel-icon">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <h3>WhatsApp</h3>
+        <p class="channel-subtitle">Quick Chat • 15 min reply</p>
+        <a href="https://wa.me/919876543210" target="_blank" class="channel-main-info">+91 98765 43210</a>
+        <p class="channel-timing">Available 24/7</p>
+      </div>
+
+      <div class="channel-card">
+        <div class="channel-icon">
+          <i class="fa-regular fa-envelope"></i>
+        </div>
+        <h3>Email</h3>
+        <p class="channel-subtitle">Detailed Queries</p>
+        <a href="mailto:info@elite.com" class="channel-main-info">info@elite.com</a>
+        <p class="channel-timing">Response in 24 hrs</p>
+      </div>
+
+      <div class="channel-card">
+        <div class="channel-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <h3>Visit Us</h3>
+        <p class="channel-subtitle">In-Person Consultation</p>
+        <span class="channel-main-info" style="font-size: 0.92rem;">Harmony Tower</span>
+        <p class="channel-timing">City Center, Suite 402</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-section" id="contact">
+    <div class="section-header-center">
+      <div class="section-tag"><i class="fa-solid fa-calendar-check"></i> Online Booking</div>
+      <h2>Schedule Your <span>Personal Consultation</span></h2>
+      <p>Take the first step toward your aesthetic transformation. Fill out the form below to book your appointment.</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <!-- Dark Surgery Visual Left Panel -->
+      <div class="info-panel">
+        <div>
+          <h2>Get In Touch</h2>
+          <div class="info-item">
+            <h3>Locations</h3>
+            <p>Langhorne & Philadelphia, PA</p>
+          </div>
+          <div class="info-item">
+            <h3>Direct Contact</h3>
+            <p>Phone: (215) 555-0199<br>Email: care@smartlipocenter.com</p>
+          </div>
+          <div class="info-item">
+            <h3>Consultation Hours</h3>
+            <p>Mon – Fri: 8:00 AM – 6:00 PM<br>Saturday: By Appointment</p>
+          </div>
+        </div>
+        <p style="font-size: 0.85rem; opacity: 0.9; color: #d1e7dd;">
+          * Confidential consultations tailored to your individual cosmetic goals.
+        </p>
+      </div>
+
+      <!-- Form Panel -->
+      <div class="form-panel">
+        <div class="form-header">
+          <div class="section-tag"><i class="fa-solid fa-shield-halved"></i> Secure Booking</div>
+          <h2>Request a <span>Private Consultation</span></h2>
+          <p>Fill in your details. All information is encrypted and strictly confidential.</p>
+        </div>
+
+        <div id="statusAlert" class="alert-box">
+          Thank you! Your appointment request has been submitted. Our clinic will contact you shortly.
+        </div>
+
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" required placeholder="Jane" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" required placeholder="Doe" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" required placeholder="jane@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" required placeholder="(555) 000-0000" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Interested Treatment</label>
+            <select id="service" required>
+              <option value="" disabled selected>Select a procedure</option>
+              <option value="smartlipo">SmartLipo Body Sculpting</option>
+              <option value="facial">Facial Rejuvenation</option>
+              <option value="laser">Laser Hair Removal</option>
+              <option value="other">General Consultation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message or Preferred Time</label>
+            <textarea id="message" rows="3" placeholder="Tell us about your goals or questions..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Book Consultation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section" id="location">
+    <div class="section-header-center">
+      <div class="section-tag"><i class="fa-solid fa-map-location-dot"></i> Interactive Route</div>
+      <h2>Find Our <span>State-of-the-Art Center</span></h2>
+      <p>Easily accessible in the center of the city with dedicated parking and premium facilities.</p>
+    </div>
+
+    <div class="map-layout-card">
+      <div class="map-sidebar">
+        <div>
+          <div class="section-tag"><i class="fa-solid fa-map-pin"></i> Clinic Location</div>
+          <h2>Visit Our <span>State-of-the-Art</span> Facility</h2>
+          <p class="sub">Strategically located for convenient access with private parking.</p>
+
+          <ul class="facility-list">
+            <li class="facility-item">
+              <i class="fa-solid fa-building"></i>
+              <div>
+                <strong>Philadelphia Main Center</strong>
+                <span>Harmony Tower, Suite 402, City Center, PA</span>
+              </div>
+            </li>
+            <li class="facility-item">
+              <i class="fa-solid fa-square-parking"></i>
+              <div>
+                <strong>Free Valet & Parking</strong>
+                <span>Dedicated on-site parking available for all patients</span>
+              </div>
+            </li>
+            <li class="facility-item">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Operating Hours</strong>
+                <span>Monday – Friday: 8:00 AM – 6:00 PM</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <a href="https://maps.google.com" target="_blank" class="btn-directions">
+          <i class="fa-solid fa-diamond-turn-right"></i> Open in Google Maps
+        </a>
+      </div>
+
+      <div class="map-frame-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195600.6558231365!2d-75.25811776517173!3d40.002497999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6b7d8d4b54beb%3A0x89f514d88c3e58c1!2sPhiladelphia%2C%20PA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ 
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const alertBox = document.getElementById('statusAlert');
+      alertBox.style.display = 'block';
+      this.reset();
+
+      setTimeout(() => {
+        alertBox.style.display = 'none';
+      }, 5000);
+    });
+
+    // Auto Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    let hasAnimated = false;
+
+    function runCounterAnimation() {
+      const statsSection = document.querySelector('.stats-strip');
+      if (!statsSection) return;
+
+      const rect = statsSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80 && !hasAnimated) {
+        hasAnimated = true;
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          const duration = 1800;
+          const stepTime = 20;
+          const steps = duration / stepTime;
+          const increment = target / steps;
+          let current = 0;
+
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              counter.innerText = target >= 1000 ? (target / 1000) + 'k' : target;
+              clearInterval(timer);
+            } else {
+              counter.innerText = target >= 1000 ? (Math.floor(current) / 1000).toFixed(1) + 'k' : Math.floor(current);
+            }
+          }, stepTime);
+        });
+      }
+    }
+
+    window.addEventListener('scroll', runCounterAnimation);
+    window.addEventListener('load', runCounterAnimation);
+  </script>
+</body>
+</html>
