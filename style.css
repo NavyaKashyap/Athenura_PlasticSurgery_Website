@@ -1515,9 +1515,9 @@ SWIPER
 =====================================================*/
 
 .beforeAfterSwiper {
-    width: 100vw;
+    width: 100%;
 
-    overflow: visible !important;
+    overflow: hidden;
 
     padding-bottom: 60px;
 }
@@ -1527,24 +1527,23 @@ SWIPER
 }
 
 .beforeAfterSwiper .swiper-slide {
-    width: 430px !important;
-
     height: auto;
 
     display: flex;
 
-    transform: none;
+    flex-shrink: 0;
 
-    opacity: 1;
+    /* IMPORTANT:
+       Let Swiper calculate the width */
+    width: auto;
 }
-
 
 /*=====================================================
 BEFORE AFTER CARD
 =====================================================*/
 
 .before-card {
-    width: 430px;
+    width: 100%;
 
     height: 500px;
 
@@ -1574,18 +1573,6 @@ BEFORE AFTER CARD
 
     transition: transform 0.6s ease;
 }
-
-.before-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 22px 50px rgba(49, 140, 92, 0.15);
-}
-
-.before-card:hover img {
-    transform: scale(1.04);
-}
-
 
 /*=====================================================
 PAGINATION
