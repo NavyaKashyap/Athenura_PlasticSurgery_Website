@@ -810,3 +810,46 @@ document.addEventListener ("DOMContentLoaded", () => {
       </div>
     </footer>
   `;})
+  
+/* =================================
+   CTA Section
+================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cta = document.getElementById("cta");
+
+    if (!cta) return;
+
+    cta.className = "cta"
+    cta.innerHTML = `
+        <!-- CTA BACKGROUND + CONTENT -->
+        <div class="cta-container">
+
+            <div class="cta-content">
+
+                <h2>REQUEST A CONSULTATION</h2>
+
+                <p>
+                    We are an accomplished group of physician teachers and
+                    researchers dedicated to advancing the field of cosmetic
+                    medicine.
+                </p>
+
+                <a href="#" class="cta-button">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- WOMAN IMAGE -->
+        <img
+            src="images/cta/cta-woman.png"
+            alt="Woman"
+            class="cta-woman"
+        >
+    `;
+});
