@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athenura Clinic — Aesthetic &amp; Plastic Surgery Services</title>
+  <meta name="description" content="Discover refined plastic surgery and aesthetic treatments tailored to your natural beauty at Athenura Clinic.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/services.css">
+</head>
+<body id="services-page">
+
+  <!-- =========================================================
+       FLOATING RIGHT SIDE TABS
+       ========================================================= -->
+  <div class="floating-side-tabs" aria-hidden="true">
+    <a href="#take-next-step" class="floating-tab">Contact</a>
+    <a href="#site-footer" class="floating-tab">Direction</a>
+  </div>
+
+  <!-- =========================================================
+       HEADER & NAVIGATION
+       ========================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="site-header__brand" id="header-brand" aria-label="Athenura Home">
+        <img 
+          src="images/athenura-logo-original.jpg" 
+          alt="Athenura - Code. Create. Innovate" 
+          class="site-header__logo-img"
+          id="header-logo-img"
+        />
+      </a>
+
+      <nav class="site-header__nav" aria-label="Main Navigation">
+        <ul class="site-header__nav-list" id="site-nav-links">
+          <li><a href="#hero" class="site-header__nav-link">HOME</a></li>
+          <li><a href="#services-section" class="site-header__nav-link is-active">SERVICES</a></li>
+          <li><a href="#services-section" class="site-header__nav-link">RESOURCES</a></li>
+          <li><a href="#treatment-finder" class="site-header__nav-link">GALLERY</a></li>
+          <li><a href="#take-next-step" class="site-header__nav-link">CONTACT</a></li>
+          <li><a href="#take-next-step" class="site-header__nav-link">OFFERS</a></li>
+          <li>
+            <button type="button" class="site-header__search-btn" aria-label="Search treatments">
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="site-header__toggle" id="site-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" id="hero">
+    <p><u>Experience exceptional care and personalized aesthetic treatments with our expert team.</u></p>
+  </div>
+
+  <!-- =========================================================
+       SERVICES PAGE HERO (wide, horizontal — adapted from the
+       homepage hero style, with content specific to this page)
+       ========================================================= -->
+  <section class="services-hero" id="services-hero">
+    <div class="container services-hero__inner">
+      <div class="services-hero__content">
+        <p class="services-hero__tagline">EXPERT CARE, TAILORED RESULTS</p>
+        <h1 class="services-hero__title">Procedures Built Around Your Goals</h1>
+        <p class="services-hero__desc">
+          From subtle refinements to complete transformations, explore our full range of surgical and non-surgical treatments — each guided by precision, artistry, and your natural features.
+        </p>
+        <div class="services-hero__actions">
+          <a href="#take-next-step" class="btn btn-primary" id="services-hero-book-btn">Book Consultation</a>
+          <a href="#services-section" class="services-hero__link">View All Services <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="services-hero__media">
+        <img src="images/hero-face.jpg" alt="Surgical marking for a facial procedure at Athenura Clinic" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SERVICES SECTION (Premium Editorial Layout)
+       ========================================================= -->
+  <section class="services-section" id="services-section">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="services-header">
+        <p class="services-header__tagline">FACIAL PROCEDURES</p>
+        <h2 class="services-header__title">Our Specialized Services</h2>
+        <p class="services-header__desc">
+          Refined facial procedures designed to enhance balance, proportion and natural expression, delivered with meticulous, personalized care.
+        </p>
+      </div>
+
+      <!-- Editorial Service Rows -->
+      <div class="service-rows" id="service-track">
+        <!-- Dynamic rows injected via js/services.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       TREATMENT FINDER / SMART SERVICE EXPLORER
+       ========================================================= -->
+  <section class="explorer-section" id="treatment-finder">
+    <div class="container">
+      <div class="explorer-card">
+        <div class="explorer-header">
+          <p style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--c-brand-green); margin-bottom: 6px;">
+            GUIDED DISCOVERY
+          </p>
+          <h3>Find Your Ideal Treatment</h3>
+          <p>Answer 3 quick questions to discover procedures tailored to your aesthetic aspirations.</p>
+        </div>
+
+        <!-- Stepper Indicator -->
+        <div class="explorer-steps" aria-hidden="true">
+          <div class="explorer-steps__dot is-active" data-step="1">1</div>
+          <div class="explorer-steps__line" data-line="1"></div>
+          <div class="explorer-steps__dot" data-step="2">2</div>
+          <div class="explorer-steps__line" data-line="2"></div>
+          <div class="explorer-steps__dot" data-step="3">3</div>
+        </div>
+
+        <!-- Step 1: Area of Interest -->
+        <div class="explorer-step is-active" data-step="1">
+          <h4 class="explorer-step__question">Which area of focus would you like to explore?</h4>
+          <div class="explorer-options">
+            <button type="button" class="explorer-options__btn" data-key="area" data-value="face" aria-pressed="false">Face &amp; Facial Features</button>
+            <button type="button" class="explorer-options__btn" data-key="area" data-value="body" aria-pressed="false">Body Contouring &amp; Abdomen</button>
+            <button type="button" class="explorer-options__btn" data-key="area" data-value="breast" aria-pressed="false">Breast Procedures</button>
+            <button type="button" class="explorer-options__btn" data-key="area" data-value="skin" aria-pressed="false">Skin &amp; Non-Surgical Rejuvenation</button>
+          </div>
+          <div class="explorer-nav" style="justify-content: flex-end;">
+            <button type="button" class="btn btn-primary explorer-nav__next" data-next="2" disabled>Next Question &#8594;</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Treatment Type -->
+        <div class="explorer-step" data-step="2">
+          <h4 class="explorer-step__question">What type of approach do you prefer?</h4>
+          <div class="explorer-options">
+            <button type="button" class="explorer-options__btn" data-key="type" data-value="surgical" aria-pressed="false">Surgical (Long-term definition)</button>
+            <button type="button" class="explorer-options__btn" data-key="type" data-value="non-surgical" aria-pressed="false">Non-Surgical (Minimal downtime)</button>
+            <button type="button" class="explorer-options__btn" data-key="type" data-value="not-sure" aria-pressed="false">Open to Expert Surgeon Guidance</button>
+          </div>
+          <div class="explorer-nav">
+            <button type="button" class="btn btn-outline explorer-nav__back" data-back-to="1">&#8592; Back</button>
+            <button type="button" class="btn btn-primary explorer-nav__next" data-next="3" disabled>Next Question &#8594;</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Primary Goal -->
+        <div class="explorer-step" data-step="3">
+          <h4 class="explorer-step__question">What is your primary treatment objective?</h4>
+          <div class="explorer-options">
+            <button type="button" class="explorer-options__btn" data-key="goal" data-value="refine" aria-pressed="false">Refine Contour &amp; Balance</button>
+            <button type="button" class="explorer-options__btn" data-key="goal" data-value="restore" aria-pressed="false">Restore Firmness &amp; Volume</button>
+            <button type="button" class="explorer-options__btn" data-key="goal" data-value="rejuvenate" aria-pressed="false">Rejuvenate Skin Radiance</button>
+            <button type="button" class="explorer-options__btn" data-key="goal" data-value="contour" aria-pressed="false">Sculpt Silhouette Definition</button>
+          </div>
+          <div class="explorer-nav">
+            <button type="button" class="btn btn-outline explorer-nav__back" data-back-to="2">&#8592; Back</button>
+            <button type="button" class="btn btn-primary explorer-nav__next" data-next="4" disabled>View Recommended Treatments &#8594;</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Explorer Results -->
+        <div class="explorer-results" id="explorer-results">
+          <h4>Recommended Treatments For You</h4>
+          <p>Based on your selections, our plastic surgery team recommends considering the following:</p>
+          <ul class="explorer-results__grid" id="explorer-results-grid"></ul>
+          <div style="display: flex; justify-content: center; gap: 12px; margin-top: 20px;">
+            <a href="#take-next-step" class="btn btn-primary">Book Consultation</a>
+            <button type="button" class="btn btn-outline" id="explorer-restart">Restart Finder</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       "TAKE THE NEXT STEP" CTA SECTION — 50/50 split screen
+       ========================================================= -->
+  <section class="cta-section" id="take-next-step">
+    <div class="container cta-section__grid">
+      <div class="cta-section__inner">
+        <p class="cta-section__tagline">TAKE THE NEXT STEP</p>
+        <h2 class="cta-section__title">Begin Your Journey To A New You</h2>
+        <p class="cta-section__desc">
+          Every procedure begins with an in-depth, confidential consultation.
+          Book a consultation with our plastic surgery experts and take the first step.
+        </p>
+        <p class="cta-section__statement">Your aesthetic journey begins with personalized care.</p>
+        <a href="#hero" class="btn btn-white-solid cta-section__btn" id="cta-book-consultation">
+          BOOK CONSULTATION
+        </a>
+      </div>
+      <div class="cta-section__media">
+        <img src="images/cta-consultation.jpg" alt="Doctor consulting with a patient and marking treatment areas ahead of a procedure at Athenura Clinic" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Pure white gap separating the CTA from the footer -->
+  <div class="section-gap-white" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       SITE FOOTER
+       ========================================================= -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+
+      <div class="site-footer__grid">
+        
+        <!-- Left Brand / Logo Column -->
+        <div class="site-footer__brand-col">
+          <img 
+            src="images/athenura-logo-color-transparent.png" 
+            alt="Athenura - Code. Create. Innovate" 
+            class="site-footer__logo-img"
+          />
+          <p class="site-footer__about-text">
+            We believe in creating a welcoming experience where every patient feels confident, cared for, and valued.
+          </p>
+          <div>
+            <h5 class="site-footer__hours-title">&#9758; Hours Of Operation</h5>
+            <p class="site-footer__hours-text">Mon-Fri : 09:00 AM to 05:00 PM</p>
+          </div>
+          <div class="site-footer__social-links">
+            <a href="#hero" class="site-footer__social-btn" aria-label="Google">G</a>
+            <a href="#hero" class="site-footer__social-btn" aria-label="Facebook">f</a>
+            <a href="#hero" class="site-footer__social-btn" aria-label="Instagram">&#128247;</a>
+          </div>
+        </div>
+
+        <!-- Column Pair A: About Us (top) + Contact (bottom) -->
+        <div class="site-footer__col-pair">
+          <div>
+            <h4 class="site-footer__col-title">About Us</h4>
+            <ul class="site-footer__link-list">
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#hero" class="site-footer__link">About Us</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Meet Our Providers</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#take-next-step" class="site-footer__link">Post</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#take-next-step" class="site-footer__link">Feedback</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#take-next-step" class="site-footer__link">Reviews</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="site-footer__col-title">Contact</h4>
+            <ul class="site-footer__link-list">
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#site-footer" class="site-footer__link">Get Direction</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#site-footer" class="site-footer__link">Direction to SmartLipo</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#take-next-step" class="site-footer__link">Appointments</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#site-footer" class="site-footer__link">Business Hours</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column Pair B: Resources (top) + Services (bottom) -->
+        <div class="site-footer__col-pair">
+          <div>
+            <h4 class="site-footer__col-title">Resources</h4>
+            <ul class="site-footer__link-list">
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Local Resources</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Library</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Social Media</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#take-next-step" class="site-footer__link">Newsletter Sign Up</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#treatment-finder" class="site-footer__link">Content</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="site-footer__col-title">Services</h4>
+            <ul class="site-footer__link-list">
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Brazilian Butt Lift (Fat Transfer) Specialist</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Fat Reduction</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Chemical Peel</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">CO2 Laser Treatment</a></li>
+              <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Fat Transfer Surgery</a></li>
+            </ul>
+            <a href="#services-section" class="site-footer__view-all">View All &#9758;</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Athenura. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       SERVICE DETAIL MODAL
+       ========================================================= -->
+  <div class="service-modal-overlay" id="service-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
+    <div class="service-modal" id="service-modal-box">
+      <button type="button" class="service-modal__close" id="service-modal-close" aria-label="Close dialog">&times;</button>
+      <div id="service-modal-content">
+        <!-- Injected dynamically via js/services.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       BOOK CONSULTATION MODAL (shared by every Book Consultation trigger)
+       ========================================================= -->
+  <div class="booking-modal-overlay" id="booking-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+    <div class="booking-modal" id="booking-modal-box">
+      <button type="button" class="booking-modal__close" id="booking-modal-close" aria-label="Close dialog">&times;</button>
+
+      <div class="booking-modal__header">
+        <p class="booking-modal__eyebrow">SCHEDULE YOUR VISIT</p>
+        <h3 class="booking-modal__title" id="booking-modal-title">Book Your Consultation</h3>
+        <p class="booking-modal__subtitle">Share a few details and our team will confirm your appointment shortly.</p>
+      </div>
+
+      <form class="booking-form" id="booking-form" novalidate>
+        <div class="booking-form__field">
+          <label for="booking-name">Full Name</label>
+          <input type="text" id="booking-name" name="fullName" placeholder="Your full name" autocomplete="name" required />
+        </div>
+
+        <div class="booking-form__row">
+          <div class="booking-form__field">
+            <label for="booking-email">Email</label>
+            <input type="email" id="booking-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+          <div class="booking-form__field">
+            <label for="booking-phone">Phone Number</label>
+            <input type="tel" id="booking-phone" name="phone" placeholder="+1 (___) ___-____" autocomplete="tel" required />
+          </div>
+        </div>
+
+        <div class="booking-form__field">
+          <label for="booking-service">Select Service</label>
+          <select id="booking-service" name="service" required>
+            <option value="" disabled selected>Choose a service</option>
+          </select>
+        </div>
+
+        <div class="booking-form__row">
+          <div class="booking-form__field">
+            <label for="booking-date">Preferred Date</label>
+            <input type="date" id="booking-date" name="preferredDate" required />
+          </div>
+          <div class="booking-form__field">
+            <label for="booking-time">Preferred Time</label>
+            <input type="time" id="booking-time" name="preferredTime" required />
+          </div>
+        </div>
+
+        <div class="booking-form__field">
+          <label for="booking-message">Message / Your Concern</label>
+          <textarea id="booking-message" name="message" rows="4" placeholder="Tell us a little about what you'd like to address..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary booking-form__submit">Book Consultation</button>
+      </form>
+
+      <div class="booking-form__success" id="booking-form-success">
+        <div class="booking-form__success-icon" aria-hidden="true">&#10003;</div>
+        <h4>Request Received</h4>
+        <p>Thank you — your consultation request has been submitted. Our team will reach out shortly to confirm your appointment.</p>
+        <button type="button" class="btn btn-outline" id="booking-form-close-success">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top floating button -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">&#8593;</button>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/services.js"></script>
+</body>
+</html>
