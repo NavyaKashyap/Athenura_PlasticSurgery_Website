@@ -1654,7 +1654,7 @@ BEFORE AFTER CARD HOVER
     border: 2px solid transparent;
 
     box-shadow:
-        0 15px 40px rgba(49, 140, 92, 0.10);
+        0 15px 40px rgba(146, 240, 190, 0.918);
 
     transition:
         transform 0.4s ease,
@@ -1671,7 +1671,7 @@ BEFORE AFTER CARD HOVER
     border-color: #318c5c;
 
     box-shadow:
-        0 20px 45px rgba(49, 140, 92, 0.30);
+        0 20px 45px rgba(201, 255, 212, 0.999);
 }
 
 
