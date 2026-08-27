@@ -4330,357 +4330,211 @@ SMALL MOBILE
 
 }
 
-/* =========================================================
-   21. FOOTER
-========================================================= */
+/* ==========================================
+   FOOTER 
+========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Platypi:wght@600&family=Poppins:wght@500&display=swap');
 
+/* ==========================================
+   FOOTER COMPONENT STYLES
+========================================== */
 .footer {
-    position: relative;
-
-    padding: 55px 7% 20px;
-
-    background: #3a9963;
-
-    color: #ffffff;
+  background-color: #3a9963;
+  color: #ffffff;
+  /* padding: 60px 0 30px 0; */
+  position: relative;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 100%;
 }
 
-
-/* =========================================================
-   FOOTER MAIN
-========================================================= */
+.footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 60px 40px 0px;
+}
 
 .footer-main {
-    max-width: 1250px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: 1.4fr 1fr 1fr;
-
-    gap: 70px;
-
-    align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 150px;
 }
 
-
-/* =========================================================
-   LEFT SECTION
-========================================================= */
-
+/* LEFT COLUMN STYLES */
 .footer-left {
-    text-align: center;
+  flex: 0 0 340px;
+  max-width: 340px;
 }
-
-
-/* =========================================================
-   FOOTER LOGO
-========================================================= */
 
 .footer-logo {
-    width: 500px;
-    height: 75px;
-
-    margin: 0 auto 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 8px;
-
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
 }
 
 .footer-logo img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: contain;
+  width: 250px;
+  height: auto;
+  display: block;
+  background: radial-gradient(ellipse farthest-corner at center,  #8cf1b8, transparent 60%);
 }
-
-
-/* =========================================================
-   FOOTER DESCRIPTION
-========================================================= */
 
 .footer-description {
-    max-width: 400px;
-
-    margin: 0 auto;
-
-    color: #ffffff;
-
-    font-size: 15px;
-
-    line-height: 1.5;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 60px;
+  color: #ffffff;
+  text-align: center;
 }
-
-
-/* =========================================================
-   HOURS OF OPERATION
-========================================================= */
 
 .footer-hours-section {
-    margin-top: 110px;
+  margin-bottom: 25px;
 }
 
-.footer-hours-section h3 {
-    margin-bottom: 8px;
-
-    color: #ffffff;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 25px;
-    font-weight: 600;
+/* FIGMA HEADINGS STYLE (Platypi 600 SemiBold 22px) */
+.footer-title {
+  font-family: 'Platypi', serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 100%;
+  color: #ffffff;
+  margin: 0 0 16px 0;
 }
 
-.footer-hours-section p {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size: 15px;
+.footer-hours-section .footer-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
+.footer-hours-section .hours-text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 100%;
+  margin-top: 8px;
+  text-align: center;
+}
 
-/* =========================================================
-   SOCIAL LINKS
-========================================================= */
-
+/* SOCIAL LINKS */
 .social-links {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-
-    margin-top: 25px;
-      margin-left: 153px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
 }
-
-
-/* =========================================================
-   SOCIAL CIRCLE
-========================================================= */
 
 .social-links a {
-    width: 42px;
-    height: 42px;
-
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-    margin: 0;
-
-    background: #ffffff;
-
-    border-radius: 50%;
-
-    color: #318c5c;
-
-    text-decoration: none;
-
-    transition: transform 0.3s ease;
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  color: #3b9468;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
-
-
-/* =========================================================
-   ICON BASE
-========================================================= */
-
-.social-links a i {
-    position: absolute;
-
-    display: block;
-
-    margin: 0;
-    padding: 0;
-
-    line-height: 1;
-
-    font-style: normal;
-}
-
-
-/* =========================================================
-   GOOGLE
-========================================================= */
-
-.social-links a:nth-child(1) i {
-    font-size: 25px;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -52%);
-}
-
-
-/* =========================================================
-   FACEBOOK
-========================================================= */
-
-.social-links a:nth-child(2) i {
-    font-size: 27px;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -47%);
-}
-
-
-/* =========================================================
-   INSTAGRAM
-========================================================= */
-
-.social-links a:nth-child(3) i {
-    font-size: 25px;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-}
-
-
-/* =========================================================
-   HOVER
-========================================================= */
 
 .social-links a:hover {
-    transform: translateY(-3px);
-
-    background: #ffffff;
-
-    color: #246e47;
-}
-/* =========================================================
-   FOOTER COLUMNS
-========================================================= */
-
-.footer-column h3 {
-    margin: 0 0 12px;
-
-    color: #ffffff;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 28px;
-    font-weight: 600;
+  transform: translateY(-4px);
+  opacity: 0.9;
 }
 
+/* RIGHT COLUMNS GRID */
+.footer-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* gap: 30px; */
+}
 
-/* =========================================================
-   FOOTER LIST
-========================================================= */
+.footer-column .subheading {
+  margin-top: 36px;
+}
 
 .footer-column ul {
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-column li {
-    position: relative;
-
-    margin-bottom: 6px;
-
-    padding-left: 14px;
+.footer-column ul li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
-.footer-column li::before {
-    content: "•";
-
-    position: absolute;
-
-    left: 0;
-
-    color: rgba(255, 255, 255, 0.85);
+.footer-column ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: -6px;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 100%;
 }
 
-.footer-column li a {
-    color: #ffffff;
-
-    font-size: 15px;
-
-    text-decoration: none;
-
-    transition: opacity 0.3s ease;
+.footer-column ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-.footer-column li a:hover {
-    opacity: 0.7;
+.footer-column ul li a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
 }
-
-
-/* =========================================================
-   CONTACT / SERVICES HEADING
-========================================================= */
-
-.footer-subheading {
-    margin-top: 35px !important;
-}
-
-
-/* =========================================================
-   VIEW ALL
-========================================================= */
 
 .view-all {
-    display: inline-block;
-
-    margin-top: 5px;
-
-    margin-left: 14px;
-
-    padding-bottom: 2px;
-
-    border-bottom: 1px solid #ffffff;
-
-    color: #ffffff;
-
-    font-size: 14px;
-
-    text-decoration: none;
+  display: inline-block;
+  margin-top: 14px;
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 15px;
+  font-weight: 500;
 }
 
-.view-all:hover {
-    opacity: 0.7;
-}
-
-
-/* =========================================================
-   FOOTER BOTTOM
-========================================================= */
+/* BOTTOM SECTION (copyright) */
 
 .footer-bottom {
-    max-width: 1250px;
-
-    margin: 45px auto 0;
-
-    padding-top: 18px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-
-    text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 30px;
+  padding: 25px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
 }
 
-.footer-bottom p {
-    margin: 0;
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 40px;
+  }
 
-    color: #ffffff;
+  .footer-left {
+    max-width: 100%;
+  }
 
-    font-size: 13px;
+  .footer-grid {
+    width: 100%;
+  }
+}
 
-    opacity: 0.9;
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 }
 
 
