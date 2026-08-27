@@ -2777,82 +2777,128 @@ SMALL MOBILE
 
 
 /* =========================================================
-   17. CONSULTATION / OUR PROCESS SECTION
+   CLINIC / PROCEDURES INTRODUCTION
 ========================================================= */
 
-.consultation-section {
+.clinic-intro-section {
     position: relative;
-    padding: 100px 6%;
+    padding: 100px 7% 90px;
     background: #ffffff;
     overflow: hidden;
 }
 
-.consultation-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 /* =========================================================
-   HEADING
+   TOP INTRODUCTION
 ========================================================= */
 
-.consultation-heading {
+.clinic-intro-content {
+    max-width: 1050px;
+    margin: 0 auto 70px;
     text-align: center;
-    margin-bottom: 60px;
 }
 
-.consultation-heading span {
-    display: inline-block;
-    margin-bottom: 12px;
-
-    color: #318c5c;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.consultation-heading h2 {
-    margin: 0;
+.clinic-intro-content h2 {
+    margin: 0 0 28px;
 
     font-family: "Cormorant Garamond", serif;
-    color: #222222;
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: 0.5px;
 
-    font-size: 58px;
-    font-weight: 600;
-    line-height: 1.05;
+    color: #222;
 }
 
-.consultation-heading h2 em {
+.clinic-intro-content p {
+    max-width: 950px;
+    margin: 0 auto 18px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+    font-weight: 400;
+
+    color: #666;
+}
+
+.clinic-intro-content a {
     color: #318c5c;
-    font-style: italic;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.clinic-intro-content a:hover {
+    color: #246e47;
 }
 
 
 /* =========================================================
-   PROCESS
+   PROCEDURE GRID
 ========================================================= */
 
-.consultation-process {
+.procedure-grid {
+    max-width: 1180px;
+    margin: 0 auto;
+
     display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 290px 290px;
 
-    align-items: center;
-
-    margin-bottom: 70px;
+    gap: 24px;
 }
 
-.process-item {
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.procedure-card {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.procedure-card:hover {
+    transform: translateY(-6px);
+}
+
+
+/* =========================================================
+   NON-SURGICAL INFORMATION CARD
+========================================================= */
+
+.procedure-info {
+    padding: 48px 45px;
+
     display: flex;
-    align-items: flex-start;
-    gap: 18px;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #f7f6f3;
+
+    border: 1px solid rgba(49, 140, 92, 0.08);
 }
 
-.process-number {
-    flex-shrink: 0;
+.procedure-info:hover {
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
 
-    width: 48px;
-    height: 48px;
+
+/* Icon */
+
+.procedure-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 22px;
 
     display: flex;
     align-items: center;
@@ -2860,213 +2906,278 @@ SMALL MOBILE
 
     border-radius: 50%;
 
-    background: #318c5c;
-    color: #ffffff;
+    background: #ffffff;
+    border: 1px solid rgba(49, 140, 92, 0.16);
+
+    box-shadow: 0 8px 22px rgba(49, 140, 92, 0.08);
+}
+
+.procedure-icon img {
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+
+    transition: transform 0.35s ease;
+}
+
+.procedure-card:hover .procedure-icon img {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+
+/* Heading */
+
+.procedure-info h3 {
+    margin: 0 0 12px;
 
     font-family: "Cormorant Garamond", serif;
-    font-size: 22px;
+    font-size: 32px;
     font-weight: 600;
+    line-height: 1.1;
+
+    color: #222;
 }
 
-.process-item h4 {
-    margin: 0 0 7px;
 
-    color: #222222;
-    font-size: 17px;
-    font-weight: 600;
-}
+/* Paragraph */
 
-.process-item p {
-    max-width: 230px;
-
+.procedure-info p {
+    max-width: 390px;
     margin: 0;
 
-    color: #777777;
-    font-size: 14px;
-    line-height: 1.7;
-}
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
 
-.process-line {
-    width: 70px;
-    height: 1px;
-
-    margin: 0 20px;
-
-    background: #d8d8d8;
+    color: #777;
 }
 
 
 /* =========================================================
-   MAIN CONSULTATION CARD
+   IMAGE PROCEDURE CARD
 ========================================================= */
 
-.consultation-card {
+.procedure-image {
     position: relative;
 
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    background: #eef5f0;
 
-    min-height: 520px;
-
-    overflow: hidden;
-
-    background: #f7f6f3;
-    background-image: url("image/Vector.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 15px 40px rgba(49, 140, 92, 0.08);
+    display: flex;
+    align-items: stretch;
 }
 
 
 /* =========================================================
-   FORM
+   PERSON IMAGE
 ========================================================= */
 
-.consultation-form {
+.procedure-person {
+    position: absolute;
+
+    left: 20px;
+    bottom: -25px;
+
+    width: 53%;
+    height: 105%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    z-index: 1;
+}
+
+.procedure-person img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.08));
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.procedure-image:hover .procedure-person img {
+    transform: scale(1.035) translateY(-4px);
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.12));
+}
+
+
+/* =========================================================
+   PROCEDURE TEXT
+========================================================= */
+
+.procedure-text {
+    position: relative;
+
+    width: 48%;
+    margin-left: auto;
+
+    padding: 45px 35px 40px 10px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    padding: 55px 60px;
+    z-index: 3;
 }
 
-.consultation-form h3 {
-    margin: 0 0 30px;
+.procedure-text h3 {
+    margin: 0 0 12px;
 
     font-family: "Cormorant Garamond", serif;
-    color: #318c5c;
-
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1.05;
+
+    color: #222;
 }
 
-.consultation-form form {
-    width: 100%;
+.procedure-text p {
+    margin: 0 0 22px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    line-height: 1.75;
+
+    color: #666;
 }
 
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+.procedure-text a {
+    width: fit-content;
 
-    margin-bottom: 18px;
-}
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
 
-.consultation-form input,
-.consultation-form select,
-.consultation-form textarea {
-    width: 100%;
-    box-sizing: border-box;
+    padding-bottom: 5px;
 
-    padding: 15px 17px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
 
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-
-    outline: none;
-
-    background: #ffffff;
-    color: #444444;
-
-    font-family: inherit;
-    font-size: 14px;
-
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.consultation-form input,
-.consultation-form select {
-    height: 52px;
-}
-
-.consultation-form textarea {
-    display: block;
-
-    margin-top: 18px;
-
-    min-height: 120px;
-
-    resize: vertical;
-}
-
-.consultation-form input:focus,
-.consultation-form select:focus,
-.consultation-form textarea:focus {
-    border-color: #318c5c;
-
-    box-shadow:
-        0 0 0 3px rgba(49, 140, 92, 0.08);
-}
-
-.consultation-form input::placeholder,
-.consultation-form textarea::placeholder {
-    color: #999999;
-}
-
-
-/* =========================================================
-   BUTTON
-========================================================= */
-
-.consultation-form button {
-    display: inline-block;
-
-    margin-top: 22px;
-    padding: 15px 30px;
-
-    border: 1px solid #318c5c;
-    border-radius: 0;
-
-    background: #318c5c;
-    color: #ffffff;
-
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 500;
-
-    cursor: pointer;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.consultation-form button:hover {
-    background: #ffffff;
     color: #318c5c;
+    text-decoration: none;
 
-    transform: translateY(-2px);
+    border-bottom: 1px solid rgba(49, 140, 92, 0.35);
+
+    transition:
+        gap 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.procedure-text a span {
+    font-size: 17px;
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.procedure-text a:hover {
+    gap: 13px;
+    color: #246e47;
+    border-color: #246e47;
+}
+
+.procedure-text a:hover span {
+    transform: translateX(3px);
 }
 
 
 /* =========================================================
-   DOCTOR IMAGE
+   REVERSE CARD
+   Image on RIGHT / Text on LEFT
 ========================================================= */
 
-.consultation-image {
-    height: 100%;
-    min-height: 520px;
-
-    overflow: hidden;
+.reverse-card .procedure-person {
+    left: auto;
+    right: 20px;
 }
 
-.consultation-image img {
-    width: 100%;
-    height: 100%;
+.reverse-card .procedure-text {
+    margin-left: 0;
+    margin-right: auto;
 
-    display: block;
+    padding-left: 35px;
+    padding-right: 10px;
+}
 
-    object-fit: cover;
-    object-position: center;
+.reverse-card .procedure-person img {
+    transform: scaleX(-1);
+}
+
+.reverse-card:hover .procedure-person img {
+    transform: scaleX(-1) scale(1.035) translateY(-4px);
+}
+
+
+/* =========================================================
+   SUBTLE DECORATIVE CIRCLES
+========================================================= */
+
+.procedure-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    background: rgba(49, 140, 92, 0.07);
+
+    top: -75px;
+    right: -60px;
+
+    z-index: 0;
+}
+
+.procedure-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(49, 140, 92, 0.12);
+
+    bottom: -45px;
+    left: 38%;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   BOTTOM DESCRIPTION
+========================================================= */
+
+.clinic-bottom-content {
+    max-width: 900px;
+
+    margin: 65px auto 0;
+
+    text-align: center;
+}
+
+.clinic-bottom-content p {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+
+    color: #666;
 }
 
 
@@ -3074,44 +3185,36 @@ SMALL MOBILE
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
 
-    .consultation-section {
-        padding: 80px 5%;
+    .clinic-intro-section {
+        padding: 80px 5% 75px;
     }
 
-    .consultation-heading h2 {
-        font-size: 50px;
+    .procedure-grid {
+        grid-template-rows: 270px 270px;
+        gap: 20px;
     }
 
-    .consultation-process {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
+    .procedure-info {
+        padding: 35px;
     }
 
-    .process-line {
-        display: none;
+    .procedure-info h3,
+    .procedure-text h3 {
+        font-size: 29px;
     }
 
-    .process-item {
-        align-items: center;
+    .procedure-person {
+        width: 52%;
     }
 
-    .process-item p {
-        max-width: 500px;
+    .procedure-text {
+        padding-right: 25px;
     }
 
-    .consultation-card {
-        grid-template-columns: 1fr 0.8fr;
-    }
-
-    .consultation-form {
-        padding: 45px;
-    }
-
-    .consultation-form h3 {
-        font-size: 36px;
+    .reverse-card .procedure-text {
+        padding-left: 25px;
     }
 }
 
@@ -3120,70 +3223,155 @@ SMALL MOBILE
    MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
-    .consultation-section {
-        padding: 65px 5%;
+    .clinic-intro-section {
+        padding: 65px 5% 60px;
     }
 
-    .consultation-heading {
+    .clinic-intro-content {
         margin-bottom: 45px;
     }
 
-    .consultation-heading h2 {
-        font-size: 42px;
-        line-height: 1.1;
+    .clinic-intro-content h2 {
+        font-size: 38px;
+        line-height: 1.12;
     }
 
-    .consultation-process {
-        margin-bottom: 50px;
-    }
-
-    .process-item {
-        gap: 14px;
-    }
-
-    .process-number {
-        width: 42px;
-        height: 42px;
-
-        font-size: 19px;
-    }
-
-    .process-item h4 {
-        font-size: 16px;
-    }
-
-    .process-item p {
+    .clinic-intro-content p {
         font-size: 13px;
+        line-height: 1.8;
     }
 
-    .consultation-card {
+
+    /* Stack cards */
+
+    .procedure-grid {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        gap: 18px;
     }
 
-    .consultation-form {
-        padding: 40px 25px;
+    .procedure-card {
+        min-height: 310px;
     }
 
-    .consultation-form h3 {
+
+    /* Information card */
+
+    .procedure-info {
+        min-height: 260px;
+        padding: 35px 30px;
+    }
+
+    .procedure-info h3 {
+        font-size: 30px;
+    }
+
+
+    /* Image cards */
+
+    .procedure-image {
+        min-height: 340px;
+    }
+
+    .procedure-person {
+        width: 48%;
+        left: 5px;
+    }
+
+    .procedure-text {
+        width: 50%;
+        padding: 35px 20px 35px 5px;
+    }
+
+    .reverse-card .procedure-person {
+        right: 5px;
+    }
+
+    .reverse-card .procedure-text {
+        padding: 35px 5px 35px 20px;
+    }
+
+    .procedure-text h3 {
+        font-size: 29px;
+    }
+
+    .procedure-text p {
+        font-size: 11px;
+    }
+
+
+    .clinic-bottom-content {
+        margin-top: 45px;
+    }
+
+    .clinic-bottom-content p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .clinic-intro-section {
+        padding: 55px 20px 50px;
+    }
+
+    .clinic-intro-content h2 {
         font-size: 34px;
     }
 
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 15px;
-
-        margin-bottom: 15px;
+    .clinic-intro-content p {
+        font-size: 12px;
     }
 
-    .consultation-form textarea {
-        margin-top: 15px;
+    .procedure-card {
+        border-radius: 20px;
     }
 
-    .consultation-image {
-        height: 350px;
-        min-height: 350px;
+    .procedure-info {
+        min-height: 250px;
+        padding: 30px 25px;
+    }
+
+    .procedure-info h3 {
+        font-size: 28px;
+    }
+
+    .procedure-image {
+        min-height: 330px;
+    }
+
+    .procedure-person {
+        width: 47%;
+    }
+
+    .procedure-text {
+        width: 52%;
+        padding-right: 16px;
+    }
+
+    .reverse-card .procedure-text {
+        padding-left: 16px;
+    }
+
+    .procedure-text h3 {
+        font-size: 27px;
+    }
+
+    .procedure-text p {
+        font-size: 10.5px;
+    }
+
+    .procedure-text a {
+        font-size: 11px;
     }
 }
 /* =========================================================
