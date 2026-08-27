@@ -1654,7 +1654,7 @@ BEFORE AFTER CARD HOVER
     border: 2px solid transparent;
 
     box-shadow:
-        0 15px 40px rgba(146, 240, 190, 0.918);
+        0 15px 40px rgba(232, 236, 234, 0.868);
 
     transition:
         transform 0.4s ease,
@@ -1671,7 +1671,7 @@ BEFORE AFTER CARD HOVER
     border-color: #318c5c;
 
     box-shadow:
-        0 20px 45px rgba(201, 255, 212, 0.999);
+        0 20px 45px rgba(49, 140, 92, 0.30);
 }
 
 
@@ -1696,15 +1696,7 @@ BEFORE AFTER CARD HOVER
 .before-card:hover img {
     transform: scale(1.04);
 }
-.before-card:hover {
-    transform: translateY(-10px);
 
-    border-color: #318c5c;
-
-    box-shadow:
-        0 0 0 2px rgba(49, 140, 92, 0.15),
-        0 20px 50px rgba(49, 140, 92, 0.30);
-}
 
 /*=====================================================
 TABLET
