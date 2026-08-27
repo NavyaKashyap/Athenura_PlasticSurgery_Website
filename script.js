@@ -16,41 +16,117 @@ if (closeOffer && offerPopup) {
 }
 
 
-// ==================================================
-// MOBILE MENU
-// ==================================================
+const navbarContainer = document.getElementById("navbar");
 
-const menuBtn = document.getElementById("menuBtn");
-const nav = document.querySelector(".navbar nav");
+  navbarContainer.innerHTML = `
+        <nav class="navbar">
 
-if (menuBtn && nav) {
+            <div class="navbar-container">
 
-    menuBtn.addEventListener("click", function () {
+                <!-- Athenura Logo -->
+                <a href="../index.html" class="navbar-logo">
+                    <img src="images/logo/athenura-logo.png" alt="Athenura">
+                </a>
 
-        if (nav.style.display === "flex") {
 
-            nav.style.display = "none";
+                <!-- Navigation -->
+                <div class="navbar-menu">
 
-        } else {
+                    <a href="../index.html" class="nav-link">HOME</a>
 
-            nav.style.display = "flex";
-            nav.style.flexDirection = "column";
-            nav.style.position = "absolute";
-            nav.style.top = "75px";
-            nav.style.right = "5%";
-            nav.style.background = "#ffffff";
-            nav.style.padding = "25px";
-            nav.style.gap = "20px";
-            nav.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.08)";
-            nav.style.borderRadius = "8px";
-            nav.style.zIndex = "100";
+                    <a href="../services/index.html" class="nav-link">
+                        SERVICES
+                    </a>
 
-        }
+                    <a href="../resources/index.html" class="nav-link">
+                        RESOURCES
+                    </a>
 
-    });
+                    <a href="../gallery/index.html" class="nav-link">
+                        GALLERY
+                    </a>
 
-}
+                    <a href="../contact/index.html" class="nav-link">
+                        CONTACT
+                    </a>
 
+                    <a href="../offers/index.html" class="nav-link">
+                        OFFERS
+                    </a>
+
+                    <!-- Search -->
+                    <button class="search-button" aria-label="Search">
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle
+                                cx="11"
+                                cy="11"
+                                r="7"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+                            <path
+                                d="M16.5 16.5L21 21"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </button>
+
+                </div>
+
+
+                <!-- Mobile Menu Button -->
+                <button class="menu-toggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </nav>
+    `;
+
+
+  /* =================================
+     SCROLL EFFECT
+  ================================= */
+
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 30) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+
+  });
+
+
+  /* =================================
+     MOBILE MENU
+  ================================= */
+
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navbarMenu = document.querySelector(".navbar-menu");
+
+  menuToggle.addEventListener("click", () => {
+
+    navbarMenu.classList.toggle("active");
+    menuToggle.classList.toggle("active");
+
+  });
+
+});
 
 // ==================================================
 // CARD SCROLL ANIMATION
