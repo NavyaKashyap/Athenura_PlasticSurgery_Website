@@ -1515,7 +1515,10 @@ SWIPER
 =====================================================*/
 
 .beforeAfterSwiper {
-    width: 100%;
+    width: 100vw;
+
+    /* Break out of the .container */
+    margin-left: calc(50% - 50vw);
 
     overflow: hidden;
 
@@ -1527,15 +1530,43 @@ SWIPER
 }
 
 .beforeAfterSwiper .swiper-slide {
+    width: 430px !important;
+
     height: auto;
 
     display: flex;
 
     flex-shrink: 0;
+}
 
-    /* IMPORTANT:
-       Let Swiper calculate the width */
-    width: auto;
+.before-card {
+    width: 430px;
+
+    height: 500px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 3px;
+
+    border: none;
+
+    box-shadow:
+        0 15px 40px rgba(49, 140, 92, 0.10);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.before-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
 }
 
 /*=====================================================

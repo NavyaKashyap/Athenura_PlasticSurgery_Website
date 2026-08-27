@@ -381,84 +381,44 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    new Swiper(".beforeAfterSwiper", {
+    new Swiper(slider, {
 
-        /* ================================
-           BASIC SETTINGS
-        ================================= */
+    loop: true,
 
-        loop: true,
+    speed: 650,
 
-        speed: 650,
+    grabCursor: true,
 
-        grabCursor: true,
+    allowTouchMove: true,
 
-        allowTouchMove: true,
+    slidesPerView: "auto",
 
-        watchOverflow: true,
+    spaceBetween: 22,
 
+    autoplay: {
+        delay: 3200,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+    },
 
-        /* ================================
-           SLIDES
-        ================================= */
+    pagination: {
+        el: ".before-pagination",
+        clickable: true
+    },
 
-        slidesPerView: 1,
+    navigation: {
+        nextEl: ".before-next",
+        prevEl: ".before-prev"
+    }
+     
 
-        spaceBetween: 22,
+});
 
-
-        /* ================================
-           AUTOPLAY
-        ================================= */
-
-        autoplay: {
-            delay: 3200,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true
-        },
-
-
-        /* ================================
-           PAGINATION
-        ================================= */
-
-        pagination: {
-            el: ".before-pagination",
-            clickable: true
-        },
-
-
-        /* ================================
-           NAVIGATION
-        ================================= */
-
-        navigation: {
-            nextEl: ".before-next",
-            prevEl: ".before-prev"
-        },
-
-
-        /* ================================
-           RESPONSIVE
-        ================================= */
-
-        breakpoints: {
-
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 22
-            },
-
-            1100: {
-                slidesPerView: 3,
-                spaceBetween: 25
-            }
-
-        }
+       
 
     });
 
-});
+
 // TREATMENTS BY AGE
 // ==================================================
 
