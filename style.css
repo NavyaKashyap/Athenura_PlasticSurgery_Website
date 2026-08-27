@@ -2267,30 +2267,7 @@ SMALL MOBILE
 
     color:#318c5c;
 }
-/* Floating Animation */
 
-@keyframes floatCircle{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-
-}
-
-.benefit-circle{
-
-    animation:floatCircle 4s ease-in-out infinite;
-}
-
-.circle-one{ animation-delay:0s; }
-.circle-two{ animation-delay:.5s; }
-.circle-three{ animation-delay:1s; }
-.circle-four{ animation-delay:1.5s; }
-.circle-five{ animation-delay:2s; }
 /* =========================================================
    CIRCLE POSITION
 ========================================================= */
