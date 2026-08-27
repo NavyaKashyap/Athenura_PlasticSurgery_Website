@@ -375,8 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    const slider =
-        document.querySelector(".beforeAfterSwiper");
+    const slider = document.querySelector(".beforeAfterSwiper");
 
     if (!slider) {
         return;
@@ -384,42 +383,82 @@ document.addEventListener("DOMContentLoaded", function () {
 
     new Swiper(".beforeAfterSwiper", {
 
+        /* ================================
+           BASIC SETTINGS
+        ================================= */
+
         loop: true,
 
-        speed: 900,
+        speed: 650,
 
         grabCursor: true,
 
-        centeredSlides: false,
+        allowTouchMove: true,
 
-        slidesPerView: "auto",
+        watchOverflow: true,
+
+
+        /* ================================
+           SLIDES
+        ================================= */
+
+        slidesPerView: 1,
 
         spaceBetween: 22,
 
+
+        /* ================================
+           AUTOPLAY
+        ================================= */
+
         autoplay: {
-            delay: 2800,
-
+            delay: 3200,
             disableOnInteraction: false,
-
             pauseOnMouseEnter: true
         },
 
+
+        /* ================================
+           PAGINATION
+        ================================= */
+
         pagination: {
             el: ".before-pagination",
-
             clickable: true
         },
 
+
+        /* ================================
+           NAVIGATION
+        ================================= */
+
         navigation: {
             nextEl: ".before-next",
-
             prevEl: ".before-prev"
+        },
+
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        breakpoints: {
+
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 22
+            },
+
+            1100: {
+                slidesPerView: 3,
+                spaceBetween: 25
+            }
+
         }
 
     });
 
 });
-
 // TREATMENTS BY AGE
 // ==================================================
 
