@@ -829,7 +829,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <!-- VECTOR BACKGROUND -->
             <img
-                src="Resources/images/cta/Vector.png"
+                src="image/vect.png"
                 alt=""
                 class="cta-vector"
             >
