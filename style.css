@@ -2835,20 +2835,42 @@ SMALL MOBILE
 
 
 /* =========================================================
-   PROCEDURE GRID
+   FULL-WIDTH PROCEDURE GRID
 ========================================================= */
 
 .procedure-grid {
-    max-width: 1180px;
-    margin: 0 auto;
+    width: calc(100% + 14%);
+    margin-left: -7%;
+    margin-right: -7%;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 290px 290px;
+    grid-template-rows: 320px 320px;
 
-    gap: 24px;
+    gap: 0;
 }
 
+
+/* Cards touch the page edges */
+
+.procedure-card {
+    border-radius: 0;
+    min-width: 0;
+}
+
+
+/* Keep information cards spacious */
+
+.procedure-info {
+    padding: 55px 8%;
+}
+
+
+/* Image cards */
+
+.procedure-image {
+    border-radius: 0;
+}
 
 /* =========================================================
    COMMON CARD
