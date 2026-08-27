@@ -38,7 +38,7 @@ const navbarContainer = document.getElementById("navbar");
                         SERVICES
                     </a>
 
-                    <a href="../resources/index.html" class="nav-link">
+                    <a href="Resources/resources.html" class="nav-link">
                         RESOURCES
                     </a>
 
