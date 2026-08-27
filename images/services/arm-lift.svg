@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
+      
+      <rect width="600" height="450" fill="#f7efe8"/>
+      <!-- Arm Silhouette resting on sterile pad -->
+      <path d="M0,350 L600,270 L600,450 L0,450 Z" fill="#f5ded0"/>
+      <!-- Surgical Contouring Guideline along Upper Arm -->
+      <path d="M180,335 C240,325 320,310 420,295" stroke="#0e392b" stroke-width="5" stroke-dasharray="6 4" stroke-linecap="round"/>
+      
+      <!-- Doctor's Gloved Hand Assessing Tissue Firmness -->
+      <ellipse cx="290" cy="275" rx="35" ry="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" transform="rotate(20 290 275)"/>
+      <ellipse cx="370" cy="260" rx="35" ry="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" transform="rotate(10 370 260)"/>
+
+      <rect x="20" y="390" width="160" height="40" rx="20" fill="#0e392b" opacity="0.9"/>
+      <text x="100" y="415" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">ARM LIFT</text>
+    
+    </svg>
