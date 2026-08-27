@@ -2835,43 +2835,485 @@ SMALL MOBILE
 
 
 /* =========================================================
-   FULL-WIDTH PROCEDURE GRID
+   CLINIC / PROCEDURES — FULL EDGE LAYOUT
 ========================================================= */
 
 .procedure-grid {
-    width: calc(100% + 14%);
-    margin-left: -7%;
-    margin-right: -7%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 320px 320px;
+
+    /* Non-surgical = smaller
+       Facial = larger */
+    grid-template-columns: 0.75fr 1.25fr;
+
+    grid-template-rows: 310px 310px;
 
     gap: 0;
+
+    overflow: hidden;
 }
 
 
-/* Cards touch the page edges */
+/* =========================================================
+   ALL CARDS
+========================================================= */
 
 .procedure-card {
-    border-radius: 0;
+    position: relative;
     min-width: 0;
-}
+    min-height: 310px;
 
-
-/* Keep information cards spacious */
-
-.procedure-info {
-    padding: 55px 8%;
-}
-
-
-/* Image cards */
-
-.procedure-image {
     border-radius: 0;
+    overflow: hidden;
+
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease;
 }
 
+
+/* =========================================================
+   NON-SURGICAL CARDS
+========================================================= */
+
+.non-surgical-card {
+    padding: 45px 7%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #f7f6f3;
+}
+
+.non-surgical-card:hover {
+    background: #f3f7f4;
+}
+
+
+/* Icon */
+
+.procedure-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    border: 1px solid rgba(49, 140, 92, 0.15);
+
+    box-shadow: 0 8px 20px rgba(49, 140, 92, 0.08);
+
+    transition: transform 0.35s ease;
+}
+
+.procedure-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.non-surgical-card:hover .procedure-icon {
+    transform: scale(1.08);
+}
+
+
+/* Heading */
+
+.non-surgical-card h3 {
+    margin: 0 0 10px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 34px;
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    color: #222;
+}
+
+
+/* Paragraph */
+
+.non-surgical-card p {
+    max-width: 390px;
+
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    line-height: 1.8;
+
+    color: #707070;
+}
+
+
+/* =========================================================
+   FACIAL PROCEDURE CARDS
+========================================================= */
+
+.facial-card {
+    position: relative;
+
+    background: #edf5ef;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   FACIAL PERSON
+========================================================= */
+
+.facial-card .procedure-person {
+    position: absolute;
+
+    left: 5%;
+    bottom: -35px;
+
+    width: 47%;
+    height: 110%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+.facial-card .procedure-person img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    filter: drop-shadow(
+        0 18px 25px rgba(0, 0, 0, 0.08)
+    );
+
+    transition: transform 0.5s ease;
+}
+
+.facial-card:hover .procedure-person img {
+    transform: scale(1.035) translateY(-5px);
+}
+
+
+/* =========================================================
+   FACIAL TEXT
+========================================================= */
+
+.facial-card .procedure-text {
+    position: relative;
+
+    width: 45%;
+
+    margin-left: auto;
+
+    padding: 40px 8% 40px 10px;
+
+    z-index: 4;
+}
+
+.facial-card .procedure-text h3 {
+    margin: 0 0 12px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 36px;
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    color: #222;
+}
+
+.facial-card .procedure-text p {
+    margin: 0 0 20px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+    line-height: 1.8;
+
+    color: #666;
+}
+
+.facial-card .procedure-text a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #318c5c;
+
+    text-decoration: none;
+
+    transition: gap 0.3s ease;
+}
+
+.facial-card .procedure-text a span {
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+.facial-card .procedure-text a:hover {
+    gap: 13px;
+}
+
+.facial-card .procedure-text a:hover span {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   SECOND FACIAL CARD
+   Image RIGHT — TEXT LEFT
+========================================================= */
+
+.reverse-card {
+    grid-column: 1 / 2;
+}
+
+.reverse-card .procedure-person {
+    left: auto;
+    right: 5%;
+}
+
+.reverse-card .procedure-text {
+    margin-left: 0;
+    margin-right: auto;
+
+    padding-left: 8%;
+    padding-right: 10px;
+}
+
+
+/* Flip only the second person image */
+
+.reverse-card .procedure-person img {
+    transform: scaleX(-1);
+}
+
+.reverse-card:hover .procedure-person img {
+    transform: scaleX(-1) scale(1.035) translateY(-5px);
+}
+
+
+/* =========================================================
+   SECOND NON-SURGICAL CARD
+========================================================= */
+
+.procedure-grid > .non-surgical-card:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES ON FACIAL CARDS
+========================================================= */
+
+.facial-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(49, 140, 92, 0.07);
+
+    top: -100px;
+    right: -80px;
+
+    z-index: 0;
+}
+
+.facial-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(49, 140, 92, 0.12);
+
+    bottom: -45px;
+    left: 35%;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   BOTTOM DESCRIPTION
+========================================================= */
+
+.clinic-bottom-content {
+    max-width: 900px;
+
+    margin: 65px auto 0;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .procedure-grid {
+        grid-template-columns: 0.8fr 1.2fr;
+
+        grid-template-rows: 290px 290px;
+    }
+
+    .non-surgical-card {
+        padding: 35px 6%;
+    }
+
+    .non-surgical-card h3 {
+        font-size: 30px;
+    }
+
+    .facial-card .procedure-person {
+        width: 50%;
+    }
+
+    .facial-card .procedure-text {
+        width: 47%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .procedure-grid {
+        width: 100vw;
+
+        margin-left: calc(50% - 50vw);
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto;
+
+        gap: 0;
+    }
+
+
+    .procedure-card {
+        min-height: 300px;
+    }
+
+
+    /* Keep natural HTML order on mobile */
+
+    .procedure-grid > .non-surgical-card:nth-child(4) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+
+    .non-surgical-card {
+        padding: 40px 7%;
+    }
+
+
+    .facial-card {
+        min-height: 330px;
+    }
+
+
+    .facial-card .procedure-person {
+        width: 48%;
+        left: 2%;
+    }
+
+    .facial-card .procedure-text {
+        width: 48%;
+        padding-right: 6%;
+    }
+
+    .reverse-card .procedure-person {
+        right: 2%;
+        left: auto;
+    }
+
+    .reverse-card .procedure-text {
+        padding-left: 6%;
+        padding-right: 5px;
+    }
+
+
+    .facial-card .procedure-text h3 {
+        font-size: 30px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .procedure-card {
+        min-height: 280px;
+    }
+
+    .facial-card {
+        min-height: 310px;
+    }
+
+    .non-surgical-card h3,
+    .facial-card .procedure-text h3 {
+        font-size: 27px;
+    }
+
+    .procedure-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .non-surgical-card p,
+    .facial-card .procedure-text p {
+        font-size: 11px;
+    }
+}
 /* =========================================================
    COMMON CARD
 ========================================================= */
