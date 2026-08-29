@@ -4622,48 +4622,37 @@ Patient Result Circle
 WELLNESS / BMI SECTION
 =====================================================*/
 
-.wellness-section {
+.wellness-section{
+    position:relative;
+    width:100%;
+    min-height:500px;
 
-    position: relative;
+    display:grid;
+    grid-template-columns:55% 45%;
+    align-items:center;
 
-    width: 100%;
+    overflow:hidden;
 
-    min-height: 440px;
-
-    display: grid;
-
-    grid-template-columns: 55% 45%;
-
-    align-items: center;
-
-    overflow: hidden;
-
-    background: #ffffff;
-
-    margin: 0;
-
-    padding: 0;
+    background:#ffffff;
 }
 
 
 /*=====================================================
-SUBTLE BACKGROUND TEXTURE
+BACKGROUND TEXTURE
 =====================================================*/
 
-.wellness-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+.wellness-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
 
     background:
-        radial-gradient(
-            circle at 15% 50%,
-            rgba(49, 140, 92, 0.035),
-            transparent 35%
-        );
+        radial-gradient(circle at 15% 45%,
+        rgba(49,140,92,.04),
+        transparent 38%);
 
-    pointer-events: none;
-    z-index: 0;
+    pointer-events:none;
+    z-index:0;
 }
 
 
@@ -4671,60 +4660,39 @@ SUBTLE BACKGROUND TEXTURE
 CONTENT
 =====================================================*/
 
-.wellness-content {
-    position: relative;
-    z-index: 2;
+.wellness-content{
+    position:relative;
+    z-index:2;
 
-    padding: 50px 35px 50px 5%;
-
-    max-width: 780px;
+    padding-left:6%;
+    padding-right:40px;
 }
 
+.wellness-content h2{
 
-/*=====================================================
-SMALL GREEN ACCENT
-=====================================================*/
+    margin:0 0 22px;
 
-.wellness-content::before {
-    display: none;
+    max-width:650px;
+
+    font-family:"Cormorant Garamond",serif;
+    font-size:52px;
+    font-weight:500;
+    line-height:1.08;
+
+    color:#318c5c;
 }
 
+.wellness-content p{
 
-/*=====================================================
-HEADING
-=====================================================*/
+    max-width:480px;
 
-.wellness-content h2 {
-    margin: 0 0 16px;
+    margin:0 0 35px;
 
-    max-width: 650px;
+    font-family:"Poppins",sans-serif;
+    font-size:19px;
+    line-height:1.7;
 
-    color: #318c5c;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 34px;
-    font-weight: 500;
-
-    line-height: 1.12;
-    letter-spacing: 0;
-}
-
-/*=====================================================
-DESCRIPTION
-=====================================================*/
-
-.wellness-content p {
-
-    max-width: 470px;
-
-    margin: 0 0 28px;
-
-    color: #222222;
-
-    font-size: 15px;
-
-    line-height: 1.7;
+    color:#222;
 }
 
 
@@ -4732,40 +4700,34 @@ DESCRIPTION
 BUTTON
 =====================================================*/
 
-.wellness-content .section-btn {
+.section-btn{
 
-    display: inline-flex;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    align-items: center;
+    padding:16px 38px;
 
-    justify-content: center;
+    background:#318c5c;
+    color:#fff;
 
-    min-width: 215px;
+    border-radius:6px;
 
-    padding: 14px 28px;
+    font-size:16px;
+    font-weight:500;
 
-    border-radius: 5px;
+    text-decoration:none;
 
-    background: #318c5c;
+    box-shadow:0 12px 25px rgba(49,140,92,.18);
 
-    color: #ffffff;
-
-    font-size: 14px;
-
-    font-weight: 500;
-
-    box-shadow:
-        0 7px 18px rgba(49, 140, 92, 0.18);
-
-    transition: all 0.3s ease;
+    transition:.35s;
 }
 
+.section-btn:hover{
 
-.wellness-content .section-btn:hover {
+    background:#246e47;
 
-    background: #246e47;
-
-    transform: translateY(-2px);
+    transform:translateY(-3px);
 }
 
 
@@ -4773,104 +4735,88 @@ BUTTON
 IMAGE AREA
 =====================================================*/
 
-.wellness-image {
+.wellness-image{
 
-    position: relative;
+    position:relative;
 
-    width: 100%;
+    height:500px;
 
-    height: 440px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    overflow: hidden;
-
-    z-index: 1;
+    overflow:hidden;
 }
 
 
 /*=====================================================
-IMAGE
+BMI IMAGE
 =====================================================*/
 
-.wellness-image img {
+.wellness-image img{
 
-    width: 100%;
+    position:absolute;
 
-    height: 100%;
+    right:-180px;
+    bottom:0;
 
-    display: block;
+    height:108%;
+    width:auto;
 
-    object-fit: contain;
+    max-width:none;
 
-    object-position: center;
+    object-fit:contain;
 
-    border: none;
+    display:block;
 }
 
 
 /*=====================================================
-SOFT CIRCLE BEHIND IMAGE
+DECORATIVE CIRCLE
 =====================================================*/
 
-.wellness-image::before {
+.wellness-image::before{
 
-    content: "";
+    content:"";
 
-    position: absolute;
+    position:absolute;
 
-    width: 300px;
+    width:330px;
+    height:330px;
 
-    height: 300px;
+    border-radius:50%;
 
-    right: 15%;
+    background:rgba(49,140,92,.05);
 
-    top: 50%;
+    right:140px;
+    top:95px;
 
-    transform: translateY(-50%);
-
-    border-radius: 50%;
-
-    background: rgba(49, 140, 92, 0.045);
-
-    z-index: -1;
+    z-index:-1;
 }
 
 
 /*=====================================================
-TABLET
+LAPTOP
 =====================================================*/
 
-@media (max-width: 1100px) {
+@media(max-width:1200px){
 
-    .wellness-section {
-
-        grid-template-columns: 55% 45%;
-
-        min-height: 400px;
+    .wellness-section{
+        min-height:460px;
     }
 
-    .wellness-content {
-
-        padding-left: 6%;
+    .wellness-content h2{
+        font-size:44px;
     }
 
-    .wellness-content h2 {
-
-        font-size: 34px;
-
+    .wellness-content p{
+        font-size:17px;
     }
 
-    .wellness-image {
-
-        height: 400px;
-
+    .wellness-image{
+        height:460px;
     }
 
+    .wellness-image img{
+        height:104%;
+        right:-150px;
+    }
 }
 
 
@@ -4878,32 +4824,57 @@ TABLET
 TABLET
 =====================================================*/
 
-@media (max-width: 850px) {
+@media(max-width:992px){
 
-    .wellness-section {
+    .wellness-section{
 
-        grid-template-columns: 1fr 0.8fr;
+        grid-template-columns:1fr;
+        text-align:center;
 
+        padding-top:60px;
     }
 
-    .wellness-content h2 {
+    .wellness-content{
 
-        font-size: 31px;
-
+        padding:0 40px;
     }
 
-    .wellness-content p {
+    .wellness-content h2{
 
-        font-size: 14px;
+        font-size:40px;
 
+        margin:auto auto 20px;
     }
 
-    .wellness-image {
+    .wellness-content p{
 
-        height: 350px;
-
+        margin:auto auto 30px;
     }
 
+    .wellness-image{
+
+        height:420px;
+    }
+
+    .wellness-image img{
+
+        position:relative;
+
+        right:0;
+        bottom:0;
+
+        height:100%;
+        width:auto;
+
+        margin:auto;
+    }
+
+    .wellness-image::before{
+
+        right:50%;
+        transform:translateX(50%);
+        top:60px;
+    }
 }
 
 
@@ -4911,103 +4882,44 @@ TABLET
 MOBILE
 =====================================================*/
 
-@media (max-width: 700px) {
+@media(max-width:576px){
 
-    .wellness-section {
+    .wellness-content{
 
-        display: flex;
-
-        flex-direction: column;
-
-        min-height: auto;
-
+        padding:0 25px;
     }
 
-    .wellness-content {
+    .wellness-content h2{
 
-        width: 100%;
-
-        padding: 55px 25px 25px;
-
+        font-size:32px;
     }
 
-    .wellness-content::before {
+    .wellness-content p{
 
-        left: 25px;
-
-        top: 32px;
-
+        font-size:15px;
     }
 
-    .wellness-content h2 {
+    .section-btn{
 
-        font-size: 36px;
-
+        width:100%;
     }
 
-    .wellness-image {
+    .wellness-image{
 
-        width: 100%;
-
-        height: 300px;
-
+        height:300px;
     }
 
-    .wellness-image::before {
+    .wellness-image img{
 
-        width: 220px;
-
-        height: 220px;
-
+        height:100%;
     }
 
+    .wellness-image::before{
+
+        width:220px;
+        height:220px;
+    }
 }
-
-
-/*=====================================================
-SMALL MOBILE
-=====================================================*/
-
-@media (max-width: 480px) {
-
-    .wellness-content {
-
-        padding: 50px 20px 25px;
-
-    }
-
-    .wellness-content::before {
-
-        left: 20px;
-
-    }
-
-    .wellness-content h2 {
-
-        font-size: 31px;
-
-    }
-
-    .wellness-content p {
-
-        font-size: 13px;
-
-    }
-
-    .wellness-content .section-btn {
-
-        width: 100%;
-
-    }
-
-    .wellness-image {
-
-        height: 250px;
-
-    }
-
-}
-
 /* =====================================================
    VIP PLASTIC SURGERY CLUB
 ===================================================== */
