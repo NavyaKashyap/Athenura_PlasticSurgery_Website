@@ -383,40 +383,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     new Swiper(slider, {
 
-    loop: true,
+        loop: true,
 
-    speed: 650,
+        speed: 650,
 
-    grabCursor: true,
+        grabCursor: true,
 
-    allowTouchMove: true,
+        allowTouchMove: true,
 
-    slidesPerView: "auto",
+        slidesPerView: "auto",
 
-    spaceBetween: 22,
+        /* SPACE BETWEEN CARDS */
+        spaceBetween: 30,
 
-    autoplay: {
-        delay: 3200,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true
-    },
+        autoplay: {
+            delay: 3200,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
 
-    pagination: {
-        el: ".before-pagination",
-        clickable: true
-    },
+        pagination: {
+            el: ".before-pagination",
+            clickable: true
+        },
 
-    navigation: {
-        nextEl: ".before-next",
-        prevEl: ".before-prev"
-    }
-     
-
-});
-
-       
+        navigation: {
+            nextEl: ".before-next",
+            prevEl: ".before-prev"
+        }
 
     });
+
+});
 
 
 // TREATMENTS BY AGE

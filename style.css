@@ -1611,14 +1611,36 @@ BEFORE & AFTER SECTION
 
 .before-after-section {
     position: relative;
-
     width: 100%;
-
     padding: 90px 0;
-
     background: #ffffff;
-
     overflow: hidden;
+}
+
+
+/*=====================================================
+GLOBAL RESET
+=====================================================*/
+
+.before-after-section *,
+.before-after-section *::before,
+.before-after-section *::after {
+    box-sizing: border-box;
+}
+
+
+/*=====================================================
+HEADER CONTAINER
+=====================================================*/
+
+.before-after-section .container {
+    width: 100%;
+    max-width: 1350px;
+
+    margin: 0 auto;
+    padding: 0 5%;
+
+    box-sizing: border-box;
 }
 
 
@@ -1626,23 +1648,12 @@ BEFORE & AFTER SECTION
 HEADER
 =====================================================*/
 
-.before-after-section .container {
-    max-width: 1350px;
-
-    margin: 0 auto;
-
-    padding: 0 5%;
-}
-
 .before-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-end;
 
     gap: 40px;
-
     margin-bottom: 50px;
 }
 
@@ -1658,11 +1669,9 @@ HEADER
     color: #318c5c;
 
     font-size: 13px;
-
     font-weight: 600;
 
     text-transform: uppercase;
-
     letter-spacing: 4px;
 }
 
@@ -1674,7 +1683,6 @@ HEADER
     font-family: "Cormorant Garamond", serif;
 
     font-size: 64px;
-
     font-weight: 600;
 
     line-height: 1;
@@ -1684,7 +1692,6 @@ HEADER
     color: #318c5c;
 
     font-style: italic;
-
     font-weight: 500;
 }
 
@@ -1695,7 +1702,6 @@ NAVIGATION
 
 .before-navigation {
     display: flex;
-
     align-items: center;
 
     gap: 15px;
@@ -1707,16 +1713,13 @@ NAVIGATION
     height: 50px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border: 1px solid #dce9e2;
-
     border-radius: 50%;
 
     background: #ffffff;
-
     color: #318c5c;
 
     font-size: 18px;
@@ -1737,110 +1740,135 @@ NAVIGATION
 
 
 /*=====================================================
-SWIPER
+EDGE-TO-EDGE SWIPER
 =====================================================*/
 
 .beforeAfterSwiper {
-    width: 100vw;
+    position: relative;
 
-    /* Break out of the .container */
-    margin-left: calc(50% - 50vw);
+    width: 100vw;
+    max-width: 100vw;
+
+    /*
+    Break the Swiper out of the centered .container
+    */
+    margin-left: calc((100% - 100vw) / 2);
+    margin-right: 0;
 
     overflow: hidden;
 
-    padding-bottom: 60px;
+    padding: 0 0 60px 0;
+
+    box-sizing: border-box;
 }
 
+
+/*=====================================================
+SWIPER WRAPPER
+=====================================================*/
+
 .beforeAfterSwiper .swiper-wrapper {
+    display: flex;
+
     align-items: stretch;
 }
+
+
+/*=====================================================
+SWIPER SLIDE
+=====================================================*/
 
 .beforeAfterSwiper .swiper-slide {
     width: 430px !important;
 
-    height: auto;
+    height: 500px;
 
     display: flex;
 
     flex-shrink: 0;
+
+    box-sizing: border-box;
 }
 
-.before-card {
-    width: 430px;
-
-    height: 500px;
-
-    overflow: hidden;
-
-    background: #ffffff;
-
-    border-radius: 3px;
-
-    border: none;
-
-    box-shadow:
-        0 15px 40px rgba(49, 140, 92, 0.10);
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-.before-card img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-}
 
 /*=====================================================
-BEFORE AFTER CARD
+BEFORE & AFTER CARD
 =====================================================*/
 
 .before-card {
-    width: 100%;
+    position: relative;
 
+    width: 100%;
     height: 500px;
+
+    flex-shrink: 0;
 
     overflow: hidden;
 
     background: #ffffff;
 
-    border-radius: 3px;
+    border: 2px solid transparent;
 
-    border: none;
+    border-radius: 8px;
+
+    box-sizing: border-box;
 
     box-shadow:
-        0 15px 40px rgba(49, 140, 92, 0.10);
+        0 15px 40px rgba(232, 236, 234, 0.868);
 
     transition:
         transform 0.4s ease,
-        box-shadow 0.4s ease;
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
 }
 
+
+/*=====================================================
+CARD IMAGE
+=====================================================*/
+
 .before-card img {
+    display: block;
+
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
 
-    transition: transform 0.6s ease;
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
 }
+
+
+/*=====================================================
+CARD HOVER
+=====================================================*/
+
+.before-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #38cf7e;
+
+    box-shadow:
+        0 20px 45px rgba(153, 240, 193, 0.84);
+}
+
+.before-card:hover img {
+    transform: scale(1.04);
+}
+
 
 /*=====================================================
 PAGINATION
 =====================================================*/
 
 .before-pagination {
-    position: relative !important;
+    position: static !important;
 
     width: auto !important;
 
-    bottom: auto !important;
+    margin: 0 !important;
 }
 
 .before-pagination .swiper-pagination-bullet {
@@ -1861,67 +1889,6 @@ PAGINATION
 
     background: #318c5c;
 }
-/*=====================================================
-BEFORE AFTER CARD HOVER
-=====================================================*/
-
-.before-card {
-    position: relative;
-
-    width: 430px;
-    height: 500px;
-
-    overflow: hidden;
-
-    background: #ffffff;
-
-    border-radius: 8px;
-
-    border: 2px solid transparent;
-
-    box-shadow:
-        0 15px 40px rgba(232, 236, 234, 0.868);
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
-}
-
-
-/* GREEN HOVER EFFECT */
-
-.before-card:hover {
-    transform: translateY(-10px);
-
-    border-color: #38cf7e;
-
-    box-shadow:
-        0 20px 45px rgba(153, 240, 193, 0.84);
-}
-
-
-/* IMAGE */
-
-.before-card img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
-}
-
-
-/* IMAGE HOVER */
-
-.before-card:hover img {
-    transform: scale(1.04);
-}
 
 
 /*=====================================================
@@ -1930,20 +1897,22 @@ TABLET
 
 @media (max-width: 992px) {
 
+    .before-after-section {
+        padding: 75px 0;
+    }
+
     .before-title h2 {
         font-size: 52px;
     }
 
     .beforeAfterSwiper .swiper-slide {
         width: 360px !important;
-    }
-
-    .before-card {
-        width: 360px;
-
         height: 440px;
     }
 
+    .before-card {
+        height: 440px;
+    }
 }
 
 
@@ -1961,32 +1930,59 @@ MOBILE
         padding: 0 20px;
     }
 
+
+    /* HEADER */
+
     .before-header {
         flex-direction: column;
 
         align-items: flex-start;
+
+        gap: 20px;
 
         margin-bottom: 40px;
     }
 
     .before-title h2 {
         font-size: 42px;
+        line-height: 1.1;
     }
+
+
+    /* NAVIGATION */
 
     .before-navigation {
         margin-top: 5px;
     }
 
-    .beforeAfterSwiper .swiper-slide {
-        width: 82vw !important;
+
+    /* EDGE-TO-EDGE SWIPER */
+
+    .beforeAfterSwiper {
+        width: 100vw;
+        max-width: 100vw;
+
+        margin-left: calc((100% - 100vw) / 2);
+        margin-right: 0;
+
+        padding-bottom: 50px;
     }
 
-    .before-card {
-        width: 82vw;
 
+    /* SLIDE */
+
+    .beforeAfterSwiper .swiper-slide {
+        width: 82vw !important;
         height: 400px;
     }
 
+
+    /* CARD */
+
+    .before-card {
+        width: 100%;
+        height: 400px;
+    }
 }
 
 
@@ -2004,28 +2000,51 @@ SMALL MOBILE
         padding: 0 15px;
     }
 
+
+    /* TITLE */
+
     .before-title h2 {
         font-size: 34px;
+        line-height: 1.1;
     }
+
+
+    /* SWIPER */
+
+    .beforeAfterSwiper {
+        width: 100vw;
+        max-width: 100vw;
+
+        margin-left: calc((100% - 100vw) / 2);
+        margin-right: 0;
+    }
+
+
+    /* SLIDE */
 
     .beforeAfterSwiper .swiper-slide {
         width: 86vw !important;
-    }
-
-    .before-card {
-        width: 86vw;
-
         height: 330px;
     }
+
+
+    /* CARD */
+
+    .before-card {
+        height: 330px;
+    }
+
+
+    /* ARROWS */
 
     .before-prev,
     .before-next {
         width: 42px;
         height: 42px;
+
+        font-size: 15px;
     }
-
 }
-
 
 /* =========================================================
    TREATMENTS BY AGE
