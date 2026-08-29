@@ -745,14 +745,14 @@ PROCEDURE GRID
 =====================================================*/
 
 .procedure-grid{
-
     width:100%;
 
     display:grid;
 
     grid-template-columns:1fr 1.9fr;
 
-    gap:20px;
+    column-gap:20px;   /* Space between left & right cards */
+    row-gap:35px;      /* Space between top and bottom rows */
 
     margin-top:25px;
 }
