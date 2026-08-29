@@ -757,28 +757,7 @@ BOTTOM
     line-height:2;
 }
 
-/* =========================================================
-   12. ABOUT SECTION
-========================================================= */
 
-.about-section {
-    position: relative;
-
-    padding: 110px 7%;
-
-    overflow: hidden;
-
-    background-color: #ffffff;
-
-    background-image:
-        url("image/Vector.png");
-
-    background-repeat: no-repeat;
-
-    background-position: center;
-
-    background-size: 100% 100%;
-}
 
 /*=====================================================
 COMMON CARD
@@ -1371,7 +1350,28 @@ SMOOTH ANIMATION
 
     transition:all .35s ease;
 }
+/* =========================================================
+   12. ABOUT SECTION
+========================================================= */
 
+.about-section {
+    position: relative;
+
+    padding: 110px 7%;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    background-image:
+        url("image/Vector.png");
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size: 100% 100%;
+}
 
 /* =========================================================
    ABOUT INTRO
