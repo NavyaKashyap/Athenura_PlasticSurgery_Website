@@ -730,7 +730,7 @@ GRID
 
     grid-template-columns:34% 66%;
 
-    gap:22px;
+    gap:30Spx;
 
     margin-top:20px;
 }
@@ -787,7 +787,7 @@ NON-SURGICAL CARD
     flex-direction:column;
     justify-content:center;
 
-    padding:75px 75px;
+    padding:55px 45px;
 
     background:#f8f5f0;
 }
