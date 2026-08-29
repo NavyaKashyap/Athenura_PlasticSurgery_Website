@@ -1028,6 +1028,44 @@ IMAGE ANIMATION
 }
 
 /*=====================================================
+BACKGROUND VECTOR PATTERN
+=====================================================*/
+
+.clinic-intro-section{
+    position:relative;
+    overflow:hidden;
+    background:#ffffff;
+}
+
+.clinic-intro-section::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    opacity:.35;
+
+    background-image:
+
+    linear-gradient(
+        135deg,
+        transparent 0%,
+        transparent 38%,
+        rgba(0,0,0,.035) 38%,
+        rgba(0,0,0,.035) 48%,
+        transparent 48%,
+        transparent 100%
+    );
+
+    background-size:190px 190px;
+
+    background-position:center;
+
+    pointer-events:none;
+}
+
+/*=====================================================
 LAPTOP
 =====================================================*/
 
