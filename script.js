@@ -46,7 +46,7 @@ const navbarContainer = document.getElementById("navbar");
                         GALLERY
                     </a>
 
-                    <a href="../contact/index.html" class="nav-link">
+                    <a href="contact.html" class="nav-link">
                         CONTACT
                     </a>
 
