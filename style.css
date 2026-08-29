@@ -722,17 +722,13 @@ TOP CONTENT
 GRID
 =====================================================*/
 
-.procedure-grid{
-
-    width:100%;
-
-    display:grid;
-
-    grid-template-columns:34% 66%;
-
-    gap:30Spx;
-
-    margin-top:20px;
+.procedure-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
 }
 
 /*=====================================================
