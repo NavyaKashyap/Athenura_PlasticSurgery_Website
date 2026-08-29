@@ -751,7 +751,7 @@ PROCEDURE GRID
 
     grid-template-columns:1fr 1.9fr;
 
-    column-gap:20px;   /* Space between left & right cards */
+    column-gap:200px;   /* Space between left & right cards */
     row-gap:35px;      /* Space between top and bottom rows */
 
     margin-top:25px;
