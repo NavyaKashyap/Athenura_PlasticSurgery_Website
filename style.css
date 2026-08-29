@@ -718,17 +718,22 @@ TOP CONTENT
     color:#246e47;
 }
 
+
 /*=====================================================
-GRID
+PROCEDURE GRID
 =====================================================*/
 
 .procedure-grid {
+    width: calc(100% - 40px);
+    margin: 20px auto 0;
+
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-    padding: 0 20px;
+    grid-template-columns: 32% 1fr;
+
+    column-gap: 30px;
+    row-gap: 30px;
+
     box-sizing: border-box;
-    margin-top: 20px;
 }
 
 /*=====================================================
