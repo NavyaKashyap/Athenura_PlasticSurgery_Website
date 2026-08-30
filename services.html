@@ -61,9 +61,11 @@
     </div>
   </header>
 
-  <!-- Announcement Bar -->
+  <!-- =========================================================
+       ANNOUNCEMENT BAR
+       ========================================================= -->
   <div class="announcement-bar" id="hero">
-    <p><u>Experience exceptional care and personalized aesthetic treatments with our expert team.</u></p>
+    <p>Experience exceptional care and personalized aesthetic treatments with our expert team.</p>
   </div>
 
   <!-- =========================================================
@@ -71,6 +73,8 @@
        homepage hero style, with content specific to this page)
        ========================================================= -->
   <section class="services-hero" id="services-hero">
+    <div class="services-hero__dots" aria-hidden="true"></div>
+    <div class="services-hero__blob-2" aria-hidden="true"></div>
     <div class="container services-hero__inner">
       <div class="services-hero__content">
         <p class="services-hero__tagline">EXPERT CARE, TAILORED RESULTS</p>
@@ -84,7 +88,7 @@
         </div>
       </div>
       <div class="services-hero__media">
-        <img src="images/hero-face.jpg" alt="Surgical marking for a facial procedure at Athenura Clinic" loading="lazy" />
+        <img src="images/hero-treatment-plan-v2.png" alt="Facial assessment markings guiding a personalized treatment plan at Athenura Clinic" loading="lazy" />
       </div>
     </div>
   </section>
@@ -194,11 +198,26 @@
   </section>
 
   <!-- =========================================================
-       "TAKE THE NEXT STEP" CTA SECTION — 50/50 split screen
+       "TAKE THE NEXT STEP" CTA SECTION — full-bleed video
+       background with a frosted-glass panel on the right
        ========================================================= -->
   <section class="cta-section" id="take-next-step">
+    <video
+      class="cta-section__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="images/cta-consultation.jpg"
+      aria-hidden="true"
+    >
+      <source src="images/cta-bg-video.mp4" type="video/mp4" />
+    </video>
+    <div class="cta-section__overlay" aria-hidden="true"></div>
+
     <div class="container cta-section__grid">
-      <div class="cta-section__inner">
+      <div class="cta-section__inner cta-section__glass">
         <p class="cta-section__tagline">TAKE THE NEXT STEP</p>
         <h2 class="cta-section__title">Begin Your Journey To A New You</h2>
         <p class="cta-section__desc">
@@ -209,9 +228,6 @@
         <a href="#hero" class="btn btn-white-solid cta-section__btn" id="cta-book-consultation">
           BOOK CONSULTATION
         </a>
-      </div>
-      <div class="cta-section__media">
-        <img src="images/cta-consultation.jpg" alt="Doctor consulting with a patient and marking treatment areas ahead of a procedure at Athenura Clinic" loading="lazy" />
       </div>
     </div>
   </section>
