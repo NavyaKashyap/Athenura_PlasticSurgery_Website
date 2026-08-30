@@ -59,8 +59,7 @@ main{
 
     gap: 12px;
 
-    /* transform: translateY(-4px); */
-    transform: scale(1.04);
+    transform: translateY(-4px);
 }
 
 .hero-button span {
@@ -132,9 +131,6 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background: linear-gradient(to bottom right,#eef7f2, #3a9963);
-    background: linear-gradient(to bottom right,#d5fde7, #ffffff, #d5fde7);
-    background: linear-gradient(to bottom right,#d5fde7, white); */
     background: linear-gradient(to bottom right,#cfecdb, white, #cfecdb);
 
     order: 1;

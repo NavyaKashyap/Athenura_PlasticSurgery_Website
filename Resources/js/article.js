@@ -119,23 +119,69 @@ function createArticleNavigation() {
 // Show Article Section
 // ==============================
 
+// function showArticleSection(sectionName) {
+
+//     const section = selectedArticle[sectionName];
+
+//     articleContentContainer.innerHTML = `
+
+//         <div class="article-panel active" data-content="${sectionName}">
+
+//             <h2>
+//                 ${section.title}
+//             </h2>
+
+//             ${section.content}
+
+//         </div>
+
+//     `;
+
+// }
+
 function showArticleSection(sectionName) {
 
     const section = selectedArticle[sectionName];
 
-    articleContentContainer.innerHTML = `
+    // Fade current content out
+    articleContentContainer.classList.add("section-changing");
 
-        <div class="article-panel active" data-content="${sectionName}">
 
-            <h2>
-                ${section.title}
-            </h2>
+    setTimeout(function () {
 
-            ${section.content}
+        // Change the content
+        articleContentContainer.innerHTML = `
 
-        </div>
+            <div class="article-panel active" data-content="${sectionName}">
 
-    `;
+                <h2>
+                    ${section.title}
+                </h2>
+
+                ${section.content}
+
+            </div>
+
+        `;
+
+
+        // Start new content from slightly below
+        articleContentContainer.classList.remove("section-changing");
+        articleContentContainer.classList.add("section-enter");
+
+
+        // Trigger the transition
+        requestAnimationFrame(function () {
+
+            requestAnimationFrame(function () {
+
+                articleContentContainer.classList.remove("section-enter");
+
+            });
+
+        });
+
+    }, 300);
 
 }
 

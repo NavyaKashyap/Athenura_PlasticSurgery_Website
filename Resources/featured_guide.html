@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature-Guide</title>
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/featured_guide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+
+<body>
+    <header id="navbar"></header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1> Behind the Myths
+                    <span id="myth-text"></span>
+                </h1>
+
+
+            </div>
+
+            <div class="hero-image">
+                <img src="images/articles/featured_guide_img.png" alt="Doctor consulting with a patient">
+            </div>
+
+        </section>
+
+        <section class="myths-section">
+
+            <div class="myths-heading">
+
+                <span>COMMON MISCONCEPTIONS</span>
+
+                <h2>Myths About Plastic Surgery</h2>
+
+                <p>
+                    Let's separate fiction from facts. Click on any myth to discover
+                    the truth behind it.
+                </p>
+
+            </div>
+
+
+            <div class="myths-grid" id="myths-grid"></div>
+
+        </section>
+
+
+        <!-- ============================== -->
+        <!-- MYTH MODAL -->
+        <!-- ============================== -->
+
+        <div class="myth-overlay" id="myth-overlay">
+
+            <div class="myth-modal" id="myth-modal">
+
+                <!-- LEFT : IMAGE / MYTH -->
+                <div class="myth-modal-image">
+
+                    <img id="modal-myth-image" src="" alt="">
+
+                    <div class="modal-image-fog">
+
+                        <span id="modal-myth-number"></span>
+
+                        <h2 id="modal-myth-title"></h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT : TRUTH -->
+                <div class="myth-modal-content">
+
+                    <button class="myth-close" id="myth-close">
+                        ×
+                    </button>
+
+                    <span class="truth-label">
+                        THE TRUTH
+                    </span>
+
+                    <h2 id="modal-truth-title"></h2>
+
+                    <div id="modal-truth-content"></div>
+
+                    <div class="truth-note">
+
+                        <div class="truth-note-icon">
+                            ✓
+                        </div>
+
+                        <p id="modal-truth-note"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer id="footer"></footer>
+
+
+    <script src="js/components.js"></script>
+
+    <script src="js/featured_guide.js"></script>
+
+</body>
+
+</html>
