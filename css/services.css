@@ -273,9 +273,19 @@ ul, ol {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--c-bg-white);
-  border-bottom: 1px solid var(--c-border-light);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  /* Transparent, premium frosted-glass header — logo and nav stay
+     crisp thanks to the blur + subtle tint, without a hard block. */
+  background-color: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid rgba(47, 138, 92, 0.1);
+  box-shadow: 0 2px 16px rgba(47, 138, 92, 0.05);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header {
+    background-color: rgba(255, 255, 255, 0.96);
+  }
 }
 
 .site-header__inner {
@@ -292,7 +302,7 @@ ul, ol {
 }
 
 .site-header__logo-img {
-  height: 58px;
+  height: 68px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -413,19 +423,52 @@ ul, ol {
   z-index: 0;
 }
 
+/* Second soft decorative blob, lower-left — echoes the layered
+   teal shapes in the reference composition. */
+.services-hero__blob-2 {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 6%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: var(--c-brand-green-light);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Subtle dot-grid accent, lower-left of the copy column */
+.services-hero__dots {
+  position: absolute;
+  left: 4%;
+  bottom: 8%;
+  width: 120px;
+  height: 90px;
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  background-image: radial-gradient(var(--c-accent-teal) 1.6px, transparent 1.6px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
+}
+
 .services-hero__inner {
   display: flex;
-  align-items: center;
-  gap: 56px;
-  padding-top: 56px;
-  padding-bottom: 56px;
+  align-items: flex-start;
+  gap: 40px;
+  padding-top: 0;
   position: relative;
   z-index: 1;
 }
 
 .services-hero__content {
-  flex: 0 0 46%;
-  max-width: 46%;
+  flex: 0 0 44%;
+  max-width: 44%;
+  padding-top: 48px;
+  padding-bottom: 64px;
 }
 
 .services-hero__tagline {
@@ -439,12 +482,12 @@ ul, ol {
 
 .services-hero__title {
   font-family: var(--font-serif);
-  font-size: clamp(38px, 3.8vw, 56px);
-  line-height: 1.08;
+  font-size: clamp(42px, 4.6vw, 68px);
+  line-height: 1.05;
   font-weight: 800;
   letter-spacing: -0.01em;
   color: var(--c-brand-green-dark);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .services-hero__desc {
@@ -481,23 +524,30 @@ ul, ol {
   border-color: var(--c-brand-green-hover);
 }
 
+/* Full-bleed cutout — no card, no border-radius, no shadow.
+   The person is placed directly against the page background and
+   allowed to overflow past the bottom (and slightly past the right
+   edge on very wide screens), matching the reference composition. */
 .services-hero__media {
-  flex: 0 0 48%;
-  max-width: 48%;
-  aspect-ratio: 16 / 10;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 20px 44px rgba(47, 138, 92, 0.16);
+  flex: 1 1 56%;
+  max-width: 56%;
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-self: flex-start;
+  pointer-events: none;
 }
 
 .services-hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
   display: block;
+  width: auto;
+  height: clamp(420px, 46vw, 640px);
+  max-width: 118%;
+  object-fit: contain;
+  object-position: bottom right;
+  margin-right: clamp(-40px, -3vw, -10px);
 }
 
 @media (max-width: 900px) {
@@ -507,21 +557,36 @@ ul, ol {
     top: -60px;
     left: -60px;
   }
+  .services-hero__blob-2 {
+    width: 150px;
+    height: 150px;
+  }
   .services-hero__inner {
     flex-direction: column;
-    gap: 32px;
+    align-items: center;
+    gap: 12px;
     padding-top: 40px;
-    padding-bottom: 44px;
+  }
+  .services-hero__content {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
     text-align: center;
   }
-  .services-hero__content,
   .services-hero__media {
     flex: none;
     max-width: 100%;
     width: 100%;
+    justify-content: center;
+    align-self: center;
   }
-  .services-hero__media {
-    aspect-ratio: 16 / 9;
+  .services-hero__media img {
+    height: auto;
+    max-width: 72%;
+    max-height: 60vh;
+    margin-right: 0;
   }
   .services-hero__desc {
     margin-left: auto;
@@ -535,15 +600,12 @@ ul, ol {
 @media (max-width: 600px) {
   .services-hero__inner {
     padding-top: 32px;
-    padding-bottom: 36px;
-    gap: 26px;
   }
   .services-hero__title {
-    font-size: clamp(28px, 7vw, 36px);
+    font-size: clamp(30px, 8vw, 38px);
   }
-  .services-hero__media {
-    aspect-ratio: 4 / 3;
-    border-radius: var(--radius-md);
+  .services-hero__media img {
+    max-width: 82%;
   }
   .services-hero__actions {
     gap: 16px 22px;
@@ -557,6 +619,46 @@ ul, ol {
   padding-top: 64px;
   padding-bottom: 72px;
   background-color: var(--c-bg-page);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft decorative blob + dot-grid, echoing the hero's visual
+   language so the premium feel carries through the whole page. */
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--c-brand-green-light);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.services-section::after {
+  content: '';
+  position: absolute;
+  left: 3%;
+  bottom: 6%;
+  width: 130px;
+  height: 100px;
+  z-index: 0;
+  opacity: 0.45;
+  pointer-events: none;
+  background-image: radial-gradient(var(--c-accent-teal) 1.6px, transparent 1.6px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
+}
+
+.services-header,
+.service-rows {
+  position: relative;
+  z-index: 1;
 }
 
 .services-header {
@@ -591,19 +693,24 @@ ul, ol {
   line-height: 1.7;
 }
 
-/* Spacious editorial service rows — no scrolling, no tabs */
+/* ---------------------------------------------------------
+   EDITORIAL SERVICE ROWS — 1 per row, alternating zig-zag
+   (image/content swap sides every row), large premium images
+   with an overlapping content card, spacious proportions.
+--------------------------------------------------------- */
 .service-rows {
   display: flex;
   flex-direction: column;
   gap: 0;
+  position: relative;
 }
 
 .service-row {
-  --row-pad: clamp(24px, 1.8vw, 34px);
-  --media-w: clamp(400px, 27vw, 480px);
-  --content-w: clamp(390px, 25vw, 460px);
-  --overlap: clamp(56px, 3.6vw, 70px);
-  --lift: clamp(28px, 1.8vw, 36px);
+  --row-pad: clamp(30px, 2.4vw, 46px);
+  --media-w: clamp(480px, 44vw, 600px);
+  --content-w: clamp(440px, 38vw, 540px);
+  --overlap: clamp(56px, 4vw, 78px);
+  --lift: clamp(28px, 2vw, 40px);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -613,8 +720,7 @@ ul, ol {
 }
 
 /* Thin vertical connector line linking each alternating service,
-   centered on the page and confined to the gap between rows so it
-   never touches or overlaps a service's image or card. */
+   centered on the page and confined to the gap between rows. */
 .service-row + .service-row::before {
   content: '';
   position: absolute;
@@ -623,22 +729,24 @@ ul, ol {
   width: 1px;
   height: calc(var(--row-pad) * 2);
   background-color: var(--c-accent-gold);
-  opacity: 0.55;
+  opacity: 0.5;
   transform: translateX(-50%);
-}
-
-.service-row:nth-child(even) {
-  flex-direction: row-reverse;
 }
 
 .service-row__media {
   flex: 0 0 var(--media-w);
   width: var(--media-w);
   aspect-ratio: 4 / 3;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 10px 24px rgba(47, 138, 92, 0.12);
+  box-shadow: 0 18px 40px rgba(47, 138, 92, 0.16);
   transition: box-shadow 0.4s ease;
+  /* Premium, more colorful Athenura-toned backdrop behind each
+     transparent cutout — teal + green glow over a warm cream base. */
+  background:
+    radial-gradient(circle at 28% 22%, rgba(53, 184, 181, 0.4) 0%, transparent 55%),
+    radial-gradient(circle at 78% 82%, rgba(57, 153, 102, 0.38) 0%, transparent 60%),
+    linear-gradient(145deg, var(--c-cream) 0%, #e4f2ea 100%);
 }
 
 .service-row__media img {
@@ -647,29 +755,27 @@ ul, ol {
   object-fit: cover;
   object-position: center center;
   display: block;
-  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
-}
-
-/* Subtle, professional zoom-in on hover — image stays perfectly
-   contained by the media box's overflow:hidden. */
-.service-row:hover .service-row__media {
-  box-shadow: 0 16px 32px rgba(47, 138, 92, 0.2);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .service-row:hover .service-row__media img {
-  transform: scale(1.07);
+  transform: scale(1.05);
 }
 
-/* Fine-tuned focal point per service so each cropped photo
-   stays centered and undistorted regardless of source aspect ratio. */
-.service-row[data-id="brow-lift"] .service-row__media img { object-position: center center; }
-.service-row[data-id="eyelid"] .service-row__media img { object-position: center center; }
-.service-row[data-id="facelift"] .service-row__media img { object-position: center 30%; }
-.service-row[data-id="fat-transfer-face"] .service-row__media img { object-position: center center; }
-.service-row[data-id="neck-lift"] .service-row__media img { object-position: center center; }
-.service-row[data-id="otoplasty"] .service-row__media img { object-position: center center; }
-.service-row[data-id="rhinoplasty"] .service-row__media img { object-position: center 18%; }
+.service-row:hover .service-row__media {
+  box-shadow: 0 24px 50px rgba(47, 138, 92, 0.24);
+}
+
+/* Fine-tuned focal point per service so each cropped photo shows
+   the complete face/head — nothing cut off at the forehead, hair,
+   or chin — regardless of the source photo's original framing. */
+.service-row[data-id="rhinoplasty"] .service-row__media img { object-position: center 22%; }
+.service-row[data-id="brow-lift"] .service-row__media img { object-position: center 18%; }
+.service-row[data-id="facelift"] .service-row__media img { object-position: center 20%; }
+.service-row[data-id="eyelid"] .service-row__media img { object-position: center 22%; }
+.service-row[data-id="fat-transfer-face"] .service-row__media img { object-position: center 20%; }
+.service-row[data-id="neck-lift"] .service-row__media img { object-position: center 18%; }
+.service-row[data-id="otoplasty"] .service-row__media img { object-position: center 20%; }
 
 .service-row__content {
   flex: 0 0 var(--content-w);
@@ -679,28 +785,31 @@ ul, ol {
   flex-direction: column;
   justify-content: center;
   background-color: #ffffff;
-  padding: 24px 28px;
+  padding: clamp(28px, 2.6vw, 40px) clamp(30px, 2.8vw, 44px);
   margin-top: var(--lift);
   position: relative;
   z-index: 2;
-  box-shadow: 0 14px 30px rgba(47, 138, 92, 0.13);
-  border-radius: var(--radius-sm);
+  box-shadow: 0 18px 40px rgba(47, 138, 92, 0.14);
+  border-radius: var(--radius-md);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .service-row:hover .service-row__content {
   transform: translateY(-4px);
-  box-shadow: 0 20px 38px rgba(47, 138, 92, 0.18);
+  box-shadow: 0 24px 48px rgba(47, 138, 92, 0.2);
 }
 
-/* Odd rows: image left, card right — card overlaps leftwards into the image
-   by ~14% of the image width, staying well clear of the next service. */
+/* Row 1 (odd): image left, content right, overlapping to the left */
 .service-row:nth-child(odd) .service-row__content {
   margin-left: calc(var(--overlap) * -1);
   border-left: 3px solid var(--c-accent-gold);
 }
 
-/* Even rows: card left, image right — card overlaps rightwards into the image */
+/* Row 2 (even): content left, image right — mirrored */
+.service-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
 .service-row:nth-child(even) .service-row__content {
   margin-right: calc(var(--overlap) * -1);
   border-right: 3px solid var(--c-accent-gold);
@@ -709,37 +818,46 @@ ul, ol {
 .service-row__meta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--c-brand-green);
-  margin-bottom: 10px;
+  color: var(--c-brand-green-dark);
+  background-color: rgba(53, 184, 181, 0.12);
+  border: 1px solid rgba(53, 184, 181, 0.28);
+  padding: 5px 12px 5px 10px;
+  border-radius: 999px;
+  margin-bottom: 14px;
 }
 
 .service-row__meta::before {
   content: '';
-  width: 20px;
+  width: 14px;
   height: 1px;
-  background-color: var(--c-accent-gold);
+  background-color: var(--c-accent-teal);
 }
 
 .service-row__name {
   font-family: var(--font-serif);
-  font-size: clamp(24px, 2.2vw, 30px);
+  font-size: clamp(26px, 2.4vw, 32px);
   font-weight: 800;
   color: var(--c-brand-green-dark);
-  margin-bottom: 12px;
-  line-height: 1.15;
+  margin-bottom: 14px;
+  line-height: 1.16;
+  transition: color 0.3s ease;
+}
+
+.service-row:hover .service-row__name {
+  color: var(--c-accent-teal);
 }
 
 .service-row__desc {
-  font-size: 19px;
+  font-size: 17.5px;
   font-weight: 500;
   line-height: 1.65;
-  color: var(--c-text-muted);
-  margin-bottom: 20px;
+  color: rgba(51, 51, 51, 0.8);
+  margin-bottom: 22px;
   max-width: 460px;
 }
 
@@ -751,7 +869,7 @@ ul, ol {
   width: max-content;
   align-items: center;
   gap: 9px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -780,6 +898,55 @@ ul, ol {
   transform: translateY(-1px);
 }
 
+/* Tablet: reduce overlap/sizing a touch, keep the same zig-zag */
+@media (max-width: 1024px) {
+  .service-row {
+    --media-w: clamp(360px, 48vw, 460px);
+    --content-w: clamp(320px, 42vw, 420px);
+    --overlap: clamp(36px, 3vw, 54px);
+  }
+  .service-row__name {
+    font-size: clamp(22px, 2.6vw, 27px);
+  }
+  .service-row__desc {
+    font-size: 16px;
+  }
+}
+
+/* Mobile: stack image on top, card below, full width, no overlap */
+@media (max-width: 860px) {
+  .service-row,
+  .service-row:nth-child(even) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+    padding: 26px 0 40px;
+  }
+  .service-row__media,
+  .service-row__content {
+    width: 100%;
+    max-width: 520px;
+    flex: none;
+  }
+  .service-row__content,
+  .service-row:nth-child(even) .service-row__content {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: calc(var(--lift) * -1);
+    border-left: none;
+    border-right: none;
+    border-top: 3px solid var(--c-accent-gold);
+    width: 92%;
+  }
+  .service-row__desc {
+    max-width: 100%;
+  }
+  .view-details-btn {
+    align-self: center;
+  }
+}
+
 /* ---------------------------------------------------------
    TREATMENT FINDER QUIZ SECTION
 --------------------------------------------------------- */
@@ -787,6 +954,46 @@ ul, ol {
   padding-top: 50px;
   padding-bottom: 60px;
   background-color: var(--c-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Matching soft blob accent from the hero/services sections. */
+.explorer-section::before {
+  content: '';
+  position: absolute;
+  bottom: -90px;
+  right: -70px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: var(--c-brand-green-light);
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Matching dot-grid accent, top-left, for full visual consistency
+   with the hero and services sections. */
+.explorer-section::after {
+  content: '';
+  position: absolute;
+  top: 8%;
+  left: 4%;
+  width: 120px;
+  height: 90px;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  background-image: radial-gradient(var(--c-accent-teal) 1.6px, transparent 1.6px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
+}
+
+.explorer-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .explorer-card {
@@ -965,7 +1172,9 @@ ul, ol {
 }
 
 /* ---------------------------------------------------------
-   CTA / "TAKE THE NEXT STEP" SECTION
+   CTA / "TAKE THE NEXT STEP" SECTION — full-bleed video +
+   frosted-glass content panel. Same section padding/footprint
+   as the previous compact layout.
 --------------------------------------------------------- */
 .cta-section {
   background-color: var(--c-brand-green-dark);
@@ -974,6 +1183,8 @@ ul, ol {
   padding-bottom: 42px;
   text-align: center;
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 /* Clearly visible white horizontal divider separating the Services /
@@ -988,6 +1199,29 @@ ul, ol {
   height: 3px;
   background-color: #ffffff;
   opacity: 0.9;
+  z-index: 3;
+}
+
+/* Full-bleed background video, filling the entire section. */
+.cta-section__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: 0;
+}
+
+/* Brand-green tint over the video, mirrored so it deepens toward
+   the right where the glass panel sits (photo stays clearer on
+   the left), matching the reference composition. */
+.cta-section__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(260deg, rgba(30, 92, 60, 0.92) 0%, rgba(37, 110, 73, 0.82) 32%, rgba(57, 153, 102, 0.5) 62%, rgba(57, 153, 102, 0.28) 100%);
 }
 
 .cta-section__inner {
@@ -996,20 +1230,35 @@ ul, ol {
   margin-right: auto;
 }
 
-/* 50/50 split-screen layout: copy column + image column.
-   Same vertical padding/typography as before — only the inner
-   arrangement changes from a single centered column to two. */
 .cta-section__grid {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
-  gap: 38px;
+  justify-content: flex-end;
   text-align: left;
+  min-height: 320px;
 }
 
-.cta-section__grid .cta-section__inner {
-  flex: 1 1 50%;
-  max-width: 480px;
+/* Frosted-glass panel holding the copy + button — now on the
+   right, with the photo/video reading clearly on the left. */
+.cta-section__glass {
+  flex: 0 1 520px;
+  max-width: 520px;
   margin: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  border-radius: var(--radius-lg);
+  padding: 30px 34px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+}
+
+.cta-section__glass:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.3);
 }
 
 .cta-section__grid .cta-section__statement::before {
@@ -1022,38 +1271,16 @@ ul, ol {
   margin-right: 0;
 }
 
-.cta-section__media {
-  flex: 1 1 50%;
-  max-width: 50%;
-  align-self: stretch;
-  min-height: 220px;
-  max-height: 300px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
-}
-
-.cta-section__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 22%;
-  display: block;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.cta-section:hover .cta-section__media img {
-  transform: scale(1.05);
-}
-
 @media (max-width: 900px) {
   .cta-section__grid {
-    flex-direction: column;
-    text-align: center;
-    gap: 24px;
+    justify-content: center;
+    min-height: 280px;
   }
-  .cta-section__grid .cta-section__inner {
+  .cta-section__glass {
+    flex: 1 1 100%;
     max-width: 100%;
+    text-align: center;
+    padding: 26px 24px;
   }
   .cta-section__grid .cta-section__statement::before {
     left: 50%;
@@ -1062,20 +1289,6 @@ ul, ol {
   .cta-section__grid .cta-section__btn {
     margin-left: auto;
     margin-right: auto;
-  }
-  .cta-section__media {
-    max-width: 100%;
-    width: 100%;
-    min-height: 180px;
-    max-height: 260px;
-    aspect-ratio: 16 / 10;
-  }
-}
-
-@media (max-width: 480px) {
-  .cta-section__media {
-    aspect-ratio: 4 / 3;
-    max-height: 220px;
   }
 }
 
@@ -1688,64 +1901,7 @@ ul, ol {
   }
 }
 
-@media (max-width: 900px) {
-  .service-row,
-  .service-row:nth-child(even) {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0;
-    padding: 22px 0 36px;
-  }
-  .service-row__media,
-  .service-row__content {
-    flex: none;
-    max-width: 100%;
-    width: 100%;
-  }
-  .service-row__media {
-    max-width: 420px;
-    aspect-ratio: 4 / 3;
-  }
-  .service-row__content {
-    align-items: center;
-    width: 90%;
-    max-width: 400px;
-    margin-top: -40px;
-    margin-left: 0;
-    margin-right: 0;
-    border-left: none;
-    border-right: none;
-    border-bottom: 3px solid var(--c-accent-gold);
-    text-align: center;
-  }
-  .service-row:nth-child(odd) .service-row__content,
-  .service-row:nth-child(even) .service-row__content {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .service-row__media img {
-    height: 100%;
-  }
-  .service-row__desc {
-    max-width: 440px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .service-row__meta {
-    justify-content: center;
-  }
-}
-
 @media (max-width: 600px) {
-  .service-row__media {
-    max-width: 340px;
-  }
-  .service-row__content {
-    width: 92%;
-    padding: 22px 20px;
-    margin-top: -32px;
-  }
   .explorer-card {
     padding: 22px 18px;
   }
@@ -1763,13 +1919,13 @@ ul, ol {
     --container-px: 16px;
   }
   .site-header__logo-img {
-    height: 44px;
+    height: 50px;
   }
 }
 
 @media (max-width: 768px) {
   .site-header__logo-img {
-    height: 50px;
+    height: 56px;
   }
 }
 
@@ -1782,7 +1938,9 @@ ul, ol {
     top: 82px;
     left: 0;
     width: 100%;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    backdrop-filter: blur(14px) saturate(160%);
     flex-direction: column;
     padding: 20px;
     gap: 16px;
@@ -1848,10 +2006,24 @@ ul, ol {
   opacity: 1;
 }
 
-/* Service rows fade up individually as the visitor scrolls,
+/* Service rows fade, slide, and lift up individually as the
+   visitor scrolls — direction alternates with the zig-zag layout
+   (odd rows drift in from the right, even rows from the left),
    each with its own small stagger delay set inline by JS. */
 .service-row.reveal-init {
-  transform: translateY(36px);
+  transform: translate(0, 36px);
+}
+
+.service-row:nth-child(odd).reveal-init {
+  transform: translate(24px, 36px);
+}
+
+.service-row:nth-child(even).reveal-init {
+  transform: translate(-24px, 36px);
+}
+
+.service-row.reveal-init.is-visible {
+  transform: translate(0, 0);
 }
 
 /* -----------------------------------------------------------
@@ -1911,16 +2083,10 @@ ul, ol {
   transform: translateY(0);
 }
 
-/* Gold accent dash draws in alongside the heading it introduces */
-.service-row__meta::before {
-  transition: width 0.6s ease 0.15s;
-}
-
 /* -----------------------------------------------------------
-   Card hover polish — explorer + service content cards
+   Card hover polish — explorer + service cards
 ----------------------------------------------------------- */
-.explorer-card,
-.service-row__content {
+.explorer-card {
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
