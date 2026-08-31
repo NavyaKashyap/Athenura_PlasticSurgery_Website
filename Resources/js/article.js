@@ -366,7 +366,7 @@ relatedResources.forEach(function (resource) {
         <div class="card-image">
 
             <img
-                src="${resource.image}"
+                src="${resource.image_card}"
                 alt="${resource.title}"
             >
 
