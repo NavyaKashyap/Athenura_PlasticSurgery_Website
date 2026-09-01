@@ -1,3 +1,7 @@
+// ==============================
+// Taking ID from URL
+// ==============================
+
 const urlParams = new URLSearchParams(window.location.search);
 
 const resourceId = Number(urlParams.get("id"));
@@ -10,21 +14,23 @@ const selectedResource = resources.find(function (resource) {
 
 console.log(selectedResource);
 
+// ==============================
+// Hero of article
+// ==============================
 
 const categoryElement = document.getElementById("article-category");
 const dateElement = document.getElementById("article-date");
 const titleElement = document.getElementById("article-title");
-const descriptionElement = document.getElementById("article-description");
-const articleHero = document.querySelector(".article-hero");
+// const descriptionElement = document.getElementById("article-description");
+const imageElement = document.getElementById("article-image");
 
 
 categoryElement.textContent = selectedResource.category;
 dateElement.textContent = selectedResource.date;
 titleElement.textContent = selectedResource.title;
-descriptionElement.textContent = selectedResource.description;
-articleHero.style.backgroundImage = `url("${selectedResource.image}")`;
-
-// Hero of article
+// descriptionElement.textContent = selectedResource.description;
+imageElement.src = selectedResource.image;
+imageElement.alt = selectedResource.title;
 
 
 
@@ -113,23 +119,69 @@ function createArticleNavigation() {
 // Show Article Section
 // ==============================
 
+// function showArticleSection(sectionName) {
+
+//     const section = selectedArticle[sectionName];
+
+//     articleContentContainer.innerHTML = `
+
+//         <div class="article-panel active" data-content="${sectionName}">
+
+//             <h2>
+//                 ${section.title}
+//             </h2>
+
+//             ${section.content}
+
+//         </div>
+
+//     `;
+
+// }
+
 function showArticleSection(sectionName) {
 
     const section = selectedArticle[sectionName];
 
-    articleContentContainer.innerHTML = `
+    // Fade current content out
+    articleContentContainer.classList.add("section-changing");
 
-        <div class="article-panel active" data-content="${sectionName}">
 
-            <h2>
-                ${section.title}
-            </h2>
+    setTimeout(function () {
 
-            ${section.content}
+        // Change the content
+        articleContentContainer.innerHTML = `
 
-        </div>
+            <div class="article-panel active" data-content="${sectionName}">
 
-    `;
+                <h2>
+                    ${section.title}
+                </h2>
+
+                ${section.content}
+
+            </div>
+
+        `;
+
+
+        // Start new content from slightly below
+        articleContentContainer.classList.remove("section-changing");
+        articleContentContainer.classList.add("section-enter");
+
+
+        // Trigger the transition
+        requestAnimationFrame(function () {
+
+            requestAnimationFrame(function () {
+
+                articleContentContainer.classList.remove("section-enter");
+
+            });
+
+        });
+
+    }, 300);
 
 }
 
@@ -314,7 +366,7 @@ relatedResources.forEach(function (resource) {
         <div class="card-image">
 
             <img
-                src="${resource.image}"
+                src="${resource.image_card}"
                 alt="${resource.title}"
             >
 

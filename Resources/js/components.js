@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     <a href="../index.html" class="nav-link">HOME</a>
 
-                    <a href="../services/index.html" class="nav-link">
+                    <a href="../services.html" class="nav-link">
                         SERVICES
                     </a>
 
-                    <a href="../resources/index.html" class="nav-link">
+                    <a href="resources.html" class="nav-link">
                         RESOURCES
                     </a>
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         GALLERY
                     </a>
 
-                    <a href="../contact/index.html" class="nav-link">
+                    <a href="../contact.html" class="nav-link">
                         CONTACT
                     </a>
 
