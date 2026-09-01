@@ -27,7 +27,7 @@
     <div class="container site-header__inner">
       <a href="index.html" class="site-header__brand" id="header-brand" aria-label="Athenura Home">
         <img 
-          src="images/athenura-logo-original.jpg" 
+          src="images/athenura-logo-color-transparent.png" 
           alt="Athenura - Code. Create. Innovate" 
           class="site-header__logo-img"
           id="header-logo-img"
@@ -62,17 +62,11 @@
   </header>
 
   <!-- =========================================================
-       ANNOUNCEMENT BAR
-       ========================================================= -->
-  <div class="announcement-bar" id="hero">
-    <p>Experience exceptional care and personalized aesthetic treatments with our expert team.</p>
-  </div>
-
-  <!-- =========================================================
        SERVICES PAGE HERO (wide, horizontal — adapted from the
        homepage hero style, with content specific to this page)
        ========================================================= -->
   <section class="services-hero" id="services-hero">
+    <div id="hero"></div>
     <div class="services-hero__dots" aria-hidden="true"></div>
     <div class="services-hero__blob-2" aria-hidden="true"></div>
     <div class="container services-hero__inner">
@@ -245,11 +239,13 @@
         
         <!-- Left Brand / Logo Column -->
         <div class="site-footer__brand-col">
-          <img 
-            src="images/athenura-logo-color-transparent.png" 
-            alt="Athenura - Code. Create. Innovate" 
-            class="site-footer__logo-img"
-          />
+          <div class="site-footer__logo-wrap">
+            <img 
+              src="images/athenura-logo-color-transparent.png" 
+              alt="Athenura - Code. Create. Innovate" 
+              class="site-footer__logo-img"
+            />
+          </div>
           <p class="site-footer__about-text">
             We believe in creating a welcoming experience where every patient feels confident, cared for, and valued.
           </p>
@@ -258,9 +254,26 @@
             <p class="site-footer__hours-text">Mon-Fri : 09:00 AM to 05:00 PM</p>
           </div>
           <div class="site-footer__social-links">
-            <a href="#hero" class="site-footer__social-btn" aria-label="Google">G</a>
-            <a href="#hero" class="site-footer__social-btn" aria-label="Facebook">f</a>
-            <a href="#hero" class="site-footer__social-btn" aria-label="Instagram">&#128247;</a>
+            <a href="#hero" class="site-footer__social-btn" aria-label="Google">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A11 11 0 0 0 12 23z"/>
+                <path d="M5.84 14.09A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.43.34-2.09V7.06H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94z"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.06l3.66 2.85C6.71 7.31 9.14 5.38 12 5.38z"/>
+              </svg>
+            </a>
+            <a href="#hero" class="site-footer__social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M13.5 22v-8.5H16l.5-3.5h-3V7.7c0-1 .3-1.7 1.7-1.7H16.6V2.8C16.3 2.8 15.3 2.7 14.2 2.7c-2.3 0-3.9 1.4-3.9 4V10h-2.6v3.5h2.6V22h3.2z"/>
+              </svg>
+            </a>
+            <a href="#hero" class="site-footer__social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2.5" y="2.5" width="19" height="19" rx="5"/>
+                <circle cx="12" cy="12" r="4.3"/>
+                <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
           </div>
         </div>
 
