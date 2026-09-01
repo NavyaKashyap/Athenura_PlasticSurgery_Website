@@ -34,7 +34,7 @@ const navbarContainer = document.getElementById("navbar");
 
                     <a href="../index.html" class="nav-link">HOME</a>
 
-                    <a href="services.html" class="nav-link">
+                    <a href="../services.html" class="nav-link">
                         SERVICES
                     </a>
 
@@ -46,7 +46,7 @@ const navbarContainer = document.getElementById("navbar");
                         GALLERY
                     </a>
 
-                    <a href="contact.html" class="nav-link">
+                    <a href="../contact.html" class="nav-link">
                         CONTACT
                     </a>
 
