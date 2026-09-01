@@ -24,7 +24,7 @@ const navbarContainer = document.getElementById("navbar");
             <div class="navbar-container">
 
                 <!-- Athenura Logo -->
-                <a href="HomePage/index.html" class="navbar-logo">
+                <a href="index.html" class="navbar-logo">
                     <img src="Resources/images/logo/athenura-logo.png" alt="Athenura">
                 </a>
 
@@ -32,7 +32,7 @@ const navbarContainer = document.getElementById("navbar");
                 <!-- Navigation -->
                 <div class="navbar-menu">
 
-                    <a href="HomePage/index.html" class="nav-link">HOME</a>
+                    <a href="index.html" class="nav-link">HOME</a>
 
                     <a href="../services.html" class="nav-link">
                         SERVICES
