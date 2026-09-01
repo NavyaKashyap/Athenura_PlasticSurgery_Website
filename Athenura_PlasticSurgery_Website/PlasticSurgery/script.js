@@ -556,7 +556,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         70: {
-            image: "Athenura_PlasticSurgery_Website/PlasticSurgery/image/70.jpg",
+            image: "image/70.jpg",
             number: "06",
             alt: "Treatments in your 70s",
 
