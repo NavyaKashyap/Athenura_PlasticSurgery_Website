@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ageData = {
 
         20: {
-            image: "Athenura_PlasticSurgery_Website/PlasticSurgery/image/20.jpg",
+            image: "image/20.jpg",
             number: "01",
             alt: "Treatments in your 20s",
 
@@ -472,7 +472,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         30: {
-            image: "Athenura_PlasticSurgery_Website/PlasticSurgery/image/30.jpg",
+            image: "image/30.jpg",
             number: "02",
             alt: "Treatments in your 30s",
 
@@ -493,7 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         40: {
-            image: "Athenura_PlasticSurgery_Website/PlasticSurgery/image/40.jpg",
+            image: "image/40.jpg",
             number: "03",
             alt: "Treatments in your 40s",
 
@@ -514,7 +514,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         50: {
-            image: "Athenura_PlasticSurgery_Website/PlasticSurgery/image/50.jpg",
+            image: "image/50.jpg",
             number: "04",
             alt: "Treatments in your 50s",
 
@@ -535,7 +535,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         60: {
-            image: "Athenura_PlasticSurgery_Website/PlasticSurgery/image/60.jpg",
+            image: "image/60.jpg",
             number: "05",
             alt: "Treatments in your 60s",
 
