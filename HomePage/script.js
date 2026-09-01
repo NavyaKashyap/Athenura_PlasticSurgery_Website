@@ -32,7 +32,7 @@ const navbarContainer = document.getElementById("navbar");
                 <!-- Navigation -->
                 <div class="navbar-menu">
 
-                    <a href="../index.html" class="nav-link">HOME</a>
+                    <a href="HomePage/index.html" class="nav-link">HOME</a>
 
                     <a href="../services.html" class="nav-link">
                         SERVICES
