@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-green: #24824d;
@@ -69,11 +69,7 @@
     }
 
   
-    /* =================================
-   NAVBAR
-================================= */
-
-/* =================================
+   /* =================================
    NAVBAR
 ================================= */
 
@@ -81,30 +77,18 @@
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 65px;
+
     z-index: 1000;
 
     background: transparent;
 
     transition:
         background 0.35s ease,
-        backdrop-filter 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-/* =================================
-   SCROLLED NAVBAR
-================================= */
-
-.navbar.scrolled {
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 1) 40%,
-        transparent
-    );
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        box-shadow 0.35s ease,
+        backdrop-filter 0.35s ease;
 }
 
 /* =================================
@@ -115,6 +99,7 @@
     width: 90%;
     max-width: 1300px;
     height: 100%;
+
     margin: 0 auto;
 
     display: flex;
@@ -133,7 +118,7 @@
     text-decoration: none;
 
     opacity: 1;
-    transform: translateY(0);
+    visibility: visible;
 
     animation: navItemDrop 0.5s ease-out forwards;
 }
@@ -156,8 +141,6 @@
     align-items: center;
 
     gap: 30px;
-
-    opacity: 1;
 }
 
 /* =================================
@@ -167,28 +150,24 @@
 .nav-link {
     position: relative;
 
-    display: inline-block;
+    color: #ffffff;
 
-    color: #26352d;
-
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
     font-weight: 400;
 
     text-decoration: none;
-
     white-space: nowrap;
 
     opacity: 1;
     visibility: visible;
 
-    transition: color 0.25s ease;
-
-    animation: navItemDrop 0.5s ease-out forwards;
+    transition:
+        color 0.25s ease;
 }
 
 /* =================================
-   NAV LINK HOVER
+   LINK HOVER
 ================================= */
 
 .nav-link:hover {
@@ -196,7 +175,7 @@
 }
 
 /* =================================
-   NAV LINK UNDERLINE
+   UNDERLINE
 ================================= */
 
 .nav-link::after {
@@ -234,34 +213,50 @@
     padding: 0;
 
     border: none;
-
     background: transparent;
 
-    color: #26352d;
+    color: #ffffff;
 
     cursor: pointer;
-
-    opacity: 1;
-    visibility: visible;
 
     transition:
         color 0.25s ease,
         transform 0.25s ease;
-
-    animation: navItemDrop 0.5s ease-out forwards;
 }
 
 .search-button:hover {
     color: #3b9464;
-
     transform: scale(1.08);
 }
 
-.search-button svg {
-    display: block;
+/* =================================
+   SCROLLED NAVBAR
+================================= */
 
-    width: 20px;
-    height: 20px;
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark text after scrolling */
+
+.navbar.scrolled .nav-link {
+    color: #26352d;
+}
+
+.navbar.scrolled .nav-link:hover {
+    color: #3b9464;
+}
+
+.navbar.scrolled .search-button {
+    color: #26352d;
+}
+
+.navbar.scrolled .search-button:hover {
+    color: #3b9464;
 }
 
 /* =================================
@@ -282,7 +277,6 @@
     padding: 5px;
 
     border: none;
-
     background: transparent;
 
     cursor: pointer;
@@ -294,9 +288,15 @@
     width: 24px;
     height: 2px;
 
-    background: #26352d;
+    background: #ffffff;
 
     transition: 0.3s ease;
+}
+
+/* Hamburger becomes dark after scroll */
+
+.navbar.scrolled .menu-toggle span {
+    background: #26352d;
 }
 
 /* =================================
@@ -318,7 +318,7 @@
 }
 
 /* =================================
-   MOBILE NAVBAR
+   MOBILE
 ================================= */
 
 @media (max-width: 860px) {
@@ -360,22 +360,26 @@
     }
 
     .nav-link {
-        color: #26352d;
-
         width: 100%;
+
+        color: #26352d;
 
         font-size: 15px;
     }
 
     .search-button {
-        margin-top: 5px;
+        color: #26352d;
     }
 
     .menu-toggle {
         display: flex;
     }
 
-    /* Hamburger animation */
+    .navbar.scrolled .menu-toggle span {
+        background: #26352d;
+    }
+
+    /* Mobile hamburger animation */
 
     .menu-toggle.active span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
@@ -408,9 +412,7 @@
         left: 4%;
         width: 92%;
     }
-
 }
-   
 
     /* Hero Section */
     .hero {
