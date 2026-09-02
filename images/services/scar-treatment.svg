@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
+      
+      <rect width="600" height="450" fill="#f8ede4"/>
+      <!-- Patient Forearm Resting Horizontally -->
+      <path d="M0,380 L600,280 L600,450 L0,450 Z" fill="#f5ded0"/>
+      <!-- Linear Surgical Scar on Forearm -->
+      <path d="M220,360 C260,345 340,330 400,315" stroke="#f43f5e" stroke-width="7" stroke-linecap="round"/>
+      <path d="M240,355 C270,348 310,340 350,332" stroke="#fda4af" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- Doctor Gloved Hands holding precision laser handpiece -->
+      <path d="M380,0 L320,180 C310,210 280,220 250,220 L240,240 L340,240 L440,0 Z" fill="#ffffff"/>
+      <!-- Precision Cylindrical Laser Stylus -->
+      <rect x="250" y="160" width="30" height="120" rx="8" fill="#334155" stroke="#94a3b8" stroke-width="3" transform="rotate(-25 250 160)"/>
+      <!-- Optical Red Laser Beam striking the scar -->
+      <line x1="285" y1="280" x2="310" y2="340" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="310" cy="340" r="12" fill="#fca5a5" opacity="0.8"/>
+      <circle cx="310" cy="340" r="5" fill="#ef4444"/>
+
+      <rect x="20" y="390" width="160" height="40" rx="20" fill="#0e392b" opacity="0.9"/>
+      <text x="100" y="415" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">SCAR TREATMENT</text>
+    
+    </svg>
