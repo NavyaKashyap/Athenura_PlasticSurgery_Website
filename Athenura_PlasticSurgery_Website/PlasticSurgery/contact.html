@@ -371,6 +371,63 @@
     }
 }
 
+/* =================================
+   BACK TO TOP
+================================= */
+
+.back-to-top {
+
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    border: 2px solid #3b9866;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #3b9866;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Appears after scrolling */
+
+.back-to-top.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* Hover */
+
+.back-to-top:hover {
+
+    transform: translateY(-4px);
+
+}
 
     /* Hero Section */
     .hero {
