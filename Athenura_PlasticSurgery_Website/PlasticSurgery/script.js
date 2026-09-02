@@ -859,3 +859,25 @@ document.addEventListener("DOMContentLoaded", () => {
         >
     `;
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const surgeryCards = document.querySelectorAll(
+        ".surgery-section .left-card, .surgery-section .right-card"
+    );
+
+    surgeryCards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+            card.style.boxShadow =
+                "0 15px 35px rgba(0, 0, 0, 0.08)";
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.boxShadow = "none";
+        });
+
+    });
+
+});
+
