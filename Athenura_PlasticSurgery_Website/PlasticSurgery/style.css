@@ -651,8 +651,8 @@ body {
 
 .surgery-section {
     width: 100%;
-    padding: 60px 0;
-    background: #f7f7f7;
+    /* padding: 60px 0; */
+    /*background-image: url("image/pro\ bg.png");*/
 }
 
 /* =====================================
@@ -5408,6 +5408,12 @@ body {
 img {
     display: block;
     max-width: 100%;
+}
+
+.syr
+{
+     display: block;
+    max-width: 50%;
 }
 
 button,
