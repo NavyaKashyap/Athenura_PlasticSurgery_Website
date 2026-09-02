@@ -649,10 +649,66 @@ body {
    SURGERY SECTION
 ===================================== */
 
+/* =====================================
+   SURGERY SECTION
+===================================== */
+
 .surgery-section {
+    position: relative;
     width: 100%;
-    /* padding: 60px 0; */
-    /*background-image: url("image/pro\ bg.png");*/
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+/* =====================================
+   ABSTRACT VECTOR BACKGROUND
+===================================== */
+
+.surgery-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        linear-gradient(
+            130deg,
+            transparent 0%,
+            transparent 28%,
+            rgba(220, 220, 220, 0.30) 28.5%,
+            rgba(220, 220, 220, 0.30) 30%,
+            transparent 30.5%
+        ),
+        linear-gradient(
+            130deg,
+            transparent 0%,
+            transparent 45%,
+            rgba(220, 220, 220, 0.25) 45.5%,
+            rgba(220, 220, 220, 0.25) 47%,
+            transparent 47.5%
+        ),
+        linear-gradient(
+            130deg,
+            transparent 0%,
+            transparent 62%,
+            rgba(220, 220, 220, 0.25) 62.5%,
+            rgba(220, 220, 220, 0.25) 64%,
+            transparent 64.5%
+        );
+
+    background-size: 500px 500px;
+    background-position:
+        20% -100px,
+        55% 50px,
+        90% -50px;
+
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* =====================================
@@ -660,6 +716,9 @@ body {
 ===================================== */
 
 .surgery-section .container {
+    position: relative;
+    z-index: 1;
+
     width: 100%;
     max-width: none;
     margin: 0;
