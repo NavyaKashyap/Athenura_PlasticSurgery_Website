@@ -804,7 +804,8 @@ body {
 .surgery-section .reverse-row {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    gap: 0px;
+    row-gap: 16px;
+    column-gap: 16px;
 }
 
 .surgery-section .reverse-row .right-card {
