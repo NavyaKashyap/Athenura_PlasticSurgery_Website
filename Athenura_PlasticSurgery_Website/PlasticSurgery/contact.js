@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- Athenura Logo -->
         <a href="index.html" class="navbar-logo">
-          <img src="Athenura_PlasticSurgery_Website/PlasticSurgery/Resources/images/logo/athenura-logo.png" alt="Athenura">
+          <img src="Resources/images/logo/athenura-logo.png" alt="Athenura">
         </a>
 
         <!-- Navigation -->
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="footer-left">
 
               <a href="index.html" class="footer-logo">
-                <img src="Athenura_PlasticSurgery_Website/PlasticSurgery/Resources/images/logo/athenura-logo.png" alt="Athenura Logo">
+                <img src="Resources/images/logo/athenura-logo.png" alt="Athenura Logo">
               </a>
 
               <p class="footer-description">
