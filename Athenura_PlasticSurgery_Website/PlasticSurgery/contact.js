@@ -1,7 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
+const navbarContainer = document.getElementById("navbar");
 
-  const navbarContainer = document.getElementById("navbar");
-
+if (!navbarContainer) {
+  console.error("Navbar container #navbar not found.");
+  return;
+}
   navbarContainer.innerHTML = `
         <nav class="navbar">
 
@@ -109,8 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.classList.toggle("active");
 
   });
-
-});
 
 
 
