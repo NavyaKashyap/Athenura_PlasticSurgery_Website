@@ -704,10 +704,10 @@ body {
 ===================================== */
 
 .surgery-section .row-card {
-     display: grid;
+   display: grid;
     grid-template-columns: 1fr 1.5fr;
     column-gap: 16px;
-    row-gap: 0;
+    row-gap: 16px;
 }
 
 /* =====================================
@@ -802,10 +802,9 @@ body {
 ===================================== */
 
 .surgery-section .reverse-row {
-     display: grid;
+    display: grid;
     grid-template-columns: 1.5fr 1fr;
-    column-gap: 0;
-    row-gap: 0;
+    gap: 0px;
 }
 
 .surgery-section .reverse-row .right-card {
