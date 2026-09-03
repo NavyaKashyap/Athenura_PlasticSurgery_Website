@@ -16,7 +16,7 @@
   var SERVICES = {
     rhinoplasty: {
       name: 'Rhinoplasty', category: 'face', type: 'surgical', goals: ['refine', 'restore'],
-      image: 'images/services/rhinoplasty-reference.png', meta: 'Face & Facial \u2022 Surgical',
+      image: 'images/services/rhinoplasty-reference.jpg', meta: 'Face & Facial \u2022 Surgical',
       desc: 'Refine nasal shape and proportion for a result that stays true to your features.',
       addresses: ['Nasal shape, size or bump concerns', 'Nasal asymmetry', 'Breathing function related to nasal structure'],
       overview: 'Rhinoplasty reshapes the nose to improve balance and proportion with the rest of the face, while preserving natural function.',
@@ -26,7 +26,7 @@
     },
     facelift: {
       name: 'Facelift', category: 'face', type: 'surgical', goals: ['restore', 'rejuvenate'],
-      image: 'images/services/facelift.png', meta: 'Face & Facial \u2022 Surgical',
+      image: 'images/services/facelift.jpg', meta: 'Face & Facial \u2022 Surgical',
       desc: 'Restore a naturally rested, refreshed appearance by addressing facial laxity.',
       addresses: ['Sagging skin along the cheeks and jowls', 'Loss of jawline definition', 'Deep nasolabial folds and loose neck skin'],
       overview: 'A facelift addresses skin laxity and volume loss in the lower face and neck for a naturally refreshed appearance.',
@@ -36,7 +36,7 @@
     },
     eyelid: {
       name: 'Eyelid Surgery', category: 'face', type: 'surgical', goals: ['refine', 'rejuvenate'],
-      image: 'images/services/eyelid.png', meta: 'Face & Facial \u2022 Surgical',
+      image: 'images/services/eyelid.jpg', meta: 'Face & Facial \u2022 Surgical',
       desc: 'Soften the eye area and reduce heaviness for a brighter, more open look.',
       addresses: ['Excess or drooping upper eyelid skin', 'Puffiness or bags under the eyes', 'A tired or heavy-looking eye area'],
       overview: 'Eyelid surgery (blepharoplasty) removes excess skin and reduces puffiness around the upper or lower eyelids.',
@@ -46,7 +46,7 @@
     },
     'brow-lift': {
       name: 'Browlift', category: 'face', type: 'surgical', goals: ['refine', 'rejuvenate'],
-      image: 'images/services/brow-lift.png', meta: 'Face & Facial \u2022 Surgical',
+      image: 'images/services/brow-lift.jpg', meta: 'Face & Facial \u2022 Surgical',
       desc: 'Raise a heavy or drooping brow for a more open, alert expression.',
       addresses: ['A low or heavy brow position', 'Forehead furrows and frown lines', 'Hooded upper eyelids caused by brow position'],
       overview: 'A brow lift repositions the eyebrows and smooths forehead furrows for a naturally refreshed upper face.',
@@ -56,7 +56,7 @@
     },
     'neck-lift': {
       name: 'Neck Lift', category: 'face', type: 'surgical', goals: ['restore', 'refine'],
-      image: 'images/services/neck-lift.png', meta: 'Face & Facial \u2022 Surgical',
+      image: 'images/services/neck-lift.jpg', meta: 'Face & Facial \u2022 Surgical',
       desc: 'Targeted neck lift and platysmaplasty to eliminate sagging skin and muscle bands.',
       addresses: ['Loose or sagging neck skin', 'Vertical neck banding', 'Loss of jawline-to-neck definition'],
       overview: 'A neck lift tightens loose neck skin and underlying muscle bands to redefine the jawline and neck contour.',
@@ -66,7 +66,7 @@
     },
     otoplasty: {
       name: 'Otoplasty', category: 'face', type: 'surgical', goals: ['refine'],
-      image: 'images/services/otoplasty.png', meta: 'Face & Facial \u2022 Surgical',
+      image: 'images/services/otoplasty.jpg', meta: 'Face & Facial \u2022 Surgical',
       desc: 'Cosmetic ear reshaping and pinning to create natural symmetry and proportion.',
       addresses: ['Prominent or protruding ears', 'Ear asymmetry', 'Misshapen ear cartilage'],
       overview: 'Otoplasty reshapes, pins or resizes the ears to improve symmetry and proportion with the head and face.',
@@ -76,7 +76,7 @@
     },
     'fat-transfer-face': {
       name: 'Fat Transfer To Face', category: 'face', type: 'surgical', goals: ['restore', 'refine'],
-      image: 'images/services/fat-transfer-face.png', meta: 'Face & Facial \u2022 Surgical',
+      image: 'images/services/fat-transfer-face.jpg', meta: 'Face & Facial \u2022 Surgical',
       desc: 'Restore soft, natural volume to the face using fat harvested from your own body.',
       addresses: ['Hollowing in the cheeks or temples', 'Volume loss from natural aging', 'A flatter, less contoured facial profile'],
       overview: 'Fat transfer uses your own fat, harvested and purified, to restore soft, natural-looking volume where the face has lost fullness over time.',
@@ -86,7 +86,7 @@
     },
     'chin-jawline': {
       name: 'Chin & Jawline Surgery', category: 'face', type: 'surgical', goals: ['contour', 'refine'],
-      image: 'images/services/chin-jawline.png', meta: 'Face & Facial \u2022 Surgical',
+      image: 'images/services/chin-jawline.jpg', meta: 'Face & Facial \u2022 Surgical',
       desc: 'Mentoplasty and jawline sculpting to strengthen facial profile definition and lower-face symmetry.',
       addresses: ['A weak or recessed chin', 'An undefined jawline', 'Facial profile imbalance'],
       overview: 'Chin and jawline procedures reshape or augment the lower face to improve overall facial balance and profile.',
@@ -97,7 +97,7 @@
 
     liposuction: {
       name: 'Liposuction', category: 'body', type: 'surgical', goals: ['contour', 'refine'],
-      image: 'images/services/liposuction.png', meta: 'Body Contouring \u2022 Surgical',
+      image: 'images/services/liposuction.jpg', meta: 'Body Contouring \u2022 Surgical',
       desc: 'Contour targeted areas by removing stubborn, diet-resistant fat deposits.',
       addresses: ['Stubborn, diet-resistant fat pockets', 'Uneven body contour', 'Localized fullness in specific areas'],
       overview: 'Liposuction removes localized, diet- and exercise-resistant fat to improve body contour.',
@@ -107,7 +107,7 @@
     },
     'tummy-tuck': {
       name: 'Tummy Tuck', category: 'body', type: 'surgical', goals: ['contour', 'restore'],
-      image: 'images/services/tummy-tuck.png', meta: 'Body Contouring \u2022 Surgical',
+      image: 'images/services/tummy-tuck.jpg', meta: 'Body Contouring \u2022 Surgical',
       desc: 'Tighten abdominal muscles and skin for a firmer, smoother midsection.',
       addresses: ['Loose or excess abdominal skin', 'Separated abdominal muscles (diastasis recti)', 'Stubborn lower-abdomen fullness'],
       overview: 'A tummy tuck (abdominoplasty) tightens abdominal muscles and removes excess skin for a firmer midsection.',
@@ -117,7 +117,7 @@
     },
     'body-lift': {
       name: 'Body Lift', category: 'body', type: 'surgical', goals: ['contour', 'restore'],
-      image: 'images/services/body-lift.png', meta: 'Body Contouring \u2022 Surgical',
+      image: 'images/services/body-lift.jpg', meta: 'Body Contouring \u2022 Surgical',
       desc: 'Comprehensive lift removing excess skin around the abdomen, hips and thighs.',
       addresses: ['Excess skin after major weight loss', 'Sagging across the abdomen, hips and thighs', 'Loss of overall body contour'],
       overview: 'A body lift addresses loose skin across multiple areas, often following significant weight loss.',
@@ -127,7 +127,7 @@
     },
     'arm-lift': {
       name: 'Arm Lift', category: 'body', type: 'surgical', goals: ['contour', 'refine'],
-      image: 'images/services/arm-lift.png', meta: 'Body Contouring \u2022 Surgical',
+      image: 'images/services/arm-lift.jpg', meta: 'Body Contouring \u2022 Surgical',
       desc: 'Brachioplasty to tighten loose, sagging skin along the upper arms.',
       addresses: ['Loose, sagging upper-arm skin', 'Arm skin laxity that doesn’t respond to exercise'],
       overview: 'An arm lift (brachioplasty) removes excess skin and tightens tissue along the upper arm.',
@@ -137,7 +137,7 @@
     },
     'thigh-lift': {
       name: 'Thigh Lift', category: 'body', type: 'surgical', goals: ['contour', 'refine'],
-      image: 'images/services/thigh-lift.png', meta: 'Body Contouring \u2022 Surgical',
+      image: 'images/services/thigh-lift.jpg', meta: 'Body Contouring \u2022 Surgical',
       desc: 'Reshape the thighs by removing excess skin and tightening underlying tissue.',
       addresses: ['Loose or sagging thigh skin', 'Inner or outer thigh contour irregularities'],
       overview: 'A thigh lift removes excess skin and improves the contour of the inner or outer thigh.',
@@ -147,7 +147,7 @@
     },
     bbl: {
       name: 'Brazilian Butt Lift', category: 'body', type: 'surgical', goals: ['contour'],
-      image: 'images/services/bbl.png', meta: 'Body Contouring \u2022 Surgical',
+      image: 'images/services/bbl.jpg', meta: 'Body Contouring \u2022 Surgical',
       desc: 'Fat transfer technique to enhance shape and volume of the buttocks.',
       addresses: ['Flat or under-projected buttock volume', 'Asymmetry in buttock shape', 'A desire for a more contoured silhouette using your own tissue'],
       overview: 'A Brazilian Butt Lift uses your own fat, harvested via liposuction, to enhance buttock shape and volume.',
@@ -158,7 +158,7 @@
 
     'breast-augmentation': {
       name: 'Breast Augmentation', category: 'breast', type: 'surgical', goals: ['restore', 'contour'],
-      image: 'images/services/breast-augmentation.png', meta: 'Breast Surgery \u2022 Surgical',
+      image: 'images/services/breast-augmentation.jpg', meta: 'Breast Surgery \u2022 Surgical',
       desc: 'Enhance breast size and shape with implants tailored to your frame.',
       addresses: ['Naturally smaller breast volume', 'Volume loss after pregnancy or weight change', 'Breast size or shape asymmetry'],
       overview: 'Breast augmentation increases breast size and improves shape using implants suited to your anatomy and goals.',
@@ -168,7 +168,7 @@
     },
     'breast-reduction': {
       name: 'Breast Reduction', category: 'breast', type: 'surgical', goals: ['restore', 'refine'],
-      image: 'images/services/breast-reduction.png', meta: 'Breast Surgery \u2022 Surgical',
+      image: 'images/services/breast-reduction.jpg', meta: 'Breast Surgery \u2022 Surgical',
       desc: 'Reduce breast size and weight for improved comfort and proportion.',
       addresses: ['Back, neck or shoulder discomfort from breast size', 'Disproportionate breast-to-body size', 'Skin irritation beneath the breast crease'],
       overview: 'Breast reduction removes excess breast tissue and skin to relieve physical discomfort and improve proportion.',
@@ -178,7 +178,7 @@
     },
     'breast-lift': {
       name: 'Breast Lift', category: 'breast', type: 'surgical', goals: ['restore', 'refine'],
-      image: 'images/services/breast-lift.png', meta: 'Breast Surgery \u2022 Surgical',
+      image: 'images/services/breast-lift.jpg', meta: 'Breast Surgery \u2022 Surgical',
       desc: 'Raise and reshape the breasts to address sagging and lost firmness.',
       addresses: ['Sagging or lower-positioned breasts', 'Loss of breast firmness after pregnancy or breastfeeding', 'A downward-pointing nipple position'],
       overview: 'A breast lift (mastopexy) raises and reshapes the breasts by removing excess skin and repositioning tissue.',
@@ -188,7 +188,7 @@
     },
     'breast-reconstruction': {
       name: 'Breast Reconstruction', category: 'breast', type: 'surgical', goals: ['restore'],
-      image: 'images/services/breast-reconstruction.png', meta: 'Breast Surgery \u2022 Surgical',
+      image: 'images/services/breast-reconstruction.jpg', meta: 'Breast Surgery \u2022 Surgical',
       desc: 'Rebuild breast shape and volume following mastectomy or injury.',
       addresses: ['Breast volume or shape loss after mastectomy', 'Breast asymmetry following surgery or trauma', 'Restoring a natural breast contour'],
       overview: 'Breast reconstruction rebuilds breast shape and volume using implants or the body\u2019s own tissue.',
@@ -198,7 +198,7 @@
     },
     gynecomastia: {
       name: 'Gynecomastia Surgery', category: 'breast', type: 'surgical', goals: ['contour', 'refine'],
-      image: 'images/services/gynecomastia.png', meta: 'Breast Surgery \u2022 Surgical',
+      image: 'images/services/gynecomastia.jpg', meta: 'Breast Surgery \u2022 Surgical',
       desc: 'Reduce enlarged male breast tissue for a flatter, firmer chest contour.',
       addresses: ['Enlarged male breast tissue', 'Chest puffiness that doesn’t respond to diet or exercise', 'Loss of a flat, contoured chest profile'],
       overview: 'Gynecomastia surgery removes excess glandular tissue and/or fat to create a flatter, more contoured chest.',
@@ -209,7 +209,7 @@
 
     botox: {
       name: 'Botox', category: 'non-surgical', type: 'non-surgical', goals: ['refine', 'rejuvenate'],
-      image: 'images/services/botox.png', meta: 'Non-Surgical \u2022 Injectable',
+      image: 'images/services/botox.jpg', meta: 'Non-Surgical \u2022 Injectable',
       desc: 'Smooth fine lines and expression wrinkles with a quick, no-downtime visit.',
       addresses: ['Fine lines and expression wrinkles', 'Forehead and frown lines', 'Crow’s feet around the eyes'],
       overview: 'Botox relaxes targeted facial muscles to smooth fine lines and expression wrinkles.',
@@ -219,7 +219,7 @@
     },
     fillers: {
       name: 'Dermal Fillers', category: 'non-surgical', type: 'non-surgical', goals: ['restore', 'contour'],
-      image: 'images/services/fillers.png', meta: 'Non-Surgical \u2022 Injectable',
+      image: 'images/services/fillers.jpg', meta: 'Non-Surgical \u2022 Injectable',
       desc: 'Restore volume and softly enhance contours using targeted injectable treatments.',
       addresses: ['Volume loss in the cheeks or lips', 'Under-eye hollowing', 'Softened or less-defined facial contours'],
       overview: 'Dermal fillers restore volume and softly enhance contours using targeted injectable treatments.',
@@ -229,7 +229,7 @@
     },
     'chemical-peel': {
       name: 'Chemical Peel', category: 'non-surgical', type: 'non-surgical', goals: ['refine', 'rejuvenate'],
-      image: 'images/services/chemical-peel.png', meta: 'Non-Surgical \u2022 Skin',
+      image: 'images/services/chemical-peel.jpg', meta: 'Non-Surgical \u2022 Skin',
       desc: 'Resurface skin to improve tone, texture and clarity.',
       addresses: ['Uneven skin tone and texture', 'Early sun damage', 'Dullness and rough texture'],
       overview: 'A chemical peel exfoliates the outer skin layers to improve tone, texture and overall clarity.',
@@ -239,7 +239,7 @@
     },
     'laser-skin': {
       name: 'Laser Skin Treatments', category: 'non-surgical', type: 'non-surgical', goals: ['rejuvenate', 'refine'],
-      image: 'images/services/laser-skin.png', meta: 'Non-Surgical \u2022 Skin',
+      image: 'images/services/laser-skin.jpg', meta: 'Non-Surgical \u2022 Skin',
       desc: 'Targeted laser therapy to improve tone, texture and skin quality.',
       addresses: ['Pigmentation and sun spots', 'Uneven skin texture', 'Early signs of skin aging'],
       overview: 'Laser skin treatments use targeted light energy to improve tone, texture and overall skin quality.',
@@ -249,7 +249,7 @@
     },
     'skin-rejuvenation': {
       name: 'Skin Rejuvenation', category: 'non-surgical', type: 'non-surgical', goals: ['rejuvenate'],
-      image: 'images/services/skin-rejuvenation.png', meta: 'Non-Surgical \u2022 Skin',
+      image: 'images/services/skin-rejuvenation.jpg', meta: 'Non-Surgical \u2022 Skin',
       desc: 'Comprehensive treatments to refresh overall skin radiance and quality.',
       addresses: ['An overall loss of skin radiance', 'Combination skin tone and texture concerns', 'General signs of skin aging'],
       overview: 'Skin rejuvenation combines complementary treatments to refresh overall radiance, tone and texture.',
@@ -259,7 +259,7 @@
     },
     'scar-treatment': {
       name: 'Scar Treatment', category: 'non-surgical', type: 'non-surgical', goals: ['refine'],
-      image: 'images/services/scar-treatment.png', meta: 'Non-Surgical \u2022 Skin',
+      image: 'images/services/scar-treatment.jpg', meta: 'Non-Surgical \u2022 Skin',
       desc: 'Reduce the visible appearance of surgical or acne scarring.',
       addresses: ['Visible surgical scarring', 'Acne scarring', 'Raised or discolored scar tissue'],
       overview: 'Scar treatments aim to soften texture, color and visibility of surgical, acne or injury-related scarring.',
@@ -269,7 +269,7 @@
     },
     prp: {
       name: 'PRP Treatment', category: 'non-surgical', type: 'non-surgical', goals: ['rejuvenate', 'restore'],
-      image: 'images/services/prp.png', meta: 'Non-Surgical \u2022 Injectable',
+      image: 'images/services/prp.jpg', meta: 'Non-Surgical \u2022 Injectable',
       desc: 'Platelet-rich plasma therapy to support skin renewal and rejuvenation.',
       addresses: ['Reduced skin radiance and texture', 'Fine lines from early skin aging', 'Support for skin renewal after other treatments'],
       overview: 'PRP treatment uses concentrated platelets from your own blood to support skin renewal and rejuvenation.',
@@ -288,7 +288,7 @@
 
   /* The 7 services shown in the redesigned Services panel, in the
      requested display order. */
-  var PANEL_SERVICES = ['rhinoplasty', 'brow-lift', 'eyelid', 'facelift', 'fat-transfer-face', 'neck-lift', 'otoplasty'];
+  var PANEL_SERVICES = ['brow-lift', 'eyelid', 'facelift', 'fat-transfer-face', 'neck-lift', 'otoplasty', 'rhinoplasty'];
 
   var CATEGORY_INFO = {
     face: {
@@ -710,11 +710,11 @@
       }
     });
 
-    /* --- Service cards: fade up one after another as they scroll in --- */
+    /* --- Service rows: fade up one after another as they scroll in --- */
     var serviceRows = document.querySelectorAll('.service-row');
     serviceRows.forEach(function (row, index) {
       row.classList.add('reveal-init');
-      row.style.setProperty('--reveal-delay', ((index % 2) * 110) + 'ms');
+      row.style.setProperty('--reveal-delay', ((index % 3) * 110) + 'ms');
     });
 
     var revealObserver = new IntersectionObserver(function (entries, observer) {
