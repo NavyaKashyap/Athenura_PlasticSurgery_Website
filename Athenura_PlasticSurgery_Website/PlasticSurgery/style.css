@@ -809,10 +809,11 @@ body {
 }
 
 .surgery-section .heading-wrapper h1 {
-    font-size: 52px;
+    font-size: 32px;
     line-height: 1.1;
     color: #6d9b7e;
     margin-bottom: 20px;
+    margin-top: 20px; ;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
 }
