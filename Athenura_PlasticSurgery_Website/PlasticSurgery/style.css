@@ -318,7 +318,7 @@ button {
 
     overflow: hidden;
 
-    padding-top: 100px;
+    padding-top: 70px;
 
     box-sizing: border-box;
 
@@ -482,7 +482,7 @@ button {
 
     right: 0;
 
-    width: 70%;
+    width: 40%;
 
     height: calc(100% - 100px);
 
