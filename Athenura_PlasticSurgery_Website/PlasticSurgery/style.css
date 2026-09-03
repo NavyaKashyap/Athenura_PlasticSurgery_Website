@@ -439,7 +439,7 @@ button {
 .hero-image{
     position: absolute;
     right: 0;
-    top: 50px;               /* Move image upward */
+    top: 10px;               /* Move image upward */
     width: 58%;
     height: calc(100% - 20px);
 
