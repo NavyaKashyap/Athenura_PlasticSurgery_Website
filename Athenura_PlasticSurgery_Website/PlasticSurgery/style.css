@@ -314,7 +314,7 @@ button {
     padding: 120px 8% 60px;
 
     background-image: url("image/BG.png");
-    background-size: cover;
+    background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
 }
