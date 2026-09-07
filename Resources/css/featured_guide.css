@@ -23,7 +23,7 @@ body {
     font-size: 40px;
     line-height: 1.4;
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.7);
 
     min-height: 110px;
     overflow: hidden;
@@ -47,7 +47,8 @@ body {
 #myth-text.myth-out {
     opacity: 0;
 
-    transform: translateY(45px);
+    /* transform: translateY(45px); */
+    transform: translateY(5px);
 }
 
 
