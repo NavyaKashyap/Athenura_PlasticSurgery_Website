@@ -32,9 +32,9 @@ const navbarContainer = document.getElementById("navbar");
                 <!-- Navigation -->
                 <div class="navbar-menu">
 
-                    <a href="../index.html" class="nav-link">HOME</a>
+                    <a href="index.html" class="nav-link">HOME</a>
 
-                    <a href="services.html" class="nav-link">
+                    <a href="../services.html" class="nav-link">
                         SERVICES
                     </a>
 
@@ -46,7 +46,7 @@ const navbarContainer = document.getElementById("navbar");
                         GALLERY
                     </a>
 
-                    <a href="contact.html" class="nav-link">
+                    <a href="../contact.html" class="nav-link">
                         CONTACT
                     </a>
 
@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ageData = {
 
         20: {
-            image: "image/20s.jpg",
+            image: "image/20.jpg",
             number: "01",
             alt: "Treatments in your 20s",
 
@@ -472,7 +472,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         30: {
-            image: "images/treatment-30s.jpg",
+            image: "image/30.jpg",
             number: "02",
             alt: "Treatments in your 30s",
 
@@ -493,7 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         40: {
-            image: "images/treatment-40s.jpg",
+            image: "image/40.jpg",
             number: "03",
             alt: "Treatments in your 40s",
 
@@ -514,7 +514,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         50: {
-            image: "images/treatment-50s.jpg",
+            image: "image/50.jpg",
             number: "04",
             alt: "Treatments in your 50s",
 
@@ -535,7 +535,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         60: {
-            image: "images/treatment-60s.jpg",
+            image: "image/60.jpg",
             number: "05",
             alt: "Treatments in your 60s",
 
@@ -556,7 +556,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         70: {
-            image: "images/treatment-70s.jpg",
+            image: "image/70.jpg",
             number: "06",
             alt: "Treatments in your 70s",
 
@@ -859,3 +859,25 @@ document.addEventListener("DOMContentLoaded", () => {
         >
     `;
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const surgeryCards = document.querySelectorAll(
+        ".surgery-section .left-card, .surgery-section .right-card"
+    );
+
+    surgeryCards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+            card.style.boxShadow =
+                "0 15px 35px rgba(0, 0, 0, 0.08)";
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.boxShadow = "none";
+        });
+
+    });
+
+});
+
