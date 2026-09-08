@@ -42,7 +42,7 @@ const navbarContainer = document.getElementById("navbar");
                         RESOURCES
                     </a>
 
-                    <a href="../gallery/index.html" class="nav-link">
+                    <a href="Gallery/gallery.html" class="nav-link">
                         GALLERY
                     </a>
 
