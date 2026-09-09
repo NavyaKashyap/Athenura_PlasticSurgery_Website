@@ -806,61 +806,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
     }
-
-
-    /* =================================
-       CTA SECTION
-    ================================= */
-
-    const cta =
-        document.getElementById("cta");
-
-
-    if (cta) {
-
-        cta.className = "cta";
-
-
-        cta.innerHTML = `
-
-            <!-- CTA CONTAINER -->
-            <div class="cta-container">
-
-                <div class="cta-content">
-
-                    <h2>
-                        REQUEST A CONSULTATION
-                    </h2>
-
-
-                    <p>
-                        We are an accomplished group of physician 
-                        teachers and researchers dedicated to advancing 
-                        the field of cosmetic medicine.
-                    </p>
-
-
-                    <a href="#" class="cta-button">
-                        Book Now
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- WOMAN IMAGE -->
-            <img
-                src="Resources/images/cta/cta-woman.png"
-                alt="Woman"
-                class="cta-woman"
-            >
-
-        `;
-
-    }
-
-});
 /*=========================================
     BEFORE & AFTER COMPARISON SLIDER
 =========================================*/
@@ -924,5 +869,59 @@ document.querySelectorAll(".compare-wrapper").forEach((wrapper) => {
         updateSlider(e.touches[0].clientX);
 
     });
+
+});
+
+    /* =================================
+       CTA SECTION
+    ================================= */
+
+    const cta =
+        document.getElementById("cta");
+
+
+    if (cta) {
+
+        cta.className = "cta";
+
+
+        cta.innerHTML = `
+
+            <!-- CTA CONTAINER -->
+            <div class="cta-container">
+
+                <div class="cta-content">
+
+                    <h2>
+                        REQUEST A CONSULTATION
+                    </h2>
+
+
+                    <p>
+                        We are an accomplished group of physician 
+                        teachers and researchers dedicated to advancing 
+                        the field of cosmetic medicine.
+                    </p>
+
+
+                    <a href="#" class="cta-button">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- WOMAN IMAGE -->
+            <img
+                src="Resources/images/cta/cta-woman.png"
+                alt="Woman"
+                class="cta-woman"
+            >
+
+        `;
+
+    }
 
 });
