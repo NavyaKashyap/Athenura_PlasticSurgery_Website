@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
+      
+      <defs>
+        <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f5dfd0"/>
+          <stop offset="50%" stop-color="#e8caa8"/>
+          <stop offset="100%" stop-color="#d6b38f"/>
+        </linearGradient>
+        <linearGradient id="hair" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#2a1b15"/>
+          <stop offset="100%" stop-color="#140b07"/>
+        </linearGradient>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fdfbf8"/>
+          <stop offset="100%" stop-color="#ece2d8"/>
+        </linearGradient>
+        <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+          <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.08"/>
+        </filter>
+      </defs>
+      <rect width="600" height="450" fill="url(#bgGrad)"/>
+      
+      <!-- Patient Profile Silhouette -->
+      <!-- Hair -->
+      <path d="M60,0 C120,0 210,50 210,180 C210,260 170,360 80,450 L0,450 L0,0 Z" fill="url(#hair)"/>
+      <!-- Face & Neck Profile -->
+      <path d="M160,70 C190,75 220,110 220,135 C220,145 200,165 245,175 C255,177 265,183 260,192 C252,202 225,200 220,210 C218,225 240,240 235,255 C230,265 210,270 215,285 C220,305 238,320 230,335 C215,360 180,420 170,450 L270,450 C280,380 320,340 330,300 C340,250 300,150 250,70 Z" fill="url(#skin)" filter="url(#soft)"/>
+      <!-- Eye & Brow -->
+      <path d="M195,142 C205,138 220,140 225,148" stroke="#3d2314" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M198,155 C208,150 218,155 222,160 C212,164 202,162 198,155 Z" fill="#2a1810"/>
+      <!-- Nose Contour & Subtle Dotted Assessment Line -->
+      <path d="M218,145 C220,160 235,172 258,180 L252,192 C238,192 226,190 220,205" stroke="#0e392b" stroke-width="3" stroke-dasharray="4 4" fill="none"/>
+      
+      <!-- Doctor's Gloved Hand & Precision Instrument -->
+      <!-- Arm / Glove coming from right -->
+      <path d="M420,130 C380,140 340,160 310,180 C295,190 280,185 270,182 L260,180 L272,175 C290,165 315,150 360,125 Z" fill="#ffffff" filter="url(#soft)"/>
+      <path d="M420,110 L600,60 L600,240 L450,210 Z" fill="#f8fafc" opacity="0.95"/>
+      <!-- Metallic Marking Instrument -->
+      <rect x="250" y="176" width="60" height="7" rx="3" fill="#94a3b8" transform="rotate(-10 250 176)"/>
+      <polygon points="248,178 255,174 255,182" fill="#0e392b"/>
+      
+      <!-- Lower Gloved Hand supporting chin -->
+      <path d="M230,330 C250,330 280,340 310,380 L360,450 L280,450 C250,400 220,360 215,340 Z" fill="#ffffff" filter="url(#soft)"/>
+      
+      <!-- Branding / Badge -->
+      <rect x="20" y="390" width="180" height="40" rx="20" fill="#0e392b" opacity="0.9"/>
+      <text x="110" y="415" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">RHINOPLASTY</text>
+    
+    </svg>

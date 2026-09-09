@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
+      
+      <rect width="600" height="450" fill="#f6efe7"/>
+      <!-- Patient Face -->
+      <circle cx="260" cy="270" r="160" fill="#f4dfcf"/>
+      <path d="M100,200 C100,80 200,40 320,50 C380,60 420,120 420,200 Z" fill="#d4c3b3"/>
+      <!-- Forehead & Eyebrows with upward elevation markers -->
+      <path d="M160,200 C210,175 270,180 300,195" stroke="#3b271d" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <path d="M330,195 C360,180 410,180 430,205" stroke="#3b271d" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <!-- Doctor Gloved Hands on Forehead (Top) -->
+      <path d="M220,0 L240,150 C250,165 270,165 280,150 L300,0 Z" fill="#ffffff"/>
+      <path d="M340,0 L360,150 C370,165 390,165 400,150 L420,0 Z" fill="#ffffff"/>
+      <!-- Elevation Vectors -->
+      <line x1="230" y1="180" x2="230" y2="120" stroke="#0e392b" stroke-width="4" stroke-dasharray="5 3"/>
+      <polygon points="230,110 224,124 236,124" fill="#0e392b"/>
+      <line x1="370" y1="180" x2="370" y2="120" stroke="#0e392b" stroke-width="4" stroke-dasharray="5 3"/>
+      <polygon points="370,110 364,124 376,124" fill="#0e392b"/>
+
+      <rect x="20" y="390" width="160" height="40" rx="20" fill="#0e392b" opacity="0.9"/>
+      <text x="100" y="415" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">BROW LIFT</text>
+    
+    </svg>
