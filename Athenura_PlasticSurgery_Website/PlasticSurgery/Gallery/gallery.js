@@ -1,6 +1,6 @@
 
 
-const navbarContainer = document.getElementById("navbar");
+document.addEventListener("DOMContentLoaded", () => {
 
   navbarContainer.innerHTML = `
         <nav class="navbar">
@@ -77,6 +77,7 @@ const navbarContainer = document.getElementById("navbar");
 
         </nav>
     `;
+
 
 
   /* =================================
@@ -524,7 +525,6 @@ FOOTER
 ==============*/
 
 document.addEventListener ("DOMContentLoaded", () => {
-  const footerContainer = document.getElementById("footer");
 
   if (!footerContainer) return;
 
@@ -624,7 +624,7 @@ document.addEventListener ("DOMContentLoaded", () => {
 
       </div>
     </footer>
-  `;})
+  `;
   
 /* =================================
    CTA Section
@@ -675,8 +675,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alt="Woman"
             class="cta-woman"
         >
-    `;
+       `;
 });
-
-
-
+});
+});
