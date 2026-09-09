@@ -1,161 +1,178 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  navbarContainer.innerHTML = `
-        <nav class="navbar">
+    /* =================================
+       NAVBAR
+    ================================= */
 
-            <div class="navbar-container">
+    const navbarContainer = document.getElementById("navbar");
 
-                <!-- Athenura Logo -->
-                <a href="index.html" class="navbar-logo">
-                    <img src="Resources/images/logo/athenura-logo.png" alt="Athenura">
-                </a>
+    if (navbarContainer) {
 
+        navbarContainer.innerHTML = `
+            <nav class="navbar">
 
-                <!-- Navigation -->
-                <div class="navbar-menu">
+                <div class="navbar-container">
 
-                    <a href="index.html" class="nav-link">HOME</a>
-
-                    <a href="../services.html" class="nav-link">
-                        SERVICES
-                    </a>
-
-                    <a href="Resources/resources.html" class="nav-link">
-                        RESOURCES
-                    </a>
-
-                    <a href="Gallery/gallery.html" class="nav-link">
-                        GALLERY
-                    </a>
-
-                    <a href="../contact.html" class="nav-link">
-                        CONTACT
-                    </a>
-
-                    <a href="../offers/index.html" class="nav-link">
-                        OFFERS
-                    </a>
-
-                    <!-- Search -->
-                    <button class="search-button" aria-label="Search">
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
+                    <!-- Athenura Logo -->
+                    <a href="../index.html" class="navbar-logo">
+                        <img 
+                            src="../Resources/images/logo/athenura-logo.png" 
+                            alt="Athenura"
                         >
-                            <circle
-                                cx="11"
-                                cy="11"
-                                r="7"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            />
-                            <path
-                                d="M16.5 16.5L21 21"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                            />
-                        </svg>
+                    </a>
+
+                    <!-- Navigation -->
+                    <div class="navbar-menu">
+
+                        <a href="../index.html" class="nav-link">
+                            HOME
+                        </a>
+
+                        <a href="../services.html" class="nav-link">
+                            SERVICES
+                        </a>
+
+                        <a href="../Resources/resources.html" class="nav-link">
+                            RESOURCES
+                        </a>
+
+                        <a href="../Gallery/gallery.html" class="nav-link">
+                            GALLERY
+                        </a>
+
+                        <a href="../contact.html" class="nav-link">
+                            CONTACT
+                        </a>
+
+                        <a href="../offers/index.html" class="nav-link">
+                            OFFERS
+                        </a>
+
+                        <!-- Search -->
+                        <button 
+                            class="search-button" 
+                            aria-label="Search"
+                            type="button"
+                        >
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <circle
+                                    cx="11"
+                                    cy="11"
+                                    r="7"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+
+                                <path
+                                    d="M16.5 16.5L21 21"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Mobile Menu -->
+                    <button 
+                        class="menu-toggle" 
+                        aria-label="Open menu"
+                        type="button"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
 
                 </div>
 
-
-                <!-- Mobile Menu Button -->
-                <button class="menu-toggle" aria-label="Open menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-            </div>
-
-        </nav>
-    `;
+            </nav>
+        `;
 
 
+        /* =================================
+           SCROLL EFFECT
+        ================================= */
 
-  /* =================================
-     SCROLL EFFECT
-  ================================= */
+        const navbar = document.querySelector(".navbar");
 
-  const navbar = document.querySelector(".navbar");
+        if (navbar) {
 
-  window.addEventListener("scroll", () => {
+            window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 30) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
+                if (window.scrollY > 30) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
 
-  });
-
-
-  /* =================================
-     MOBILE MENU
-  ================================= */
-
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navbarMenu = document.querySelector(".navbar-menu");
-
-  menuToggle.addEventListener("click", () => {
-
-    navbarMenu.classList.toggle("active");
-    menuToggle.classList.toggle("active");
-
-  });
-
-
-
-
-
-// ==================================================
-// BACK TO TOP
-// ==================================================
-
-const backToTop =
-    document.getElementById("backToTop");
-
-if (backToTop) {
-
-    // Show / hide button while scrolling
-
-    window.addEventListener("scroll", function () {
-
-        if (window.scrollY > 500) {
-
-            backToTop.classList.add("show");
-
-        } else {
-
-            backToTop.classList.remove("show");
+            });
 
         }
 
-    });
+
+        /* =================================
+           MOBILE MENU
+        ================================= */
+
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navbarMenu = document.querySelector(".navbar-menu");
+
+        if (menuToggle && navbarMenu) {
+
+            menuToggle.addEventListener("click", () => {
+
+                navbarMenu.classList.toggle("active");
+                menuToggle.classList.toggle("active");
+
+            });
+
+        }
+
+    }
 
 
-    // Scroll to top when clicked
+    /* =================================
+       BACK TO TOP
+    ================================= */
 
-    backToTop.addEventListener("click", function () {
+    const backToTop = document.getElementById("backToTop");
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+    if (backToTop) {
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 500) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+
         });
 
-    });
 
-}
-/* =====================================================
+        backToTop.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    }
+
+
+    /* =================================
        GALLERY FILTER
-    ===================================================== */
+    ================================= */
 
     const filterButtons =
         document.querySelectorAll(".filter-btn");
@@ -168,26 +185,20 @@ if (backToTop) {
 
         button.addEventListener("click", () => {
 
-            /* Remove active */
-
+            /* Remove active class */
             filterButtons.forEach(btn => {
-
                 btn.classList.remove("active");
-
             });
 
-
-            /* Add active */
-
+            /* Add active class */
             button.classList.add("active");
 
-
+            /* Get filter */
             const filter =
                 button.getAttribute("data-filter");
 
 
-            /* Filter items */
-
+            /* Filter gallery */
             galleryItems.forEach(item => {
 
                 if (
@@ -209,9 +220,10 @@ if (backToTop) {
 
     });
 
-/* =====================================================
+
+    /* =================================
        LIGHTBOX
-    ===================================================== */
+    ================================= */
 
     const lightbox =
         document.getElementById("lightbox");
@@ -235,9 +247,9 @@ if (backToTop) {
     let currentIndex = 0;
 
 
-    /* =================================================
-       VISIBLE ITEMS
-    ================================================= */
+    /* =================================
+       GET VISIBLE ITEMS
+    ================================= */
 
     function getVisibleItems() {
 
@@ -252,16 +264,13 @@ if (backToTop) {
     }
 
 
-    /* =================================================
+    /* =================================
        OPEN LIGHTBOX
-    ================================================= */
+    ================================= */
 
     function openLightbox(index) {
 
-        if (
-            !lightbox ||
-            !lightboxImage
-        ) {
+        if (!lightbox || !lightboxImage) {
             return;
         }
 
@@ -299,7 +308,6 @@ if (backToTop) {
         lightboxImage.src =
             image.src;
 
-
         lightboxImage.alt =
             image.alt;
 
@@ -314,16 +322,15 @@ if (backToTop) {
 
         lightbox.classList.add("show");
 
-
         document.body.style.overflow =
             "hidden";
 
     }
 
 
-    /* =================================================
+    /* =================================
        CLOSE LIGHTBOX
-    ================================================= */
+    ================================= */
 
     function closeLightbox() {
 
@@ -334,16 +341,15 @@ if (backToTop) {
 
         lightbox.classList.remove("show");
 
-
         document.body.style.overflow =
             "";
 
     }
 
 
-    /* =================================================
-       NEXT
-    ================================================= */
+    /* =================================
+       NEXT IMAGE
+    ================================= */
 
     function showNext() {
 
@@ -372,9 +378,11 @@ if (backToTop) {
         openLightbox(currentIndex);
 
     }
- /* =================================================
-       PREVIOUS
-    ================================================= */
+
+
+    /* =================================
+       PREVIOUS IMAGE
+    ================================= */
 
     function showPrevious() {
 
@@ -403,9 +411,9 @@ if (backToTop) {
     }
 
 
-    /* =====================================================
+    /* =================================
        GALLERY IMAGE CLICK
-    ===================================================== */
+    ================================= */
 
     galleryItems.forEach(item => {
 
@@ -426,9 +434,9 @@ if (backToTop) {
     });
 
 
-    /* =====================================================
+    /* =================================
        LIGHTBOX BUTTONS
-    ===================================================== */
+    ================================= */
 
     if (closeButton) {
 
@@ -460,17 +468,15 @@ if (backToTop) {
     }
 
 
-    /* =====================================================
-       CLICK OUTSIDE
-    ===================================================== */
+    /* =================================
+       CLICK OUTSIDE LIGHTBOX
+    ================================= */
 
     if (lightbox) {
 
         lightbox.addEventListener("click", event => {
 
-            if (
-                event.target === lightbox
-            ) {
+            if (event.target === lightbox) {
 
                 closeLightbox();
 
@@ -481,9 +487,9 @@ if (backToTop) {
     }
 
 
-    /* =====================================================
-       KEYBOARD
-    ===================================================== */
+    /* =================================
+       KEYBOARD CONTROLS
+    ================================= */
 
     document.addEventListener("keydown", event => {
 
@@ -520,162 +526,338 @@ if (backToTop) {
     });
 
 
-/*============
-FOOTER
-==============*/
+    /* =================================
+       FOOTER
+    ================================= */
 
-document.addEventListener ("DOMContentLoaded", () => {
+    const footerContainer =
+        document.getElementById("footer");
 
-  if (!footerContainer) return;
 
-  footerContainer.innerHTML = `
-    <footer class="footer">
-      <div class="footer-container">
-        
-        <!-- MAIN CONTENT GRID -->
-        <div class="footer-main">
+    if (footerContainer) {
 
-          <!-- LEFT COLUMN -->
-          <div class="footer-left">
-            <a href="../index.html" class="footer-logo">
-              <img src="Resources/images/logo/athenura-logo.png" alt="Athenura Logo">
-            </a>
+        footerContainer.innerHTML = `
 
-            <p class="footer-description">
-              We believe in creating a welcoming experience where every patient feels confident, cared for, and valued.
-            </p>
+            <footer class="footer">
 
-            <div class="footer-hours-section">
-              <h3 class="footer-title">
-                <i class="fa-regular fa-hand-point-right"></i> Hours Of Operation
-              </h3>
-              <p class="hours-text">Mon-Fri : 09:00 AM to 05:00 PM</p>
+                <div class="footer-container">
+
+                    <!-- MAIN CONTENT GRID -->
+                    <div class="footer-main">
+
+                        <!-- LEFT COLUMN -->
+                        <div class="footer-left">
+
+                            <a 
+                                href="../index.html" 
+                                class="footer-logo"
+                            >
+                                <img 
+                                    src="../Resources/images/logo/athenura-logo.png" 
+                                    alt="Athenura Logo"
+                                >
+                            </a>
+
+
+                            <p class="footer-description">
+                                We believe in creating a welcoming experience 
+                                where every patient feels confident, cared for, 
+                                and valued.
+                            </p>
+
+
+                            <div class="footer-hours-section">
+
+                                <h3 class="footer-title">
+                                    <i class="fa-regular fa-hand-point-right"></i>
+                                    Hours Of Operation
+                                </h3>
+
+                                <p class="hours-text">
+                                    Mon-Fri : 09:00 AM to 05:00 PM
+                                </p>
+
+                            </div>
+
+
+                            <div class="social-links">
+
+                                <a 
+                                    href="https://www.google.com/" 
+                                    target="_blank"
+                                    aria-label="Google"
+                                >
+                                    <i class="fa-brands fa-google"></i>
+                                </a>
+
+
+                                <a 
+                                    href="https://www.facebook.com/" 
+                                    target="_blank"
+                                    aria-label="Facebook"
+                                >
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+
+
+                                <a 
+                                    href="https://www.instagram.com/" 
+                                    target="_blank"
+                                    aria-label="Instagram"
+                                >
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RIGHT COLUMNS -->
+                        <div class="footer-grid">
+
+                            <!-- ABOUT -->
+                            <div class="footer-column">
+
+                                <h3 class="footer-title">
+                                    About Us
+                                </h3>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="../about/index.html">
+                                            About Us
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Meet Our Providers
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Post
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Feedback
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Reviews
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+
+                                <h3 class="footer-title subheading">
+                                    Contact
+                                </h3>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="#">
+                                            Get Direction
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Direction to SmartLipo
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Appointments
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Business Hours
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+
+                            <!-- RESOURCES -->
+                            <div class="footer-column">
+
+                                <h3 class="footer-title">
+                                    Resources
+                                </h3>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="#">
+                                            Local Resources
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Library
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Social Media
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Newsletter Sign Up
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Content
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+
+                                <h3 class="footer-title subheading">
+                                    Services
+                                </h3>
+
+                                <ul>
+
+                                    <li>
+                                        <a href="#">
+                                            Brazilian Butt Lift 
+                                            (Fat Transfer) Specialist
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Fat Reduction
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Chemical Peel
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            CO2 Laser Treatment
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            Fat Transfer Surgery
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+
+                                <a 
+                                    href="../services/index.html" 
+                                    class="view-all"
+                                >
+                                    View All 
+                                    <i class="fa-regular fa-hand-point-right"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COPYRIGHT -->
+                    <div class="footer-bottom">
+
+                        <p>
+                            © 2026 Athenura. All Rights Reserved.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </footer>
+
+        `;
+
+    }
+
+
+    /* =================================
+       CTA SECTION
+    ================================= */
+
+    const cta =
+        document.getElementById("cta");
+
+
+    if (cta) {
+
+        cta.className = "cta";
+
+
+        cta.innerHTML = `
+
+            <!-- CTA CONTAINER -->
+            <div class="cta-container">
+
+                <div class="cta-content">
+
+                    <h2>
+                        REQUEST A CONSULTATION
+                    </h2>
+
+
+                    <p>
+                        We are an accomplished group of physician 
+                        teachers and researchers dedicated to advancing 
+                        the field of cosmetic medicine.
+                    </p>
+
+
+                    <a href="#" class="cta-button">
+                        Book Now
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="social-links">
-              <a href="https://www.google.com/" target="_blank" aria-label="Google">
-                <i class="fa-brands fa-google"></i>
-              </a>
-              <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </div>
-          </div>
 
-          <!-- RIGHT COLUMNS SECTION -->
-          <div class="footer-grid">
-            
-            <!-- Column 1: About Us & Contact -->
-            <div class="footer-column">
-              <h3 class="footer-title">About Us</h3>
-              <ul>
-                <li><a href="../about/index.html">About Us</a></li>
-                <li><a href="#">Meet Our Providers</a></li>
-                <li><a href="#">Post</a></li>
-                <li><a href="#">Feedback</a></li>
-                <li><a href="#">Reviews</a></li>
-              </ul>
-
-              <h3 class="footer-title subheading">Contact</h3>
-              <ul>
-                <li><a href="#">Get Direction</a></li>
-                <li><a href="#">Direction to SmartLipo</a></li>
-                <li><a href="#">Appointments</a></li>
-                <li><a href="#">Business Hours</a></li>
-              </ul>
-            </div>
-
-            <!-- Column 2: Resources & Services -->
-            <div class="footer-column">
-              <h3 class="footer-title">Resources</h3>
-              <ul>
-                <li><a href="#">Local Resources</a></li>
-                <li><a href="#">Library</a></li>
-                <li><a href="#">Social Media</a></li>
-                <li><a href="#">Newsletter Sign Up</a></li>
-                <li><a href="#">Content</a></li>
-              </ul>
-
-              <h3 class="footer-title subheading">Services</h3>
-              <ul>
-                <li><a href="#">Brazilian Butt Lift (Fat Transfer) Specialist</a></li>
-                <li><a href="#">Fat Reduction</a></li>
-                <li><a href="#">Chemical Peel</a></li>
-                <li><a href="#">CO2 Laser Treatment</a></li>
-                <li><a href="#">Fat Transfer Surgery</a></li>
-              </ul>
-
-              <a href="../services/index.html" class="view-all">View All <i class="fa-regular fa-hand-point-right"></i></a>
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- COPYRIGHT -->
-        
-          <div class="footer-bottom">
-            <p>© 2026 Athenura. All Rights Reserved.</p>
-          </div>
-       
-
-      </div>
-    </footer>
-  `;
-  
-/* =================================
-   CTA Section
-================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const cta = document.getElementById("cta");
-
-    if (!cta) return;
-
-    cta.className = "cta";
-
-    cta.innerHTML = `
-        <!-- CTA CONTAINER -->
-        <div class="cta-container">
-
-            <!-- VECTOR BACKGROUND 
+            <!-- WOMAN IMAGE -->
             <img
-                src="image/vector2.png"
-                alt=""
-                class="cta-vector"
-            >-->
+                src="Resources/images/cta/cta-woman.png"
+                alt="Woman"
+                class="cta-woman"
+            >
 
-            <!-- CTA CONTENT -->
-            <div class="cta-content">
+        `;
 
-                <h2>REQUEST A CONSULTATION</h2>
+    }
 
-                <p>
-                    We are an accomplished group of physician teachers and
-                    researchers dedicated to advancing the field of cosmetic
-                    medicine.
-                </p>
-
-                <a href="#" class="cta-button">
-                    Book Now
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- WOMAN IMAGE -->
-        <img
-            src="Resources/images/cta/cta-woman.png"
-            alt="Woman"
-            class="cta-woman"
-        >
-       `;
-});
-});
 });
