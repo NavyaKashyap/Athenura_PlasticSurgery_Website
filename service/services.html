@@ -27,7 +27,7 @@
     <div class="container site-header__inner">
       <a href="index.html" class="site-header__brand" id="header-brand" aria-label="Athenura Home">
         <img 
-          src="images/athenura-logo-original.jpg" 
+          src="images/athenura-logo-color-transparent.png" 
           alt="Athenura - Code. Create. Innovate" 
           class="site-header__logo-img"
           id="header-logo-img"
@@ -37,41 +37,39 @@
       <nav class="site-header__nav" aria-label="Main Navigation">
         <ul class="site-header__nav-list" id="site-nav-links">
           <li><a href="#hero" class="site-header__nav-link">HOME</a></li>
-          <li><a href="#services-section" class="site-header__nav-link is-active">SERVICES &#9662;</a></li>
-          <li><a href="#services-section" class="site-header__nav-link">RESOURCES &#9662;</a></li>
+          <li><a href="#services-section" class="site-header__nav-link is-active">SERVICES</a></li>
+          <li><a href="#services-section" class="site-header__nav-link">RESOURCES</a></li>
           <li><a href="#treatment-finder" class="site-header__nav-link">GALLERY</a></li>
-          <li><a href="#take-next-step" class="site-header__nav-link">CONTACT &#9662;</a></li>
+          <li><a href="#take-next-step" class="site-header__nav-link">CONTACT</a></li>
           <li><a href="#take-next-step" class="site-header__nav-link">OFFERS</a></li>
           <li>
             <button type="button" class="site-header__search-btn" aria-label="Search treatments">
-              &#128269;
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
             </button>
           </li>
         </ul>
       </nav>
 
-      <div style="display: flex; align-items: center; gap: 14px;">
-        <a href="#take-next-step" class="btn btn-primary site-header__cta-btn" id="header-book-btn">BOOK CONSULTATION</a>
-        <button class="site-header__toggle" id="site-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+      <button class="site-header__toggle" id="site-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
-
-  <!-- Announcement Bar -->
-  <div class="announcement-bar" id="hero">
-    <p><u>Experience exceptional care and personalized aesthetic treatments with our expert team.</u></p>
-  </div>
 
   <!-- =========================================================
        SERVICES PAGE HERO (wide, horizontal — adapted from the
        homepage hero style, with content specific to this page)
        ========================================================= -->
   <section class="services-hero" id="services-hero">
-    <div class="container services-hero__inner">
+    <div id="hero"></div>
+    <div class="services-hero__dots" aria-hidden="true"></div>
+    <div class="services-hero__blob-2" aria-hidden="true"></div>
+    <div class="services-hero__inner">
       <div class="services-hero__content">
         <p class="services-hero__tagline">EXPERT CARE, TAILORED RESULTS</p>
         <h1 class="services-hero__title">Procedures Built Around Your Goals</h1>
@@ -84,7 +82,7 @@
         </div>
       </div>
       <div class="services-hero__media">
-        <img src="images/hero-face.jpg" alt="Surgical marking for a facial procedure at Athenura Clinic" loading="lazy" />
+        <img src="images/hero-treatment-plan-v4.png" alt="Clinician gently assessing a patient's facial contours ahead of a personalized treatment plan at Athenura Clinic" loading="lazy" />
       </div>
     </div>
   </section>
@@ -194,11 +192,26 @@
   </section>
 
   <!-- =========================================================
-       "TAKE THE NEXT STEP" CTA SECTION — 50/50 split screen
+       "TAKE THE NEXT STEP" CTA SECTION — full-bleed video
+       background with a frosted-glass panel on the right
        ========================================================= -->
   <section class="cta-section" id="take-next-step">
+    <video
+      class="cta-section__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="images/cta-consultation.jpg"
+      aria-hidden="true"
+    >
+      <source src="images/cta-bg-video.mp4" type="video/mp4" />
+    </video>
+    <div class="cta-section__overlay" aria-hidden="true"></div>
+
     <div class="container cta-section__grid">
-      <div class="cta-section__inner">
+      <div class="cta-section__inner cta-section__glass">
         <p class="cta-section__tagline">TAKE THE NEXT STEP</p>
         <h2 class="cta-section__title">Begin Your Journey To A New You</h2>
         <p class="cta-section__desc">
@@ -209,9 +222,6 @@
         <a href="#hero" class="btn btn-white-solid cta-section__btn" id="cta-book-consultation">
           BOOK CONSULTATION
         </a>
-      </div>
-      <div class="cta-section__media">
-        <img src="images/cta-consultation.jpg" alt="Doctor consulting with a patient and marking treatment areas ahead of a procedure at Athenura Clinic" loading="lazy" />
       </div>
     </div>
   </section>
@@ -229,84 +239,96 @@
         
         <!-- Left Brand / Logo Column -->
         <div class="site-footer__brand-col">
-          <img 
-            src="images/athenura-logo-white.png" 
-            alt="Athenura - Code. Create. Innovate" 
-            class="site-footer__logo-img"
-          />
+          <div class="site-footer__logo-wrap">
+            <img 
+              src="images/athenura-logo-color-transparent.png" 
+              alt="Athenura - Code. Create. Innovate" 
+              class="site-footer__logo-img"
+            />
+          </div>
           <p class="site-footer__about-text">
             We believe in creating a welcoming experience where every patient feels confident, cared for, and valued.
           </p>
           <div>
-            <h5 class="site-footer__hours-title">&#128197; Hours Of Operation</h5>
+            <h5 class="site-footer__hours-title">&#9758; Hours Of Operation</h5>
             <p class="site-footer__hours-text">Mon-Fri : 09:00 AM to 05:00 PM</p>
           </div>
           <div class="site-footer__social-links">
-            <a href="#hero" class="site-footer__social-btn" aria-label="Google">G</a>
-            <a href="#hero" class="site-footer__social-btn" aria-label="Facebook">f</a>
-            <a href="#hero" class="site-footer__social-btn" aria-label="Instagram">&#128247;</a>
+            <a href="#hero" class="site-footer__social-btn" aria-label="Google">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A11 11 0 0 0 12 23z"/>
+                <path d="M5.84 14.09A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.43.34-2.09V7.06H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94z"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.06l3.66 2.85C6.71 7.31 9.14 5.38 12 5.38z"/>
+              </svg>
+            </a>
+            <a href="#hero" class="site-footer__social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M13.5 22v-8.5H16l.5-3.5h-3V7.7c0-1 .3-1.7 1.7-1.7H16.6V2.8C16.3 2.8 15.3 2.7 14.2 2.7c-2.3 0-3.9 1.4-3.9 4V10h-2.6v3.5h2.6V22h3.2z"/>
+              </svg>
+            </a>
+            <a href="#hero" class="site-footer__social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2.5" y="2.5" width="19" height="19" rx="5"/>
+                <circle cx="12" cy="12" r="4.3"/>
+                <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
           </div>
         </div>
 
-        <!-- Column Pair A: About Us (top) + Contact (bottom) -->
-        <div class="site-footer__col-pair">
-          <div>
-            <h4 class="site-footer__col-title">About Us</h4>
-            <ul class="site-footer__link-list">
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#hero" class="site-footer__link">About Us</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#services-section" class="site-footer__link">Meet Our Providers</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#take-next-step" class="site-footer__link">Post</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#take-next-step" class="site-footer__link">Feedback</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#take-next-step" class="site-footer__link">Reviews</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="site-footer__col-title">Contact</h4>
-            <ul class="site-footer__link-list">
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#site-footer" class="site-footer__link">Get Direction</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#take-next-step" class="site-footer__link">Appointments</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#site-footer" class="site-footer__link">Business Hours</a></li>
-            </ul>
-          </div>
+        <!-- About Us Column -->
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">About Us</h4>
+          <ul class="site-footer__link-list">
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#hero" class="site-footer__link">About Us</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#hero" class="site-footer__link">Meet Our Providers</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Post</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#take-next-step" class="site-footer__link">Feedback</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#take-next-step" class="site-footer__link">Reviews</a></li>
+          </ul>
         </div>
 
-        <!-- Column Pair B: Resources (top) + Services (bottom) -->
-        <div class="site-footer__col-pair">
-          <div>
-            <h4 class="site-footer__col-title">Resources</h4>
-            <ul class="site-footer__link-list">
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#services-section" class="site-footer__link">Local Resources</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#services-section" class="site-footer__link">Library</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#services-section" class="site-footer__link">Social Media</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#take-next-step" class="site-footer__link">Newsletter Sign Up</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#treatment-finder" class="site-footer__link">Content</a></li>
-            </ul>
-          </div>
+        <!-- Contact Column -->
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Contact</h4>
+          <ul class="site-footer__link-list">
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#site-footer" class="site-footer__link">Get Direction</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#site-footer" class="site-footer__link">Direction to SmartLipo</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#take-next-step" class="site-footer__link">Appointments</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#site-footer" class="site-footer__link">Business Hours</a></li>
+          </ul>
+        </div>
 
-          <div>
-            <h4 class="site-footer__col-title">Services</h4>
-            <ul class="site-footer__link-list">
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#services-section" class="site-footer__link">Brazilian Butt Lift</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#services-section" class="site-footer__link">Fat Reduction</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#services-section" class="site-footer__link">Chemical Peel</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#services-section" class="site-footer__link">CO2 Laser Treatment</a></li>
-              <li><span class="site-footer__bullet">&#8226;</span><a href="#services-section" class="site-footer__link">Fat Transfer Surgery</a></li>
-            </ul>
-            <a href="#services-section" class="site-footer__view-all">View All &#8594;</a>
-          </div>
+        <!-- Resources Column -->
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Resources</h4>
+          <ul class="site-footer__link-list">
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#treatment-finder" class="site-footer__link">Local Resources</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#treatment-finder" class="site-footer__link">Library</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#hero" class="site-footer__link">Social Media</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#take-next-step" class="site-footer__link">Newsletter Sign Up</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Content</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Services</h4>
+          <ul class="site-footer__link-list">
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Brazilian Butt Lift (Fat Transfer) Specialist</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Fat Reduction</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Chemical Peel</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">CO2 Laser Treatment</a></li>
+            <li><span class="site-footer__bullet">&#9679;</span><a href="#services-section" class="site-footer__link">Fat Transfer Surgery</a></li>
+          </ul>
+          <a href="#services-section" class="site-footer__view-all">View All <span aria-hidden="true">&#9758;</span></a>
         </div>
 
       </div>
-    </div>
 
-    <!-- Darker green bottom strip with the site tagline -->
-    <div class="site-footer__bottom-strip">
-      <div class="container">
-        <p class="site-footer__bottom-banner">
-          Experience exceptional care and personalized aesthetic treatments with our expert team.
-        </p>
-        <p class="site-footer__bottom">&copy; 2026 Athenura Clinic. All rights reserved. Code. Create. Innovate.</p>
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Athenura. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
