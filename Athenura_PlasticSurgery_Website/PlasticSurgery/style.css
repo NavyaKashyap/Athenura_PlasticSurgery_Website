@@ -2125,11 +2125,20 @@ Mobile
    BENEFITS OF PLASTIC SURGERY
 ========================================================= */
 
-.benefits-section {
+.benefits-section{
     position: relative;
-    padding: 90px 7%;
-    background: #f7f6f3;
+    width: 100%;
     overflow: hidden;
+    padding: 90px 7%;
+
+    background: linear-gradient(
+        180deg,
+        #FFFFFF 0%,
+        #F9FDFC 20%,
+        #DBF3E580 50%,
+        #F9FDFC 80%,
+        #FFFFFF 100%
+    );
 }
 
 .benefits-container {
