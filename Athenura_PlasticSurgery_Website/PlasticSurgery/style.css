@@ -2127,18 +2127,21 @@ Mobile
 
 .benefits-section{
     position: relative;
-    width: 100%;
-    overflow: hidden;
     padding: 90px 7%;
+    overflow: hidden;
 
-    background: linear-gradient(
-        180deg,
-        #FFFFFF 0%,
-        #F9FDFC 20%,
-        #DBF3E580 50%,
-        #F9FDFC 80%,
-        #FFFFFF 100%
-    );
+    background:
+        linear-gradient(
+            180deg,
+            #FFFFFF 0%,
+            #DBF3E580 50%,
+            #FFFFFF 100%
+        ),
+        url("image/vect.png");
+
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 550px;
 }
 
 .benefits-container {
