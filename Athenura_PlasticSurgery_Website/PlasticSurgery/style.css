@@ -2127,21 +2127,40 @@ Mobile
 
 .benefits-section{
     position: relative;
-    padding: 90px 7%;
     overflow: hidden;
+    padding: 90px 7%;
 
-    background:
-        linear-gradient(
-            180deg,
-            #FFFFFF 0%,
-            #DBF3E580 50%,
-            #FFFFFF 100%
-        ),
-        url("image/vect.png");
+    background: linear-gradient(
+        180deg,
+        #FFFFFF 0%,
+        #DBF3E580 50%,
+        #FFFFFF 100%
+    );
+}
 
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: 550px;
+.benefits-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;      /* or contain if it's an SVG/vector */
+    opacity: 0.15;          /* adjust as needed */
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+.benefits-container{
+    position: relative;
+    z-index: 2;
+}
+
+.benefits-container{
+    position: relative;
+    z-index: 2;
 }
 
 .benefits-container {
