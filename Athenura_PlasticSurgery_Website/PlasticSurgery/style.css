@@ -1305,99 +1305,223 @@ body {
 BEFORE & AFTER SECTION
 =====================================================*/
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  background-color: #f0f2f5;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 10px;
+.before-after-section{
+    width:100%;
+    padding:80px 0;
+    background:#ffffff;
+    display:flex;
+    justify-content:center;
 }
 
-/* Card Container */
-.banner-container {
-  width: 100%;
-  max-width: 900px;
-  background: radial-gradient(circle at center, #ffffff 0%, #f6f8f7 100%);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  display: flex !important;
-  flex-direction: row !important; /* Hamesha ek line me */
-  align-items: flex-end;
-  justify-content: space-between;
-  overflow: hidden;
-  padding: 0 5px;
+/*==========================
+Banner Container
+==========================*/
+
+.banner-container{
+    position:relative;
+    width:100%;
+    max-width:1200px;
+    height:450px;
+    margin:auto;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:radial-gradient(circle at center,#ffffff 0%,#f6f8f7 100%);
+    border-radius:24px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
 }
 
-/* Left Image */
-.image-left {
-  width: 25% !important;
-  max-height: 220px;
-  object-fit: contain;
-  border-radius: 0 !important; /* Circle hatane ke liye */
-  display: block;
+/*==========================
+Images
+==========================*/
+
+.image-left,
+.image-right{
+    position:absolute;
+    bottom:0;
+    width:340px;
+    height:100%;
+    object-fit:cover;
+    pointer-events:none;
 }
 
-/* Right Image */
-.image-right {
-  width: 28% !important;
-  max-height: 240px;
-  object-fit: contain;
-  border-radius: 0 !important; /* Circle hatane ke liye */
-  display: block;
+.image-left{
+    left:-20px;
+    object-position:top center;
 }
 
-/* Center Content */
-.banner-content {
-  flex: 1;
-  text-align: center;
-  padding: 15px 5px;
-  align-self: center;
+.image-right{
+    right:-20px;
+    object-position:top center;
 }
 
-.title-main {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #111111;
-  line-height: 1.2;
+/*==========================
+Center Content
+==========================*/
+
+.banner-content{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:100%;
+    max-width:500px;
+    text-align:center;
+    z-index:5;
+    padding:0 20px;
 }
 
-.title-sub {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #3b7b5c;
-  line-height: 1.2;
-  margin-top: 2px;
-  margin-bottom: 12px;
+.title-main{
+    font-family:"Playfair Display",serif;
+    font-size:48px;
+    font-weight:700;
+    color:#111;
+    line-height:1.1;
+    margin-bottom:5px;
 }
 
-.button-group {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
+.title-sub{
+    font-family:"Playfair Display",serif;
+    font-size:48px;
+    font-weight:700;
+    color:#318c5c;
+    line-height:1.1;
+    margin-bottom:30px;
 }
 
-.btn {
-  background-color: #3b7b5c;
-  color: #ffffff;
-  padding: 6px 12px;
-  font-size: 10px;
-  font-weight: 500;
-  border-radius: 4px;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 4px 10px rgba(59, 123, 92, 0.3);
+/*==========================
+Buttons
+==========================*/
+
+.button-group{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
 }
 
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:160px;
+    height:50px;
+
+    background:#318c5c;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:15px;
+    font-weight:600;
+
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(49,140,92,.25);
+}
+
+.btn:hover{
+    background:#246e47;
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(49,140,92,.35);
+}
+
+/*==========================
+Tablet
+==========================*/
+
+@media(max-width:992px){
+
+    .banner-container{
+        height:380px;
+    }
+
+    .image-left,
+    .image-right{
+        width:260px;
+    }
+
+    .title-main,
+    .title-sub{
+        font-size:38px;
+    }
+
+}
+
+/*==========================
+Mobile
+==========================*/
+
+@media(max-width:768px){
+
+    .banner-container{
+        height:520px;
+    }
+
+    .image-left,
+    .image-right{
+        width:180px;
+        opacity:.25;
+    }
+
+    .image-left{
+        left:-70px;
+    }
+
+    .image-right{
+        right:-70px;
+    }
+
+    .banner-content{
+        max-width:320px;
+    }
+
+    .title-main,
+    .title-sub{
+        font-size:32px;
+    }
+
+    .button-group{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:220px;
+    }
+
+}
+
+/*==========================
+Small Mobile
+==========================*/
+
+@media(max-width:480px){
+
+    .banner-container{
+        height:460px;
+        border-radius:18px;
+    }
+
+    .title-main,
+    .title-sub{
+        font-size:28px;
+    }
+
+    .image-left,
+    .image-right{
+        width:150px;
+    }
+
+}
 /* =========================================================
    TREATMENTS BY AGE
    GREEN + WHITE THEME
