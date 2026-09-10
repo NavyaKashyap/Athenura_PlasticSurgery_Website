@@ -1350,7 +1350,7 @@ Images
 .image-right{
     position:absolute;
     bottom:0;
-    height:108%;
+    height:85%;
     width:auto;
     object-fit:contain;
     z-index:2;
