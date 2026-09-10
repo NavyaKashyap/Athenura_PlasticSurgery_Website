@@ -1305,438 +1305,145 @@ body {
 BEFORE & AFTER SECTION
 =====================================================*/
 
-.before-after-section {
-    position: relative;
-    width: 100%;
-    padding: 90px 0;
-    background: #ffffff;
-    overflow: hidden;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-/*=====================================================
-GLOBAL RESET
-=====================================================*/
-
-.before-after-section *,
-.before-after-section *::before,
-.before-after-section *::after {
-    box-sizing: border-box;
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
 }
 
-
-/*=====================================================
-HEADER CONTAINER
-=====================================================*/
-
-.before-after-section .container {
-    width: 100%;
-    max-width: 1350px;
-
-    margin: 0 auto;
-    padding: 0 5%;
-
-    box-sizing: border-box;
+/* Main Banner Box */
+.banner-container {
+  width: 100%;
+  max-width: 1100px;
+  height: 420px;
+  background: radial-gradient(circle at center, #ffffff 0%, #f6f8f7 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
-/*=====================================================
-HEADER
-=====================================================*/
-
-.before-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    gap: 40px;
-    margin-bottom: 50px;
+/* Left Image Styling */
+.image-left {
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  height: 90%;
+  width: 320px;
+  object-fit: cover;
+  object-position: top center;
+  pointer-events: none;
 }
 
-.before-title {
-    max-width: 700px;
+/* Right Image Styling */
+.image-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 95%;
+  width: 380px;
+  object-fit: cover;
+  object-position: top center;
+  pointer-events: none;
 }
 
-.before-title span {
-    display: inline-block;
-
-    margin-bottom: 14px;
-
-    color: #318c5c;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    text-transform: uppercase;
-    letter-spacing: 4px;
+/* Center Content Styling */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
 }
 
-.before-title h2 {
-    margin: 0;
-
-    color: #111111;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 64px;
-    font-weight: 600;
-
-    line-height: 1;
+/* Text Headings */
+.title-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
 }
 
-.before-title em {
-    color: #318c5c;
-
-    font-style: italic;
-    font-weight: 500;
+.title-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #3b7b5c;
+  line-height: 1.2;
+  margin-top: 4px;
+  margin-bottom: 28px;
 }
 
-
-/*=====================================================
-NAVIGATION
-=====================================================*/
-
-.before-navigation {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+/* Buttons Container */
+.button-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
 }
 
-.before-prev,
-.before-next {
-    width: 50px;
-    height: 50px;
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: #3b7b5c;
+  color: #ffffff;
+  padding: 10px 22px;
+  font-size: 13.5px;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(59, 123, 92, 0.35);
+  transition: all 0.25s ease-in-out;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.btn:hover {
+  background-color: #2f644a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(59, 123, 92, 0.45);
+}
 
-    border: 1px solid #dce9e2;
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile & Tablet Responsive */
+@media (max-width: 900px) {
+  .banner-container {
+    height: auto;
+    padding: 50px 20px;
+    flex-direction: column;
+  }
+
+  .image-left,
+  .image-right {
+    position: static;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
+    margin-bottom: 20px;
+  }
 
-    background: #ffffff;
-    color: #318c5c;
-
-    font-size: 18px;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease;
+  .title-main,
+  .title-sub {
+    font-size: 32px;
+  }
 }
-
-.before-prev:hover,
-.before-next:hover {
-    background: #318c5c;
-    border-color: #318c5c;
-    color: #ffffff;
-}
-
-
-/*=====================================================
-EDGE-TO-EDGE SWIPER
-=====================================================*/
-
-.beforeAfterSwiper {
-    position: relative;
-
-    /*
-    IMPORTANT:
-    Break completely out of .container
-    */
-    width: 100vw !important;
-    max-width: 100vw !important;
-
-    left: 50%;
-
-    margin-left: -50vw !important;
-    margin-right: 0 !important;
-
-    overflow: hidden;
-
-    padding: 0 0 60px 0;
-
-    box-sizing: border-box;
-}
-
-
-/*=====================================================
-SWIPER WRAPPER
-=====================================================*/
-
-.beforeAfterSwiper .swiper-wrapper {
-    display: flex;
-    align-items: stretch;
-}
-
-
-/*=====================================================
-SWIPER SLIDES
-=====================================================*/
-
-.beforeAfterSwiper .swiper-slide {
-    width: 430px !important;
-    height: 500px !important;
-
-    display: flex;
-    flex-shrink: 0;
-
-    box-sizing: border-box;
-}
-
-
-/*=====================================================
-BEFORE & AFTER CARD
-=====================================================*/
-
-.before-card {
-    position: relative;
-
-    width: 100%;
-    height: 500px;
-
-    overflow: hidden;
-
-    background: #ffffff;
-
-    border: 2px solid transparent;
-    border-radius: 8px;
-
-    box-sizing: border-box;
-
-    box-shadow:
-        0 15px 40px rgba(232, 236, 234, 0.868);
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
-}
-
-
-/*=====================================================
-CARD IMAGE
-=====================================================*/
-
-.before-card img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.5s ease;
-}
-
-
-/*=====================================================
-CARD HOVER
-=====================================================*/
-
-.before-card:hover {
-    transform: translateY(-10px);
-
-    border-color: #38cf7e;
-
-    box-shadow:
-        0 20px 45px rgba(153, 240, 193, 0.84);
-}
-
-.before-card:hover img {
-    transform: scale(1.04);
-}
-
-
-/*=====================================================
-PAGINATION
-=====================================================*/
-
-.before-pagination {
-    position: static !important;
-
-    width: auto !important;
-
-    margin: 0 !important;
-}
-
-.before-pagination .swiper-pagination-bullet {
-    width: 9px;
-    height: 9px;
-
-    margin: 0 4px !important;
-
-    background: #cddbd3;
-
-    opacity: 1;
-}
-
-.before-pagination .swiper-pagination-bullet-active {
-    width: 28px;
-
-    border-radius: 20px;
-
-    background: #318c5c;
-}
-
-
-/*=====================================================
-TABLET
-=====================================================*/
-
-@media (max-width: 992px) {
-
-    .before-after-section {
-        padding: 75px 0;
-    }
-
-    .before-title h2 {
-        font-size: 52px;
-    }
-
-    .beforeAfterSwiper .swiper-slide {
-        width: 360px !important;
-        height: 440px !important;
-    }
-
-    .before-card {
-        height: 440px;
-    }
-}
-
-
-/*=====================================================
-MOBILE
-=====================================================*/
-
-@media (max-width: 768px) {
-
-    .before-after-section {
-        padding: 70px 0;
-    }
-
-    .before-after-section .container {
-        padding: 0 20px;
-    }
-
-
-    /* HEADER */
-
-    .before-header {
-        flex-direction: column;
-        align-items: flex-start;
-
-        gap: 20px;
-        margin-bottom: 40px;
-    }
-
-    .before-title h2 {
-        font-size: 42px;
-        line-height: 1.1;
-    }
-
-
-    /* NAVIGATION */
-
-    .before-navigation {
-        margin-top: 5px;
-    }
-
-
-    /*=================================================
-    MOBILE EDGE-TO-EDGE SWIPER
-    =================================================*/
-
-    .beforeAfterSwiper {
-        width: 100vw !important;
-        max-width: 100vw !important;
-
-        left: 50%;
-
-        margin-left: -50vw !important;
-        margin-right: 0 !important;
-
-        padding-bottom: 50px;
-    }
-
-
-    /* SLIDES */
-
-    .beforeAfterSwiper .swiper-slide {
-        width: 82vw !important;
-        height: 400px !important;
-    }
-
-
-    /* CARDS */
-
-    .before-card {
-        width: 100%;
-        height: 400px;
-    }
-}
-
-
-/*=====================================================
-SMALL MOBILE
-=====================================================*/
-
-@media (max-width: 480px) {
-
-    .before-after-section {
-        padding: 60px 0;
-    }
-
-    .before-after-section .container {
-        padding: 0 15px;
-    }
-
-
-    /* TITLE */
-
-    .before-title h2 {
-        font-size: 34px;
-        line-height: 1.1;
-    }
-
-
-    /* SWIPER */
-
-    .beforeAfterSwiper {
-        width: 100vw !important;
-        max-width: 100vw !important;
-
-        left: 50%;
-
-        margin-left: -50vw !important;
-    }
-
-
-    /* SLIDES */
-
-    .beforeAfterSwiper .swiper-slide {
-        width: 86vw !important;
-        height: 330px !important;
-    }
-
-
-    /* CARD */
-
-    .before-card {
-        height: 330px;
-    }
-
-
-    /* ARROWS */
-
-    .before-prev,
-    .before-next {
-        width: 42px;
-        height: 42px;
-
-        font-size: 15px;
-    }
-}
-
 /* =========================================================
    TREATMENTS BY AGE
    GREEN + WHITE THEME
