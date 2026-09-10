@@ -1330,6 +1330,7 @@ Banner Container
     height:500px;
     margin:auto;
     overflow:hidden;
+
     display:flex;
     justify-content:center;
     align-items:center;
@@ -1338,9 +1339,17 @@ Banner Container
         135deg,
         #ffffff 0%,
         #f8fdf9 35%,
-        #edf9f2 70%,
-        #dff4e7 100%
+        #eef8f2 70%,
+        #e1f3e8 100%
     );
+
+    border-radius:24px;
+    border:1px solid rgba(49,140,92,.08);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.05),
+        0 25px 60px rgba(49,140,92,.12),
+        inset 0 1px 0 rgba(255,255,255,.9);
 }
 
 /*==========================
@@ -1351,42 +1360,20 @@ Images
 .image-right{
     position:absolute;
     bottom:0;
+    width:400px;
     height:100%;
-    width:420px;
     object-fit:cover;
-    z-index:1;
+    z-index:2;
     pointer-events:none;
 }
 
 .image-left{
-    left:0;
-    object-position:center top;
-
-    /* Blend into center */
-    -webkit-mask-image:linear-gradient(to right,
-        black 55%,
-        rgba(0,0,0,.8) 70%,
-        transparent 100%);
-    mask-image:linear-gradient(to right,
-        black 55%,
-        rgba(0,0,0,.8) 70%,
-        transparent 100%);
+    left:-30px;
 }
 
 .image-right{
-    right:0;
-    object-position:center top;
-
-    -webkit-mask-image:linear-gradient(to left,
-        black 55%,
-        rgba(0,0,0,.8) 70%,
-        transparent 100%);
-    mask-image:linear-gradient(to left,
-        black 55%,
-        rgba(0,0,0,.8) 70%,
-        transparent 100%);
+    right:-30px;
 }
-
 /*==========================
 Center Content
 ==========================*/
@@ -1401,6 +1388,21 @@ Center Content
     text-align:center;
     z-index:5;
     padding:0 20px;
+}
+
+/* ADD THIS HERE */
+.banner-content::before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:rgba(255,255,255,.45);
+    filter:blur(70px);
+    z-index:-1;
 }
 
 .title-main{
@@ -1420,25 +1422,6 @@ Center Content
     line-height:1.1;
     margin-bottom:30px;
 }
-
-/* Soft glow behind text */
-
-.banner-content::before{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    width:520px;
-    height:320px;
-    background:radial-gradient(circle,
-        rgba(255,255,255,.95) 0%,
-        rgba(255,255,255,.75) 45%,
-        rgba(255,255,255,0) 100%);
-    z-index:-1;
-    filter:blur(10px);
-}
-
 /*==========================
 Buttons
 ==========================*/
