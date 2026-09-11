@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="navbar-container">
 
                 <!-- Athenura Logo -->
-                <a href="../home/index.html" class="navbar-logo">
+                <a href="../index.html" class="navbar-logo">
                     <img src="../images/logo/athenura-logo.png" alt="Athenura">
                 </a>
 
