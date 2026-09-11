@@ -8,60 +8,31 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="navbar-container">
 
                 <!-- Athenura Logo -->
-                <a href="../index.html" class="navbar-logo">
-                    <img src="images/logo/athenura-logo.png" alt="Athenura">
+                <a href="../home/index.html" class="navbar-logo">
+                    <img src="../images/logo/athenura-logo.png" alt="Athenura">
                 </a>
 
 
                 <!-- Navigation -->
                 <div class="navbar-menu">
 
-                    <a href="../index.html" class="nav-link">HOME</a>
+                    <a href="../home/index.html" class="nav-link">HOME</a>
 
-                    <a href="../services.html" class="nav-link">
+                    <a href="../services/services.html" class="nav-link">
                         SERVICES
                     </a>
 
-                    <a href="resources.html" class="nav-link">
+                    <a href="../Resources/resources.html" class="nav-link">
                         RESOURCES
                     </a>
 
-                    <a href="../gallery/index.html" class="nav-link">
+                    <a href="../Gallery/gallery.html" class="nav-link">
                         GALLERY
                     </a>
 
-                    <a href="../contact.html" class="nav-link">
+                    <a href="../contact/contact.html" class="nav-link">
                         CONTACT
                     </a>
-
-                    <a href="../offers/index.html" class="nav-link">
-                        OFFERS
-                    </a>
-
-                    <!-- Search -->
-                    <button class="search-button" aria-label="Search">
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <circle
-                                cx="11"
-                                cy="11"
-                                r="7"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            />
-                            <path
-                                d="M16.5 16.5L21 21"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                            />
-                        </svg>
-                    </button>
 
                 </div>
 
@@ -133,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <!-- LEFT COLUMN -->
           <div class="footer-left">
             <a href="../index.html" class="footer-logo">
-              <img src="images/logo/athenura-logo.png" alt="Athenura Logo">
+              <img src="../images/logo/athenura-logo.png" alt="Athenura Logo">
             </a>
 
             <p class="footer-description">
@@ -311,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- WOMAN IMAGE -->
         <img
-            src="images/cta/cta-woman.png"
+            src="../images/cta/cta-woman.png"
             alt="Woman"
             class="cta-woman"
         >

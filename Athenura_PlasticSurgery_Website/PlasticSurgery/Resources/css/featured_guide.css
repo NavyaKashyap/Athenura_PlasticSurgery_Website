@@ -23,7 +23,7 @@ body {
     font-size: 40px;
     line-height: 1.4;
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.7);
 
     min-height: 110px;
     overflow: hidden;
@@ -32,6 +32,13 @@ body {
 
 #myth-text {
     display: block;
+    color: #667d68;
+    font-style: italic;
+
+    text-shadow: 
+    0 0 5px #fff, 
+    0 0 15px #fff,
+    3px 8px 8px #667d68;
 
     opacity: 1;
     transform: translateY(0);
@@ -47,7 +54,8 @@ body {
 #myth-text.myth-out {
     opacity: 0;
 
-    transform: translateY(45px);
+    /* transform: translateY(45px); */
+    transform: translateY(5px);
 }
 
 
@@ -266,6 +274,115 @@ body {
 
     color: rgba(0, 0, 0, 0.7);
 }
+
+
+/* =================================
+   RESPONSIVE - MYTHS Grid
+================================= */
+@media (max-width: 1024px) {
+
+    .myths-section {
+        padding: 40px 6% 10%;
+    }
+
+    .myths-heading {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .myths-heading h2 {
+        font-size: 32px;
+    }
+
+    .myths-heading p {
+        font-size: 16px;
+    }
+
+    /* 2 cards per row on tablet */
+    .myths-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .myth-card {
+        height: 260px;
+    }
+
+    .myth-card-content {
+        left: 20px;
+        right: 20px;
+        bottom: 18px;
+    }
+
+    .myth-card h3 {
+        font-size: 19px;
+    }
+
+    .myth-number {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .myths-section {
+        padding: 35px 5% 8%;
+    }
+
+    .myths-heading span {
+        font-size: 14px;
+    }
+
+    .myths-heading h2 {
+        font-size: 26px;
+    }
+
+    .myths-heading p {
+        font-size: 14.5px;
+    }
+
+    /* 1 card per row on mobile */
+    .myths-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .myth-card {
+        height: 240px;
+    }
+
+    .myth-card-content {
+        left: 18px;
+        right: 18px;
+        bottom: 16px;
+    }
+
+    .myth-card h3 {
+        font-size: 18px;
+    }
+
+    .myth-number {
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .myth-card {
+        height: 220px;
+    }
+
+    .myth-card h3 {
+        font-size: 16.5px;
+    }
+
+    .myths-heading h2 {
+        font-size: 22px;
+    }
+}
+
+
 
 
 /* =================================
@@ -613,4 +730,138 @@ body {
     color: white;
 
     transform: rotate(90deg);
+}
+
+
+
+/* =================================
+   RESPONSIVE - MYTH MODAL
+================================= */
+@media (max-width: 1024px) {
+
+    .myth-overlay {
+        padding: 15px;
+        align-items: center;
+    }
+
+    .myth-modal {
+        grid-template-columns: 1fr;
+        grid-template-rows: 500px auto;
+        width: 80%;
+        /* max-width: 100%; */
+        height: auto;
+        max-height: calc(100vh - 30px);
+        /* border-radius: 15px; */
+    }
+
+    /* IMAGE - fixed height, no scroll */
+    .myth-modal-image {
+        height: 500px;
+        min-height: 500px;
+        overflow: hidden;
+    }
+
+    .modal-image-fog {
+        padding: 60px 25px 20px;
+    }
+
+    .modal-image-fog span {
+        font-size: 14px;
+    }
+
+    .modal-image-fog h2 {
+        font-size: 24px;
+    }
+
+    /* CONTENT - scrolls only if it exceeds remaining space */
+    .myth-modal-content {
+        padding: 30px 25px 35px;
+        overflow-y: auto;
+        min-height: 0; /* required so grid child can actually scroll instead of stretching modal */
+    }
+
+    .truth-label {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .myth-modal-content > h2 {
+        font-size: 26px;
+        margin: 0 40px 18px 0;
+    }
+
+    #modal-truth-content p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 14px;
+    }
+
+    .truth-note {
+        padding: 14px;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .truth-note-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .truth-note p {
+        font-size: 14px;
+    }
+
+    .myth-close {
+        top: 22px;
+        right: 22px;
+        width: 38px;
+        height: 38px;
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .myth-overlay {
+        padding: 0;
+    }
+
+    .myth-modal {
+        max-height: 100vh;
+        /* border-radius: 0; */
+        grid-template-rows: 280px auto;
+    }
+
+    .myth-modal-image {
+        height: 280px;
+        min-height: 280px;
+    }
+
+    .modal-image-fog {
+        padding: 45px 18px 16px;
+    }
+
+    .modal-image-fog h2 {
+        font-size: 20px;
+    }
+
+    .myth-modal-content {
+        padding: 25px 18px 30px;
+    }
+
+    .myth-modal-content > h2 {
+        font-size: 21px;
+        margin: 0 30px 14px 0;
+    }
+
+    #modal-truth-content p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .myth-close {
+        top: 14px;
+        right: 14px;
+    }
 }

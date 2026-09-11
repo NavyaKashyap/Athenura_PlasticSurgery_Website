@@ -13,11 +13,11 @@ body {
     box-sizing: border-box;
 }
 
-main{
+/* main{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 /* =================================
    HERO BUTTON
@@ -154,7 +154,7 @@ main{
     line-height: 60px;
     font-weight: 500;
     /* color: #26352d; */
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.7);
 }
 
 
@@ -293,4 +293,84 @@ main{
 
 .featured-guide:hover .featured-guide-image img {
     transform: scale(1.03);
+}
+
+
+
+/* =================================
+   RESPONSIVE MEDIA QUERIES
+================================= */
+
+/* Laptops & Smaller Desktops (under 1024px) */
+@media (max-width: 1024px) {
+    .featured-guide-content {
+        padding: 40px;
+    }
+
+    .featured-guide-content h2 {
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    .featured-guide-image {
+        min-height: 400px;
+    }
+}
+
+/* Mobile & Tablets (under 768px) */
+@media (max-width: 768px) {
+    .featured-guide {
+        grid-template-columns: 1fr; 
+        margin: 80px auto;
+        width: 80%;
+    }
+
+    /* Image at the top */
+    .featured-guide-image {
+        order: 1; 
+        /* min-height: 300px; */
+        max-height: 350px;
+    }
+
+    /* Text content at the bottom */
+    .featured-guide-content {
+        order: 2; 
+        padding: 30px 25px;
+    }
+
+    .featured-guide-content h2 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    .featured-label {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .featured-guide-content > p {
+        margin: 20px 0;
+    }
+}
+
+
+/* Extra Small Mobile Devices (under 480px) */
+@media (max-width: 480px) {
+    .featured-guide-image {
+        min-height: 240px;
+        max-height: 280px;
+    }
+
+    .featured-guide-content {
+        padding: 25px 18px;
+    }
+
+    .featured-guide-content h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .featured-point p {
+        font-size: 14px;
+    }
 }
