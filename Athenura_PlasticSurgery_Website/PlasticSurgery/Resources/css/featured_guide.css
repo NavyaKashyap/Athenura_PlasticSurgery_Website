@@ -32,6 +32,13 @@ body {
 
 #myth-text {
     display: block;
+    color: #667d68;
+    font-style: italic;
+
+    text-shadow: 
+    0 0 5px #fff, 
+    0 0 15px #fff,
+    3px 8px 8px #667d68;
 
     opacity: 1;
     transform: translateY(0);
