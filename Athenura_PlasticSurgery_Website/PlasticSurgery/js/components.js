@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 <!-- Navigation -->
                 <div class="navbar-menu">
 
-                    <a href="../home/index.html" class="nav-link">HOME</a>
+                    <a href="../index.html" class="nav-link">HOME</a>
 
-                    <a href="../services/services.html" class="nav-link">
+                    <a href="../Services/services.html" class="nav-link">
                         SERVICES
                     </a>
 
