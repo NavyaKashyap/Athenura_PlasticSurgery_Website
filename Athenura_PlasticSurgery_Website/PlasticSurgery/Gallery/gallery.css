@@ -32,87 +32,237 @@ body {
 .gallery-hero {
     position: relative;
     min-height: 720px;
+    width: 100%;
     overflow: hidden;
 
-    /* Main background */
+    /* Green / white background */
     background: #f4faf6;
 
     display: flex;
     align-items: center;
 }
 
-/* Vector background */
-.gallery-vector {
-    position: absolute;
-    z-index: 0;
 
-    width: 75%;
+/* =========================================================
+   VECTOR BACKGROUND
+========================================================= */
+
+.gallery-hero-vector {
+    position: absolute;
+
+    width: 70%;
     height: 100%;
 
     right: 0;
     top: 0;
 
     object-fit: cover;
+
     opacity: 0.35;
+
+    z-index: 0;
+
     pointer-events: none;
 }
 
-/* Transparent hero image */
-.gallery-model {
+
+/* =========================================================
+   TRANSPARENT HERO IMAGE
+========================================================= */
+
+.gallery-hero-image {
     position: absolute;
+
     z-index: 2;
 
-    width: 80%;
+    width: 58%;
     max-width: 850px;
 
-    right: 8%;
+    right: 2%;
     bottom: 0;
 
     height: auto;
 
     object-fit: contain;
+
+    /* NO BLUR */
+    filter: none;
 }
 
-/* Text */
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
 .gallery-hero-content {
     position: relative;
+
     z-index: 3;
 
     width: 45%;
+    max-width: 600px;
+
     margin-left: 8%;
 }
 
+
 .gallery-eyebrow {
     display: block;
-    margin-bottom: 15px;
+
+    margin-bottom: 18px;
 
     font-family: "Poppins", sans-serif;
+
     font-size: 13px;
     font-weight: 600;
+
     letter-spacing: 3px;
 
     color: #318c5c;
 }
 
+
 .gallery-hero-content h1 {
     margin: 0 0 20px;
 
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(65px, 7vw, 100px);
+
+    font-size: clamp(65px, 7vw, 105px);
+
+    font-weight: 500;
+
     line-height: 0.9;
-    font-weight: 800;
 
     color: #318c5c;
 }
 
+
 .gallery-hero-content p {
     max-width: 500px;
 
+    margin: 0 0 30px;
+
     font-family: "Poppins", sans-serif;
+
     font-size: 16px;
+
     line-height: 1.8;
 
     color: #3f4b44;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.gallery-hero-btn {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 24px;
+
+    background: #318c5c;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    border-radius: 4px;
+
+    transition: all 0.3s ease;
+}
+
+
+.gallery-hero-btn:hover {
+    background: #246e47;
+
+    transform: translateY(-2px);
+}
+
+
+.gallery-hero-btn i {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .gallery-hero {
+        min-height: 650px;
+    }
+
+    .gallery-hero-content {
+        width: 48%;
+        margin-left: 6%;
+    }
+
+    .gallery-hero-image {
+        width: 60%;
+        right: -2%;
+    }
+
+    .gallery-hero-vector {
+        width: 75%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .gallery-hero {
+        min-height: 800px;
+
+        align-items: flex-start;
+    }
+
+    .gallery-hero-content {
+        width: 90%;
+
+        margin: 0 auto;
+
+        padding-top: 100px;
+
+        text-align: center;
+    }
+
+    .gallery-hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gallery-hero-image {
+        width: 85%;
+
+        right: 50%;
+
+        transform: translateX(50%);
+
+        bottom: 0;
+    }
+
+    .gallery-hero-vector {
+        width: 100%;
+
+        right: 0;
+    }
 }
 /* =========================================================
    INTRO
