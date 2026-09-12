@@ -1,46 +1,227 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =================================
-       GALLERY FILTER
-    ================================= */
+   /* =========================================================
+   GALLERY PAGE JAVASCRIPT
+========================================================= */
+
+
+    /* =====================================================
+       BEFORE & AFTER SLIDER
+    ===================================================== */
+
+    const sliders = document.querySelectorAll(".comparison-slider");
+
+
+    sliders.forEach(function (slider) {
+
+        const afterContainer =
+            slider.querySelector(".comparison-after");
+
+        const divider =
+            slider.querySelector(".comparison-line");
+
+        const handle =
+            slider.querySelector(".comparison-handle");
+
+
+        let isDragging = false;
+
+
+        /* ---------------------------------------------
+           SET SLIDER POSITION
+        --------------------------------------------- */
+
+        function setPosition(clientX) {
+
+            const rect =
+                slider.getBoundingClientRect();
+
+            let position =
+                ((clientX - rect.left) / rect.width) * 100;
+
+
+            // Keep position between 0 and 100
+            position =
+                Math.max(0, Math.min(100, position));
+
+
+            // Update after image
+            afterContainer.style.width =
+                position + "%";
+
+
+            // Update divider
+            divider.style.left =
+                position + "%";
+
+
+            // Save current position
+            slider.dataset.position =
+                position;
+        }
+
+
+        /* ---------------------------------------------
+           MOUSE
+        --------------------------------------------- */
+
+        slider.addEventListener("mousedown", function (event) {
+
+            isDragging = true;
+
+            setPosition(event.clientX);
+
+        });
+
+
+        document.addEventListener("mousemove", function (event) {
+
+            if (!isDragging) return;
+
+            setPosition(event.clientX);
+
+        });
+
+
+        document.addEventListener("mouseup", function () {
+
+            isDragging = false;
+
+        });
+
+
+        /* ---------------------------------------------
+           TOUCH
+        --------------------------------------------- */
+
+        slider.addEventListener(
+            "touchstart",
+            function (event) {
+
+                isDragging = true;
+
+                setPosition(
+                    event.touches[0].clientX
+                );
+
+            },
+            { passive: true }
+        );
+
+
+        slider.addEventListener(
+            "touchmove",
+            function (event) {
+
+                if (!isDragging) return;
+
+                setPosition(
+                    event.touches[0].clientX
+                );
+
+            },
+            { passive: true }
+        );
+
+
+        slider.addEventListener(
+            "touchend",
+            function () {
+
+                isDragging = false;
+
+            }
+        );
+
+
+        /* ---------------------------------------------
+           HANDLE CLICK
+        --------------------------------------------- */
+
+        if (handle) {
+
+            handle.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+                }
+            );
+
+        }
+
+    });
+
+
+    /* =====================================================
+       CATEGORY FILTER
+    ===================================================== */
 
     const filterButtons =
-        document.querySelectorAll(".filter-btn");
+        document.querySelectorAll(".gallery-filter");
 
-    const galleryItems =
-        document.querySelectorAll(".gallery-item");
+    const categories =
+        document.querySelectorAll(".gallery-category");
 
 
-    filterButtons.forEach(button => {
+    filterButtons.forEach(function (button) {
 
-        button.addEventListener("click", () => {
+        button.addEventListener("click", function () {
 
-            /* Remove active class */
-            filterButtons.forEach(btn => {
+            const filter =
+                this.dataset.filter;
+
+
+            /* -----------------------------------------
+               ACTIVE BUTTON
+            ----------------------------------------- */
+
+            filterButtons.forEach(function (btn) {
+
                 btn.classList.remove("active");
+
             });
 
-            /* Add active class */
-            button.classList.add("active");
-
-            /* Get filter */
-            const filter =
-                button.getAttribute("data-filter");
+            this.classList.add("active");
 
 
-            /* Filter gallery */
-            galleryItems.forEach(item => {
+            /* -----------------------------------------
+               SHOW / HIDE CATEGORIES
+            ----------------------------------------- */
+
+            categories.forEach(function (category) {
+
+                const categoryName =
+                    category.dataset.category;
+
 
                 if (
                     filter === "all" ||
-                    item.classList.contains(filter)
+                    categoryName === filter
                 ) {
 
-                    item.classList.remove("hide");
+                    category.style.display = "block";
+
+                    requestAnimationFrame(function () {
+
+                        category.style.opacity = "1";
+                        category.style.transform =
+                            "translateY(0)";
+
+                    });
 
                 } else {
 
-                    item.classList.add("hide");
+                    category.style.opacity = "0";
+                    category.style.transform =
+                        "translateY(15px)";
+
+                    setTimeout(function () {
+
+                        category.style.display = "none";
+
+                    }, 200);
 
                 }
 
@@ -50,378 +231,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
-    /* =================================
-       LIGHTBOX
-    ================================= */
-
-    const lightbox =
-        document.getElementById("lightbox");
-
-    const lightboxImage =
-        document.getElementById("lightboxImage");
-
-    const lightboxTitle =
-        document.getElementById("lightboxTitle");
-
-    const closeButton =
-        document.getElementById("lightboxClose");
-
-    const prevButton =
-        document.getElementById("lightboxPrev");
-
-    const nextButton =
-        document.getElementById("lightboxNext");
-
-
-    let currentIndex = 0;
-
-
-    /* =================================
-       GET VISIBLE ITEMS
-    ================================= */
-
-    function getVisibleItems() {
-
-        return Array.from(
-            document.querySelectorAll(".gallery-item")
-        ).filter(item => {
-
-            return !item.classList.contains("hide");
-
-        });
-
-    }
-
-
-    /* =================================
-       OPEN LIGHTBOX
-    ================================= */
-
-    function openLightbox(index) {
-
-        if (!lightbox || !lightboxImage) {
-            return;
-        }
-
-
-        const visibleItems =
-            getVisibleItems();
-
-
-        if (!visibleItems.length) {
-            return;
-        }
-
-
-        currentIndex = index;
-
-
-        const item =
-            visibleItems[currentIndex];
-
-
-        if (!item) {
-            return;
-        }
-
-
-        const image =
-            item.querySelector("img");
-
-
-        if (!image) {
-            return;
-        }
-
-
-        lightboxImage.src =
-            image.src;
-
-        lightboxImage.alt =
-            image.alt;
-
-
-        if (lightboxTitle) {
-
-            lightboxTitle.textContent =
-                item.dataset.title || image.alt;
-
-        }
-
-
-        lightbox.classList.add("show");
-
-        document.body.style.overflow =
-            "hidden";
-
-    }
-
-
-    /* =================================
-       CLOSE LIGHTBOX
-    ================================= */
-
-    function closeLightbox() {
-
-        if (!lightbox) {
-            return;
-        }
-
-
-        lightbox.classList.remove("show");
-
-        document.body.style.overflow =
-            "";
-
-    }
-
-
-    /* =================================
-       NEXT IMAGE
-    ================================= */
-
-    function showNext() {
-
-        const visibleItems =
-            getVisibleItems();
-
-
-        if (!visibleItems.length) {
-            return;
-        }
-
-
-        currentIndex++;
-
-
-        if (
-            currentIndex >=
-            visibleItems.length
-        ) {
-
-            currentIndex = 0;
-
-        }
-
-
-        openLightbox(currentIndex);
-
-    }
-
-
-    /* =================================
-       PREVIOUS IMAGE
-    ================================= */
-
-    function showPrevious() {
-
-        const visibleItems =
-            getVisibleItems();
-
-
-        if (!visibleItems.length) {
-            return;
-        }
-
-
-        currentIndex--;
-
-
-        if (currentIndex < 0) {
-
-            currentIndex =
-                visibleItems.length - 1;
-
-        }
-
-
-        openLightbox(currentIndex);
-
-    }
-
-
-    /* =================================
-       GALLERY IMAGE CLICK
-    ================================= */
-
-    galleryItems.forEach(item => {
-
-        item.addEventListener("click", () => {
-
-            const visibleItems =
-                getVisibleItems();
-
-
-            const index =
-                visibleItems.indexOf(item);
-
-
-            openLightbox(index);
-
-        });
-
-    });
-
-
-    /* =================================
-       LIGHTBOX BUTTONS
-    ================================= */
-
-    if (closeButton) {
-
-        closeButton.addEventListener(
-            "click",
-            closeLightbox
-        );
-
-    }
-
-
-    if (nextButton) {
-
-        nextButton.addEventListener(
-            "click",
-            showNext
-        );
-
-    }
-
-
-    if (prevButton) {
-
-        prevButton.addEventListener(
-            "click",
-            showPrevious
-        );
-
-    }
-
-
-    /* =================================
-       CLICK OUTSIDE LIGHTBOX
-    ================================= */
-
-    if (lightbox) {
-
-        lightbox.addEventListener("click", event => {
-
-            if (event.target === lightbox) {
-
-                closeLightbox();
-
-            }
-
-        });
-
-    }
-
-
-    /* =================================
-       KEYBOARD CONTROLS
-    ================================= */
-
-    document.addEventListener("keydown", event => {
-
-        if (
-            !lightbox ||
-            !lightbox.classList.contains("show")
-        ) {
-
-            return;
-
-        }
-
-
-        if (event.key === "Escape") {
-
-            closeLightbox();
-
-        }
-
-
-        if (event.key === "ArrowRight") {
-
-            showNext();
-
-        }
-
-
-        if (event.key === "ArrowLeft") {
-
-            showPrevious();
-
-        }
-
-    });
-
-
-/*=========================================
-    BEFORE & AFTER COMPARISON SLIDER
-=========================================*/
-
-document.querySelectorAll(".compare-wrapper").forEach((wrapper) => {
-
-    const after = wrapper.querySelector(".after");
-    const divider = wrapper.querySelector(".divider");
-
-    let isDragging = false;
-
-    // Update slider position
-    function updateSlider(x) {
-
-        const rect = wrapper.getBoundingClientRect();
-
-        let position = x - rect.left;
-
-        if (position < 0) position = 0;
-        if (position > rect.width) position = rect.width;
-
-        const percentage = (position / rect.width) * 100;
-
-        divider.style.left = percentage + "%";
-
-        after.style.clipPath = `inset(0 0 0 ${percentage}%)`;
-    }
-
-    /* Desktop */
-
-    wrapper.addEventListener("mousedown", () => {
-        isDragging = true;
-    });
-
-    window.addEventListener("mouseup", () => {
-        isDragging = false;
-    });
-
-    window.addEventListener("mousemove", (e) => {
-
-        if (!isDragging) return;
-
-        updateSlider(e.clientX);
-
-    });
-
-    /* Mobile */
-
-    wrapper.addEventListener("touchstart", () => {
-        isDragging = true;
-    });
-
-    window.addEventListener("touchend", () => {
-        isDragging = false;
-    });
-
-    window.addEventListener("touchmove", (e) => {
-
-        if (!isDragging) return;
-
-        updateSlider(e.touches[0].clientX);
-
-    });
-
-});
-
-    
 
 });
