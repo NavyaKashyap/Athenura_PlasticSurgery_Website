@@ -418,6 +418,7 @@ body {
     color: #707a73;
 }
 
+
 /* =================================
    SPECIALIST NOTE
 ================================= */
@@ -455,13 +456,6 @@ body {
 }
 
 
-/* Content */
-
-/* .specialist-note-content {
-    max-width: 850px;
-} */
-
-
 .specialist-note-content h2 {
     margin: 0 0 22px;
 
@@ -469,6 +463,7 @@ body {
     font-size: 32px;
     line-height: 1.3;
     font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 
@@ -511,6 +506,8 @@ body {
     color: rgba(0, 0, 0, 0.6);
     text-align: justify;
 }
+
+
 
 /* ================================
    RELATED RESOURCES
@@ -569,4 +566,440 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+}
+
+
+
+/* ================================
+   RESPONSIVE CSS 
+================================ */
+
+/* ================================
+   Responsive Article Section
+================================ */
+
+/* =================================
+   RESPONSIVE OVERRIDES FOR ARTICLE
+================================= */
+
+/* Medium Screens / Small Laptops (under 1200px) */
+@media (max-width: 1280px) {
+    .article-section {
+        padding: 50px;
+        grid-template-columns: 280px 1fr;
+        gap: 30px;
+    }
+
+    .article-content {
+        padding: 30px 40px;
+    }
+
+    .article-panel h2 {
+        font-size: 32px;
+    }
+}
+
+/* Tablets (under 992px) - Stack Sidebar on Top as Dynamic Horizontal Tabs */
+@media (max-width: 992px) {
+    .article-section {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* Convert Sidebar to Sticky Horizontal Nav Bar */
+    .article-sidebar {
+        position: sticky;
+        top: 60px;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 10;
+        padding: 12px 15px;
+    }
+
+    .article-sidebar h2 {
+        /* font-size: 13px; */
+        margin-bottom: 15px;
+        padding: 0 5px;
+    }
+
+    /* Horizontal scrollable navigation row */
+    .article-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 8px;
+        padding-bottom: 6px;
+        /* Subtle scrollbar touch styling */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .article-nav-item {
+        width: auto;
+        padding: 10px 16px;
+        border-radius: 8px;
+        border-left: none;
+        border-top: 3px solid transparent;
+        /* font-size: 14px; */
+        flex-shrink: 0;
+    }
+
+    .article-nav-item.active {
+        border-top-color: #3b9464;
+        background: #f5f8f6;
+    }
+
+    /* Main Article Container Spans Full Width */
+    .article-content {
+        width: 100%;
+        /* padding: 30px 25px; */
+        box-sizing: border-box;
+    }
+}
+
+/* Mobile Screens (under 600px) */
+@media (max-width: 600px) {
+    .article-section {
+        padding: 30px 30px;
+    }
+
+    .article-sidebar h2 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .article-nav-item {
+        font-size: 14px;
+    }
+
+    .article-content {
+        padding: 24px 20px;
+    }
+
+    .article-panel h2 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    .article-panel h3 {
+        font-size: 18px;
+    }
+
+    .article-panel p,
+    .article-panel li {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .routine-reminder {
+        padding: 18px 20px;
+        margin: 25px 0;
+    }
+}
+
+
+
+/* =================================
+   RESPONSIVE SPECIALIST NOTE
+================================= */
+
+/* Laptops & Tablets in Landscape (under 1024px) */
+@media (max-width: 1280px) {
+    .specialist-note {
+        padding: 20px 50px 60px;
+    }
+
+    .specialist-note-inner {
+        grid-template-columns: 180px 1fr;
+        padding: 40px 45px;
+        gap: 30px;
+    }
+
+    .specialist-note-content h2 {
+        font-size: 28px;
+    }
+}
+
+/* Tablet Portrait & Large Phones (under 768px) */
+@media (max-width: 768px) {
+    /* .specialist-note {
+        padding: 0px 40px 40px;
+    } */
+
+    /* Switch from 2-column grid to stacked 1-column layout */
+    .specialist-note-inner {
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        gap: 15px;
+    }
+
+    .specialist-note-label {
+        font-size: 14px;
+        letter-spacing: 2px;
+        padding-top: 0;
+    }
+
+    .specialist-note-content h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .specialist-note-content p {
+        font-size: 15px;
+        line-height: 1.7;
+
+        /* Prevents awkward gaps in narrow screens */
+        /* text-align: left;  */
+    }
+
+    /* Flex direction switch for reminder container on small width */
+    .specialist-note-reminder {
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 18px;
+        margin: 25px 0 0;
+    }
+
+    .specialist-note-reminder span {
+        font-size: 14px;
+    }
+}
+
+/* Extra Small Mobile Devices (under 480px) */
+@media (max-width: 480px) {
+    .specialist-note {
+        padding: 0px 30px 30px;
+    }
+
+    .specialist-note-inner {
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    .specialist-note-content h2 {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .specialist-note-content p {
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .specialist-note-reminder strong,
+    .specialist-note-reminder span {
+        font-size: 13px;
+    }
+}
+
+
+
+/* =================================
+   RESPONSIVE KEY TAKEAWAYS
+================================= */
+
+/* Laptops & Smaller Desktops (under 1024px) */
+@media (max-width: 1280px) {
+    .key-takeaways {
+        padding: 50px;
+    }
+
+    .takeaways-heading h2 {
+        font-size: 30px;
+    }
+
+    .takeaways-grid {
+        gap: 30px;
+    }
+
+    .takeaway-card {
+        padding: 25px;
+    }
+
+    .takeaway-card h3 {
+        font-size: 20px;
+    }
+}
+
+/* Tablets (under 768px) */
+@media (max-width: 992px) {
+    .takeaways-heading {
+        margin-bottom: 30px;
+    }
+
+    .takeaways-heading h2 {
+        font-size: 26px;
+    }
+
+    .takeaways-heading p {
+        font-size: 15px;
+    }
+
+    /* Collapse 2-column grid to 1 column */
+    .takeaways-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .takeaway-card {
+        padding: 24px 22px;
+        /* text-align: left; Avoid awkward justification spacing on mobile */
+    }
+
+    /* Stack note label above content */
+    .takeaway-note {
+        flex-direction: column;
+        gap: 8px;
+        padding: 24px 20px;
+        margin-top: 30px;
+    }
+
+    .note-label {
+        padding-top: 0;
+        font-size: 14px;
+    }
+
+    .note-content h3 {
+        font-size: 20px;
+    }
+
+    .note-content p {
+        font-size: 15px;
+    }
+}
+
+
+/* Mobile Devices (under 480px) */
+@media (max-width: 480px) {
+    .key-takeaways {
+        padding: 40px 30px;
+    }
+
+    .takeaways-heading span {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .takeaways-heading h2 {
+        font-size: 22px;
+        line-height: 1.35;
+    }
+
+    .takeaways-grid {
+        gap: 20px;
+    }
+
+    .takeaway-card {
+        padding: 20px 18px;
+    }
+
+    .takeaway-number {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .takeaway-card h3 {
+        font-size: 18px;
+    }
+
+    .takeaway-card p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .takeaway-note {
+        padding: 18px 16px;
+    }
+
+    .note-content h3 {
+        font-size: 18px;
+    }
+
+    .note-content p {
+        font-size: 14px;
+    }
+}
+
+
+
+/* =================================
+   RESPONSIVE RELATED RESOURCES
+================================= */
+
+/* Laptops & Medium Screens (under 1024px) */
+@media (max-width: 1280px) {
+    .related-resources {
+        padding: 0 50px;
+        margin: 60px 0;
+    }
+
+    .related-resources-heading h2 {
+        font-size: 30px;
+    }
+
+    .related-resources-cards {
+        gap: 20px;
+    }
+
+    /* Reset width in grid layout */
+    .related-resources-cards .resource-card {
+        flex: initial;
+        width: 100%;
+    }
+}
+
+/* Tablets (under 900px): Switch grid to 2 columns */
+@media (max-width: 992px) {
+    .related-resources-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Mobile Screens (under 600px): Switch grid to 1 column */
+@media (max-width: 600px) {
+    .related-resources {
+        padding: 0 30px;
+        margin: 40px 0;
+    }
+
+    .related-resources-heading {
+        margin-bottom: 25px;
+    }
+
+    .related-resources-heading span {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .related-resources-heading h2 {
+        font-size: 24px;
+    }
+
+    .related-resources-heading p {
+        font-size: 15px;
+    }
+
+    .related-resources-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .related-resources-cards .resource-card {
+        flex: initial;
+        width: 100%;
+    }
+
+    .related-resources-cards .card-image {
+        height: 190px;
+    }
+
+    .related-resources-cards .card-content {
+        padding: 20px;
+    }
+
+    .related-resources-cards .card-content h3 {
+        font-size: 19px;
+    }
 }

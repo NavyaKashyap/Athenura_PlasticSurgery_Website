@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     <a href="../home/index.html" class="nav-link">HOME</a>
 
-                    <a href="../services/services.html" class="nav-link">
+                    <a href="../Services/services.html" class="nav-link">
                         SERVICES
                     </a>
 
@@ -86,111 +86,376 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /*============
-FOOTER
+  FOOTER
 ==============*/
 
 document.addEventListener("DOMContentLoaded", () => {
-  const footerContainer = document.getElementById("footer");
+//   const footerContainer = document.getElementById("footer");
 
-  if (!footerContainer) return;
+//   if (!footerContainer) return;
 
-  footerContainer.innerHTML = `
-    <footer class="footer">
-      <div class="footer-container">
+//   footerContainer.innerHTML = `
+//     <footer class="footer">
+//       <div class="footer-container">
         
-        <!-- MAIN CONTENT GRID -->
-        <div class="footer-main">
+//         <!-- MAIN CONTENT GRID -->
+//         <div class="footer-main">
 
-          <!-- LEFT COLUMN -->
-          <div class="footer-left">
-            <a href="../index.html" class="footer-logo">
-              <img src="../images/logo/athenura-logo.png" alt="Athenura Logo">
-            </a>
+//           <!-- LEFT COLUMN -->
+//           <div class="footer-left">
+//             <a href="../index.html" class="footer-logo">
+//               <img src="../images/logo/athenura-logo.png" alt="Athenura Logo">
+//             </a>
 
-            <p class="footer-description">
-              We believe in creating a welcoming experience where every patient feels confident, cared for, and valued.
-            </p>
+//             <p class="footer-description">
+//               We believe in creating a welcoming experience where every patient feels confident, cared for, and valued.
+//             </p>
 
-            <div class="footer-hours-section">
-              <h3 class="footer-title">
-                <i class="fa-regular fa-hand-point-right"></i> Hours Of Operation
-              </h3>
-              <p class="hours-text">Mon-Fri : 09:00 AM to 05:00 PM</p>
-            </div>
+//             <div class="footer-hours-section">
+//               <h3 class="footer-title">
+//                 <i class="fa-regular fa-hand-point-right"></i> Hours Of Operation
+//               </h3>
+//               <p class="hours-text">Mon-Fri : 09:00 AM to 05:00 PM</p>
+//             </div>
 
-            <div class="social-links">
-              <a href="https://www.google.com/" target="_blank" aria-label="Google">
-                <i class="fa-brands fa-google"></i>
-              </a>
-              <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </div>
-          </div>
+//             <div class="social-links">
+//               <a href="https://www.google.com/" target="_blank" aria-label="Google">
+//                 <i class="fa-brands fa-google"></i>
+//               </a>
+//               <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+//                 <i class="fa-brands fa-facebook-f"></i>
+//               </a>
+//               <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+//                 <i class="fa-brands fa-instagram"></i>
+//               </a>
+//             </div>
+//           </div>
 
-          <!-- RIGHT COLUMNS SECTION -->
-          <div class="footer-grid">
+//           <!-- RIGHT COLUMNS SECTION -->
+//           <div class="footer-grid">
             
-            <!-- Column 1: About Us & Contact -->
-            <div class="footer-column">
-              <h3 class="footer-title">About Us</h3>
-              <ul>
-                <li><a href="../about/index.html">About Us</a></li>
-                <li><a href="#">Meet Our Providers</a></li>
-                <li><a href="#">Post</a></li>
-                <li><a href="#">Feedback</a></li>
-                <li><a href="#">Reviews</a></li>
-              </ul>
+//             <!-- Column 1: About Us & Contact -->
+//             <div class="footer-column">
+//               <h3 class="footer-title">About Us</h3>
+//               <ul>
+//                 <li><a href="../about/index.html">About Us</a></li>
+//                 <li><a href="#">Meet Our Providers</a></li>
+//                 <li><a href="#">Post</a></li>
+//                 <li><a href="#">Feedback</a></li>
+//                 <li><a href="#">Reviews</a></li>
+//               </ul>
 
-              <h3 class="footer-title subheading">Contact</h3>
-              <ul>
-                <li><a href="#">Get Direction</a></li>
-                <li><a href="#">Direction to SmartLipo</a></li>
-                <li><a href="#">Appointments</a></li>
-                <li><a href="#">Business Hours</a></li>
-              </ul>
-            </div>
+//               <h3 class="footer-title subheading">Contact</h3>
+//               <ul>
+//                 <li><a href="#">Get Direction</a></li>
+//                 <li><a href="#">Direction to SmartLipo</a></li>
+//                 <li><a href="#">Appointments</a></li>
+//                 <li><a href="#">Business Hours</a></li>
+//               </ul>
+//             </div>
 
-            <!-- Column 2: Resources & Services -->
-            <div class="footer-column">
-              <h3 class="footer-title">Resources</h3>
-              <ul>
-                <li><a href="#">Local Resources</a></li>
-                <li><a href="#">Library</a></li>
-                <li><a href="#">Social Media</a></li>
-                <li><a href="#">Newsletter Sign Up</a></li>
-                <li><a href="#">Content</a></li>
-              </ul>
+//             <!-- Column 2: Resources & Services -->
+//             <div class="footer-column">
+//               <h3 class="footer-title">Resources</h3>
+//               <ul>
+//                 <li><a href="#">Local Resources</a></li>
+//                 <li><a href="#">Library</a></li>
+//                 <li><a href="#">Social Media</a></li>
+//                 <li><a href="#">Newsletter Sign Up</a></li>
+//                 <li><a href="#">Content</a></li>
+//               </ul>
 
-              <h3 class="footer-title subheading">Services</h3>
-              <ul>
-                <li><a href="#">Brazilian Butt Lift (Fat Transfer) Specialist</a></li>
-                <li><a href="#">Fat Reduction</a></li>
-                <li><a href="#">Chemical Peel</a></li>
-                <li><a href="#">CO2 Laser Treatment</a></li>
-                <li><a href="#">Fat Transfer Surgery</a></li>
-              </ul>
+//               <h3 class="footer-title subheading">Services</h3>
+//               <ul>
+//                 <li><a href="#">Brazilian Butt Lift (Fat Transfer) Specialist</a></li>
+//                 <li><a href="#">Fat Reduction</a></li>
+//                 <li><a href="#">Chemical Peel</a></li>
+//                 <li><a href="#">CO2 Laser Treatment</a></li>
+//                 <li><a href="#">Fat Transfer Surgery</a></li>
+//               </ul>
 
-              <a href="../services/index.html" class="view-all">View All <i class="fa-regular fa-hand-point-right"></i></a>
-            </div>
+//               <a href="../services/index.html" class="view-all">View All <i class="fa-regular fa-hand-point-right"></i></a>
+//             </div>
 
-          </div>
+//           </div>
 
-        </div>
+//         </div>
 
-        <!-- COPYRIGHT -->
+//         <!-- COPYRIGHT -->
         
-          <div class="footer-bottom">
-            <p>© 2026 Athenura. All Rights Reserved.</p>
-          </div>
+//           <div class="footer-bottom">
+//             <p>© 2026 Athenura. All Rights Reserved.</p>
+//           </div>
        
 
-      </div>
-    </footer>
-  `;
+//       </div>
+//     </footer>
+//   `;
+
+    const footerContainer = document.getElementById("footer");
+
+    if (!footerContainer) return;
+
+
+    footerContainer.innerHTML = `
+
+        <footer class="footer">
+
+            <div class="footer-container">
+
+                <div class="footer-main">
+
+
+                    <!-- =================================
+                         COLUMN 1 : BRAND / ABOUT
+                    ================================== -->
+
+                    <div class="footer-left">
+
+                        <a href="../index.html" class="footer-logo">
+
+                            <img
+                                src="../images/logo/athenura-logo.png"
+                                alt="Athenura Logo"
+                            >
+
+                        </a>
+
+
+                        <p class="footer-description">
+
+                            We believe in creating a welcoming
+                            experience where every patient feels
+                            confident, cared for, and valued.
+
+                        </p>
+
+
+                        <div class="footer-hours-section">
+
+                            <h3 class="footer-title">
+
+                                <i class="fa-regular fa-hand-point-right"></i>
+
+                                Hours Of Operation
+
+                            </h3>
+
+
+                            <p class="hours-text">
+
+                                Mon-Fri : 09:00 AM to 05:00 PM
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- SOCIAL LINKS -->
+
+                        <div class="social-links">
+
+                            <a
+                                href="https://www.google.com/"
+                                target="_blank"
+                                aria-label="Google"
+                            >
+                                <i class="fa-brands fa-google"></i>
+                            </a>
+
+
+                            <a
+                                href="https://www.facebook.com/"
+                                target="_blank"
+                                aria-label="Facebook"
+                            >
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+
+
+                            <a
+                                href="https://www.instagram.com/"
+                                target="_blank"
+                                aria-label="Instagram"
+                            >
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         COLUMN 2 : QUICK LINKS
+                    ================================== -->
+
+                    <div class="footer-column quick-links">
+
+                        <h3 class="footer-title">
+
+                            Quick Links
+
+                        </h3>
+
+
+                        <ul>
+
+                            <li>
+                                <a href="../index.html">
+                                    Home
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="../service/services.html">
+                                    Services
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="../Resources/resources.html">
+                                    Resources
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="../Gallery/gallery.html">
+                                    Gallery
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="../contact/contact.html">
+                                    Contact
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         COLUMN 3 : GET IN TOUCH
+                    ================================== -->
+
+                    <div class="footer-column get-in-touch">
+
+                        <h3 class="footer-title">
+
+                            Get In Touch
+
+                        </h3>
+
+                        <div class="contact-items">
+                        <!-- PHONE -->
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="contact-label">
+                                    Phone
+                                </span>
+
+                                <a
+                                    href="tel:+919835051934"
+                                    class="contact-value"
+                                >
+                                    +91 9835051934
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="contact-label">
+                                    Email
+                                </span>
+
+                                <a
+                                    href="mailto:official@athenura.in"
+                                    class="contact-value"
+                                >
+                                    official@athenura.in
+                                </a>
+
+                            </div>
+
+                        </div>
+                        </div>
+                        
+
+
+
+                        <!-- MAP -->
+
+                        <div class="footer-map">
+
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.378777777823!2d77.3614601942478!3d28.618407722875563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2cb70326146a27db%3A0x39227c4340f97501!2sAthenura!5e0!3m2!1sen!2sin!4v1770454010754!5m2!1sen!2sin"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Athenura Location"
+                            >
+                            </iframe>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     COPYRIGHT
+                ================================== -->
+
+                <div class="footer-bottom">
+
+                    <p>
+                        © 2026 Athenura. All Rights Reserved.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </footer>
+
+    `;
+
 
 /* =================================
    BACK TO TOP

@@ -24,8 +24,8 @@ body {
     line-height: 1.4;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.7);
-
-    min-height: 110px;
+    width: 400px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -279,7 +279,16 @@ body {
 /* =================================
    RESPONSIVE - MYTHS Grid
 ================================= */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
+    .myths-section{
+        padding: 50px 45px 100px;
+    }
+    .myths-grid {
+        gap: 30px 25px;
+    }
+}
+
+@media (max-width: 1200px) {
 
     .myths-section {
         padding: 40px 6% 10%;
@@ -344,7 +353,6 @@ body {
     /* 1 card per row on mobile */
     .myths-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
     }
 
     .myth-card {
@@ -367,7 +375,14 @@ body {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
+    .myths-section {
+        padding: 35px 40px 80px;
+    }
+
+    .myths-grid {
+        gap: 20px;
+    }
 
     .myth-card {
         height: 220px;
@@ -732,15 +747,25 @@ body {
     transform: rotate(90deg);
 }
 
+/* Hide Back to Top button when Myth Modal is Active */
+.myth-overlay.active ~ .back-to-top,
+body:has(.myth-overlay.active) .back-to-top {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none;
+}
+
 
 
 /* =================================
    RESPONSIVE - MYTH MODAL
 ================================= */
-@media (max-width: 1024px) {
-
+@media (max-width: 1200px) {
     .myth-overlay {
-        padding: 15px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 
@@ -749,15 +774,15 @@ body {
         grid-template-rows: 500px auto;
         width: 80%;
         /* max-width: 100%; */
-        height: auto;
-        max-height: calc(100vh - 30px);
+        height: fit-content;
+        /* max-height: calc(100vh - 30px); */
         /* border-radius: 15px; */
     }
 
     /* IMAGE - fixed height, no scroll */
     .myth-modal-image {
         height: 500px;
-        min-height: 500px;
+        /* min-height: 500px; */
         overflow: hidden;
     }
 
@@ -775,7 +800,7 @@ body {
 
     /* CONTENT - scrolls only if it exceeds remaining space */
     .myth-modal-content {
-        padding: 30px 25px 35px;
+        padding:35px;
         overflow-y: auto;
         min-height: 0; /* required so grid child can actually scroll instead of stretching modal */
     }
@@ -821,10 +846,16 @@ body {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+    .myth-modal{
+       grid-template-rows: 400px auto;
+    }
+}
+
+@media (max-width: 480px) {
 
     .myth-overlay {
-        padding: 0;
+        padding: 50px 0;
     }
 
     .myth-modal {

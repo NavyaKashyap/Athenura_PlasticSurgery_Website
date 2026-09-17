@@ -31,7 +31,7 @@
 
     <main>
         <!-- =========================
-         HERO
+        HERO
     ========================== -->
 
         <section class="gallery-hero">
@@ -57,7 +57,7 @@
 
 
         <!-- =========================
-         GALLERY INTRO
+        GALLERY INTRO
     ========================== -->
 
         <section class="gallery-intro">
@@ -83,164 +83,46 @@
 
 
         <!-- =========================
-         FILTER BUTTONS
+        FILTER BUTTONS
     ========================== -->
 
         <section class="gallery-section">
 
             <div class="gallery-filters">
 
-                <button class="filter-btn active" data-filter="all">
-                    All
-                </button>
+                <div class="main-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        All
+                    </button>
 
-                <button class="filter-btn" data-filter="face">
-                    Face
-                </button>
+                    <button class="filter-btn" data-filter="face">
+                        Face
+                    </button>
 
-                <button class="filter-btn" data-filter="body">
-                    Body
-                </button>
+                    <button class="filter-btn" data-filter="body">
+                        Body
+                    </button>
 
-                <button class="filter-btn" data-filter="breast">
-                    Breast
-                </button>
+                    <button class="filter-btn" data-filter="breast">
+                        Breast
+                    </button>
 
-                <button class="filter-btn" data-filter="aesthetic">
-                    Aesthetic
-                </button>
+                    <button class="filter-btn" data-filter="aesthetic">
+                        Aesthetic
+                    </button>
+                </div>
+
+                <div class="sub-filters" id="sub-filters"></div>
 
             </div>
 
-            <!-- =========================
-     BEFORE & AFTER GALLERY
-========================= -->
+            <div class="gallery-grid" id="gallery-grid"></div>
 
-            <div class="gallery-grid">
-
-                <!-- Card 1 -->
-                <div class="compare-card face">
-
-                    <div class="compare-wrapper">
-
-                        <img src="images/gallery/face-before.jpg" alt="Before" class="before">
-
-                        <img src="images/gallery/face-after.jpg" alt="After" class="after">
-
-                        <span class="label before">Before</span>
-
-                        <span class="label after">After</span>
-
-                        <div class="divider">
-                            <div class="handle">
-                                &#10094;&#10095;
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="compare-info">
-                        <h3>Facelift Surgery</h3>
-                        <p>
-                            Natural facial rejuvenation with youthful contours and balanced aesthetics.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <!-- Card 2 -->
-                <div class="compare-card breast">
-
-                    <div class="compare-wrapper">
-
-                        <img src="images/gallery/breast-before.jpg" alt="Before" class="before">
-
-                        <img src="images/gallery/breast-after.jpg" alt="After" class="after">
-
-                        <span class="label before">Before</span>
-
-                        <span class="label after">After</span>
-
-                        <div class="divider">
-                            <div class="handle">
-                                &#10094;&#10095;
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="compare-info">
-                        <h3>Breast Augmentation</h3>
-                        <p>
-                            Enhanced volume and symmetry with natural-looking results.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <!-- Card 3 -->
-                <div class="compare-card body">
-
-                    <div class="compare-wrapper">
-
-                        <img src="images/gallery/body-before.jpg" alt="Before" class="before">
-
-                        <img src="images/gallery/body-after.jpg" alt="After" class="after">
-
-                        <span class="label before">Before</span>
-
-                        <span class="label after">After</span>
-
-                        <div class="divider">
-                            <div class="handle">
-                                &#10094;&#10095;
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="compare-info">
-                        <h3>Body Contouring</h3>
-                        <p>
-                            Improved body shape and definition through advanced contouring techniques.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <!-- Card 4 -->
-                <div class="compare-card aesthetic">
-
-                    <div class="compare-wrapper">
-
-                        <img src="images/gallery/skin-before.jpg" alt="Before" class="before">
-
-                        <img src="images/gallery/skin-after.jpg" alt="After" class="after">
-
-                        <span class="label before">Before</span>
-
-                        <span class="label after">After</span>
-
-                        <div class="divider">
-                            <div class="handle">
-                                &#10094;&#10095;
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="compare-info">
-                        <h3>Skin Rejuvenation</h3>
-                        <p>
-                            Brighter, smoother, and healthier skin with advanced aesthetic treatments.
-                        </p>
-                    </div>
-
-                </div>
-
+            <div class="gallery-load-more">
+                <button id="load-more-btn">
+                    Load More
+                    <i class="fa-solid fa-arrow-down"></i>
+                </button>
             </div>
         </section>
         <!-- =========================
