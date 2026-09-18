@@ -8743,7 +8743,8 @@ a {
 }
 
 /* =========================================================
-   TREATMENT POPUP
+   EXPLORE TREATMENTS POPUP
+   Does NOT change .age-explore button
 ========================================================= */
 
 .treatment-modal {
@@ -8755,8 +8756,8 @@ a {
     align-items: center;
     justify-content: center;
 
-    visibility: hidden;
     opacity: 0;
+    visibility: hidden;
 
     transition:
         opacity 0.35s ease,
@@ -8764,26 +8765,26 @@ a {
 }
 
 
-/* ACTIVE */
+/* OPEN STATE */
 
 .treatment-modal.active {
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
 }
 
 
 /* =========================================================
-   OVERLAY
+   DARK OVERLAY
 ========================================================= */
 
 .treatment-modal .treatment-modal-overlay {
     position: absolute;
     inset: 0;
 
-    background: rgba(18, 35, 27, 0.48);
+    background: rgba(20, 40, 30, 0.50);
 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 
@@ -8802,17 +8803,18 @@ a {
 
     background: #ffffff;
 
-    padding: 52px 55px 38px;
+    padding: 55px 58px 38px;
 
-    border-radius: 4px;
+    border: 1px solid rgba(49, 140, 92, 0.12);
+    border-radius: 5px;
 
     box-shadow:
-        0 30px 80px rgba(20, 55, 39, 0.22);
+        0 30px 80px rgba(25, 70, 48, 0.25);
 
-    transform: translateY(35px) scale(0.97);
+    transform: translateY(35px) scale(0.96);
 
     transition:
-        transform 0.4s cubic-bezier(.22,.61,.36,1);
+        transform 0.45s cubic-bezier(.22, .61, .36, 1);
 }
 
 
@@ -8827,14 +8829,17 @@ a {
 
 .treatment-modal .treatment-close {
     position: absolute;
-
     top: 20px;
     right: 22px;
 
     width: 42px;
     height: 42px;
 
-    border: 1px solid #d7e6dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #d8e7df;
     border-radius: 50%;
 
     background: #ffffff;
@@ -8848,20 +8853,21 @@ a {
 
     cursor: pointer;
 
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
 }
 
 
 .treatment-modal .treatment-close:hover {
     background: #318c5c;
-    color: #ffffff;
     border-color: #318c5c;
+    color: #ffffff;
+
     transform: rotate(90deg);
 }
 
 
 /* =========================================================
-   HEADER
+   POPUP HEADER
 ========================================================= */
 
 .treatment-modal .treatment-popup-header {
@@ -8872,15 +8878,15 @@ a {
 
 
 .treatment-modal .treatment-popup-label {
-    display: inline-block;
+    display: block;
 
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 
     color: #318c5c;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
 
     letter-spacing: 3px;
@@ -8889,14 +8895,13 @@ a {
 
 
 .treatment-modal .treatment-popup-header h2 {
-    margin: 0 0 14px;
+    margin: 0 0 15px;
 
     color: #1d2923;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(42px, 5vw, 62px);
-
+    font-size: clamp(44px, 5vw, 64px);
     font-weight: 500;
 
     line-height: 0.95;
@@ -8911,28 +8916,28 @@ a {
 
 
 .treatment-modal .treatment-popup-header p {
-    max-width: 580px;
+    max-width: 570px;
 
     margin: 0;
 
-    color: #66736d;
+    color: #69766f;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 14px;
+    font-size: 13px;
 
     line-height: 1.7;
 }
 
 
 /* =========================================================
-   TREATMENT LIST
+   TREATMENT GRID
 ========================================================= */
 
 .treatment-modal .treatment-list {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
 
     border-top: 1px solid #dce8e1;
 }
@@ -8943,11 +8948,9 @@ a {
 ========================================================= */
 
 .treatment-modal .treatment-item {
-    position: relative;
-
     display: grid;
 
-    grid-template-columns: 38px 1fr 35px;
+    grid-template-columns: 35px 1fr 34px;
 
     align-items: center;
 
@@ -8955,7 +8958,7 @@ a {
 
     min-height: 135px;
 
-    padding: 20px 18px;
+    padding: 20px 16px;
 
     border-bottom: 1px solid #dce8e1;
 
@@ -8967,15 +8970,19 @@ a {
 }
 
 
+/* Vertical divider */
+
 .treatment-modal .treatment-item:nth-child(odd) {
     border-right: 1px solid #dce8e1;
 }
 
 
-.treatment-modal .treatment-item:hover {
-    background: #f3faf6;
+/* Hover */
 
-    padding-left: 23px;
+.treatment-modal .treatment-item:hover {
+    background: #f4faf7;
+
+    padding-left: 22px;
 }
 
 
@@ -8986,7 +8993,7 @@ a {
 .treatment-modal .treatment-number {
     align-self: start;
 
-    padding-top: 3px;
+    padding-top: 4px;
 
     color: #318c5c;
 
@@ -9000,7 +9007,7 @@ a {
 
 
 /* =========================================================
-   INFO
+   TREATMENT TITLE
 ========================================================= */
 
 .treatment-modal .treatment-info h3 {
@@ -9017,6 +9024,8 @@ a {
 }
 
 
+/* Description */
+
 .treatment-modal .treatment-info p {
     margin: 0;
 
@@ -9024,33 +9033,35 @@ a {
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 11px;
+    font-size: 10.5px;
 
-    line-height: 1.55;
+    line-height: 1.6;
 }
 
 
 /* =========================================================
-   ARROW
+   ROUND ARROW
 ========================================================= */
 
 .treatment-modal .treatment-arrow {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
     width: 32px;
     height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     border: 1px solid #318c5c;
     border-radius: 50%;
 
     color: #318c5c;
 
-    font-size: 15px;
+    font-size: 14px;
 
-    transition: all 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 
@@ -9075,22 +9086,24 @@ a {
 
     gap: 20px;
 
-    padding-top: 28px;
+    padding-top: 27px;
 }
 
 
 .treatment-modal .treatment-popup-footer span {
-    color: #8a968f;
+    color: #89948e;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 10px;
+    font-size: 9px;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
 }
 
 
 .treatment-modal .treatment-popup-footer button {
+    padding: 0;
+
     border: none;
 
     background: transparent;
@@ -9099,24 +9112,24 @@ a {
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
 
     letter-spacing: 1.5px;
 
     cursor: pointer;
 
-    transition: opacity 0.2s ease;
+    transition: opacity 0.25s ease;
 }
 
 
 .treatment-modal .treatment-popup-footer button:hover {
-    opacity: 0.65;
+    opacity: 0.6;
 }
 
 
 /* =========================================================
-   BODY LOCK
+   BODY SCROLL LOCK
 ========================================================= */
 
 body.treatment-modal-open {
@@ -9135,38 +9148,32 @@ body.treatment-modal-open {
 
         max-height: 92vh;
 
-        padding: 45px 25px 28px;
+        padding: 48px 25px 28px;
     }
-
 
     .treatment-modal .treatment-popup-header {
         margin-bottom: 25px;
     }
 
-
     .treatment-modal .treatment-popup-header h2 {
-        font-size: 45px;
+        font-size: 46px;
     }
-
 
     .treatment-modal .treatment-list {
         grid-template-columns: 1fr;
     }
 
-
     .treatment-modal .treatment-item:nth-child(odd) {
         border-right: none;
     }
 
-
     .treatment-modal .treatment-item {
-        min-height: 110px;
+        min-height: 115px;
     }
 
-
     .treatment-modal .treatment-popup-footer {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
     }
 }
 
@@ -9178,9 +9185,10 @@ body.treatment-modal-open {
 @media (max-width: 480px) {
 
     .treatment-modal .treatment-popup {
-        padding: 42px 20px 24px;
-    }
+        width: calc(100% - 20px);
 
+        padding: 45px 18px 25px;
+    }
 
     .treatment-modal .treatment-close {
         top: 14px;
@@ -9192,33 +9200,38 @@ body.treatment-modal-open {
         font-size: 23px;
     }
 
-
     .treatment-modal .treatment-popup-header h2 {
-        font-size: 39px;
+        font-size: 40px;
     }
-
 
     .treatment-modal .treatment-popup-header p {
-        font-size: 12px;
+        font-size: 11px;
     }
 
-
     .treatment-modal .treatment-item {
-        grid-template-columns: 30px 1fr 32px;
+        grid-template-columns: 28px 1fr 30px;
 
         gap: 8px;
 
-        padding: 18px 8px;
+        min-height: 105px;
+
+        padding: 16px 7px;
     }
 
+    .treatment-modal .treatment-item:hover {
+        padding-left: 12px;
+    }
 
     .treatment-modal .treatment-info h3 {
-        font-size: 22px;
+        font-size: 21px;
     }
-
 
     .treatment-modal .treatment-info p {
-        font-size: 10px;
+        font-size: 9.5px;
     }
 
+    .treatment-modal .treatment-arrow {
+        width: 29px;
+        height: 29px;
+    }
 }

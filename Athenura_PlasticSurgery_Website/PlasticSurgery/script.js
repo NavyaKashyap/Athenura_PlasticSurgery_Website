@@ -856,41 +856,40 @@ document
 
     });
 
-
-/* =========================================================
-   TREATMENT POPUP
-========================================================= */
-
-const treatmentModal = document.getElementById("treatmentModal");
+    
+    const treatmentModal =
+        document.getElementById("treatmentModal");
 
 
-function openTreatmentModal() {
+    function openTreatmentModal() {
 
-    treatmentModal.classList.add("active");
+        treatmentModal.classList.add("active");
 
-    document.body.classList.add("treatment-modal-open");
-
-}
-
-
-function closeTreatmentModal() {
-
-    treatmentModal.classList.remove("active");
-
-    document.body.classList.remove("treatment-modal-open");
-
-}
-
-
-/* Close with ESC */
-
-document.addEventListener("keydown", function(event) {
-
-    if (
-        event.key === "Escape" &&
-        treatmentModal.classList.contains("active")
-    ) {
-        closeTreatmentModal();
+        document.body.classList.add(
+            "treatment-modal-open"
+        );
     }
 
-});
+
+    function closeTreatmentModal() {
+
+        treatmentModal.classList.remove("active");
+
+        document.body.classList.remove(
+            "treatment-modal-open"
+        );
+    }
+
+
+    /* Close popup with ESC key */
+
+    document.addEventListener("keydown", function(event) {
+
+        if (
+            event.key === "Escape" &&
+            treatmentModal.classList.contains("active")
+        ) {
+            closeTreatmentModal();
+        }
+
+    });

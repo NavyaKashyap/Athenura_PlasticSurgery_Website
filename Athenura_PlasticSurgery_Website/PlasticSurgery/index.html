@@ -586,13 +586,14 @@ BEFORE & AFTER
 
                 <!-- LINK -->
                 <a href="javascript:void(0);"
-   class="age-explore-btn"
+   class="age-explore"
    onclick="openTreatmentModal()">
-    EXPLORE TREATMENTS
-                    <span class="age-arrow">
-                        ↗
-                    </span>
 
+    Explore Treatments
+
+    <span class="age-arrow">
+        ↗
+    </span>
                 </a>
 
             </div>
@@ -2283,23 +2284,30 @@ REQUEST CONSULTATION
 
     </div>
     <!-- =========================================================
-     TREATMENTS POPUP
+     EXPLORE TREATMENTS POPUP
 ========================================================= -->
 
 <div class="treatment-modal" id="treatmentModal">
 
-    <div class="treatment-modal-overlay" onclick="closeTreatmentModal()"></div>
+    <!-- Background Overlay -->
+    <div class="treatment-modal-overlay"
+         onclick="closeTreatmentModal()">
+    </div>
 
+
+    <!-- Popup Card -->
     <div class="treatment-popup">
 
-        <!-- Close -->
-        <button class="treatment-close"
+        <!-- Close Button -->
+        <button type="button"
+                class="treatment-close"
                 onclick="closeTreatmentModal()"
-                aria-label="Close">
+                aria-label="Close popup">
             ×
         </button>
 
-        <!-- Header -->
+
+        <!-- Popup Header -->
         <div class="treatment-popup-header">
 
             <span class="treatment-popup-label">
@@ -2312,17 +2320,22 @@ REQUEST CONSULTATION
             </h2>
 
             <p>
-                Thoughtfully selected treatments designed to
-                enhance your natural features while keeping
-                your results fresh and subtle.
+                Discover thoughtfully selected treatments designed
+                to enhance your natural features while keeping
+                your results fresh, subtle and beautifully balanced.
             </p>
 
         </div>
 
 
-        <!-- Treatment Cards -->
+        <!-- =====================================================
+             TREATMENT LIST
+        ====================================================== -->
+
         <div class="treatment-list">
 
+
+            <!-- Treatment 01 -->
             <div class="treatment-item">
 
                 <div class="treatment-number">
@@ -2330,18 +2343,26 @@ REQUEST CONSULTATION
                 </div>
 
                 <div class="treatment-info">
-                    <h3>Skin Rejuvenation</h3>
+
+                    <h3>
+                        Skin Rejuvenation
+                    </h3>
+
                     <p>
-                        Refresh and improve your skin's
-                        natural texture, tone and glow.
+                        Refresh your skin's natural texture,
+                        tone and youthful glow.
                     </p>
+
                 </div>
 
-                <span class="treatment-arrow">↗</span>
+                <span class="treatment-arrow">
+                    ↗
+                </span>
 
             </div>
 
 
+            <!-- Treatment 02 -->
             <div class="treatment-item">
 
                 <div class="treatment-number">
@@ -2349,18 +2370,26 @@ REQUEST CONSULTATION
                 </div>
 
                 <div class="treatment-info">
-                    <h3>Acne &amp; Scar Treatment</h3>
+
+                    <h3>
+                        Acne &amp; Scar Treatment
+                    </h3>
+
                     <p>
-                        Target acne concerns and visible
-                        scarring for smoother-looking skin.
+                        Improve the appearance of acne,
+                        scars and uneven skin texture.
                     </p>
+
                 </div>
 
-                <span class="treatment-arrow">↗</span>
+                <span class="treatment-arrow">
+                    ↗
+                </span>
 
             </div>
 
 
+            <!-- Treatment 03 -->
             <div class="treatment-item">
 
                 <div class="treatment-number">
@@ -2368,18 +2397,26 @@ REQUEST CONSULTATION
                 </div>
 
                 <div class="treatment-info">
-                    <h3>Lip Enhancement</h3>
+
+                    <h3>
+                        Lip Enhancement
+                    </h3>
+
                     <p>
                         Subtle enhancement designed to
                         complement your natural facial balance.
                     </p>
+
                 </div>
 
-                <span class="treatment-arrow">↗</span>
+                <span class="treatment-arrow">
+                    ↗
+                </span>
 
             </div>
 
 
+            <!-- Treatment 04 -->
             <div class="treatment-item">
 
                 <div class="treatment-number">
@@ -2387,34 +2424,47 @@ REQUEST CONSULTATION
                 </div>
 
                 <div class="treatment-info">
-                    <h3>Preventive Care</h3>
+
+                    <h3>
+                        Preventive Care
+                    </h3>
+
                     <p>
                         Personalized aesthetic care focused
-                        on maintaining healthy, youthful skin.
+                        on maintaining healthy-looking skin.
                     </p>
+
                 </div>
 
-                <span class="treatment-arrow">↗</span>
+                <span class="treatment-arrow">
+                    ↗
+                </span>
 
             </div>
+
 
         </div>
 
 
-        <!-- Bottom -->
+        <!-- =====================================================
+             POPUP FOOTER
+        ====================================================== -->
+
         <div class="treatment-popup-footer">
 
             <span>
                 Personalized care • Natural results
             </span>
 
-            <button onclick="closeTreatmentModal()">
+            <button type="button"
+                    onclick="closeTreatmentModal()">
                 CLOSE
             </button>
 
         </div>
 
     </div>
+
 </div>
 
 </div>
