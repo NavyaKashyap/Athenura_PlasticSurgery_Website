@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Gallery CSS -->
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="../css/components.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         NAVBAR
+    =============================== -->
+
+    <header id="navbar"></header>
+
+    <main>
+        <!-- =========================
+        HERO
+    ========================== -->
+
+        <section class="gallery-hero">
+
+            <div class="hero-content">
+
+                <span class="small-heading">
+                    OUR WORK
+                </span>
+
+                <h1>
+                    Gallery
+                </h1>
+
+                <p>
+                    Explore our collection of aesthetic transformations,
+                    procedures and patient journeys.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+        GALLERY INTRO
+    ========================== -->
+
+        <section class="gallery-intro">
+
+            <div class="section-label">
+                <span></span>
+                OUR GALLERY
+                <span></span>
+            </div>
+
+            <h2>
+                Results That Speak
+                <em>for Themselves</em>
+            </h2>
+
+            <p>
+                Discover examples of our aesthetic and surgical work.
+                Every treatment is carefully personalized to complement
+                the patient's natural features and individual goals.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+        FILTER BUTTONS
+    ========================== -->
+
+        <section class="gallery-section">
+
+            <div class="gallery-filters">
+
+                <div class="main-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="filter-btn" data-filter="face">
+                        Face
+                    </button>
+
+                    <button class="filter-btn" data-filter="body">
+                        Body
+                    </button>
+
+                    <button class="filter-btn" data-filter="breast">
+                        Breast
+                    </button>
+
+                    <button class="filter-btn" data-filter="aesthetic">
+                        Aesthetic
+                    </button>
+                </div>
+
+                <div class="sub-filters" id="sub-filters"></div>
+
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid"></div>
+
+            <div class="gallery-load-more">
+                <button id="load-more-btn">
+                    Load More
+                    <i class="fa-solid fa-arrow-down"></i>
+                </button>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section id="cta"></section>
+
+
+        <!-- ==============================
+     FOOTER
+================================ -->
+        <footer id="footer"></footer>
+
+        <script src="gallery.js"></script>
+        <script src="../js/components.js"></script>
+
+</body>
+
+</html>
