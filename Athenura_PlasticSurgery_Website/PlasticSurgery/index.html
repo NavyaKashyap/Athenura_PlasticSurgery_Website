@@ -1511,8 +1511,10 @@ REQUEST CONSULTATION
                 </div>
 
 
-                <a href="#" class="vip-button">
-                    Get VIP Access
+                <a href="javascript:void(0);"
+   class="vip-btn"
+   onclick="openVIPModal()">
+    VIP Access
                 </a>
 
             </div>
@@ -2101,6 +2103,186 @@ REQUEST CONSULTATION
 
 </div>
     
+<!-- =========================================================
+     VIP ACCESS POPUP
+========================================================= -->
+
+<div class="vip-modal" id="vipModal">
+
+    <!-- Overlay -->
+    <div class="vip-overlay"
+         onclick="closeVIPModal()">
+    </div>
+
+
+    <!-- VIP Popup -->
+    <div class="vip-access-box">
+
+        <!-- Close -->
+        <button
+            type="button"
+            class="vip-close"
+            onclick="closeVIPModal()"
+            aria-label="Close VIP access">
+            ×
+        </button>
+
+
+        <!-- Header -->
+        <div class="vip-access-header">
+
+            <div class="vip-access-tag">
+                EXCLUSIVE MEMBERSHIP
+            </div>
+
+            <h2>Welcome to the<br>VIP Plastic Surgery Club</h2>
+
+            <p>
+                Experience personalized care, exclusive benefits,
+                and a more elevated approach to your aesthetic journey.
+            </p>
+
+        </div>
+
+
+        <!-- Benefits -->
+        <div class="vip-benefits">
+
+            <div class="vip-benefit">
+
+                <div class="vip-benefit-icon">
+                    ✦
+                </div>
+
+                <div>
+                    <h4>Priority Consultation</h4>
+
+                    <p>
+                        Enjoy priority scheduling for your
+                        consultations and appointments.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="vip-benefit">
+
+                <div class="vip-benefit-icon">
+                    ✦
+                </div>
+
+                <div>
+                    <h4>Exclusive Member Benefits</h4>
+
+                    <p>
+                        Access special offers and privileges
+                        available exclusively to VIP members.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="vip-benefit">
+
+                <div class="vip-benefit-icon">
+                    ✦
+                </div>
+
+                <div>
+                    <h4>Personalized Care</h4>
+
+                    <p>
+                        Receive a more personalized experience
+                        throughout your aesthetic journey.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIP Form -->
+        <form id="vipForm">
+
+            <div class="vip-form-row">
+
+                <div class="vip-form-group">
+
+                    <label for="vipName">
+                        FULL NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="vipName"
+                        name="name"
+                        placeholder="Your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="vip-form-group">
+
+                    <label for="vipEmail">
+                        EMAIL
+                    </label>
+
+                    <input
+                        type="email"
+                        id="vipEmail"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="vip-form-group">
+
+                <label for="vipPhone">
+                    PHONE NUMBER
+                </label>
+
+                <input
+                    type="tel"
+                    id="vipPhone"
+                    name="phone"
+                    placeholder="+1 (___) ___-____"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="vip-submit-btn">
+
+                REQUEST VIP ACCESS
+
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+
+        <p class="vip-access-note">
+            Our team will contact you with further information
+            about VIP membership.
+        </p>
+
+    </div>
+
+</div>
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>

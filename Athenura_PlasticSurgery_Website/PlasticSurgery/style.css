@@ -5790,6 +5790,573 @@ body.bmi-open {
 }
 
 /* =========================================================
+   VIP ACCESS POPUP
+========================================================= */
+
+.vip-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* OPEN */
+
+.vip-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.vip-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 43, 34, 0.72);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   VIP BOX
+========================================================= */
+
+.vip-access-box {
+
+    position: relative;
+    z-index: 2;
+
+    width: 650px;
+    max-width: 100%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    padding: 48px 45px 38px;
+
+    border-radius: 17px;
+
+    background:
+        radial-gradient(
+            circle at 88% 5%,
+            rgba(125, 213, 165, 0.26),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #fbfffc 55%,
+            #f0faf4 100%
+        );
+
+    box-shadow:
+        0 30px 85px rgba(0, 0, 0, 0.32);
+
+    transform: translateY(25px) scale(0.97);
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* OPEN ANIMATION */
+
+.vip-modal.active .vip-access-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.vip-close {
+
+    position: absolute;
+
+    top: 22px;
+    right: 22px;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #777;
+
+    font-size: 28px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.25s ease;
+}
+
+
+.vip-close:hover {
+
+    background: #318c5c;
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.vip-access-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.vip-access-tag {
+
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(49, 140, 92, 0.30);
+
+    background: rgba(125, 213, 165, 0.14);
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    margin-bottom: 17px;
+}
+
+
+.vip-access-header h2 {
+
+    margin: 0 0 14px;
+
+    color: #318c5c;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 43px;
+
+    line-height: 1.05;
+
+    font-weight: 700;
+}
+
+
+.vip-access-header p {
+
+    max-width: 530px;
+
+    margin: auto;
+
+    color: #737776;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.vip-benefits {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-bottom: 27px;
+}
+
+
+.vip-benefit {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 15px 17px;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border: 1px solid rgba(49, 140, 92, 0.10);
+
+    transition: 0.25s ease;
+}
+
+
+.vip-benefit:hover {
+
+    background: rgba(255, 255, 255, 0.95);
+
+    transform: translateX(3px);
+}
+
+
+.vip-benefit-icon {
+
+    flex-shrink: 0;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(49, 140, 92, 0.12);
+
+    color: #318c5c;
+
+    font-size: 16px;
+}
+
+
+.vip-benefit h4 {
+
+    margin: 0 0 3px;
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.vip-benefit p {
+
+    margin: 0;
+
+    color: #777;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#vipForm {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.vip-form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.vip-form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.vip-form-group label {
+
+    color: #2d8b5d;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+.vip-form-group input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 17px;
+
+    border: 1px solid #d2d5d3;
+
+    border-radius: 5px;
+
+    background: #eeeeee;
+
+    color: #444;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+
+.vip-form-group input::placeholder {
+
+    color: #777;
+}
+
+
+.vip-form-group input:focus {
+
+    background: #ffffff;
+
+    border-color: #318c5c;
+
+    box-shadow:
+        0 0 0 4px rgba(49, 140, 92, 0.12);
+}
+
+
+/* =========================================================
+   VIP BUTTON
+========================================================= */
+
+.vip-submit-btn {
+
+    width: 100%;
+
+    padding: 17px 24px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #318c5c;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    transition: 0.25s ease;
+}
+
+
+.vip-submit-btn:hover {
+
+    background: #246e47;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(49, 140, 92, 0.25);
+}
+
+
+.vip-submit-btn span {
+
+    font-size: 20px;
+
+    transition: transform 0.25s ease;
+}
+
+
+.vip-submit-btn:hover span {
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.vip-access-note {
+
+    margin: 16px auto 0;
+
+    max-width: 450px;
+
+    text-align: center;
+
+    color: #858987;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BODY LOCK
+========================================================= */
+
+body.vip-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .vip-modal {
+        padding: 12px;
+    }
+
+
+    .vip-access-box {
+
+        width: 100%;
+
+        max-height: 94vh;
+
+        padding: 38px 22px 28px;
+
+        border-radius: 14px;
+    }
+
+
+    .vip-close {
+
+        top: 14px;
+        right: 14px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 24px;
+    }
+
+
+    .vip-access-header {
+
+        padding: 10px 12px 0;
+
+        margin-bottom: 25px;
+    }
+
+
+    .vip-access-header h2 {
+
+        font-size: 34px;
+    }
+
+
+    .vip-access-header p {
+
+        font-size: 13px;
+    }
+
+
+    .vip-form-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+}
+
+/* =========================================================
    1. GLOBAL RESPONSIVE FOUNDATION
 ========================================================= */
 

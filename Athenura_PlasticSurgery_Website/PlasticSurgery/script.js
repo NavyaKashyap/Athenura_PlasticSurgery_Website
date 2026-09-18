@@ -783,3 +783,75 @@ document
             category;
 
     });
+
+    /* =========================================================
+   VIP ACCESS MODAL
+========================================================= */
+
+const vipModal = document.getElementById("vipModal");
+
+
+/* =========================================================
+   OPEN
+========================================================= */
+
+function openVIPModal() {
+
+    vipModal.classList.add("active");
+
+    document.body.classList.add("vip-open");
+
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+function closeVIPModal() {
+
+    vipModal.classList.remove("active");
+
+    document.body.classList.remove("vip-open");
+
+}
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (
+        event.key === "Escape" &&
+        vipModal.classList.contains("active")
+    ) {
+
+        closeVIPModal();
+
+    }
+
+});
+
+
+/* =========================================================
+   VIP FORM
+========================================================= */
+
+document
+    .getElementById("vipForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you for your interest in the Athenura VIP Plastic Surgery Club. " +
+            "Our team will contact you shortly."
+        );
+
+        this.reset();
+
+        closeVIPModal();
+
+    });
