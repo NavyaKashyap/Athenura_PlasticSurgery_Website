@@ -959,27 +959,62 @@ document.addEventListener("DOMContentLoaded", function () {
 /* =========================================================
    SIDE DIRECTION BUTTON
 ========================================================= */
+/* =========================================================
+   DIRECTION POPUP
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+function openDirectionModal(event) {
+    if (event) {
+        event.preventDefault();
+    }
 
-    const directionBtn =
-        document.getElementById("sideDirectionBtn");
+    const modal = document.getElementById("directionModal");
 
-    const locationModal =
-        document.getElementById("locationModal");
-
-    if (!directionBtn || !locationModal) {
-        console.error("Direction button or location popup is missing.");
+    if (!modal) {
+        console.error("directionModal not found");
         return;
     }
 
-    directionBtn.addEventListener("click", function (event) {
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
 
-        event.preventDefault();
 
-        locationModal.classList.add("active");
+function closeDirectionModal() {
 
-        document.body.style.overflow = "hidden";
+    const modal = document.getElementById("directionModal");
+
+    if (!modal) {
+        return;
+    }
+
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const closeButton = document.getElementById("directionClose");
+    const overlay = document.getElementById("directionOverlay");
+
+    if (closeButton) {
+        closeButton.addEventListener("click", function () {
+            closeDirectionModal();
+        });
+    }
+
+    if (overlay) {
+        overlay.addEventListener("click", function () {
+            closeDirectionModal();
+        });
+    }
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+            closeDirectionModal();
+        }
 
     });
 

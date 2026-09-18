@@ -9016,11 +9016,11 @@ a {
     }
 }
 
-/* ==============================
+/* =========================================================
    DIRECTION POPUP
-================================ */
+========================================================= */
 
-#directionModal {
+.direction-modal {
     position: fixed;
     inset: 0;
     z-index: 999999;
@@ -9033,116 +9033,102 @@ a {
     visibility: hidden;
     pointer-events: none;
 
-    transition: 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-#directionModal.active {
+.direction-modal.active {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
 
 
-/* Overlay */
+/* DARK OVERLAY */
 
-#directionModal .direction-overlay {
+.direction-overlay {
     position: absolute;
     inset: 0;
 
-    background: rgba(20, 50, 36, 0.6);
-    backdrop-filter: blur(5px);
+    background: rgba(20, 40, 30, 0.65);
+    backdrop-filter: blur(4px);
 }
 
 
-/* Card */
+/* POPUP CARD */
 
-#directionModal .direction-card {
+.direction-card {
     position: relative;
     z-index: 2;
 
-    width: 650px;
+    width: 520px;
     max-width: calc(100% - 40px);
-    max-height: 90vh;
 
+    max-height: 90vh;
     overflow-y: auto;
 
     background: #ffffff;
 
     border-radius: 18px;
 
-    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25);
 
     transform: translateY(30px) scale(0.96);
 
-    transition: 0.4s ease;
+    transition: transform 0.35s ease;
 }
 
-#directionModal.active .direction-card {
+.direction-modal.active .direction-card {
     transform: translateY(0) scale(1);
 }
 
 
-/* Green side line */
+/* CLOSE BUTTON */
 
-#directionModal .direction-card::before {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    width: 5px;
-    height: 100%;
-
-    background: #318c5c;
-
-    border-radius: 18px 0 0 18px;
-}
-
-
-/* Close */
-
-#directionModal .direction-close {
+.direction-close {
     position: absolute;
 
     top: 18px;
-    right: 20px;
+    right: 18px;
 
     width: 40px;
     height: 40px;
 
-    border: 1px solid rgba(49, 140, 92, 0.2);
+    border: none;
     border-radius: 50%;
 
-    background: #fff;
+    background: #f1f7f3;
+
     color: #318c5c;
 
-    font-size: 27px;
+    font-size: 26px;
+    line-height: 1;
 
     cursor: pointer;
 
     z-index: 5;
 
-    transition: 0.25s ease;
+    transition: all 0.25s ease;
 }
 
-#directionModal .direction-close:hover {
+.direction-close:hover {
     background: #318c5c;
-    color: #fff;
-    transform: rotate(90deg);
+    color: #ffffff;
 }
 
 
-/* Content */
+/* CONTENT */
 
-#directionModal .direction-content {
-    padding: 50px 55px 45px;
+.direction-content {
+    padding: 45px;
 }
 
-#directionModal .direction-tag {
+.direction-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
     color: #318c5c;
-
-    font-family: "Poppins", sans-serif;
 
     font-size: 12px;
     font-weight: 600;
@@ -9150,47 +9136,48 @@ a {
     letter-spacing: 2px;
 }
 
-#directionModal h2 {
-    margin: 10px 50px 15px 0;
+.direction-content h2 {
+    margin: 15px 0 12px;
 
-    color: #1d3026;
+    font-family: "Playfair Display", serif;
 
-    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    line-height: 1.1;
 
-    font-size: 55px;
-    line-height: 1;
+    color: #18372a;
 }
 
-#directionModal h2 span {
+.direction-content h2 span {
     color: #318c5c;
 }
 
-#directionModal .direction-content > p {
-    color: #59675f;
+.direction-content > p {
+    margin-bottom: 28px;
 
-    font-family: "Poppins", sans-serif;
+    color: #68736d;
 
     font-size: 14px;
     line-height: 1.7;
-
-    margin-bottom: 25px;
 }
 
 
-/* Information */
+/* INFO */
 
-#directionModal .direction-info {
+.direction-info {
     display: flex;
+    align-items: flex-start;
     gap: 16px;
 
-    padding: 17px 0;
+    padding: 18px 0;
 
-    border-bottom: 1px solid #e7eee9;
+    border-bottom: 1px solid #e5eee9;
 }
 
-#directionModal .direction-icon {
-    min-width: 42px;
+.direction-icon {
+    width: 42px;
     height: 42px;
+
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
@@ -9203,14 +9190,12 @@ a {
     color: #318c5c;
 }
 
-#directionModal .direction-info small {
+.direction-info small {
     display: block;
 
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 
-    color: #318c5c;
-
-    font-family: "Poppins", sans-serif;
+    color: #7a847e;
 
     font-size: 10px;
     font-weight: 600;
@@ -9218,80 +9203,74 @@ a {
     letter-spacing: 1.5px;
 }
 
-#directionModal .direction-info strong {
+.direction-info strong {
     display: block;
 
-    color: #1d3026;
+    color: #18372a;
 
-    font-family: "Poppins", sans-serif;
-
-    font-size: 14px;
+    font-size: 15px;
 }
 
-#directionModal .direction-info p {
-    margin: 3px 0 0;
+.direction-info p {
+    margin: 5px 0 0;
 
-    color: #68746d;
+    color: #68736d;
 
-    font-family: "Poppins", sans-serif;
-
-    font-size: 12px;
-
+    font-size: 13px;
     line-height: 1.5;
 }
 
 
-/* Google Maps button */
+/* MAP BUTTON */
 
-#directionModal .direction-map-btn {
-    display: inline-flex;
-
+.direction-map-btn {
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 
-    gap: 9px;
+    width: 100%;
 
     margin-top: 28px;
+    padding: 15px 20px;
 
-    padding: 13px 25px;
-
-    border-radius: 5px;
+    border-radius: 10px;
 
     background: #318c5c;
 
-    color: #fff;
+    color: #ffffff;
 
     text-decoration: none;
 
-    font-family: "Poppins", sans-serif;
-
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
 
-    transition: 0.25s ease;
+    letter-spacing: 0.5px;
+
+    transition: background 0.25s ease,
+                transform 0.25s ease;
 }
 
-#directionModal .direction-map-btn:hover {
+.direction-map-btn:hover {
     background: #246e47;
-
     transform: translateY(-2px);
 }
 
 
-/* Mobile */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
-    #directionModal .direction-card {
-        max-width: calc(100% - 25px);
+    .direction-content {
+        padding: 35px 25px;
     }
 
-    #directionModal .direction-content {
-        padding: 45px 28px 35px;
+    .direction-content h2 {
+        font-size: 32px;
     }
 
-    #directionModal h2 {
-        font-size: 42px;
+    .direction-card {
+        max-width: calc(100% - 24px);
     }
 
 }

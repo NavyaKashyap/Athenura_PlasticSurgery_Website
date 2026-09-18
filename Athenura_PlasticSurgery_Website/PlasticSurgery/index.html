@@ -159,13 +159,11 @@
         Contact
     </a>
 
-    <a href="#"
-       id="sideDirectionBtn">
+    <a href="#" id="sideDirectionBtn" onclick="openDirectionModal(event)">
         Direction
     </a>
 
 </div>
-
 
         <!-- ==============================
              OFFER POPUP
@@ -1513,7 +1511,6 @@ REQUEST CONSULTATION
    onclick="openVIPModal()">
     Get VIP Access
 </a>
-                </a>
 
             </div>
 
@@ -2379,10 +2376,6 @@ REQUEST CONSULTATION
     </div>
 
 </div>
-<!-- ==============================
-     DIRECTION POPUP
-================================ -->
-
 <div id="directionModal" class="direction-modal">
 
     <div class="direction-overlay" id="directionOverlay"></div>
@@ -2412,59 +2405,7 @@ REQUEST CONSULTATION
                 Noida, with convenient access and dedicated parking.
             </p>
 
-            <div class="direction-info">
-
-                <div class="direction-icon">
-                    <i class="fa-solid fa-building"></i>
-                </div>
-
-                <div>
-                    <small>CLINIC ADDRESS</small>
-
-                    <strong>Athenura</strong>
-
-                    <p>
-                        Block B, Industrial Area, Sector 62,
-                        Noida, Uttar Pradesh 201309, India
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="direction-info">
-
-                <div class="direction-icon">
-                    <i class="fa-solid fa-square-parking"></i>
-                </div>
-
-                <div>
-                    <small>PARKING</small>
-
-                    <strong>Free Valet & Parking</strong>
-
-                    <p>
-                        Dedicated on-site parking available
-                        for all patients.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="direction-info">
-
-                <div class="direction-icon">
-                    <i class="fa-solid fa-clock"></i>
-                </div>
-
-                <div>
-                    <small>OPERATING HOURS</small>
-
-                    <strong>Monday – Friday</strong>
-
-                    <p>9:00 AM – 5:00 PM</p>
-                </div>
-
-            </div>
+            <!-- your direction-info blocks -->
 
             <a
                 href="https://www.google.com/maps/place/Athenura/@28.6184216,77.3615327,17.19z"
@@ -2478,9 +2419,7 @@ REQUEST CONSULTATION
             </a>
 
         </div>
-
     </div>
-
 </div>
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
