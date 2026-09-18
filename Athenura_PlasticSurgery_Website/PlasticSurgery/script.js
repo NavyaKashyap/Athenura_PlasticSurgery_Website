@@ -641,3 +641,145 @@ document
         closeConsultationModal();
 
     });
+
+    /* =========================================================
+   BMI CALCULATOR
+========================================================= */
+
+const bmiModal = document.getElementById("bmiModal");
+
+
+/* =========================================================
+   OPEN BMI POPUP
+========================================================= */
+
+function openBMIModal() {
+
+    bmiModal.classList.add("active");
+
+    document.body.classList.add("bmi-open");
+
+}
+
+
+/* =========================================================
+   CLOSE BMI POPUP
+========================================================= */
+
+function closeBMIModal() {
+
+    bmiModal.classList.remove("active");
+
+    document.body.classList.remove("bmi-open");
+
+}
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (
+        event.key === "Escape" &&
+        bmiModal.classList.contains("active")
+    ) {
+
+        closeBMIModal();
+
+    }
+
+});
+
+
+/* =========================================================
+   BMI CALCULATION
+========================================================= */
+
+document
+    .getElementById("bmiForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const height =
+            parseFloat(
+                document.getElementById("bmiHeight").value
+            );
+
+        const weight =
+            parseFloat(
+                document.getElementById("bmiWeight").value
+            );
+
+
+        /* Validation */
+
+        if (
+            !Number.isFinite(height) ||
+            !Number.isFinite(weight) ||
+            height <= 0 ||
+            weight <= 0
+        ) {
+
+            alert("Please enter a valid height and weight.");
+
+            return;
+
+        }
+
+
+        /* Convert height from cm to meters */
+
+        const heightInMeters = height / 100;
+
+
+        /* BMI formula */
+
+        const bmi =
+            weight /
+            (heightInMeters * heightInMeters);
+
+
+        const roundedBMI =
+            bmi.toFixed(1);
+
+
+        /* Determine category */
+
+        let category = "";
+
+
+        if (bmi < 18.5) {
+
+            category = "Underweight";
+
+        }
+        else if (bmi < 25) {
+
+            category = "Healthy Weight";
+
+        }
+        else if (bmi < 30) {
+
+            category = "Overweight";
+
+        }
+        else {
+
+            category = "Obesity";
+
+        }
+
+
+        /* Display */
+
+        document.getElementById("bmiNumber").textContent =
+            roundedBMI;
+
+        document.getElementById("bmiCategory").textContent =
+            category;
+
+    });

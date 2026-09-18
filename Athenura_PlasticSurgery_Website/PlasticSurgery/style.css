@@ -5266,6 +5266,528 @@ body.consultation-open {
     }
 
 }
+/* =========================================================
+   BMI CALCULATOR POPUP
+========================================================= */
+
+.bmi-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* OPEN */
+
+.bmi-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.bmi-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 43, 34, 0.70);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BMI BOX
+========================================================= */
+
+.bmi-box {
+    position: relative;
+    z-index: 2;
+
+    width: 600px;
+    max-width: 100%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    padding: 46px 45px 40px;
+
+    border-radius: 16px;
+
+    background:
+        radial-gradient(
+            circle at 90% 5%,
+            rgba(125, 213, 165, 0.25),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #fbfffc 55%,
+            #f1faf5 100%
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.30);
+
+    transform: translateY(25px) scale(0.97);
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* OPEN ANIMATION */
+
+.bmi-modal.active .bmi-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.bmi-close {
+    position: absolute;
+
+    top: 22px;
+    right: 22px;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #777;
+
+    font-size: 28px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.25s ease;
+}
+
+
+.bmi-close:hover {
+    background: #318c5c;
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.bmi-header {
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+
+.bmi-tag {
+    display: inline-block;
+
+    padding: 8px 19px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(49, 140, 92, 0.30);
+
+    background: rgba(125, 213, 165, 0.14);
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    margin-bottom: 17px;
+}
+
+
+.bmi-header h2 {
+    margin: 0 0 14px;
+
+    color: #318c5c;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 44px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+}
+
+
+.bmi-header p {
+    max-width: 500px;
+
+    margin: auto;
+
+    color: #737776;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#bmiForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 23px;
+}
+
+
+.bmi-form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.bmi-form-group label {
+    color: #2d8b5d;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.bmi-input-wrapper {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.bmi-input-wrapper input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px 65px 15px 18px;
+
+    border: 1px solid #d2d5d3;
+
+    border-radius: 5px;
+
+    background: #eeeeee;
+
+    color: #444;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+
+.bmi-input-wrapper input::placeholder {
+    color: #777;
+}
+
+
+.bmi-input-wrapper input:focus {
+    background: #ffffff;
+
+    border-color: #318c5c;
+
+    box-shadow:
+        0 0 0 4px rgba(49, 140, 92, 0.12);
+}
+
+
+.bmi-input-wrapper span {
+    position: absolute;
+
+    right: 18px;
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CALCULATE BUTTON
+========================================================= */
+
+.bmi-calculate-btn {
+    width: 100%;
+
+    padding: 17px 24px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #318c5c;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    transition: 0.25s ease;
+}
+
+
+.bmi-calculate-btn:hover {
+    background: #246e47;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(49, 140, 92, 0.25);
+}
+
+
+.bmi-calculate-btn span {
+    font-size: 20px;
+
+    transition: transform 0.25s ease;
+}
+
+
+.bmi-calculate-btn:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.bmi-result {
+
+    margin-top: 28px;
+
+    padding: 25px 20px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(219, 243, 229, 0.55),
+            rgba(255, 255, 255, 0.85)
+        );
+
+    border: 1px solid rgba(49, 140, 92, 0.14);
+
+    text-align: center;
+}
+
+
+.bmi-result-title {
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+}
+
+
+.bmi-number {
+
+    margin-top: 5px;
+
+    color: #318c5c;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 58px;
+
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+
+.bmi-category {
+
+    margin-top: 8px;
+
+    color: #444;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+.bmi-note {
+
+    max-width: 450px;
+
+    margin: 15px auto 0;
+
+    color: #777;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BODY SCROLL LOCK
+========================================================= */
+
+body.bmi-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .bmi-modal {
+        padding: 12px;
+    }
+
+    .bmi-box {
+
+        width: 100%;
+
+        max-height: 94vh;
+
+        padding: 38px 22px 28px;
+
+        border-radius: 14px;
+    }
+
+    .bmi-close {
+
+        top: 14px;
+        right: 14px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 24px;
+    }
+
+    .bmi-header {
+
+        padding: 10px 15px 0;
+
+        margin-bottom: 28px;
+    }
+
+    .bmi-header h2 {
+        font-size: 35px;
+    }
+
+    .bmi-header p {
+        font-size: 14px;
+    }
+
+}
 
 /* =========================================================
    1. GLOBAL RESPONSIVE FOUNDATION

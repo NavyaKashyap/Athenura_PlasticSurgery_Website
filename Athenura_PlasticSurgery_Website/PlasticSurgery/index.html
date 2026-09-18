@@ -1338,8 +1338,10 @@ REQUEST CONSULTATION
             assessment from our physician.
         </p>
 
-        <a href="#" class="section-btn">
-            Calculate My BMI
+        <a href="javascript:void(0);"
+   class="section-btn"
+   onclick="openBMIModal()">
+    Calculate My BMI
         </a>
 
     </div>
@@ -1951,6 +1953,149 @@ REQUEST CONSULTATION
             </button>
 
         </form>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     BMI CALCULATOR POPUP
+========================================================= -->
+
+<div class="bmi-modal" id="bmiModal">
+
+    <!-- Background -->
+    <div class="bmi-overlay"
+         onclick="closeBMIModal()">
+    </div>
+
+
+    <!-- Popup -->
+    <div class="bmi-box">
+
+        <!-- Close Button -->
+        <button
+            type="button"
+            class="bmi-close"
+            onclick="closeBMIModal()"
+            aria-label="Close BMI calculator">
+            ×
+        </button>
+
+
+        <!-- Header -->
+        <div class="bmi-header">
+
+            <div class="bmi-tag">
+                WELLNESS CHECK
+            </div>
+
+            <h2>Calculate Your BMI</h2>
+
+            <p>
+                Enter your height and weight to calculate your
+                Body Mass Index.
+            </p>
+
+        </div>
+
+
+        <!-- BMI Form -->
+        <form id="bmiForm">
+
+
+            <!-- Height -->
+            <div class="bmi-form-group">
+
+                <label for="bmiHeight">
+                    HEIGHT
+                </label>
+
+                <div class="bmi-input-wrapper">
+
+                    <input
+                        type="number"
+                        id="bmiHeight"
+                        placeholder="Enter your height"
+                        min="1"
+                        step="0.1"
+                        required
+                    >
+
+                    <span>cm</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Weight -->
+            <div class="bmi-form-group">
+
+                <label for="bmiWeight">
+                    WEIGHT
+                </label>
+
+                <div class="bmi-input-wrapper">
+
+                    <input
+                        type="number"
+                        id="bmiWeight"
+                        placeholder="Enter your weight"
+                        min="1"
+                        step="0.1"
+                        required
+                    >
+
+                    <span>kg</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Calculate Button -->
+            <button
+                type="submit"
+                class="bmi-calculate-btn">
+
+                CALCULATE BMI
+
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+
+        <!-- Result -->
+        <div
+            class="bmi-result"
+            id="bmiResult"
+            aria-live="polite">
+
+            <div class="bmi-result-title">
+                YOUR BMI
+            </div>
+
+            <div
+                class="bmi-number"
+                id="bmiNumber">
+                —
+            </div>
+
+            <div
+                class="bmi-category"
+                id="bmiCategory">
+                Enter your details above
+            </div>
+
+            <p class="bmi-note">
+                BMI is a general screening measure and does not
+                replace an individual assessment by a healthcare professional.
+            </p>
+
+        </div>
 
     </div>
 
