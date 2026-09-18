@@ -577,3 +577,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+/* =========================================================
+   BOOK CONSULTATION MODAL
+========================================================= */
+
+const consultationModal =
+    document.getElementById("consultationModal");
+
+
+/* OPEN MODAL */
+
+function openConsultationModal() {
+
+    consultationModal.classList.add("active");
+
+    document.body.classList.add("consultation-open");
+
+}
+
+
+/* CLOSE MODAL */
+
+function closeConsultationModal() {
+
+    consultationModal.classList.remove("active");
+
+    document.body.classList.remove("consultation-open");
+
+}
+
+
+/* CLOSE WITH ESCAPE */
+
+document.addEventListener("keydown", function (event) {
+
+    if (
+        event.key === "Escape" &&
+        consultationModal.classList.contains("active")
+    ) {
+
+        closeConsultationModal();
+
+    }
+
+});
+
+
+/* FORM SUBMIT */
+
+document
+    .getElementById("consultationForm")
+    .addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you for requesting a consultation. " +
+            "Our team will contact you shortly."
+        );
+
+        this.reset();
+
+        closeConsultationModal();
+
+    });
