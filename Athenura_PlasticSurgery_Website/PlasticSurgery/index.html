@@ -585,10 +585,12 @@ BEFORE & AFTER
 
 
                 <!-- LINK -->
-               <a href="#" class="age-explore" id="exploreTreatmentsBtn">
+                <a href="javascript:void(0);" class="age-explore" id="exploreTreatmentsBtn">
     Explore Treatments
     <span class="age-arrow">↗</span>
 </a>
+                </a>
+
             </div>
 
         </div>
@@ -1505,7 +1507,7 @@ REQUEST CONSULTATION
                 </div>
 
 
-                <a <a href="javascript:void(0);"
+                <a href="javascript:void(0);"
    class="vip-button"
    onclick="openVIPModal()">
     Get VIP Access
@@ -2276,13 +2278,24 @@ REQUEST CONSULTATION
         </p>
 
     </div>
-   <div id="treatmentModal" class="treatment-modal">
+   
+</div>
+
+<!-- =========================================================
+     TREATMENTS POPUP
+========================================================= -->
+
+<div id="treatmentModal" class="treatment-modal">
 
     <div class="treatment-overlay" id="treatmentOverlay"></div>
 
     <div class="treatment-card">
 
-        <button type="button" class="treatment-close" id="treatmentClose">
+        <button
+            type="button"
+            class="treatment-close"
+            id="treatmentClose"
+            aria-label="Close treatments">
             &times;
         </button>
 
@@ -2305,37 +2318,56 @@ REQUEST CONSULTATION
 
                 <div class="treatment-option">
                     <span>01</span>
+
                     <div>
                         <h3>Facial Treatments</h3>
-                        <p>Refresh, rejuvenate and enhance your skin.</p>
+                        <p>
+                            Refresh, rejuvenate and enhance your skin.
+                        </p>
                     </div>
+
                     <b>↗</b>
                 </div>
+
 
                 <div class="treatment-option">
                     <span>02</span>
+
                     <div>
                         <h3>Injectables</h3>
-                        <p>Subtle enhancements tailored to your features.</p>
+                        <p>
+                            Subtle enhancements tailored to your features.
+                        </p>
                     </div>
+
                     <b>↗</b>
                 </div>
+
 
                 <div class="treatment-option">
                     <span>03</span>
+
                     <div>
                         <h3>Body Contouring</h3>
-                        <p>Refine and sculpt your natural silhouette.</p>
+                        <p>
+                            Refine and sculpt your natural silhouette.
+                        </p>
                     </div>
+
                     <b>↗</b>
                 </div>
 
+
                 <div class="treatment-option">
                     <span>04</span>
+
                     <div>
                         <h3>Skin Rejuvenation</h3>
-                        <p>Improve tone, texture and overall skin quality.</p>
+                        <p>
+                            Improve tone, texture and overall skin quality.
+                        </p>
                     </div>
+
                     <b>↗</b>
                 </div>
 
@@ -2344,9 +2376,6 @@ REQUEST CONSULTATION
         </div>
 
     </div>
-</div>
-
-</div>
 
 </div>
     <!-- JavaScript -->
