@@ -5796,7 +5796,6 @@ body.bmi-open {
 .vip-modal {
     position: fixed;
     inset: 0;
-
     z-index: 999999;
 
     display: flex;
@@ -5804,6 +5803,7 @@ body.bmi-open {
     justify-content: center;
 
     padding: 20px;
+    box-sizing: border-box;
 
     opacity: 0;
     visibility: hidden;
@@ -5814,7 +5814,9 @@ body.bmi-open {
 }
 
 
-/* OPEN */
+/* =========================================================
+   OPEN STATE
+========================================================= */
 
 .vip-modal.active {
     opacity: 1;
@@ -5823,28 +5825,27 @@ body.bmi-open {
 
 
 /* =========================================================
-   OVERLAY
+   DARK BACKGROUND
 ========================================================= */
 
 .vip-overlay {
     position: absolute;
     inset: 0;
 
-    background: rgba(20, 43, 34, 0.72);
+    background: rgba(18, 43, 32, 0.72);
 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
 
     cursor: pointer;
 }
 
 
 /* =========================================================
-   VIP BOX
+   POPUP CONTAINER
 ========================================================= */
 
 .vip-access-box {
-
     position: relative;
     z-index: 2;
 
@@ -5852,30 +5853,29 @@ body.bmi-open {
     max-width: 100%;
 
     max-height: 90vh;
-
     overflow-y: auto;
 
     box-sizing: border-box;
 
-    padding: 48px 45px 38px;
+    padding: 45px 45px 38px;
 
-    border-radius: 17px;
+    border-radius: 16px;
 
     background:
         radial-gradient(
-            circle at 88% 5%,
-            rgba(125, 213, 165, 0.26),
-            transparent 25%
+            circle at 90% 0%,
+            rgba(125, 213, 165, 0.22),
+            transparent 27%
         ),
         linear-gradient(
             135deg,
             #ffffff 0%,
-            #fbfffc 55%,
-            #f0faf4 100%
+            #fbfffc 60%,
+            #f1faf5 100%
         );
 
     box-shadow:
-        0 30px 85px rgba(0, 0, 0, 0.32);
+        0 30px 80px rgba(0, 0, 0, 0.30);
 
     transform: translateY(25px) scale(0.97);
 
@@ -5884,7 +5884,7 @@ body.bmi-open {
 }
 
 
-/* OPEN ANIMATION */
+/* Popup animation */
 
 .vip-modal.active .vip-access-box {
     transform: translateY(0) scale(1);
@@ -5896,25 +5896,24 @@ body.bmi-open {
 ========================================================= */
 
 .vip-close {
-
     position: absolute;
+    top: 18px;
+    right: 18px;
 
-    top: 22px;
-    right: 22px;
+    width: 42px;
+    height: 42px;
 
-    width: 44px;
-    height: 44px;
+    padding: 0;
 
     border: none;
-
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
 
     color: #777;
 
-    font-size: 28px;
-
+    font-family: Arial, sans-serif;
+    font-size: 27px;
     font-weight: 300;
 
     line-height: 1;
@@ -5925,14 +5924,14 @@ body.bmi-open {
     align-items: center;
     justify-content: center;
 
-    transition: 0.25s ease;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-
 .vip-close:hover {
-
     background: #318c5c;
-
     color: #ffffff;
 
     transform: rotate(90deg);
@@ -5944,69 +5943,69 @@ body.bmi-open {
 ========================================================= */
 
 .vip-access-header {
-
     text-align: center;
 
-    margin-bottom: 30px;
+    margin: 5px auto 28px;
+    padding: 0 20px;
 }
 
 
-.vip-access-tag {
+/* Small label */
 
+.vip-access-tag {
     display: inline-block;
 
-    padding: 8px 20px;
+    padding: 7px 18px;
 
+    margin-bottom: 15px;
+
+    border: 1px solid rgba(49, 140, 92, 0.28);
     border-radius: 30px;
 
-    border: 1px solid rgba(49, 140, 92, 0.30);
-
-    background: rgba(125, 213, 165, 0.14);
+    background: rgba(125, 213, 165, 0.12);
 
     color: #318c5c;
 
     font-family: "Poppins", sans-serif;
-
-    font-size: 12px;
-
+    font-size: 11px;
     font-weight: 700;
 
-    letter-spacing: 1.7px;
-
-    margin-bottom: 17px;
+    letter-spacing: 1.5px;
 }
 
 
-.vip-access-header h2 {
+/* Heading */
 
-    margin: 0 0 14px;
+.vip-access-header h2 {
+    margin: 0 0 12px;
 
     color: #318c5c;
 
     font-family:
-        "Playfair Display",
+        "Cormorant Garamond",
         Georgia,
         serif;
 
-    font-size: 43px;
+    font-size: 44px;
+    font-weight: 700;
 
     line-height: 1.05;
-
-    font-weight: 700;
 }
 
 
+/* Description */
+
 .vip-access-header p {
+    max-width: 500px;
 
-    max-width: 530px;
+    margin: 0 auto;
 
-    margin: auto;
-
-    color: #737776;
+    color: #747a77;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 400;
 
     line-height: 1.7;
 }
@@ -6017,90 +6016,91 @@ body.bmi-open {
 ========================================================= */
 
 .vip-benefits {
-
     display: flex;
-
     flex-direction: column;
 
-    gap: 12px;
+    gap: 10px;
 
-    margin-bottom: 27px;
+    margin-bottom: 26px;
 }
 
 
 .vip-benefit {
-
     display: flex;
-
     align-items: flex-start;
 
-    gap: 15px;
+    gap: 14px;
 
-    padding: 15px 17px;
+    padding: 14px 16px;
 
-    border-radius: 9px;
-
-    background: rgba(255, 255, 255, 0.65);
+    box-sizing: border-box;
 
     border: 1px solid rgba(49, 140, 92, 0.10);
+    border-radius: 9px;
 
-    transition: 0.25s ease;
+    background: rgba(255, 255, 255, 0.70);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
 }
 
 
 .vip-benefit:hover {
+    background: #ffffff;
 
-    background: rgba(255, 255, 255, 0.95);
-
-    transform: translateX(3px);
+    transform: translateX(2px);
 }
 
 
-.vip-benefit-icon {
+/* Icon */
 
-    flex-shrink: 0;
+.vip-benefit-icon {
+    flex: 0 0 32px;
 
     width: 32px;
     height: 32px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
 
-    background: rgba(49, 140, 92, 0.12);
+    background: rgba(49, 140, 92, 0.11);
 
     color: #318c5c;
 
-    font-size: 16px;
+    font-size: 15px;
 }
 
 
-.vip-benefit h4 {
+/* Benefit title */
 
+.vip-benefit h4 {
     margin: 0 0 3px;
 
     color: #318c5c;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 14px;
-
+    font-size: 13px;
     font-weight: 700;
+
+    line-height: 1.4;
 }
 
 
-.vip-benefit p {
+/* Benefit description */
 
+.vip-benefit p {
     margin: 0;
 
     color: #777;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 12px;
+    font-size: 11px;
 
     line-height: 1.55;
 }
@@ -6111,17 +6111,16 @@ body.bmi-open {
 ========================================================= */
 
 #vipForm {
-
     display: flex;
-
     flex-direction: column;
 
-    gap: 20px;
+    gap: 18px;
+
+    margin: 0;
 }
 
 
 .vip-form-row {
-
     display: grid;
 
     grid-template-columns: 1fr 1fr;
@@ -6131,40 +6130,50 @@ body.bmi-open {
 
 
 .vip-form-group {
-
     display: flex;
-
     flex-direction: column;
 
-    gap: 8px;
+    gap: 7px;
+
+    min-width: 0;
 }
 
 
-.vip-form-group label {
+/* =========================================================
+   FORM LABELS
+========================================================= */
 
-    color: #2d8b5d;
+.vip-form-group label {
+    margin: 0;
+
+    color: #318c5c;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 13px;
-
+    font-size: 12px;
     font-weight: 700;
 
-    letter-spacing: 0.3px;
+    letter-spacing: 0.4px;
 }
 
 
-.vip-form-group input {
+/* =========================================================
+   INPUTS
+========================================================= */
 
+.vip-form-group input {
     width: 100%;
+
+    height: 48px;
+
+    padding: 0 16px;
 
     box-sizing: border-box;
 
-    padding: 14px 17px;
-
-    border: 1px solid #d2d5d3;
-
+    border: 1px solid #d4d7d5;
     border-radius: 5px;
+
+    outline: none;
 
     background: #eeeeee;
 
@@ -6172,43 +6181,44 @@ body.bmi-open {
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 15px;
+    font-size: 14px;
 
-    outline: none;
-
-    transition: 0.25s ease;
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
 .vip-form-group input::placeholder {
-
     color: #777;
 }
 
 
 .vip-form-group input:focus {
-
     background: #ffffff;
 
     border-color: #318c5c;
 
     box-shadow:
-        0 0 0 4px rgba(49, 140, 92, 0.12);
+        0 0 0 4px rgba(49, 140, 92, 0.10);
 }
 
 
 /* =========================================================
-   VIP BUTTON
+   VIP SUBMIT BUTTON
 ========================================================= */
 
 .vip-submit-btn {
-
     width: 100%;
 
-    padding: 17px 24px;
+    min-height: 50px;
+
+    padding: 14px 20px;
+
+    margin-top: 3px;
 
     border: none;
-
     border-radius: 5px;
 
     background: #318c5c;
@@ -6217,59 +6227,58 @@ body.bmi-open {
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 13px;
-
+    font-size: 12px;
     font-weight: 700;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1.1px;
 
     cursor: pointer;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    gap: 12px;
+    gap: 11px;
 
-    transition: 0.25s ease;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
 .vip-submit-btn:hover {
-
     background: #246e47;
 
     transform: translateY(-2px);
 
     box-shadow:
-        0 10px 25px rgba(49, 140, 92, 0.25);
+        0 8px 22px rgba(49, 140, 92, 0.22);
 }
 
 
 .vip-submit-btn span {
+    font-size: 19px;
 
-    font-size: 20px;
+    line-height: 1;
 
     transition: transform 0.25s ease;
 }
 
 
 .vip-submit-btn:hover span {
-
-    transform: translateX(5px);
+    transform: translateX(4px);
 }
 
 
 /* =========================================================
-   NOTE
+   BOTTOM NOTE
 ========================================================= */
 
 .vip-access-note {
+    max-width: 430px;
 
-    margin: 16px auto 0;
-
-    max-width: 450px;
+    margin: 14px auto 0;
 
     text-align: center;
 
@@ -6277,18 +6286,39 @@ body.bmi-open {
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
 
     line-height: 1.6;
 }
 
 
 /* =========================================================
-   BODY LOCK
+   BODY SCROLL LOCK
 ========================================================= */
 
 body.vip-open {
     overflow: hidden;
+}
+
+
+/* =========================================================
+   POPUP SCROLLBAR
+========================================================= */
+
+.vip-access-box::-webkit-scrollbar {
+    width: 7px;
+}
+
+.vip-access-box::-webkit-scrollbar-track {
+    background: #edf4f0;
+
+    border-radius: 10px;
+}
+
+.vip-access-box::-webkit-scrollbar-thumb {
+    background: #318c5c;
+
+    border-radius: 10px;
 }
 
 
@@ -6304,7 +6334,6 @@ body.vip-open {
 
 
     .vip-access-box {
-
         width: 100%;
 
         max-height: 94vh;
@@ -6316,9 +6345,8 @@ body.vip-open {
 
 
     .vip-close {
-
-        top: 14px;
-        right: 14px;
+        top: 13px;
+        right: 13px;
 
         width: 38px;
         height: 38px;
@@ -6328,30 +6356,50 @@ body.vip-open {
 
 
     .vip-access-header {
+        padding: 8px 8px 0;
 
-        padding: 10px 12px 0;
-
-        margin-bottom: 25px;
+        margin-bottom: 24px;
     }
 
 
     .vip-access-header h2 {
-
-        font-size: 34px;
+        font-size: 36px;
     }
 
 
     .vip-access-header p {
-
         font-size: 13px;
     }
 
 
     .vip-form-row {
-
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        gap: 18px;
+    }
+
+
+    .vip-benefit {
+        padding: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .vip-access-box {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+
+    .vip-access-header h2 {
+        font-size: 32px;
     }
 
 }
