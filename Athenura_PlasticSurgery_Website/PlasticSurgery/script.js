@@ -955,3 +955,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+/* =========================================================
+   SIDE DIRECTION BUTTON
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const directionBtn =
+        document.getElementById("sideDirectionBtn");
+
+    const locationModal =
+        document.getElementById("locationModal");
+
+    if (!directionBtn || !locationModal) {
+        console.error("Direction button or location popup is missing.");
+        return;
+    }
+
+    directionBtn.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        locationModal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
