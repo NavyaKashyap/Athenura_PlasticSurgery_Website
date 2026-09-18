@@ -857,85 +857,107 @@ document
     });
 
 
+/* =========================================================
+   TREATMENTS BY AGE POPUP
+========================================================= */
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    const treatmentButton =
-        document.getElementById("exploreTreatmentsBtn");
+    const modal = document.getElementById("treatmentModal");
 
-    const treatmentModal =
-        document.getElementById("treatmentModal");
+    if (!modal) {
+        console.error("Treatment modal not found.");
+        return;
+    }
 
-    const treatmentClose =
-        document.getElementById("treatmentClose");
+    function openTreatmentModal() {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
 
-    const treatmentFooterClose =
-        document.getElementById("treatmentFooterClose");
+    function closeTreatmentModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
 
-    const treatmentOverlay =
-        document.querySelector(".treatment-modal-overlay");
 
+    /* -----------------------------------------------------
+       OPEN — using the existing .age-explore button
+    ----------------------------------------------------- */
 
-    /* OPEN */
+    document.addEventListener("click", function (event) {
 
-    treatmentButton.addEventListener("click", function (event) {
+        const button = event.target.closest(".age-explore");
+
+        if (!button) return;
 
         event.preventDefault();
 
-        treatmentModal.classList.add("active");
-
-        document.body.classList.add("treatment-modal-open");
+        openTreatmentModal();
 
     });
 
 
-    /* CLOSE BUTTON */
+    /* -----------------------------------------------------
+       CLOSE BUTTON
+    ----------------------------------------------------- */
 
-    treatmentClose.addEventListener("click", function () {
+    const closeButton =
+        document.getElementById("treatmentClose");
 
-        treatmentModal.classList.remove("active");
+    if (closeButton) {
 
-        document.body.classList.remove("treatment-modal-open");
+        closeButton.addEventListener("click", function () {
+            closeTreatmentModal();
+        });
 
-    });
-
-
-    /* FOOTER CLOSE */
-
-    treatmentFooterClose.addEventListener("click", function () {
-
-        treatmentModal.classList.remove("active");
-
-        document.body.classList.remove("treatment-modal-open");
-
-    });
+    }
 
 
-    /* CLICK OUTSIDE */
+    /* -----------------------------------------------------
+       FOOTER CLOSE
+    ----------------------------------------------------- */
 
-    treatmentOverlay.addEventListener("click", function () {
+    const footerClose =
+        document.getElementById("treatmentFooterClose");
 
-        treatmentModal.classList.remove("active");
+    if (footerClose) {
 
-        document.body.classList.remove("treatment-modal-open");
+        footerClose.addEventListener("click", function () {
+            closeTreatmentModal();
+        });
 
-    });
+    }
 
 
-    /* ESC KEY */
+    /* -----------------------------------------------------
+       OVERLAY CLOSE
+    ----------------------------------------------------- */
+
+    const overlay =
+        modal.querySelector(".treatment-modal-overlay") ||
+        modal.querySelector(".treatment-overlay");
+
+    if (overlay) {
+
+        overlay.addEventListener("click", function () {
+            closeTreatmentModal();
+        });
+
+    }
+
+
+    /* -----------------------------------------------------
+       ESCAPE KEY
+    ----------------------------------------------------- */
 
     document.addEventListener("keydown", function (event) {
 
         if (
             event.key === "Escape" &&
-            treatmentModal.classList.contains("active")
+            modal.classList.contains("active")
         ) {
-
-            treatmentModal.classList.remove("active");
-
-            document.body.classList.remove(
-                "treatment-modal-open"
-            );
-
+            closeTreatmentModal();
         }
 
     });

@@ -8742,15 +8742,14 @@ a {
 
 }
 
-/* =========================================================
-   EXPLORE TREATMENTS POPUP
-   Does NOT change .age-explore button
-========================================================= */
+/* =========================================
+   TREATMENT POPUP
+========================================= */
 
-.treatment-modal {
+#treatmentModal {
     position: fixed;
     inset: 0;
-    z-index: 99999;
+    z-index: 999999;
 
     display: flex;
     align-items: center;
@@ -8758,126 +8757,103 @@ a {
 
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 
-    transition:
-        opacity 0.35s ease,
-        visibility 0.35s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-
-/* OPEN STATE */
-
-.treatment-modal.active {
+#treatmentModal.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 
-/* =========================================================
-   DARK OVERLAY
-========================================================= */
+/* Overlay */
 
-.treatment-modal .treatment-modal-overlay {
+#treatmentModal .treatment-overlay {
     position: absolute;
     inset: 0;
 
-    background: rgba(20, 40, 30, 0.50);
+    background: rgba(20, 45, 33, 0.55);
 
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 
-/* =========================================================
-   POPUP CARD
-========================================================= */
+/* Card */
 
-.treatment-modal .treatment-popup {
+#treatmentModal .treatment-card {
     position: relative;
     z-index: 2;
 
-    width: min(850px, calc(100% - 40px));
+    width: 820px;
+    max-width: calc(100% - 40px);
     max-height: 90vh;
 
     overflow-y: auto;
 
-    background: #ffffff;
+    background: #fff;
 
-    padding: 55px 58px 38px;
+    border-radius: 8px;
 
-    border: 1px solid rgba(49, 140, 92, 0.12);
-    border-radius: 5px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
 
-    box-shadow:
-        0 30px 80px rgba(25, 70, 48, 0.25);
+    transform: translateY(30px) scale(0.96);
 
-    transform: translateY(35px) scale(0.96);
-
-    transition:
-        transform 0.45s cubic-bezier(.22, .61, .36, 1);
+    transition: transform 0.4s ease;
 }
 
-
-.treatment-modal.active .treatment-popup {
+#treatmentModal.active .treatment-card {
     transform: translateY(0) scale(1);
 }
 
 
-/* =========================================================
-   CLOSE BUTTON
-========================================================= */
+/* Content */
 
-.treatment-modal .treatment-close {
+#treatmentModal .treatment-card-content {
+    padding: 55px;
+}
+
+
+/* Close */
+
+#treatmentModal .treatment-close {
     position: absolute;
     top: 20px;
-    right: 22px;
+    right: 20px;
 
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid #d8e7df;
+    border: 1px solid #d7e5dd;
     border-radius: 50%;
 
-    background: #ffffff;
+    background: #fff;
 
     color: #318c5c;
 
-    font-size: 27px;
-    font-weight: 300;
-
+    font-size: 25px;
     line-height: 1;
 
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    z-index: 5;
+
+    transition: 0.3s ease;
 }
 
-
-.treatment-modal .treatment-close:hover {
+#treatmentModal .treatment-close:hover {
     background: #318c5c;
-    border-color: #318c5c;
-    color: #ffffff;
-
+    color: #fff;
     transform: rotate(90deg);
 }
 
 
-/* =========================================================
-   POPUP HEADER
-========================================================= */
+/* Heading */
 
-.treatment-modal .treatment-popup-header {
-    max-width: 650px;
-
-    margin-bottom: 35px;
-}
-
-
-.treatment-modal .treatment-popup-label {
+#treatmentModal .treatment-label {
     display: block;
 
     margin-bottom: 12px;
@@ -8890,37 +8866,34 @@ a {
     font-weight: 600;
 
     letter-spacing: 3px;
-    text-transform: uppercase;
 }
 
 
-.treatment-modal .treatment-popup-header h2 {
+#treatmentModal h2 {
     margin: 0 0 15px;
 
     color: #1d2923;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(44px, 5vw, 64px);
+    font-size: 60px;
     font-weight: 500;
 
     line-height: 0.95;
 }
 
-
-.treatment-modal .treatment-popup-header h2 em {
+#treatmentModal h2 span {
     color: #318c5c;
-
-    font-weight: 400;
+    font-style: italic;
 }
 
 
-.treatment-modal .treatment-popup-header p {
-    max-width: 570px;
+#treatmentModal .treatment-intro {
+    max-width: 550px;
 
-    margin: 0;
+    margin: 0 0 30px;
 
-    color: #69766f;
+    color: #68756e;
 
     font-family: "Poppins", sans-serif;
 
@@ -8930,70 +8903,45 @@ a {
 }
 
 
-/* =========================================================
-   TREATMENT GRID
-========================================================= */
+/* Treatment options */
 
-.treatment-modal .treatment-list {
+#treatmentModal .treatment-options {
     display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
 
     border-top: 1px solid #dce8e1;
 }
 
 
-/* =========================================================
-   TREATMENT ITEM
-========================================================= */
-
-.treatment-modal .treatment-item {
+#treatmentModal .treatment-option {
     display: grid;
 
-    grid-template-columns: 35px 1fr 34px;
+    grid-template-columns: 35px 1fr 30px;
 
     align-items: center;
 
     gap: 12px;
 
-    min-height: 135px;
+    min-height: 125px;
 
-    padding: 20px 16px;
+    padding: 20px 15px;
 
     border-bottom: 1px solid #dce8e1;
 
-    cursor: pointer;
-
-    transition:
-        background 0.3s ease,
-        padding 0.3s ease;
+    transition: 0.3s ease;
 }
 
-
-/* Vertical divider */
-
-.treatment-modal .treatment-item:nth-child(odd) {
+#treatmentModal .treatment-option:nth-child(odd) {
     border-right: 1px solid #dce8e1;
 }
 
-
-/* Hover */
-
-.treatment-modal .treatment-item:hover {
-    background: #f4faf7;
-
-    padding-left: 22px;
+#treatmentModal .treatment-option:hover {
+    background: #f3faf6;
 }
 
 
-/* =========================================================
-   NUMBER
-========================================================= */
-
-.treatment-modal .treatment-number {
+#treatmentModal .treatment-option > span {
     align-self: start;
-
-    padding-top: 4px;
 
     color: #318c5c;
 
@@ -9001,51 +8949,36 @@ a {
 
     font-size: 10px;
     font-weight: 600;
-
-    letter-spacing: 1px;
 }
 
 
-/* =========================================================
-   TREATMENT TITLE
-========================================================= */
-
-.treatment-modal .treatment-info h3 {
-    margin: 0 0 7px;
+#treatmentModal .treatment-option h3 {
+    margin: 0 0 6px;
 
     color: #1d2923;
 
     font-family: "Cormorant Garamond", serif;
 
     font-size: 25px;
-    font-weight: 600;
-
-    line-height: 1.1;
 }
 
 
-/* Description */
-
-.treatment-modal .treatment-info p {
+#treatmentModal .treatment-option p {
     margin: 0;
 
-    color: #748078;
+    color: #78847d;
 
     font-family: "Poppins", sans-serif;
 
-    font-size: 10.5px;
+    font-size: 10px;
 
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 
-/* =========================================================
-   ROUND ARROW
-========================================================= */
-
-.treatment-modal .treatment-arrow {
-    width: 32px;
-    height: 32px;
+#treatmentModal .treatment-option b {
+    width: 30px;
+    height: 30px;
 
     display: flex;
     align-items: center;
@@ -9056,257 +8989,29 @@ a {
 
     color: #318c5c;
 
-    font-size: 14px;
+    font-size: 13px;
 
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+    font-weight: 400;
 }
 
 
-.treatment-modal .treatment-item:hover .treatment-arrow {
-    background: #318c5c;
-
-    color: #ffffff;
-
-    transform: rotate(45deg);
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.treatment-modal .treatment-popup-footer {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
-
-    padding-top: 27px;
-}
-
-
-.treatment-modal .treatment-popup-footer span {
-    color: #89948e;
-
-    font-family: "Poppins", sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 1.2px;
-}
-
-
-.treatment-modal .treatment-popup-footer button {
-    padding: 0;
-
-    border: none;
-
-    background: transparent;
-
-    color: #318c5c;
-
-    font-family: "Poppins", sans-serif;
-
-    font-size: 10px;
-    font-weight: 600;
-
-    letter-spacing: 1.5px;
-
-    cursor: pointer;
-
-    transition: opacity 0.25s ease;
-}
-
-
-.treatment-modal .treatment-popup-footer button:hover {
-    opacity: 0.6;
-}
-
-
-/* =========================================================
-   BODY SCROLL LOCK
-========================================================= */
-
-body.treatment-modal-open {
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* Mobile */
 
 @media (max-width: 700px) {
 
-    .treatment-modal .treatment-popup {
-        width: calc(100% - 28px);
-
-        max-height: 92vh;
-
-        padding: 48px 25px 28px;
+    #treatmentModal .treatment-card-content {
+        padding: 45px 25px 30px;
     }
 
-    .treatment-modal .treatment-popup-header {
-        margin-bottom: 25px;
+    #treatmentModal h2 {
+        font-size: 45px;
     }
 
-    .treatment-modal .treatment-popup-header h2 {
-        font-size: 46px;
-    }
-
-    .treatment-modal .treatment-list {
+    #treatmentModal .treatment-options {
         grid-template-columns: 1fr;
     }
 
-    .treatment-modal .treatment-item:nth-child(odd) {
+    #treatmentModal .treatment-option:nth-child(odd) {
         border-right: none;
     }
-
-    .treatment-modal .treatment-item {
-        min-height: 115px;
-    }
-
-    .treatment-modal .treatment-popup-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-    .treatment-modal .treatment-popup {
-        width: calc(100% - 20px);
-
-        padding: 45px 18px 25px;
-    }
-
-    .treatment-modal .treatment-close {
-        top: 14px;
-        right: 14px;
-
-        width: 36px;
-        height: 36px;
-
-        font-size: 23px;
-    }
-
-    .treatment-modal .treatment-popup-header h2 {
-        font-size: 40px;
-    }
-
-    .treatment-modal .treatment-popup-header p {
-        font-size: 11px;
-    }
-
-    .treatment-modal .treatment-item {
-        grid-template-columns: 28px 1fr 30px;
-
-        gap: 8px;
-
-        min-height: 105px;
-
-        padding: 16px 7px;
-    }
-
-    .treatment-modal .treatment-item:hover {
-        padding-left: 12px;
-    }
-
-    .treatment-modal .treatment-info h3 {
-        font-size: 21px;
-    }
-
-    .treatment-modal .treatment-info p {
-        font-size: 9.5px;
-    }
-
-    .treatment-modal .treatment-arrow {
-        width: 29px;
-        height: 29px;
-    }
-}
-/* =========================================================
-   FORCE TREATMENT MODAL ABOVE EVERYTHING
-========================================================= */
-
-.treatment-modal {
-    position: fixed !important;
-    inset: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-
-    z-index: 999999 !important;
-
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-}
-
-
-.treatment-modal.active {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-}
-
-
-.treatment-modal-overlay {
-    position: absolute !important;
-    inset: 0 !important;
-
-    background: rgba(20, 40, 30, 0.55) !important;
-
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-
-
-.treatment-modal .treatment-popup {
-    position: relative !important;
-    z-index: 2 !important;
-
-    width: min(850px, calc(100% - 40px)) !important;
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    background: #fff !important;
-
-    padding: 55px !important;
-
-    border-radius: 5px;
-
-    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-
-    transform: translateY(30px) scale(.96);
-
-    transition: transform .4s ease;
-}
-
-
-.treatment-modal.active .treatment-popup {
-    transform: translateY(0) scale(1);
-}
-
-
-body.treatment-modal-open {
-    overflow: hidden !important;
 }
