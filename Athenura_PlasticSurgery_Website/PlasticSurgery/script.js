@@ -860,106 +860,46 @@ document
 /* =========================================================
    TREATMENTS BY AGE POPUP
 ========================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
+    const button = document.getElementById("exploreTreatmentsBtn");
     const modal = document.getElementById("treatmentModal");
 
-    if (!modal) {
-        console.error("Treatment modal not found.");
+    if (!button || !modal) {
+        console.error("Treatment button or modal not found.");
         return;
     }
 
-    function openTreatmentModal() {
+    button.addEventListener("click", function (e) {
+        e.preventDefault();
+
         modal.classList.add("active");
         document.body.style.overflow = "hidden";
-    }
-
-    function closeTreatmentModal() {
-        modal.classList.remove("active");
-        document.body.style.overflow = "";
-    }
-
-
-    /* -----------------------------------------------------
-       OPEN — using the existing .age-explore button
-    ----------------------------------------------------- */
-
-    document.addEventListener("click", function (event) {
-
-        const button = event.target.closest(".age-explore");
-
-        if (!button) return;
-
-        event.preventDefault();
-
-        openTreatmentModal();
-
     });
 
-
-    /* -----------------------------------------------------
-       CLOSE BUTTON
-    ----------------------------------------------------- */
-
-    const closeButton =
-        document.getElementById("treatmentClose");
+    const closeButton = document.getElementById("treatmentClose");
 
     if (closeButton) {
-
         closeButton.addEventListener("click", function () {
-            closeTreatmentModal();
+            modal.classList.remove("active");
+            document.body.style.overflow = "";
         });
-
     }
 
-
-    /* -----------------------------------------------------
-       FOOTER CLOSE
-    ----------------------------------------------------- */
-
-    const footerClose =
-        document.getElementById("treatmentFooterClose");
-
-    if (footerClose) {
-
-        footerClose.addEventListener("click", function () {
-            closeTreatmentModal();
-        });
-
-    }
-
-
-    /* -----------------------------------------------------
-       OVERLAY CLOSE
-    ----------------------------------------------------- */
-
-    const overlay =
-        modal.querySelector(".treatment-modal-overlay") ||
-        modal.querySelector(".treatment-overlay");
+    const overlay = modal.querySelector(".treatment-overlay");
 
     if (overlay) {
-
         overlay.addEventListener("click", function () {
-            closeTreatmentModal();
+            modal.classList.remove("active");
+            document.body.style.overflow = "";
         });
-
     }
 
-
-    /* -----------------------------------------------------
-       ESCAPE KEY
-    ----------------------------------------------------- */
-
-    document.addEventListener("keydown", function (event) {
-
-        if (
-            event.key === "Escape" &&
-            modal.classList.contains("active")
-        ) {
-            closeTreatmentModal();
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            modal.classList.remove("active");
+            document.body.style.overflow = "";
         }
-
     });
 
 });
