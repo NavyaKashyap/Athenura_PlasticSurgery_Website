@@ -856,40 +856,88 @@ document
 
     });
 
-    
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const treatmentButton =
+        document.getElementById("exploreTreatmentsBtn");
+
     const treatmentModal =
         document.getElementById("treatmentModal");
 
+    const treatmentClose =
+        document.getElementById("treatmentClose");
 
-    function openTreatmentModal() {
+    const treatmentFooterClose =
+        document.getElementById("treatmentFooterClose");
+
+    const treatmentOverlay =
+        document.querySelector(".treatment-modal-overlay");
+
+
+    /* OPEN */
+
+    treatmentButton.addEventListener("click", function (event) {
+
+        event.preventDefault();
 
         treatmentModal.classList.add("active");
 
-        document.body.classList.add(
-            "treatment-modal-open"
-        );
-    }
+        document.body.classList.add("treatment-modal-open");
+
+    });
 
 
-    function closeTreatmentModal() {
+    /* CLOSE BUTTON */
+
+    treatmentClose.addEventListener("click", function () {
 
         treatmentModal.classList.remove("active");
 
-        document.body.classList.remove(
-            "treatment-modal-open"
-        );
-    }
+        document.body.classList.remove("treatment-modal-open");
+
+    });
 
 
-    /* Close popup with ESC key */
+    /* FOOTER CLOSE */
 
-    document.addEventListener("keydown", function(event) {
+    treatmentFooterClose.addEventListener("click", function () {
+
+        treatmentModal.classList.remove("active");
+
+        document.body.classList.remove("treatment-modal-open");
+
+    });
+
+
+    /* CLICK OUTSIDE */
+
+    treatmentOverlay.addEventListener("click", function () {
+
+        treatmentModal.classList.remove("active");
+
+        document.body.classList.remove("treatment-modal-open");
+
+    });
+
+
+    /* ESC KEY */
+
+    document.addEventListener("keydown", function (event) {
 
         if (
             event.key === "Escape" &&
             treatmentModal.classList.contains("active")
         ) {
-            closeTreatmentModal();
+
+            treatmentModal.classList.remove("active");
+
+            document.body.classList.remove(
+                "treatment-modal-open"
+            );
+
         }
 
     });
+
+});

@@ -9235,3 +9235,78 @@ body.treatment-modal-open {
         height: 29px;
     }
 }
+/* =========================================================
+   FORCE TREATMENT MODAL ABOVE EVERYTHING
+========================================================= */
+
+.treatment-modal {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+
+    z-index: 999999 !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+.treatment-modal.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+
+.treatment-modal-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+
+    background: rgba(20, 40, 30, 0.55) !important;
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+
+.treatment-modal .treatment-popup {
+    position: relative !important;
+    z-index: 2 !important;
+
+    width: min(850px, calc(100% - 40px)) !important;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #fff !important;
+
+    padding: 55px !important;
+
+    border-radius: 5px;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+
+    transform: translateY(30px) scale(.96);
+
+    transition: transform .4s ease;
+}
+
+
+.treatment-modal.active .treatment-popup {
+    transform: translateY(0) scale(1);
+}
+
+
+body.treatment-modal-open {
+    overflow: hidden !important;
+}
