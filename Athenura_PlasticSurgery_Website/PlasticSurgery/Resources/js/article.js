@@ -115,30 +115,6 @@ function createArticleNavigation() {
 }
 
 
-// ==============================
-// Show Article Section
-// ==============================
-
-// function showArticleSection(sectionName) {
-
-//     const section = selectedArticle[sectionName];
-
-//     articleContentContainer.innerHTML = `
-
-//         <div class="article-panel active" data-content="${sectionName}">
-
-//             <h2>
-//                 ${section.title}
-//             </h2>
-
-//             ${section.content}
-
-//         </div>
-
-//     `;
-
-// }
-
 function showArticleSection(sectionName) {
 
     const section = selectedArticle[sectionName];
