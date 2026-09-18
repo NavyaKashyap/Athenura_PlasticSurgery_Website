@@ -858,48 +858,100 @@ document
 
 
 /* =========================================================
-   TREATMENTS BY AGE POPUP
+   TREATMENTS POPUP
 ========================================================= */
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    const button = document.getElementById("exploreTreatmentsBtn");
-    const modal = document.getElementById("treatmentModal");
+    const treatmentButton =
+        document.getElementById("exploreTreatmentsBtn");
 
-    if (!button || !modal) {
-        console.error("Treatment button or modal not found.");
+    const treatmentModal =
+        document.getElementById("treatmentModal");
+
+    const treatmentClose =
+        document.getElementById("treatmentClose");
+
+    const treatmentOverlay =
+        document.getElementById("treatmentOverlay");
+
+
+    /* Check elements */
+
+    console.log("Treatment button:", treatmentButton);
+    console.log("Treatment modal:", treatmentModal);
+    console.log("Treatment close:", treatmentClose);
+    console.log("Treatment overlay:", treatmentOverlay);
+
+
+    /* Stop if popup elements are missing */
+
+    if (!treatmentButton || !treatmentModal) {
+        console.error(
+            "Treatment popup elements are missing."
+        );
         return;
     }
 
-    button.addEventListener("click", function (e) {
-        e.preventDefault();
 
-        modal.classList.add("active");
+    /* OPEN POPUP */
+
+    treatmentButton.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        treatmentModal.classList.add("active");
+
         document.body.style.overflow = "hidden";
+
     });
 
-    const closeButton = document.getElementById("treatmentClose");
 
-    if (closeButton) {
-        closeButton.addEventListener("click", function () {
-            modal.classList.remove("active");
+    /* CLOSE WITH X */
+
+    if (treatmentClose) {
+
+        treatmentClose.addEventListener("click", function () {
+
+            treatmentModal.classList.remove("active");
+
             document.body.style.overflow = "";
+
         });
+
     }
 
-    const overlay = modal.querySelector(".treatment-overlay");
 
-    if (overlay) {
-        overlay.addEventListener("click", function () {
-            modal.classList.remove("active");
+    /* CLOSE BY CLICKING OVERLAY */
+
+    if (treatmentOverlay) {
+
+        treatmentOverlay.addEventListener("click", function () {
+
+            treatmentModal.classList.remove("active");
+
             document.body.style.overflow = "";
+
         });
+
     }
 
-    document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-            modal.classList.remove("active");
+
+    /* CLOSE WITH ESCAPE */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (
+            event.key === "Escape" &&
+            treatmentModal.classList.contains("active")
+        ) {
+
+            treatmentModal.classList.remove("active");
+
             document.body.style.overflow = "";
+
         }
+
     });
 
 });
