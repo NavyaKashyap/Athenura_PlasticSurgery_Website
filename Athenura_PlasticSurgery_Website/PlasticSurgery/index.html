@@ -585,10 +585,10 @@ BEFORE & AFTER
 
 
                 <!-- LINK -->
-                <a href="#" class="age-explore">
-
-                    Explore Treatments
-
+                <a href="javascript:void(0);"
+   class="age-explore-btn"
+   onclick="openTreatmentModal()">
+    EXPLORE TREATMENTS
                     <span class="age-arrow">
                         ↗
                     </span>
@@ -2282,6 +2282,140 @@ REQUEST CONSULTATION
         </p>
 
     </div>
+    <!-- =========================================================
+     TREATMENTS POPUP
+========================================================= -->
+
+<div class="treatment-modal" id="treatmentModal">
+
+    <div class="treatment-modal-overlay" onclick="closeTreatmentModal()"></div>
+
+    <div class="treatment-popup">
+
+        <!-- Close -->
+        <button class="treatment-close"
+                onclick="closeTreatmentModal()"
+                aria-label="Close">
+            ×
+        </button>
+
+        <!-- Header -->
+        <div class="treatment-popup-header">
+
+            <span class="treatment-popup-label">
+                20s • FOUNDATION YEARS
+            </span>
+
+            <h2>
+                Explore Your
+                <em>Treatments</em>
+            </h2>
+
+            <p>
+                Thoughtfully selected treatments designed to
+                enhance your natural features while keeping
+                your results fresh and subtle.
+            </p>
+
+        </div>
+
+
+        <!-- Treatment Cards -->
+        <div class="treatment-list">
+
+            <div class="treatment-item">
+
+                <div class="treatment-number">
+                    01
+                </div>
+
+                <div class="treatment-info">
+                    <h3>Skin Rejuvenation</h3>
+                    <p>
+                        Refresh and improve your skin's
+                        natural texture, tone and glow.
+                    </p>
+                </div>
+
+                <span class="treatment-arrow">↗</span>
+
+            </div>
+
+
+            <div class="treatment-item">
+
+                <div class="treatment-number">
+                    02
+                </div>
+
+                <div class="treatment-info">
+                    <h3>Acne &amp; Scar Treatment</h3>
+                    <p>
+                        Target acne concerns and visible
+                        scarring for smoother-looking skin.
+                    </p>
+                </div>
+
+                <span class="treatment-arrow">↗</span>
+
+            </div>
+
+
+            <div class="treatment-item">
+
+                <div class="treatment-number">
+                    03
+                </div>
+
+                <div class="treatment-info">
+                    <h3>Lip Enhancement</h3>
+                    <p>
+                        Subtle enhancement designed to
+                        complement your natural facial balance.
+                    </p>
+                </div>
+
+                <span class="treatment-arrow">↗</span>
+
+            </div>
+
+
+            <div class="treatment-item">
+
+                <div class="treatment-number">
+                    04
+                </div>
+
+                <div class="treatment-info">
+                    <h3>Preventive Care</h3>
+                    <p>
+                        Personalized aesthetic care focused
+                        on maintaining healthy, youthful skin.
+                    </p>
+                </div>
+
+                <span class="treatment-arrow">↗</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom -->
+        <div class="treatment-popup-footer">
+
+            <span>
+                Personalized care • Natural results
+            </span>
+
+            <button onclick="closeTreatmentModal()">
+                CLOSE
+            </button>
+
+        </div>
+
+    </div>
+</div>
 
 </div>
     <!-- JavaScript -->
