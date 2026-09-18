@@ -1,16 +1,30 @@
+<<<<<<< HEAD
 /* =========================================================
    GALLERY PAGE
    ATHENURA PLASTIC SURGERY
 ========================================================= */
 
 
+=======
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 /* =========================================================
-   GLOBAL
+   GALLERY PAGE
+   PREMIUM GREEN + WHITE THEME
 ========================================================= */
 
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
+=======
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.gallery-page,
+.gallery-page * {
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
     box-sizing: border-box;
 }
 
@@ -20,17 +34,34 @@ html {
 }
 
 body {
-    background: #f7f6f3;
-    color: #318c5c;
-    font-family: "Poppins", sans-serif;
+    margin: 0;
     overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+
+
+
+/* =========================================================
+   GALLERY HERO SECTION
+========================================================= */
+
+.gallery-hero {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    box-sizing: border-box;
+
+    padding: 120px 8% 60px;
+
+    /* Main background color */
+    background: #f4faf6;
 }
 
+<<<<<<< HEAD
 button,
 input,
 textarea,
@@ -41,81 +72,345 @@ select {
 img {
     display: block;
     max-width: 100%;
+=======
+
+/* =========================================================
+   BACKGROUND VECTOR
+========================================================= */
+
+.gallery-vector {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 65%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: right center;
+
+    opacity: 0.35;
+
+    z-index: 0;
+
+    pointer-events: none;
 }
 
 
 /* =========================================================
-   HERO
+   TRANSPARENT HERO IMAGE
 ========================================================= */
 
-.gallery-hero {
-    min-height: 65vh;
+.gallery-hero-image {
+    position: absolute;
+
+    right: 2%;
+    bottom: 0;
+
+    width: 55%;
+    max-width: 850px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 2;
+
+    /* No blur */
+    filter: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.gallery-hero-content {
+    position: relative;
+
+    width: 48%;
+    max-width: 620px;
+
+    z-index: 3;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
 
-    text-align: center;
-
-    padding: 150px 20px 100px;
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(49, 140, 92, 0.10),
-            transparent 40%
-        ),
-        #f7f6f3;
+    margin-top: -40px;
 }
 
-.hero-content {
-    max-width: 850px;
-}
 
-.small-heading {
-    display: block;
+/* =========================================================
+   SMALL HEADING
+========================================================= */
 
-    margin-bottom: 20px;
+.gallery-small-heading {
+    margin-bottom: 18px;
 
-    font-size: 12px;
-    font-weight: 600;
+    font-family: "Beaufort Pro", "Federo", serif;
+
+    font-size: 17px;
+    font-weight: 500;
 
     letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #6b6b6b;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.gallery-hero-content h1 {
+    margin: 0 0 28px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 70px;
+    font-weight: 600;
+
+    line-height: 0.92;
 
     color: #318c5c;
 }
 
-.gallery-hero h1 {
-    margin-bottom: 20px;
 
-    font-family: "Cormorant Garamond", serif;
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
-    font-size: clamp(70px, 10vw, 150px);
-    line-height: 0.85;
+.gallery-description {
+    max-width: 520px;
 
-    font-weight: 500;
+    margin-bottom: 40px;
 
-    color: #3b3128;
-}
-
-.gallery-hero p {
-    max-width: 580px;
-
-    margin: auto;
-
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.8;
 
-    color: #716a63;
+    color: #5f5f5f;
 }
 
 
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.gallery-hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.gallery-primary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 34px;
+
+    background: #318c5c;
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.35s;
+}
+
+
+.gallery-primary-btn:hover {
+    background: #246e47;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(49, 140, 92, 0.25);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.gallery-secondary-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding-bottom: 5px;
+
+    color: #318c5c;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-bottom: 2px solid #318c5c;
+
+    transition: 0.3s;
+}
+
+
+.gallery-secondary-btn:hover {
+    color: #246e47;
+
+    border-color: #246e47;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .gallery-hero {
+        padding: 110px 6% 50px;
+    }
+
+    .gallery-hero-content {
+        width: 50%;
+    }
+
+    .gallery-hero-content h1 {
+        font-size: 62px;
+    }
+
+    .gallery-description {
+        font-size: 16px;
+    }
+
+    .gallery-hero-image {
+        width: 58%;
+        right: -2%;
+    }
+
+    .gallery-vector {
+        width: 70%;
+    }
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .gallery-hero {
+        min-height: 850px;
+
+        padding: 110px 6% 0;
+
+        align-items: flex-start;
+    }
+
+    .gallery-hero-content {
+        width: 100%;
+
+        margin-top: 0;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .gallery-hero-content h1 {
+        font-size: 60px;
+    }
+
+    .gallery-description {
+        max-width: 500px;
+
+        font-size: 15px;
+    }
+
+    .gallery-hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 18px;
+    }
+
+    .gallery-hero-image {
+        width: 85%;
+
+        right: 50%;
+
+        transform: translateX(50%);
+
+        bottom: 0;
+    }
+
+    .gallery-vector {
+        width: 100%;
+
+        height: 55%;
+
+        bottom: 0;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .gallery-hero {
+        min-height: 780px;
+    }
+
+    .gallery-hero-content h1 {
+        font-size: 52px;
+    }
+
+    .gallery-small-heading {
+        font-size: 13px;
+        letter-spacing: 2.5px;
+    }
+
+    .gallery-description {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .gallery-primary-btn {
+        padding: 14px 26px;
+    }
+
+    .gallery-secondary-btn {
+        font-size: 14px;
+    }
+
+    .gallery-hero-image {
+        width: 90%;
+    }
+}
 /* =========================================================
    INTRO
 ========================================================= */
 
 .gallery-intro {
-    max-width: 800px;
+    width: 100%;
+    max-width: 850px;
 
     margin: 0 auto;
 
@@ -124,7 +419,7 @@ img {
     text-align: center;
 }
 
-.section-label {
+.gallery-section-label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,6 +428,7 @@ img {
 
     margin-bottom: 25px;
 
+    font-family: "Poppins", sans-serif;
     font-size: 11px;
     font-weight: 600;
 
@@ -141,7 +437,7 @@ img {
     color: #318c5c;
 }
 
-.section-label span {
+.gallery-section-label span {
     width: 35px;
     height: 1px;
 
@@ -149,7 +445,7 @@ img {
 }
 
 .gallery-intro h2 {
-    margin-bottom: 25px;
+    margin: 0 0 25px;
 
     font-family: "Cormorant Garamond", serif;
 
@@ -158,7 +454,7 @@ img {
 
     font-weight: 500;
 
-    color: #3b3128;
+    color: #24352c;
 }
 
 .gallery-intro h2 em {
@@ -169,31 +465,44 @@ img {
 .gallery-intro p {
     max-width: 620px;
 
-    margin: auto;
+    margin: 0 auto;
 
-    color: #77706a;
-
+    font-family: "Poppins", sans-serif;
     font-size: 14px;
     line-height: 1.9;
+
+    color: #737b75;
 }
 
 
 /* =========================================================
-   GALLERY SECTION
+   MAIN GALLERY SECTION
 ========================================================= */
 
 .gallery-section {
     width: 100%;
+<<<<<<< HEAD
     max-width: 1450px;
+=======
+    max-width: 1400px;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 
-    margin: auto;
+    margin: 0 auto;
 
+<<<<<<< HEAD
     padding: 80px 5% 120px;
+=======
+    padding: 30px 40px 100px;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 }
 
 
 /* =========================================================
+<<<<<<< HEAD
    FILTER AREA
+=======
+   FILTER BUTTONS
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 ========================================================= */
 
 .gallery-filters {
@@ -209,13 +518,19 @@ img {
 
 .main-filters {
     display: flex;
+<<<<<<< HEAD
 
     justify-content: center;
     align-items: center;
+=======
+    align-items: center;
+    justify-content: center;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 
     flex-wrap: wrap;
 
     gap: 12px;
+<<<<<<< HEAD
 }
 
 
@@ -234,6 +549,29 @@ img {
     font-weight: 500;
 
     color: #444444;
+=======
+
+    margin-bottom: 75px;
+}
+
+.gallery-filter {
+    appearance: none;
+
+    padding: 12px 28px;
+
+    border: 1px solid #d7e0da;
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.3px;
+
+    color: #4d5952;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 
     cursor: pointer;
 
@@ -241,6 +579,7 @@ img {
         background 0.3s ease,
         color 0.3s ease,
         border-color 0.3s ease,
+<<<<<<< HEAD
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
@@ -262,10 +601,28 @@ img {
 
     box-shadow:
         0 7px 18px rgba(49, 140, 92, 0.18);
+=======
+        transform 0.3s ease;
+}
+
+.gallery-filter:hover {
+    border-color: #318c5c;
+    color: #318c5c;
+
+    transform: translateY(-2px);
+}
+
+.gallery-filter.active {
+    background: #318c5c;
+    border-color: #318c5c;
+
+    color: #ffffff;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 }
 
 
 /* =========================================================
+<<<<<<< HEAD
    SUB FILTERS
 ========================================================= */
 
@@ -353,10 +710,87 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 40px;
+=======
+   CATEGORY
+========================================================= */
+
+.gallery-category {
+    width: 100%;
+
+    margin-bottom: 110px;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+.gallery-category:last-child {
+    margin-bottom: 0;
 }
 
 
 /* =========================================================
+   CATEGORY HEADING
+========================================================= */
+
+.category-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 22px;
+
+    margin-bottom: 38px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgba(49, 140, 92, 0.16);
+}
+
+.category-number {
+    flex-shrink: 0;
+
+    padding-top: 4px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+    line-height: 1;
+
+    color: #318c5c;
+}
+
+.category-heading span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+
+    color: #318c5c;
+}
+
+.category-heading h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 52px;
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    color: #24352c;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
+}
+
+
+/* =========================================================
+<<<<<<< HEAD
    COMPARE CARD
 ========================================================= */
 
@@ -403,10 +837,58 @@ img {
     user-select: none;
 
     touch-action: none;
+=======
+   COMPARISON GRID
+========================================================= */
+
+.comparison-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 35px;
 }
 
 
 /* =========================================================
+   COMPARISON CARD
+========================================================= */
+
+.comparison-card {
+    width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(49, 140, 92, 0.08);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 45px rgba(30, 60, 45, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.comparison-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 25px 60px rgba(30, 60, 45, 0.13);
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
+}
+
+
+/* =========================================================
+<<<<<<< HEAD
    IMAGES
 ========================================================= */
 
@@ -443,10 +925,59 @@ img {
     z-index: 2;
 
     clip-path: inset(0 0 0 50%);
+=======
+   COMPARISON SLIDER
+========================================================= */
+
+.comparison-slider {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 3 / 2;
+
+    overflow: hidden;
+
+    background: #eef2ef;
+
+    cursor: ew-resize;
+
+    user-select: none;
+
+    touch-action: none;
 }
 
 
 /* =========================================================
+   BASE IMAGE
+========================================================= */
+
+.comparison-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    pointer-events: none;
+}
+
+
+/* BEFORE IMAGE */
+
+.comparison-before {
+    z-index: 1;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
+}
+
+
+/* =========================================================
+<<<<<<< HEAD
    IMAGE OVERLAY
 ========================================================= */
 
@@ -475,10 +1006,43 @@ img {
 
 .compare-card:hover .compare-wrapper::after {
     opacity: 1;
+=======
+   AFTER IMAGE CONTAINER
+========================================================= */
+
+.comparison-after {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 50%;
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+
+/*
+   Important:
+   The image inside .comparison-after must remain
+   the full width of the slider.
+*/
+
+.comparison-after .comparison-image {
+    width: 100%;
+
+    max-width: none;
+
+    left: 0;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 }
 
 
 /* =========================================================
+<<<<<<< HEAD
    SLIDER DIVIDER
 ========================================================= */
 
@@ -544,10 +1108,51 @@ img {
 
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.25);
+=======
+   LABELS
+========================================================= */
+
+.comparison-label {
+    position: absolute;
+
+    top: 20px;
+
+    z-index: 20;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(8px);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+
+    color: #318c5c;
+
+    pointer-events: none;
+}
+
+.comparison-label-before {
+    left: 20px;
+}
+
+.comparison-label-after {
+    right: 20px;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 }
 
 
 /* =========================================================
+<<<<<<< HEAD
    BEFORE / AFTER LABELS
 ========================================================= */
 
@@ -683,6 +1288,134 @@ img {
   gap: 12px;
   color: #2f8055;
 }
+=======
+   DIVIDER
+========================================================= */
+
+.comparison-line {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 2px;
+    height: 100%;
+
+    background: #ffffff;
+
+    z-index: 25;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HANDLE
+========================================================= */
+
+.comparison-handle {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 54px;
+    height: 54px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    transform: translate(-50%, -50%);
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #318c5c;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18);
+
+    cursor: ew-resize;
+
+    pointer-events: auto;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.comparison-handle i {
+    font-size: 12px;
+}
+
+.comparison-handle:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   CARD INFORMATION
+========================================================= */
+
+.comparison-info {
+    padding: 25px 28px 28px;
+}
+
+.card-index {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 2.2px;
+
+    color: #318c5c;
+}
+
+.comparison-info h3 {
+    margin: 0 0 9px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+    line-height: 1;
+
+    font-weight: 500;
+
+    color: #24352c;
+}
+
+.comparison-info p {
+    max-width: 520px;
+
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    line-height: 1.75;
+
+    color: #727a75;
+}
+
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 
 .view-case-btn span {
   font-size: 18px;
@@ -998,6 +1731,8 @@ img {
 .gallery-cta {
     position: relative;
 
+    width: 100%;
+
     padding: 120px 25px;
 
     text-align: center;
@@ -1046,13 +1781,15 @@ img {
 
     max-width: 750px;
 
-    margin: auto;
+    margin: 0 auto;
 }
 
 .cta-content > span {
     display: block;
 
     margin-bottom: 20px;
+
+    font-family: "Poppins", sans-serif;
 
     font-size: 10px;
 
@@ -1062,7 +1799,7 @@ img {
 }
 
 .cta-content h2 {
-    margin-bottom: 20px;
+    margin: 0 0 20px;
 
     font-family: "Cormorant Garamond", serif;
 
@@ -1076,7 +1813,11 @@ img {
 }
 
 .cta-content p {
-    margin-bottom: 35px;
+    max-width: 550px;
+
+    margin: 0 auto 35px;
+
+    font-family: "Poppins", sans-serif;
 
     font-size: 14px;
 
@@ -1096,10 +1837,17 @@ img {
 
     color: #318c5c;
 
+    font-family: "Poppins", sans-serif;
+
     font-size: 12px;
 
     font-weight: 600;
 
+<<<<<<< HEAD
+=======
+    text-decoration: none;
+
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -1114,6 +1862,7 @@ img {
 
 
 /* =========================================================
+<<<<<<< HEAD
    BACK TO TOP
 ========================================================= */
 
@@ -1188,12 +1937,33 @@ img {
 
     .gallery-grid {
         gap: 30px;
+=======
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .gallery-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 25px;
+    }
+
+    .category-heading h2 {
+        font-size: 46px;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
     }
 
 }
 
 
 /* =========================================================
+<<<<<<< HEAD
    TABLET
 ========================================================= */
 
@@ -1241,10 +2011,18 @@ img {
 
 @media (max-width: 768px) {
 
+=======
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
     .gallery-hero {
         min-height: 55vh;
 
         padding:
+<<<<<<< HEAD
             135px
             20px
             80px;
@@ -1317,10 +2095,40 @@ img {
         padding:
             55px
             20px
+=======
+            140px 20px
+            80px;
+    }
+
+    .gallery-hero h1 {
+        font-size: clamp(65px, 18vw, 100px);
+    }
+
+    .gallery-hero p {
+        font-size: 13px;
+    }
+
+
+    .gallery-intro {
+        padding:
+            75px 20px
+            50px;
+    }
+
+    .gallery-intro h2 {
+        font-size: 50px;
+    }
+
+
+    .gallery-section {
+        padding:
+            20px 20px
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
             80px;
     }
 
 
+<<<<<<< HEAD
     /* Main filters */
 
     .gallery-filters {
@@ -1348,11 +2156,22 @@ img {
 
     .sub-filter-btn {
         padding: 7px 13px;
+=======
+    .gallery-filters {
+        gap: 8px;
+
+        margin-bottom: 55px;
+    }
+
+    .gallery-filter {
+        padding: 10px 18px;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 
         font-size: 11px;
     }
 
 
+<<<<<<< HEAD
     /* Cards */
 
     .gallery-grid {
@@ -1459,6 +2278,80 @@ img {
 
     .cta-content p {
         font-size: 13px;
+=======
+    .gallery-category {
+        margin-bottom: 75px;
+    }
+
+
+    .category-heading {
+        gap: 15px;
+
+        margin-bottom: 28px;
+    }
+
+    .category-heading h2 {
+        font-size: 42px;
+    }
+
+    .category-heading span {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .comparison-slider {
+        aspect-ratio: 4 / 3;
+    }
+
+
+    .comparison-handle {
+        width: 46px;
+        height: 46px;
+    }
+
+    .comparison-handle i {
+        font-size: 10px;
+    }
+
+
+    .comparison-label {
+        top: 15px;
+
+        padding: 7px 12px;
+
+        font-size: 8px;
+    }
+
+    .comparison-label-before {
+        left: 15px;
+    }
+
+    .comparison-label-after {
+        right: 15px;
+    }
+
+
+    .comparison-info {
+        padding: 21px;
+    }
+
+    .comparison-info h3 {
+        font-size: 29px;
+    }
+
+
+    .gallery-cta {
+        padding:
+            90px 20px;
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
     }
 
 }
@@ -1468,6 +2361,7 @@ img {
    SMALL MOBILE
 ========================================================= */
 
+<<<<<<< HEAD
 @media (max-width: 480px) {
 
     .gallery-hero {
@@ -1671,4 +2565,24 @@ img {
     }
 
 
+=======
+@media (max-width: 420px) {
+
+    .gallery-filters {
+        justify-content: flex-start;
+    }
+
+    .gallery-filter {
+        padding: 9px 15px;
+    }
+
+    .category-heading h2 {
+        font-size: 38px;
+    }
+
+    .comparison-info h3 {
+        font-size: 27px;
+    }
+
+>>>>>>> 2c296096fd26dedd3df62451fd61038c8f2c4087
 }

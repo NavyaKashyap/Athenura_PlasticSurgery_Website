@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="navbar-container">
 
                 <!-- Athenura Logo -->
-                <a href="../home/index.html" class="navbar-logo">
+                <a href="../index.html" class="navbar-logo">
                     <img src="../images/logo/athenura-logo.png" alt="Athenura">
                 </a>
 
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <!-- Navigation -->
                 <div class="navbar-menu">
 
-                    <a href="../home/index.html" class="nav-link">HOME</a>
+                    <a href="../index.html" class="nav-link">HOME</a>
 
                     <a href="../Services/services.html" class="nav-link">
                         SERVICES
