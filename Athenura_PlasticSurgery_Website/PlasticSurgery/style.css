@@ -4805,6 +4805,1606 @@ SCREEN IMAGE (NO PHONE FRAME)
 }
 
 /* =========================================================
+   BOOK CONSULTATION POPUP
+========================================================= */
+
+.consultation-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* OPEN */
+
+.consultation-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.consultation-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 43, 34, 0.70);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   POPUP BOX
+========================================================= */
+
+.consultation-box {
+    position: relative;
+    z-index: 2;
+
+    width: 700px;
+    max-width: 100%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    padding: 46px 45px 40px;
+
+    border-radius: 16px;
+
+    background:
+        radial-gradient(
+            circle at 90% 5%,
+            rgba(125, 213, 165, 0.25),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #fbfffc 55%,
+            #f1faf5 100%
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.30);
+
+    transform: translateY(25px) scale(0.97);
+
+    transition: transform 0.35s ease;
+}
+
+
+/* OPEN ANIMATION */
+
+.consultation-modal.active .consultation-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.consultation-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.consultation-box::-webkit-scrollbar-track {
+    background: #edf4f0;
+}
+
+.consultation-box::-webkit-scrollbar-thumb {
+    background: #318c5c;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.consultation-close {
+    position: absolute;
+
+    top: 22px;
+    right: 22px;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #777;
+
+    font-size: 28px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.25s ease;
+}
+
+.consultation-close:hover {
+    background: #318c5c;
+    color: white;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.consultation-header {
+    text-align: center;
+
+    margin-bottom: 34px;
+}
+
+
+.consultation-tag {
+    display: inline-block;
+
+    padding: 8px 19px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(49, 140, 92, 0.30);
+
+    background: rgba(125, 213, 165, 0.14);
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    margin-bottom: 17px;
+}
+
+
+.consultation-header h2 {
+    margin: 0 0 14px;
+
+    color: #318c5c;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 44px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+}
+
+
+.consultation-header p {
+    max-width: 520px;
+
+    margin: auto;
+
+    color: #737776;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#consultationForm {
+    display: flex;
+    flex-direction: column;
+
+    gap: 23px;
+}
+
+
+.consultation-form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.consultation-form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.consultation-form-group.full-width {
+    width: 100%;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.consultation-form-group label {
+    color: #2d8b5d;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.consultation-form-group input,
+.consultation-form-group select,
+.consultation-form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px 18px;
+
+    border: 1px solid #d2d5d3;
+
+    border-radius: 5px;
+
+    background: #eeeeee;
+
+    color: #444;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+
+.consultation-form-group input::placeholder,
+.consultation-form-group textarea::placeholder {
+    color: #777;
+}
+
+
+/* FOCUS */
+
+.consultation-form-group input:focus,
+.consultation-form-group select:focus,
+.consultation-form-group textarea:focus {
+
+    background: #ffffff;
+
+    border-color: #318c5c;
+
+    box-shadow:
+        0 0 0 4px rgba(49, 140, 92, 0.12);
+}
+
+
+.consultation-form-group textarea {
+    resize: vertical;
+
+    min-height: 115px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.consultation-submit {
+
+    width: 100%;
+
+    padding: 17px 24px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #318c5c;
+
+    color: #fff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    transition: 0.25s ease;
+}
+
+
+.consultation-submit:hover {
+    background: #246e47;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(49, 140, 92, 0.25);
+}
+
+
+.consultation-submit span {
+    font-size: 20px;
+
+    transition: transform 0.25s ease;
+}
+
+
+.consultation-submit:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   PREVENT BODY SCROLL
+========================================================= */
+
+body.consultation-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .consultation-modal {
+        padding: 12px;
+    }
+
+    .consultation-box {
+        width: 100%;
+
+        max-height: 94vh;
+
+        padding: 38px 22px 28px;
+
+        border-radius: 14px;
+    }
+
+    .consultation-close {
+        top: 14px;
+        right: 14px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 24px;
+    }
+
+    .consultation-header {
+        padding: 10px 15px 0;
+
+        margin-bottom: 28px;
+    }
+
+    .consultation-header h2 {
+        font-size: 34px;
+    }
+
+    .consultation-header p {
+        font-size: 14px;
+    }
+
+    .consultation-form-row {
+        grid-template-columns: 1fr;
+
+        gap: 23px;
+    }
+
+}
+/* =========================================================
+   BMI CALCULATOR POPUP
+========================================================= */
+
+.bmi-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* OPEN */
+
+.bmi-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.bmi-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 43, 34, 0.70);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BMI BOX
+========================================================= */
+
+.bmi-box {
+    position: relative;
+    z-index: 2;
+
+    width: 600px;
+    max-width: 100%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    padding: 46px 45px 40px;
+
+    border-radius: 16px;
+
+    background:
+        radial-gradient(
+            circle at 90% 5%,
+            rgba(125, 213, 165, 0.25),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #fbfffc 55%,
+            #f1faf5 100%
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.30);
+
+    transform: translateY(25px) scale(0.97);
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* OPEN ANIMATION */
+
+.bmi-modal.active .bmi-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.bmi-close {
+    position: absolute;
+
+    top: 22px;
+    right: 22px;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #777;
+
+    font-size: 28px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.25s ease;
+}
+
+
+.bmi-close:hover {
+    background: #318c5c;
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.bmi-header {
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+
+.bmi-tag {
+    display: inline-block;
+
+    padding: 8px 19px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(49, 140, 92, 0.30);
+
+    background: rgba(125, 213, 165, 0.14);
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    margin-bottom: 17px;
+}
+
+
+.bmi-header h2 {
+    margin: 0 0 14px;
+
+    color: #318c5c;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 44px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+}
+
+
+.bmi-header p {
+    max-width: 500px;
+
+    margin: auto;
+
+    color: #737776;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#bmiForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 23px;
+}
+
+
+.bmi-form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.bmi-form-group label {
+    color: #2d8b5d;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.bmi-input-wrapper {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.bmi-input-wrapper input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px 65px 15px 18px;
+
+    border: 1px solid #d2d5d3;
+
+    border-radius: 5px;
+
+    background: #eeeeee;
+
+    color: #444;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+
+.bmi-input-wrapper input::placeholder {
+    color: #777;
+}
+
+
+.bmi-input-wrapper input:focus {
+    background: #ffffff;
+
+    border-color: #318c5c;
+
+    box-shadow:
+        0 0 0 4px rgba(49, 140, 92, 0.12);
+}
+
+
+.bmi-input-wrapper span {
+    position: absolute;
+
+    right: 18px;
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CALCULATE BUTTON
+========================================================= */
+
+.bmi-calculate-btn {
+    width: 100%;
+
+    padding: 17px 24px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #318c5c;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    transition: 0.25s ease;
+}
+
+
+.bmi-calculate-btn:hover {
+    background: #246e47;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(49, 140, 92, 0.25);
+}
+
+
+.bmi-calculate-btn span {
+    font-size: 20px;
+
+    transition: transform 0.25s ease;
+}
+
+
+.bmi-calculate-btn:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.bmi-result {
+
+    margin-top: 28px;
+
+    padding: 25px 20px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(219, 243, 229, 0.55),
+            rgba(255, 255, 255, 0.85)
+        );
+
+    border: 1px solid rgba(49, 140, 92, 0.14);
+
+    text-align: center;
+}
+
+
+.bmi-result-title {
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+}
+
+
+.bmi-number {
+
+    margin-top: 5px;
+
+    color: #318c5c;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 58px;
+
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+
+.bmi-category {
+
+    margin-top: 8px;
+
+    color: #444;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+.bmi-note {
+
+    max-width: 450px;
+
+    margin: 15px auto 0;
+
+    color: #777;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BODY SCROLL LOCK
+========================================================= */
+
+body.bmi-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .bmi-modal {
+        padding: 12px;
+    }
+
+    .bmi-box {
+
+        width: 100%;
+
+        max-height: 94vh;
+
+        padding: 38px 22px 28px;
+
+        border-radius: 14px;
+    }
+
+    .bmi-close {
+
+        top: 14px;
+        right: 14px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 24px;
+    }
+
+    .bmi-header {
+
+        padding: 10px 15px 0;
+
+        margin-bottom: 28px;
+    }
+
+    .bmi-header h2 {
+        font-size: 35px;
+    }
+
+    .bmi-header p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================================
+   VIP ACCESS POPUP
+========================================================= */
+
+.vip-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* =========================================================
+   OPEN STATE
+========================================================= */
+
+.vip-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   DARK BACKGROUND
+========================================================= */
+
+.vip-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(18, 43, 32, 0.72);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   POPUP CONTAINER
+========================================================= */
+
+.vip-access-box {
+    position: relative;
+    z-index: 2;
+
+    width: 650px;
+    max-width: 100%;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    padding: 45px 45px 38px;
+
+    border-radius: 16px;
+
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(125, 213, 165, 0.22),
+            transparent 27%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #fbfffc 60%,
+            #f1faf5 100%
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.30);
+
+    transform: translateY(25px) scale(0.97);
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* Popup animation */
+
+.vip-modal.active .vip-access-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.vip-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #777;
+
+    font-family: Arial, sans-serif;
+    font-size: 27px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.vip-close:hover {
+    background: #318c5c;
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.vip-access-header {
+    text-align: center;
+
+    margin: 5px auto 28px;
+    padding: 0 20px;
+}
+
+
+/* Small label */
+
+.vip-access-tag {
+    display: inline-block;
+
+    padding: 7px 18px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid rgba(49, 140, 92, 0.28);
+    border-radius: 30px;
+
+    background: rgba(125, 213, 165, 0.12);
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* Heading */
+
+.vip-access-header h2 {
+    margin: 0 0 12px;
+
+    color: #318c5c;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 44px;
+    font-weight: 700;
+
+    line-height: 1.05;
+}
+
+
+/* Description */
+
+.vip-access-header p {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    color: #747a77;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.vip-benefits {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 26px;
+}
+
+
+.vip-benefit {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 14px 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(49, 140, 92, 0.10);
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.70);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.vip-benefit:hover {
+    background: #ffffff;
+
+    transform: translateX(2px);
+}
+
+
+/* Icon */
+
+.vip-benefit-icon {
+    flex: 0 0 32px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(49, 140, 92, 0.11);
+
+    color: #318c5c;
+
+    font-size: 15px;
+}
+
+
+/* Benefit title */
+
+.vip-benefit h4 {
+    margin: 0 0 3px;
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* Benefit description */
+
+.vip-benefit p {
+    margin: 0;
+
+    color: #777;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#vipForm {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin: 0;
+}
+
+
+.vip-form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.vip-form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   FORM LABELS
+========================================================= */
+
+.vip-form-group label {
+    margin: 0;
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.vip-form-group input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d4d7d5;
+    border-radius: 5px;
+
+    outline: none;
+
+    background: #eeeeee;
+
+    color: #444;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.vip-form-group input::placeholder {
+    color: #777;
+}
+
+
+.vip-form-group input:focus {
+    background: #ffffff;
+
+    border-color: #318c5c;
+
+    box-shadow:
+        0 0 0 4px rgba(49, 140, 92, 0.10);
+}
+
+
+/* =========================================================
+   VIP SUBMIT BUTTON
+========================================================= */
+
+.vip-submit-btn {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 14px 20px;
+
+    margin-top: 3px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #318c5c;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.1px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 11px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.vip-submit-btn:hover {
+    background: #246e47;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(49, 140, 92, 0.22);
+}
+
+
+.vip-submit-btn span {
+    font-size: 19px;
+
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+
+.vip-submit-btn:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   BOTTOM NOTE
+========================================================= */
+
+.vip-access-note {
+    max-width: 430px;
+
+    margin: 14px auto 0;
+
+    text-align: center;
+
+    color: #858987;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BODY SCROLL LOCK
+========================================================= */
+
+body.vip-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   POPUP SCROLLBAR
+========================================================= */
+
+.vip-access-box::-webkit-scrollbar {
+    width: 7px;
+}
+
+.vip-access-box::-webkit-scrollbar-track {
+    background: #edf4f0;
+
+    border-radius: 10px;
+}
+
+.vip-access-box::-webkit-scrollbar-thumb {
+    background: #318c5c;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .vip-modal {
+        padding: 12px;
+    }
+
+
+    .vip-access-box {
+        width: 100%;
+
+        max-height: 94vh;
+
+        padding: 38px 22px 28px;
+
+        border-radius: 14px;
+    }
+
+
+    .vip-close {
+        top: 13px;
+        right: 13px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 24px;
+    }
+
+
+    .vip-access-header {
+        padding: 8px 8px 0;
+
+        margin-bottom: 24px;
+    }
+
+
+    .vip-access-header h2 {
+        font-size: 36px;
+    }
+
+
+    .vip-access-header p {
+        font-size: 13px;
+    }
+
+
+    .vip-form-row {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .vip-benefit {
+        padding: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .vip-access-box {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+
+    .vip-access-header h2 {
+        font-size: 32px;
+    }
+
+}
+
+/* =========================================================
    1. GLOBAL RESPONSIVE FOUNDATION
 ========================================================= */
 
@@ -7138,6 +8738,539 @@ a {
         right: -5px;
 
         bottom: 0;
+    }
+
+}
+
+/* =========================================
+   TREATMENT POPUP
+========================================= */
+
+#treatmentModal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#treatmentModal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* Overlay */
+
+#treatmentModal .treatment-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 45, 33, 0.55);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+
+/* Card */
+
+#treatmentModal .treatment-card {
+    position: relative;
+    z-index: 2;
+
+    width: 820px;
+    max-width: calc(100% - 40px);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #fff;
+
+    border-radius: 8px;
+
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+
+    transform: translateY(30px) scale(0.96);
+
+    transition: transform 0.4s ease;
+}
+
+#treatmentModal.active .treatment-card {
+    transform: translateY(0) scale(1);
+}
+
+
+/* Content */
+
+#treatmentModal .treatment-card-content {
+    padding: 55px;
+}
+
+
+/* Close */
+
+#treatmentModal .treatment-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #d7e5dd;
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #318c5c;
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: 0.3s ease;
+}
+
+#treatmentModal .treatment-close:hover {
+    background: #318c5c;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+
+/* Heading */
+
+#treatmentModal .treatment-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+#treatmentModal h2 {
+    margin: 0 0 15px;
+
+    color: #1d2923;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 60px;
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+#treatmentModal h2 span {
+    color: #318c5c;
+    font-style: italic;
+}
+
+
+#treatmentModal .treatment-intro {
+    max-width: 550px;
+
+    margin: 0 0 30px;
+
+    color: #68756e;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* Treatment options */
+
+#treatmentModal .treatment-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid #dce8e1;
+}
+
+
+#treatmentModal .treatment-option {
+    display: grid;
+
+    grid-template-columns: 35px 1fr 30px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 125px;
+
+    padding: 20px 15px;
+
+    border-bottom: 1px solid #dce8e1;
+
+    transition: 0.3s ease;
+}
+
+#treatmentModal .treatment-option:nth-child(odd) {
+    border-right: 1px solid #dce8e1;
+}
+
+#treatmentModal .treatment-option:hover {
+    background: #f3faf6;
+}
+
+
+#treatmentModal .treatment-option > span {
+    align-self: start;
+
+    color: #318c5c;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+#treatmentModal .treatment-option h3 {
+    margin: 0 0 6px;
+
+    color: #1d2923;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+}
+
+
+#treatmentModal .treatment-option p {
+    margin: 0;
+
+    color: #78847d;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+#treatmentModal .treatment-option b {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #318c5c;
+    border-radius: 50%;
+
+    color: #318c5c;
+
+    font-size: 13px;
+
+    font-weight: 400;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    #treatmentModal .treatment-card-content {
+        padding: 45px 25px 30px;
+    }
+
+    #treatmentModal h2 {
+        font-size: 45px;
+    }
+
+    #treatmentModal .treatment-options {
+        grid-template-columns: 1fr;
+    }
+
+    #treatmentModal .treatment-option:nth-child(odd) {
+        border-right: none;
+    }
+}
+
+/* =========================================================
+   DIRECTION POPUP
+========================================================= */
+
+.direction-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.direction-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* DARK OVERLAY */
+
+.direction-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 40, 30, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+
+/* POPUP CARD */
+
+.direction-card {
+    position: relative;
+    z-index: 2;
+
+    width: 520px;
+    max-width: calc(100% - 40px);
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25);
+
+    transform: translateY(30px) scale(0.96);
+
+    transition: transform 0.35s ease;
+}
+
+.direction-modal.active .direction-card {
+    transform: translateY(0) scale(1);
+}
+
+
+/* CLOSE BUTTON */
+
+.direction-close {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f7f3;
+
+    color: #318c5c;
+
+    font-size: 26px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: all 0.25s ease;
+}
+
+.direction-close:hover {
+    background: #318c5c;
+    color: #ffffff;
+}
+
+
+/* CONTENT */
+
+.direction-content {
+    padding: 45px;
+}
+
+.direction-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #318c5c;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.direction-content h2 {
+    margin: 15px 0 12px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+    line-height: 1.1;
+
+    color: #18372a;
+}
+
+.direction-content h2 span {
+    color: #318c5c;
+}
+
+.direction-content > p {
+    margin-bottom: 28px;
+
+    color: #68736d;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* INFO */
+
+.direction-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #e5eee9;
+}
+
+.direction-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #edf8f1;
+
+    color: #318c5c;
+}
+
+.direction-info small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #7a847e;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+}
+
+.direction-info strong {
+    display: block;
+
+    color: #18372a;
+
+    font-size: 15px;
+}
+
+.direction-info p {
+    margin: 5px 0 0;
+
+    color: #68736d;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* MAP BUTTON */
+
+.direction-map-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+
+    margin-top: 28px;
+    padding: 15px 20px;
+
+    border-radius: 10px;
+
+    background: #318c5c;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    transition: background 0.25s ease,
+                transform 0.25s ease;
+}
+
+.direction-map-btn:hover {
+    background: #246e47;
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .direction-content {
+        padding: 35px 25px;
+    }
+
+    .direction-content h2 {
+        font-size: 32px;
+    }
+
+    .direction-card {
+        max-width: calc(100% - 24px);
     }
 
 }

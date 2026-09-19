@@ -577,3 +577,445 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+/* =========================================================
+   BOOK CONSULTATION MODAL
+========================================================= */
+
+const consultationModal =
+    document.getElementById("consultationModal");
+
+
+/* OPEN MODAL */
+
+function openConsultationModal() {
+
+    consultationModal.classList.add("active");
+
+    document.body.classList.add("consultation-open");
+
+}
+
+
+/* CLOSE MODAL */
+
+function closeConsultationModal() {
+
+    consultationModal.classList.remove("active");
+
+    document.body.classList.remove("consultation-open");
+
+}
+
+
+/* CLOSE WITH ESCAPE */
+
+document.addEventListener("keydown", function (event) {
+
+    if (
+        event.key === "Escape" &&
+        consultationModal.classList.contains("active")
+    ) {
+
+        closeConsultationModal();
+
+    }
+
+});
+
+
+/* FORM SUBMIT */
+
+document
+    .getElementById("consultationForm")
+    .addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you for requesting a consultation. " +
+            "Our team will contact you shortly."
+        );
+
+        this.reset();
+
+        closeConsultationModal();
+
+    });
+
+    /* =========================================================
+   BMI CALCULATOR
+========================================================= */
+
+const bmiModal = document.getElementById("bmiModal");
+
+
+/* =========================================================
+   OPEN BMI POPUP
+========================================================= */
+
+function openBMIModal() {
+
+    bmiModal.classList.add("active");
+
+    document.body.classList.add("bmi-open");
+
+}
+
+
+/* =========================================================
+   CLOSE BMI POPUP
+========================================================= */
+
+function closeBMIModal() {
+
+    bmiModal.classList.remove("active");
+
+    document.body.classList.remove("bmi-open");
+
+}
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (
+        event.key === "Escape" &&
+        bmiModal.classList.contains("active")
+    ) {
+
+        closeBMIModal();
+
+    }
+
+});
+
+
+/* =========================================================
+   BMI CALCULATION
+========================================================= */
+
+document
+    .getElementById("bmiForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const height =
+            parseFloat(
+                document.getElementById("bmiHeight").value
+            );
+
+        const weight =
+            parseFloat(
+                document.getElementById("bmiWeight").value
+            );
+
+
+        /* Validation */
+
+        if (
+            !Number.isFinite(height) ||
+            !Number.isFinite(weight) ||
+            height <= 0 ||
+            weight <= 0
+        ) {
+
+            alert("Please enter a valid height and weight.");
+
+            return;
+
+        }
+
+
+        /* Convert height from cm to meters */
+
+        const heightInMeters = height / 100;
+
+
+        /* BMI formula */
+
+        const bmi =
+            weight /
+            (heightInMeters * heightInMeters);
+
+
+        const roundedBMI =
+            bmi.toFixed(1);
+
+
+        /* Determine category */
+
+        let category = "";
+
+
+        if (bmi < 18.5) {
+
+            category = "Underweight";
+
+        }
+        else if (bmi < 25) {
+
+            category = "Healthy Weight";
+
+        }
+        else if (bmi < 30) {
+
+            category = "Overweight";
+
+        }
+        else {
+
+            category = "Obesity";
+
+        }
+
+
+        /* Display */
+
+        document.getElementById("bmiNumber").textContent =
+            roundedBMI;
+
+        document.getElementById("bmiCategory").textContent =
+            category;
+
+    });
+
+    /* =========================================================
+   VIP ACCESS MODAL
+========================================================= */
+
+const vipModal = document.getElementById("vipModal");
+
+
+/* =========================================================
+   OPEN
+========================================================= */
+
+function openVIPModal() {
+
+    vipModal.classList.add("active");
+
+    document.body.classList.add("vip-open");
+
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+function closeVIPModal() {
+
+    vipModal.classList.remove("active");
+
+    document.body.classList.remove("vip-open");
+
+}
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (
+        event.key === "Escape" &&
+        vipModal.classList.contains("active")
+    ) {
+
+        closeVIPModal();
+
+    }
+
+});
+
+
+/* =========================================================
+   VIP FORM
+========================================================= */
+
+document
+    .getElementById("vipForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you for your interest in the Athenura VIP Plastic Surgery Club. " +
+            "Our team will contact you shortly."
+        );
+
+        this.reset();
+
+        closeVIPModal();
+
+    });
+
+
+/* =========================================================
+   TREATMENTS POPUP
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const treatmentButton =
+        document.getElementById("exploreTreatmentsBtn");
+
+    const treatmentModal =
+        document.getElementById("treatmentModal");
+
+    const treatmentClose =
+        document.getElementById("treatmentClose");
+
+    const treatmentOverlay =
+        document.getElementById("treatmentOverlay");
+
+
+    /* Check elements */
+
+    console.log("Treatment button:", treatmentButton);
+    console.log("Treatment modal:", treatmentModal);
+    console.log("Treatment close:", treatmentClose);
+    console.log("Treatment overlay:", treatmentOverlay);
+
+
+    /* Stop if popup elements are missing */
+
+    if (!treatmentButton || !treatmentModal) {
+        console.error(
+            "Treatment popup elements are missing."
+        );
+        return;
+    }
+
+
+    /* OPEN POPUP */
+
+    treatmentButton.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        treatmentModal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+
+    /* CLOSE WITH X */
+
+    if (treatmentClose) {
+
+        treatmentClose.addEventListener("click", function () {
+
+            treatmentModal.classList.remove("active");
+
+            document.body.style.overflow = "";
+
+        });
+
+    }
+
+
+    /* CLOSE BY CLICKING OVERLAY */
+
+    if (treatmentOverlay) {
+
+        treatmentOverlay.addEventListener("click", function () {
+
+            treatmentModal.classList.remove("active");
+
+            document.body.style.overflow = "";
+
+        });
+
+    }
+
+
+    /* CLOSE WITH ESCAPE */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (
+            event.key === "Escape" &&
+            treatmentModal.classList.contains("active")
+        ) {
+
+            treatmentModal.classList.remove("active");
+
+            document.body.style.overflow = "";
+
+        }
+
+    });
+
+});
+
+/* =========================================================
+   SIDE DIRECTION BUTTON
+========================================================= */
+/* =========================================================
+   DIRECTION POPUP
+========================================================= */
+
+function openDirectionModal(event) {
+    if (event) {
+        event.preventDefault();
+    }
+
+    const modal = document.getElementById("directionModal");
+
+    if (!modal) {
+        console.error("directionModal not found");
+        return;
+    }
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeDirectionModal() {
+
+    const modal = document.getElementById("directionModal");
+
+    if (!modal) {
+        return;
+    }
+
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const closeButton = document.getElementById("directionClose");
+    const overlay = document.getElementById("directionOverlay");
+
+    if (closeButton) {
+        closeButton.addEventListener("click", function () {
+            closeDirectionModal();
+        });
+    }
+
+    if (overlay) {
+        overlay.addEventListener("click", function () {
+            closeDirectionModal();
+        });
+    }
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+            closeDirectionModal();
+        }
+
+    });
+
+});

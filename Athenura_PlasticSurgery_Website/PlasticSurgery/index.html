@@ -117,15 +117,15 @@
                 <p class="description">
                    Discover bespoke cosmetic and reconstructive procedures 
                    delivered with surgical precision and personalized care 
-                   for naturally refined results
+                   for naturally refined results.
                 </p>
 
                 <div class="hero-buttons">
 
-                    <a href="#" class="primary-btn">
-                        Book Consultation
+                    <a href="javascript:void(0);"
+                       class="primary-btn"
+                       onclick="openConsultationModal()">Book Consultation
                     </a>
-
                     <a href="../Services/services.html" class="secondary-btn">
                         Explore Services
                     </a>
@@ -150,21 +150,20 @@
 
 
         <!-- ==============================
-             SIDE CONTACT BUTTONS
-        =============================== -->
+     SIDE CONTACT BUTTONS
+=============================== -->
 
-        <div class="side-buttons">
+<div class="side-buttons">
 
-            <a href="#">
-                Contact
-            </a>
+    <a href="contact/contact.html">
+        Contact
+    </a>
 
-            <a href="#">
-                Direction
-            </a>
+    <a href="#" id="sideDirectionBtn" onclick="openDirectionModal(event)">
+        Direction
+    </a>
 
-        </div>
-
+</div>
 
         <!-- ==============================
              OFFER POPUP
@@ -430,8 +429,8 @@ BEFORE & AFTER
       <h2 class="title-sub">Photos</h2>
       
       <div class="button-group">
-        <a href="#gallery" class="btn">View Gallery</a>
-        <a href="#offers" class="btn">View Offers</a>
+        <a href="Gallery/gallery.html" class="btn">View Gallery</a>
+        <!--<a href="#offers" class="btn">View Offers</a>-->
       </div>
     </div>
 
@@ -585,14 +584,10 @@ BEFORE & AFTER
 
 
                 <!-- LINK -->
-                <a href="#" class="age-explore">
-
-                    Explore Treatments
-
-                    <span class="age-arrow">
-                        ↗
-                    </span>
-
+                <a href="javascript:void(0);" class="age-explore" id="exploreTreatmentsBtn">
+    Explore Treatments
+    <span class="age-arrow">↗</span>
+</a>
                 </a>
 
             </div>
@@ -1338,8 +1333,10 @@ REQUEST CONSULTATION
             assessment from our physician.
         </p>
 
-        <a href="#" class="section-btn">
-            Calculate My BMI
+        <a href="javascript:void(0);"
+   class="section-btn"
+   onclick="openBMIModal()">
+    Calculate My BMI
         </a>
 
     </div>
@@ -1509,9 +1506,11 @@ REQUEST CONSULTATION
                 </div>
 
 
-                <a href="#" class="vip-button">
-                    Get VIP Access
-                </a>
+                <a href="javascript:void(0);"
+   class="vip-button"
+   onclick="openVIPModal()">
+    Get VIP Access
+</a>
 
             </div>
 
@@ -1735,8 +1734,693 @@ REQUEST CONSULTATION
 
     <footer id="footer"></footer>
 
+    <!-- =========================================================
+     BOOK CONSULTATION POPUP
+========================================================= -->
+
+<div class="consultation-modal" id="consultationModal">
+
+    <!-- Dark background -->
+    <div class="consultation-overlay"
+         onclick="closeConsultationModal()">
+    </div>
+
+    <!-- Popup -->
+    <div class="consultation-box">
+
+        <!-- Close -->
+        <button
+            type="button"
+            class="consultation-close"
+            onclick="closeConsultationModal()"
+            aria-label="Close consultation form">
+            ×
+        </button>
+
+
+        <!-- Header -->
+        <div class="consultation-header">
+
+            <div class="consultation-tag">
+                SCHEDULE YOUR VISIT
+            </div>
+
+            <h2>Book Your Consultation</h2>
+
+            <p>
+                Share a few details and our team will confirm your
+                appointment shortly.
+            </p>
+
+        </div>
+
+
+        <!-- Form -->
+        <form id="consultationForm">
+
+            <!-- Full Name -->
+            <div class="consultation-form-group full-width">
+
+                <label for="consultationName">
+                    FULL NAME
+                </label>
+
+                <input
+                    type="text"
+                    id="consultationName"
+                    name="name"
+                    placeholder="Your full name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Email + Phone -->
+            <div class="consultation-form-row">
+
+                <div class="consultation-form-group">
+
+                    <label for="consultationEmail">
+                        EMAIL
+                    </label>
+
+                    <input
+                        type="email"
+                        id="consultationEmail"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="consultation-form-group">
+
+                    <label for="consultationPhone">
+                        PHONE NUMBER
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="consultationPhone"
+                        name="phone"
+                        placeholder="+1 (___) ___-____"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Service -->
+            <div class="consultation-form-group full-width">
+
+                <label for="consultationService">
+                    SELECT SERVICE
+                </label>
+
+                <select
+                    id="consultationService"
+                    name="service"
+                    required>
+
+                    <option value="" disabled selected>
+                        Choose a service
+                    </option>
+
+                    <option value="Facial Procedures">
+                        Facial Procedures
+                    </option>
+
+                    <option value="Body Contouring">
+                        Body Contouring
+                    </option>
+
+                    <option value="Breast Surgery">
+                        Breast Surgery
+                    </option>
+
+                    <option value="Liposuction">
+                        Liposuction
+                    </option>
+
+                    <option value="SmartLipo">
+                        SmartLipo
+                    </option>
+
+                    <option value="Reconstructive Surgery">
+                        Reconstructive Surgery
+                    </option>
+
+                    <option value="Non-Surgical Procedures">
+                        Non-Surgical Procedures
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Date + Time -->
+            <div class="consultation-form-row">
+
+                <div class="consultation-form-group">
+
+                    <label for="consultationDate">
+                        PREFERRED DATE
+                    </label>
+
+                    <input
+                        type="date"
+                        id="consultationDate"
+                        name="date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="consultation-form-group">
+
+                    <label for="consultationTime">
+                        PREFERRED TIME
+                    </label>
+
+                    <input
+                        type="time"
+                        id="consultationTime"
+                        name="time"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Message -->
+            <div class="consultation-form-group full-width">
+
+                <label for="consultationMessage">
+                    MESSAGE / YOUR CONCERN
+                </label>
+
+                <textarea
+                    id="consultationMessage"
+                    name="message"
+                    rows="4"
+                    placeholder="Tell us a little about what you'd like to address...">
+                </textarea>
+
+            </div>
+
+
+            <!-- Submit -->
+            <button
+                type="submit"
+                class="consultation-submit">
+
+                REQUEST CONSULTATION
+
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     BMI CALCULATOR POPUP
+========================================================= -->
+
+<div class="bmi-modal" id="bmiModal">
+
+    <!-- Background -->
+    <div class="bmi-overlay"
+         onclick="closeBMIModal()">
+    </div>
+
+
+    <!-- Popup -->
+    <div class="bmi-box">
+
+        <!-- Close Button -->
+        <button
+            type="button"
+            class="bmi-close"
+            onclick="closeBMIModal()"
+            aria-label="Close BMI calculator">
+            ×
+        </button>
+
+
+        <!-- Header -->
+        <div class="bmi-header">
+
+            <div class="bmi-tag">
+                WELLNESS CHECK
+            </div>
+
+            <h2>Calculate Your BMI</h2>
+
+            <p>
+                Enter your height and weight to calculate your
+                Body Mass Index.
+            </p>
+
+        </div>
+
+
+        <!-- BMI Form -->
+        <form id="bmiForm">
+
+
+            <!-- Height -->
+            <div class="bmi-form-group">
+
+                <label for="bmiHeight">
+                    HEIGHT
+                </label>
+
+                <div class="bmi-input-wrapper">
+
+                    <input
+                        type="number"
+                        id="bmiHeight"
+                        placeholder="Enter your height"
+                        min="1"
+                        step="0.1"
+                        required
+                    >
+
+                    <span>cm</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Weight -->
+            <div class="bmi-form-group">
+
+                <label for="bmiWeight">
+                    WEIGHT
+                </label>
+
+                <div class="bmi-input-wrapper">
+
+                    <input
+                        type="number"
+                        id="bmiWeight"
+                        placeholder="Enter your weight"
+                        min="1"
+                        step="0.1"
+                        required
+                    >
+
+                    <span>kg</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Calculate Button -->
+            <button
+                type="submit"
+                class="bmi-calculate-btn">
+
+                CALCULATE BMI
+
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+
+        <!-- Result -->
+        <div
+            class="bmi-result"
+            id="bmiResult"
+            aria-live="polite">
+
+            <div class="bmi-result-title">
+                YOUR BMI
+            </div>
+
+            <div
+                class="bmi-number"
+                id="bmiNumber">
+                —
+            </div>
+
+            <div
+                class="bmi-category"
+                id="bmiCategory">
+                Enter your details above
+            </div>
+
+            <p class="bmi-note">
+                BMI is a general screening measure and does not
+                replace an individual assessment by a healthcare professional.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
     
-    
+<!-- =========================================================
+     VIP ACCESS POPUP
+========================================================= -->
+
+<div class="vip-modal" id="vipModal">
+
+    <!-- Overlay -->
+    <div class="vip-overlay"
+         onclick="closeVIPModal()">
+    </div>
+
+
+    <!-- VIP Popup -->
+    <div class="vip-access-box">
+
+        <!-- Close -->
+        <button
+            type="button"
+            class="vip-close"
+            onclick="closeVIPModal()"
+            aria-label="Close VIP access">
+            ×
+        </button>
+
+
+        <!-- Header -->
+        <div class="vip-access-header">
+
+            <div class="vip-access-tag">
+                EXCLUSIVE MEMBERSHIP
+            </div>
+
+            <h2>Welcome to the<br>VIP Plastic Surgery Club</h2>
+
+            <p>
+                Experience personalized care, exclusive benefits,
+                and a more elevated approach to your aesthetic journey.
+            </p>
+
+        </div>
+
+
+        <!-- Benefits -->
+        <div class="vip-benefits">
+
+            <div class="vip-benefit">
+
+                <div class="vip-benefit-icon">
+                    ✦
+                </div>
+
+                <div>
+                    <h4>Priority Consultation</h4>
+
+                    <p>
+                        Enjoy priority scheduling for your
+                        consultations and appointments.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="vip-benefit">
+
+                <div class="vip-benefit-icon">
+                    ✦
+                </div>
+
+                <div>
+                    <h4>Exclusive Member Benefits</h4>
+
+                    <p>
+                        Access special offers and privileges
+                        available exclusively to VIP members.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="vip-benefit">
+
+                <div class="vip-benefit-icon">
+                    ✦
+                </div>
+
+                <div>
+                    <h4>Personalized Care</h4>
+
+                    <p>
+                        Receive a more personalized experience
+                        throughout your aesthetic journey.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIP Form -->
+        <form id="vipForm">
+
+            <div class="vip-form-row">
+
+                <div class="vip-form-group">
+
+                    <label for="vipName">
+                        FULL NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="vipName"
+                        name="name"
+                        placeholder="Your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="vip-form-group">
+
+                    <label for="vipEmail">
+                        EMAIL
+                    </label>
+
+                    <input
+                        type="email"
+                        id="vipEmail"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="vip-form-group">
+
+                <label for="vipPhone">
+                    PHONE NUMBER
+                </label>
+
+                <input
+                    type="tel"
+                    id="vipPhone"
+                    name="phone"
+                    placeholder="+1 (___) ___-____"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="vip-submit-btn">
+
+                REQUEST VIP ACCESS
+
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+
+        <p class="vip-access-note">
+            Our team will contact you with further information
+            about VIP membership.
+        </p>
+
+    </div>
+   
+</div>
+
+<!-- =========================================================
+     TREATMENTS POPUP
+========================================================= -->
+
+<div id="treatmentModal" class="treatment-modal">
+
+    <div class="treatment-overlay" id="treatmentOverlay"></div>
+
+    <div class="treatment-card">
+
+        <button
+            type="button"
+            class="treatment-close"
+            id="treatmentClose"
+            aria-label="Close treatments">
+            &times;
+        </button>
+
+        <div class="treatment-card-content">
+
+            <span class="treatment-label">
+                OUR TREATMENTS
+            </span>
+
+            <h2>
+                Explore <span>Treatments</span>
+            </h2>
+
+            <p class="treatment-intro">
+                Discover personalized aesthetic treatments
+                designed to enhance your natural beauty.
+            </p>
+
+            <div class="treatment-options">
+
+                <div class="treatment-option">
+                    <span>01</span>
+
+                    <div>
+                        <h3>Facial Treatments</h3>
+                        <p>
+                            Refresh, rejuvenate and enhance your skin.
+                        </p>
+                    </div>
+
+                    <b>↗</b>
+                </div>
+
+
+                <div class="treatment-option">
+                    <span>02</span>
+
+                    <div>
+                        <h3>Injectables</h3>
+                        <p>
+                            Subtle enhancements tailored to your features.
+                        </p>
+                    </div>
+
+                    <b>↗</b>
+                </div>
+
+
+                <div class="treatment-option">
+                    <span>03</span>
+
+                    <div>
+                        <h3>Body Contouring</h3>
+                        <p>
+                            Refine and sculpt your natural silhouette.
+                        </p>
+                    </div>
+
+                    <b>↗</b>
+                </div>
+
+
+                <div class="treatment-option">
+                    <span>04</span>
+
+                    <div>
+                        <h3>Skin Rejuvenation</h3>
+                        <p>
+                            Improve tone, texture and overall skin quality.
+                        </p>
+                    </div>
+
+                    <b>↗</b>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="directionModal" class="direction-modal">
+
+    <div class="direction-overlay" id="directionOverlay"></div>
+
+    <div class="direction-card">
+
+        <button
+            type="button"
+            class="direction-close"
+            id="directionClose">
+            &times;
+        </button>
+
+        <div class="direction-content">
+
+            <span class="direction-tag">
+                <i class="fa-solid fa-location-dot"></i>
+                ATHENURA
+            </span>
+
+            <h2>
+                Find Our <span>Center</span>
+            </h2>
+
+            <p>
+                Visit our state-of-the-art facility in Sector 62,
+                Noida, with convenient access and dedicated parking.
+            </p>
+
+            <!-- your direction-info blocks -->
+
+            <a
+                href="https://www.google.com/maps/place/Athenura/@28.6184216,77.3615327,17.19z"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="direction-map-btn">
+
+                <i class="fa-solid fa-diamond-turn-right"></i>
+                Get Directions
+
+            </a>
+
+        </div>
+    </div>
+</div>
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
