@@ -536,7 +536,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     medicine.
                 </p>
 
-                <a href="#" class="cta-button">
+                <a href="#" class="cta-button" onclick="openConsultationModal(); return false;">
                     Book Now
                 </a>
 
@@ -552,4 +552,333 @@ document.addEventListener("DOMContentLoaded", () => {
             class="cta-woman"
         >
     `;
+});
+
+/* =================================
+   Consultation Modal
+================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    if (document.getElementById("consultationModal")) return;
+
+    const consultationModal = document.createElement("div");
+
+    consultationModal.innerHTML = `
+
+        <!-- =========================================================
+             BOOK CONSULTATION POPUP
+        ========================================================= -->
+
+        <div class="consultation-modal" id="consultationModal">
+
+            <!-- Dark background -->
+
+            <div class="consultation-overlay"
+                 onclick="closeConsultationModal()">
+            </div>
+
+
+            <!-- Popup -->
+
+            <div class="consultation-box">
+
+
+                <!-- Close -->
+
+                <button
+                    type="button"
+                    class="consultation-close"
+                    onclick="closeConsultationModal()"
+                    aria-label="Close consultation form">
+
+                    ×
+
+                </button>
+
+
+                <!-- Header -->
+
+                <div class="consultation-header">
+
+                    <div class="consultation-tag">
+                        SCHEDULE YOUR VISIT
+                    </div>
+
+                    <h2>Book Your Consultation</h2>
+
+                    <p>
+                        Share a few details and our team will confirm your
+                        appointment shortly.
+                    </p>
+
+                </div>
+
+
+                <!-- Form -->
+
+                <form id="consultationForm">
+
+
+                    <!-- Full Name -->
+
+                    <div class="consultation-form-group full-width">
+
+                        <label for="consultationName">
+                            FULL NAME
+                        </label>
+
+                        <input
+                            type="text"
+                            id="consultationName"
+                            name="name"
+                            placeholder="Your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email + Phone -->
+
+                    <div class="consultation-form-row">
+
+                        <div class="consultation-form-group">
+
+                            <label for="consultationEmail">
+                                EMAIL
+                            </label>
+
+                            <input
+                                type="email"
+                                id="consultationEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="consultation-form-group">
+
+                            <label for="consultationPhone">
+                                PHONE NUMBER
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="consultationPhone"
+                                name="phone"
+                                placeholder="+1 (___) ___-____"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Service -->
+
+                    <div class="consultation-form-group full-width">
+
+                        <label for="consultationService">
+                            SELECT SERVICE
+                        </label>
+
+                        <select
+                            id="consultationService"
+                            name="service"
+                            required>
+
+                            <option value="" disabled selected>
+                                Choose a service
+                            </option>
+
+                            <option value="Facial Procedures">
+                                Facial Procedures
+                            </option>
+
+                            <option value="Body Contouring">
+                                Body Contouring
+                            </option>
+
+                            <option value="Breast Surgery">
+                                Breast Surgery
+                            </option>
+
+                            <option value="Liposuction">
+                                Liposuction
+                            </option>
+
+                            <option value="SmartLipo">
+                                SmartLipo
+                            </option>
+
+                            <option value="Reconstructive Surgery">
+                                Reconstructive Surgery
+                            </option>
+
+                            <option value="Non-Surgical Procedures">
+                                Non-Surgical Procedures
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Date + Time -->
+
+                    <div class="consultation-form-row">
+
+                        <div class="consultation-form-group">
+
+                            <label for="consultationDate">
+                                PREFERRED DATE
+                            </label>
+
+                            <input
+                                type="date"
+                                id="consultationDate"
+                                name="date"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="consultation-form-group">
+
+                            <label for="consultationTime">
+                                PREFERRED TIME
+                            </label>
+
+                            <input
+                                type="time"
+                                id="consultationTime"
+                                name="time"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Message -->
+
+                    <div class="consultation-form-group full-width">
+
+                        <label for="consultationMessage">
+                            MESSAGE / YOUR CONCERN
+                        </label>
+
+                        <textarea
+                            id="consultationMessage"
+                            name="message"
+                            rows="4"
+                            placeholder="Tell us a little about what you'd like to address..."></textarea>
+
+                    </div>
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="consultation-submit">
+
+                        REQUEST CONSULTATION
+
+                        <span>→</span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    `;
+
+    document.body.appendChild(consultationModal);
+
+});
+
+/* =========================================================
+   BOOK CONSULTATION MODAL FUNCTIONALITY
+========================================================= */
+
+
+/* OPEN MODAL */
+
+function openConsultationModal() {
+
+    const consultationModal =
+        document.getElementById("consultationModal");
+
+    if (!consultationModal) return;
+
+    consultationModal.classList.add("active");
+
+    document.body.classList.add("consultation-open");
+}
+
+
+/* CLOSE MODAL */
+
+function closeConsultationModal() {
+
+    const consultationModal =
+        document.getElementById("consultationModal");
+
+    if (!consultationModal) return;
+
+    consultationModal.classList.remove("active");
+
+    document.body.classList.remove("consultation-open");
+}
+
+
+/* CLOSE WITH ESCAPE */
+
+document.addEventListener("keydown", function (event) {
+
+    const consultationModal =
+        document.getElementById("consultationModal");
+
+    if (!consultationModal) return;
+
+    if (
+        event.key === "Escape" &&
+        consultationModal.classList.contains("active")
+    ) {
+
+        closeConsultationModal();
+
+    }
+
+});
+
+/* =========================================================
+   CONSULTATION FORM
+========================================================= */
+
+document.addEventListener("submit", function (event) {
+
+    if (event.target.id !== "consultationForm") return;
+
+    event.preventDefault();
+
+    alert(
+        "Thank you for requesting a consultation. " +
+        "Our team will contact you shortly."
+    );
+
+    event.target.reset();
+
+    closeConsultationModal();
+
 });

@@ -345,8 +345,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Body Contouring",
                 description:
                     "Improved body shape and definition through advanced contouring techniques.",
-                beforeImage: "images/body/body_contouring/body-before4breast/breast_aug/.png",
-                afterImage: "images/body/body_contouring/body-after4breast/breast_aug/.png"
+                beforeImage: "images/body/body_contouring/body-before4.png",
+                afterImage: "images/body/body_contouring/body-after4.png"
             },
         ],
 
