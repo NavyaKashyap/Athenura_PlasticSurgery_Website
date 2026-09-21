@@ -2,8 +2,6 @@
    ATHENURA — BENEFITS PAGE JS
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-
     /* =====================================================
        1. SCROLL REVEAL
     ===================================================== */
@@ -145,5 +143,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
-});
