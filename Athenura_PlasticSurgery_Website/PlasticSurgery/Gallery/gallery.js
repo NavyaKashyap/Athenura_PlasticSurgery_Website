@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Facelift Surgery",
                 description:
                     "Natural facial rejuvenation with youthful contours and balanced aesthetics.",
-                beforeImage: "images/facelift-before.jpeg",
-                afterImage: "images/facelift-after.png"
+                beforeImage: "images/face/facelift/facelift-before.jpeg",
+                afterImage: "images/face/facelift/facelift-after.png"
             },
 
             {
@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Rhinoplasty",
                 description:
                     "Refined nasal contours designed to create balanced and harmonious facial proportions.",
-                beforeImage: "images/rhinoplasty-before.jpeg",
-                afterImage: "images/rhinoplasty-after.jpeg"
+                beforeImage: "images/face/rhinoplasty/rhinoplasty-before.jpeg",
+                afterImage: "images/face/rhinoplasty/rhinoplasty-after.jpeg"
             },
 
             {
@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Lip & Chin Enhancement",
                 description:
                     "Subtle facial enhancement designed to improve overall facial balance.",
-                beforeImage: "images/lipaugmentation-before2.jpg",
-                afterImage: "images/lipaugmentation-after2.jpg"
+                beforeImage: "images/face/lip_chin/lipaugmentation-before2.jpg",
+                afterImage: "images/face/lip_chin/lipaugmentation-after2.jpg"
             },
 
             {
@@ -43,26 +43,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Blepharoplasty",
                 description:
                     "Refreshed eye contours for a more rested and youthful appearance.",
-                beforeImage: "images/blepharoplasty-before1.jpeg",
-                afterImage: "images/blepharoplasty-after1.jpeg"
+                beforeImage: "images/face/blepharoplasty/blepharoplasty-before1.jpeg",
+                afterImage: "images/face/blepharoplasty/blepharoplasty-after1.jpeg"
             },
             {
                 id: 5,
                 procedure: "facelift",
                 title: "Facelift & Necklift Surgery",
                 description:
-                    "Comprehensive lower face and neck rejuvenation to smooth jowls, tighten sagging skin, and restore a defined jawline.",
-                beforeImage: "images/facelift-before1.png",
-                afterImage: "images/facelift-after1.png"
+                    "Comprehensive lower face and neck rejuvenation to smooth jowls and tighten sagging skin.",
+                beforeImage: "images/face/facelift/facelift-before1.png",
+                afterImage: "images/face/facelift/facelift-after1.png"
             },
             {
                 id: 6,
                 procedure: "facelift",
                 title: "Facelift & Necklift Surgery",
                 description:
-                    "Comprehensive lower face and neck rejuvenation to smooth jowls, tighten sagging skin, and restore a defined jawline.",
-                beforeImage: "images/facelift-before2.png",
-                afterImage: "images/facelift-after2.png"
+                    "Comprehensive lower face and neck rejuvenation to smooth jowls and tighten sagging skin.",
+                beforeImage: "images/face/facelift/facelift-before2.png",
+                afterImage: "images/face/facelift/facelift-after2.png"
             },
             {
                 id: 7,
@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Facelift & Necklift Surgery",
                 description:
                     "Face rejuvenation to smooth jowls, tighten sagging skin.",
-                beforeImage: "images/facelift-before3.png",
-                afterImage: "images/facelift-after3.png"
+                beforeImage: "images/face/facelift/facelift-before3.png",
+                afterImage: "images/face/facelift/facelift-after3.png"
             },
             {
                 id: 8,
@@ -79,8 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Facelift & Necklift Surgery",
                 description:
                     "Tighten sagging skin, and restore a defined jawline.",
-                beforeImage: "images/facelift-before4.png",
-                afterImage: "images/facelift-after4.png"
+                beforeImage: "images/face/facelift/facelift-before4.png",
+                afterImage: "images/face/facelift/facelift-after4.png"
             },
             {
                 id: 9,
@@ -88,9 +88,163 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Facelift & Necklift Surgery",
                 description:
                     "Comprehensive lower face rejuvenation.",
-                beforeImage: "images/facelift-before5.png",
-                afterImage: "images/facelift-after5.png"
+                beforeImage: "images/face/facelift/facelift-before5.png",
+                afterImage: "images/face/facelift/facelift-after5.png"
+            },
+            {
+                id: 10,
+                procedure: "facelift",
+                title: "Facelift & Necklift Surgery",
+                description:
+                    "Comprehensive lower face rejuvenation.",
+                beforeImage: "images/face/facelift/facelift-before6.png",
+                afterImage: "images/face/facelift/facelift-after6.png"
+            },
+            {
+                id: 11,
+                procedure: "facelift",
+                title: "Facelift & Necklift Surgery",
+                description:
+                    "Tighten sagging skin, and restore a defined jawline.",
+                beforeImage: "images/face/facelift/facelift-before7.png",
+                afterImage: "images/face/facelift/facelift-after7.png"
+            },
+            {
+                id: 12,
+                procedure: "rhinoplasty",
+                title: "Rhinoplasty",
+                description:
+                    "Refined nasal contours designed to create balanced and harmonious facial proportions.",
+                beforeImage: "images/face/rhinoplasty/rhinoplasty-before1.jpeg",
+                afterImage: "images/face/rhinoplasty/rhinoplasty-after1.jpeg"
+            },
+            {
+                id: 13,
+                procedure: "rhinoplasty",
+                title: "Rhinoplasty",
+                description:
+                    "Refined nasal contours designed to create balanced and harmonious facial proportions.",
+                beforeImage: "images/face/rhinoplasty/rhinoplasty-before2.jpeg",
+                afterImage: "images/face/rhinoplasty/rhinoplasty-after2.jpeg"
+            },
+            {
+                id: 14,
+                procedure: "rhinoplasty",
+                title: "Rhinoplasty",
+                description:
+                    "Refined nasal contours designed to create balanced and harmonious facial proportions.",
+                beforeImage: "images/face/rhinoplasty/rhinoplasty-before3.jpeg",
+                afterImage: "images/face/rhinoplasty/rhinoplasty-after3.jpeg"
+            },
+            {
+                id: 15,
+                procedure: "rhinoplasty",
+                title: "Rhinoplasty",
+                description:
+                    "Refined nasal contours designed to create balanced and harmonious facial proportions.",
+                beforeImage: "images/face/rhinoplasty/rhinoplasty-before4.png",
+                afterImage: "images/face/rhinoplasty/rhinoplasty-after4.png"
+            },
+            {
+                id: 16,
+                procedure: "rhinoplasty",
+                title: "Rhinoplasty",
+                description:
+                    "Refined nasal contours designed to create balanced and harmonious facial proportions.",
+                beforeImage: "images/face/rhinoplasty/rhinoplasty-before5.png",
+                afterImage: "images/face/rhinoplasty/rhinoplasty-after5.png"
+            },
+            {
+                id: 17,
+                procedure: "rhinoplasty",
+                title: "Rhinoplasty",
+                description:
+                    "Refined nasal contours designed to create balanced and harmonious facial proportions.",
+                beforeImage: "images/face/rhinoplasty/rhinoplasty-before6.png",
+                afterImage: "images/face/rhinoplasty/rhinoplasty-after6.png"
+            },
+            {
+                id: 18,
+                procedure: "rhinoplasty",
+                title: "Rhinoplasty",
+                description:
+                    "Refined nasal contours designed to create balanced and harmonious facial proportions.",
+                beforeImage: "images/face/rhinoplasty/rhinoplasty-before7.png",
+                afterImage: "images/face/rhinoplasty/rhinoplasty-after7.png"
+            },
+            {
+                id: 19,
+                procedure: "blepharoplasty",
+                title: "Blepharoplasty",
+                description:
+                    "Refreshed eye contours for a more rested and youthful appearance.",
+                beforeImage: "images/face/blepharoplasty/blepharoplasty-before2.png",
+                afterImage: "images/face/blepharoplasty/blepharoplasty-after2.png"
+            },
+            {
+                id: 20,
+                procedure: "blepharoplasty",
+                title: "Blepharoplasty",
+                description:
+                    "Refreshed eye contours for a more rested and youthful appearance.",
+                beforeImage: "images/face/blepharoplasty/blepharoplasty-before3.png",
+                afterImage: "images/face/blepharoplasty/blepharoplasty-after3.png"
+            },
+            {
+                id: 21,
+                procedure: "blepharoplasty",
+                title: "Blepharoplasty",
+                description:
+                    "Refreshed eye contours for a more rested and youthful appearance.",
+                beforeImage: "images/face/blepharoplasty/blepharoplasty-before4.png",
+                afterImage: "images/face/blepharoplasty/blepharoplasty-after4.png"
+            },
+            {
+                id: 22,
+                procedure: "blepharoplasty",
+                title: "Blepharoplasty",
+                description:
+                    "Refreshed eye contours for a more rested and youthful appearance.",
+                beforeImage: "images/face/blepharoplasty/blepharoplasty-before5.png",
+                afterImage: "images/face/blepharoplasty/blepharoplasty-after5.png"
+            },
+            {
+                id: 23,
+                procedure: "blepharoplasty",
+                title: "Blepharoplasty",
+                description:
+                    "Lower blephroplasty surgery.",
+                beforeImage: "images/face/blepharoplasty/blepharoplasty-before6.png",
+                afterImage: "images/face/blepharoplasty/blepharoplasty-after6.png"
+            },
+            {
+                id: 24,
+                procedure: "blepharoplasty",
+                title: "Blepharoplasty",
+                description:
+                    "Fixed sagging upper eyelid",
+                beforeImage: "images/face/blepharoplasty/blepharoplasty-before7.png",
+                afterImage: "images/face/blepharoplasty/blepharoplasty-after7.png"
+            },
+            {
+                id: 25,
+                procedure: "lip-chin",
+                title: "Lip Reduction",
+                description:
+                    "Reduced lip size and enhanced the shape.",
+                beforeImage: "images/face/lip_chin/lip-before.png",
+                afterImage: "images/face/lip_chin/lip-after.png"
+            },
+            {
+                id: 26,
+                procedure: "lip-chin",
+                title: "Lip Augmentation",
+                description:
+                    "Used fillers for lip augmentation.",
+                beforeImage: "images/face/lip_chin/lipaugmentation-before4.png",
+                afterImage: "images/face/lip_chin/lipaugmentation-after4.png"
             }
+            
         ],
 
         body: [
@@ -100,8 +254,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Body Contouring",
                 description:
                     "Improved body shape and definition through advanced contouring techniques.",
-                beforeImage: "images/body-before1.jpeg",
-                afterImage: "images/body-after1.jpeg"
+                beforeImage: "images/body/body_contouring/body-before1.jpeg",
+                afterImage: "images/body/body_contouring/body-after1.jpeg"
             },
 
             {
@@ -110,9 +264,90 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Liposuction",
                 description:
                     "Targeted contouring to create smoother and more defined body proportions.",
-                beforeImage: "images/liposuction-before.jpeg",
-                afterImage: "images/liposuction-after.jpeg"
-            }
+                beforeImage: "images/body/lipo/liposuction-before.jpeg",
+                afterImage: "images/body/lipo/liposuction-after.jpeg"
+            },
+            {
+                id: 3,
+                procedure: "liposuction",
+                title: "Facial Liposuction",
+                description:
+                    "Targeted contouring to create smoother and more defined face shape.",
+                beforeImage: "images/body/lipo/liposuction-before1.png",
+                afterImage: "images/body/lipo/liposuction-after1.png"
+            },
+            {
+                id: 4,
+                procedure: "liposuction",
+                title: "Liposuction",
+                description:
+                    "Targeted contouring to create smoother and more defined body proportions.",
+                beforeImage: "images/body/lipo/liposuction-before2.png",
+                afterImage: "images/body/lipo/liposuction-after2.png"
+            },
+            {
+                id: 5,
+                procedure: "liposuction",
+                title: "Liposuction",
+                description:
+                    "Targeted contouring to create smoother and more defined body proportions.",
+                beforeImage: "images/body/lipo/liposuction-before3.png",
+                afterImage: "images/body/lipo/liposuction-after3.png"
+            },
+            {
+                id: 6,
+                procedure: "liposuction",
+                title: "Liposuction",
+                description:
+                    "Targeted contouring to create smoother and more defined body proportions.",
+                beforeImage: "images/body/lipo/liposuction-before4.png",
+                afterImage: "images/body/lipo/liposuction-after4.png"
+            },
+            {
+                id: 7,
+                procedure: "liposuction",
+                title: "Liposuction",
+                description:
+                    "Targeted contouring to create smoother and more defined body proportions.",
+                beforeImage: "images/body/lipo/liposuction-before5.png",
+                afterImage: "images/body/lipo/liposuction-after5.png"
+            },
+            {
+                id: 8,
+                procedure: "liposuction",
+                title: "Liposuction",
+                description:
+                    "Targeted contouring to create smoother and more defined body proportions.",
+                beforeImage: "images/body/lipo/liposuction-before6.png",
+                afterImage: "images/body/lipo/liposuction-after6.png"
+            },
+            {
+                id: 9,
+                procedure: "body-contouring",
+                title: "Body Contouring",
+                description:
+                    "Improved body shape and definition through advanced contouring techniques.",
+                beforeImage: "images/body/body_contouring/body-before2.png",
+                afterImage: "images/body/body_contouring/body-after2.png"
+            },
+            {
+                id: 10,
+                procedure: "body-contouring",
+                title: "Body Contouring",
+                description:
+                    "Improved body shape and definition through advanced contouring techniques.",
+                beforeImage: "images/body/body_contouring/body-before3.png",
+                afterImage: "images/body/body_contouring/body-after3.png"
+            },
+            {
+                id: 11,
+                procedure: "body-contouring",
+                title: "Body Contouring",
+                description:
+                    "Improved body shape and definition through advanced contouring techniques.",
+                beforeImage: "images/body/body_contouring/body-before4.png",
+                afterImage: "images/body/body_contouring/body-after4.png"
+            },
         ],
 
         breast: [
@@ -122,8 +357,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Breast Augmentation",
                 description:
                     "Enhanced volume and symmetry with natural-looking proportions.",
-                beforeImage: "images/breast-before1.png",
-                afterImage: "images/breast-after1.png"
+                beforeImage: "images/breast/breast_aug/breast-before1.png",
+                afterImage: "images/breast/breast_aug/breast-after1.png"
             },
 
             {
@@ -132,8 +367,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Breast Lift",
                 description:
                     "Improved breast shape and position while maintaining natural proportions.",
-                beforeImage: "images/breastlift-before1.png",
-                afterImage: "images/breastlift-after1.png"
+                beforeImage: "images/breast/breast_lift/breastlift-before1.png",
+                afterImage: "images/breast/breast_lift/breastlift-after1.png"
             },
             {
                 id: 3,
@@ -141,8 +376,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Breast Augmentation",
                 description:
                     "Enhanced volume and symmetry with natural-looking proportions.",
-                beforeImage: "images/breast-before2.png",
-                afterImage: "images/breast-after2.png"
+                beforeImage: "images/breast/breast_aug/breast-before2.png",
+                afterImage: "images/breast/breast_aug/breast-after2.png"
             },
             {
                 id: 4,
@@ -150,8 +385,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Breast Augmentation",
                 description:
                     "Enhanced volume and symmetry with natural-looking proportions.",
-                beforeImage: "images/breast-before3.png",
-                afterImage: "images/breast-after3.png"
+                beforeImage: "images/breast/breast_aug/breast-before3.png",
+                afterImage: "images/breast/breast_aug/breast-after3.png"
             },
             {
                 id: 5,
@@ -159,8 +394,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Breast Augmentation",
                 description:
                     "Enhanced volume and symmetry with natural-looking proportions.",
-                beforeImage: "images/breast-before4.png",
-                afterImage: "images/breast-after4.png"
+                beforeImage: "images/breast/breast_aug/breast-before4.png",
+                afterImage: "images/breast/breast_aug/breast-after4.png"
             },
             {
                 id: 6,
@@ -168,8 +403,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Breast Augmentation",
                 description:
                     "Enhanced volume and symmetry with natural-looking proportions.",
-                beforeImage: "images/breast-before5.png",
-                afterImage: "images/breast-after5.png"
+                beforeImage: "images/breast/breast_aug/breast-before5.png",
+                afterImage: "images/breast/breast_aug/breast-after5.png"
             },
             {
                 id: 7,
@@ -177,9 +412,54 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Breast Augmentation",
                 description:
                     "Enhanced volume and symmetry with natural-looking proportions.",
-                beforeImage: "images/breast-before6.png",
-                afterImage: "images/breast-after6.png"
-            }
+                beforeImage: "images/breast/breast_aug/breast-before6.png",
+                afterImage: "images/breast/breast_aug/breast-after6.png"
+            },
+            {
+                id: 8,
+                procedure: "breast-augmentation",
+                title: "Breast Augmentation",
+                description:
+                    "Enhanced volume and symmetry with natural-looking proportions.",
+                beforeImage: "images/breast/breast_aug/breast-before7.png",
+                afterImage: "images/breast/breast_aug/breast-after7.png"
+            },
+            {
+                id: 9,
+                procedure: "breast-lift",
+                title: "Breast Lift",
+                description:
+                    "Improved breast shape and position while maintaining natural proportions.",
+                beforeImage: "images/breast/breast_lift/breastlift-before2.png",
+                afterImage: "images/breast/breast_lift/breastlift-after2.png"
+            },
+            {
+                id: 10,
+                procedure: "breast-lift",
+                title: "Breast Lift",
+                description:
+                    "Improved breast shape and position while maintaining natural proportions.",
+                beforeImage: "images/breast/breast_lift/breastlift-before4.png",
+                afterImage: "images/breast/breast_lift/breastlift-after4.png"
+            },
+            {
+                id: 11,
+                procedure: "breast-lift",
+                title: "Breast Lift",
+                description:
+                    "Improved breast shape and position while maintaining natural proportions.",
+                beforeImage: "images/breast/breast_lift/breastlift-before5.png",
+                afterImage: "images/breast/breast_lift/breastlift-after5.png"
+            },
+            {
+                id: 12,
+                procedure: "breast-lift",
+                title: "Breast Lift",
+                description:
+                    "Improved breast shape and position while maintaining natural proportions.",
+                beforeImage: "images/breast/breast_lift/breastlift-before6.png",
+                afterImage: "images/breast/breast_lift/breastlift-after6.png"
+            },
         ],
 
         aesthetic: [
@@ -189,8 +469,62 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Skin Rejuvenation",
                 description:
                     "Brighter, smoother, and healthier-looking skin with advanced aesthetic treatments.",
-                beforeImage: "images/skin-before.png",
-                afterImage: "images/skin-after.png"
+                beforeImage: "images/aesthetic/skin_rejuvenation/skin-before.png",
+                afterImage: "images/aesthetic/skin_rejuvenation/skin-after.png"
+            },
+            {
+                id: 2,
+                procedure: "skin-rejuvenation",
+                title: "Skin Rejuvenation",
+                description:
+                    "Brighter, smoother, and healthier-looking skin with advanced aesthetic treatments.",
+                beforeImage: "images/aesthetic/skin_rejuvenation/skin-before1.png",
+                afterImage: "images/aesthetic/skin_rejuvenation/skin-after1.png"
+            },
+            {
+                id: 3,
+                procedure: "skin-rejuvenation",
+                title: "Skin Rejuvenation",
+                description:
+                    "Brighter, smoother, and healthier-looking skin with advanced aesthetic treatments.",
+                beforeImage: "images/aesthetic/skin_rejuvenation/skin-before2.png",
+                afterImage: "images/aesthetic/skin_rejuvenation/skin-after2.png"
+            },
+            {
+                id: 4,
+                procedure: "skin-rejuvenation",
+                title: "Skin Rejuvenation",
+                description:
+                    "Brighter, smoother, and healthier-looking skin with advanced aesthetic treatments.",
+                beforeImage: "images/aesthetic/skin_rejuvenation/skin-before3.png",
+                afterImage: "images/aesthetic/skin_rejuvenation/skin-after3.png"
+            },
+            {
+                id: 5,
+                procedure: "skin-rejuvenation",
+                title: "Skin Rejuvenation",
+                description:
+                    "Brighter, smoother, and healthier-looking skin with advanced aesthetic treatments.",
+                beforeImage: "images/aesthetic/skin_rejuvenation/skin-before4.png",
+                afterImage: "images/aesthetic/skin_rejuvenation/skin-after4.png"
+            },
+            {
+                id: 6,
+                procedure: "skin-rejuvenation",
+                title: "Skin Rejuvenation",
+                description:
+                    "Brighter, smoother, and healthier-looking skin with advanced aesthetic treatments.",
+                beforeImage: "images/aesthetic/skin_rejuvenation/skin-before5.png",
+                afterImage: "images/aesthetic/skin_rejuvenation/skin-after5.png"
+            },
+            {
+                id: 7,
+                procedure: "skin-rejuvenation",
+                title: "Skin Rejuvenation",
+                description:
+                    "Brighter, smoother, and healthier-looking skin with advanced aesthetic treatments.",
+                beforeImage: "images/aesthetic/skin_rejuvenation/skin-before6.png",
+                afterImage: "images/aesthetic/skin_rejuvenation/skin-after6.png"
             }
         ]
     };
