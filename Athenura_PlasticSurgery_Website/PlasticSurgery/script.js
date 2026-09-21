@@ -133,7 +133,7 @@ if (aboutButton) {
 
         event.preventDefault();
 
-        window.location.href = "about.html";
+        window.location.href = "About/about.html";
 
     });
 
