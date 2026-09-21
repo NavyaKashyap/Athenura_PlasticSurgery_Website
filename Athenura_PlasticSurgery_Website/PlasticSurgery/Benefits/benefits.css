@@ -109,35 +109,48 @@ a {
 ========================================================= */
 
 /* =========================================================
-   HERO
-========================================================= */
-
-/* =========================================================
    HERO SECTION
 ========================================================= */
 
 .hero {
     position: relative;
-    min-height: calc(100vh - 90px);
+    min-height: calc(100vh - 80px);
+
     display: flex;
     align-items: center;
+
     overflow: hidden;
-    padding: 90px 8% 0;
     box-sizing: border-box;
-    background: #ffffff;
+
+    padding: 100px 8% 80px;
+
+    /* YOUR LANDSCAPE IMAGE */
+    background-image: url("../image/benefits-hero.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-/* Soft green circular background */
+
+/* =========================================================
+   SOFT WHITE OVERLAY FOR TEXT READABILITY
+========================================================= */
+
 .hero::before {
     content: "";
     position: absolute;
-    width: 540px;
-    height: 540px;
-    border-radius: 50%;
-    background: #eaf7f0;
-    right: -35px;
-    bottom: -80px;
-    z-index: 0;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.98) 0%,
+            rgba(255, 255, 255, 0.94) 35%,
+            rgba(255, 255, 255, 0.35) 65%,
+            rgba(255, 255, 255, 0.05) 100%
+        );
+
+    z-index: 1;
 }
 
 
@@ -148,102 +161,52 @@ a {
 .hero-content {
     position: relative;
     z-index: 2;
-    width: 54%;
+
+    width: 55%;
     max-width: 780px;
-    padding-bottom: 80px;
 }
 
 .eyebrow {
     margin-bottom: 22px;
+
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 600;
+
     letter-spacing: 6px;
     color: #318c5c;
 }
 
 .hero h1 {
     margin: 0 0 28px;
-    color: #318c5c;
+
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(62px, 6vw, 96px);
+    font-size: clamp(60px, 6vw, 94px);
     font-weight: 600;
-    line-height: 0.92;
+    line-height: 0.94;
     letter-spacing: -2px;
+
+    color: #318c5c;
 }
 
 .hero-content p {
-    max-width: 780px;
+    max-width: 760px;
     margin: 0;
-    color: #18231e;
+
     font-family: "Poppins", sans-serif;
     font-size: 18px;
-    line-height: 2.1;
+    line-height: 2;
+
+    color: #18231e;
 }
 
 
 /* =========================================================
-   HERO IMAGE
+   REMOVE SEPARATE IMAGE BOX
 ========================================================= */
 
 .hero-image {
-    position: absolute;
-    z-index: 2;
-
-    right: 5%;
-    bottom: 0;
-
-    width: min(42vw, 650px);
-    aspect-ratio: 16 / 9;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-
-    overflow: visible;
-}
-
-.hero-image img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    object-position: center bottom;
-
-    border-radius: 0;
-
-    filter: none;
-}
-
-
-/* =========================================================
-   LARGE DESKTOP
-========================================================= */
-
-@media (max-width: 1400px) {
-
-    .hero {
-        padding-left: 8%;
-        padding-right: 6%;
-    }
-
-    .hero-content {
-        width: 52%;
-    }
-
-    .hero-image {
-        right: 4%;
-        width: 43vw;
-        max-width: 610px;
-    }
-
-    .hero::before {
-        width: 510px;
-        height: 510px;
-        right: -70px;
-    }
+    display: none;
 }
 
 
@@ -254,36 +217,23 @@ a {
 @media (max-width: 1200px) {
 
     .hero {
-        min-height: 720px;
-        padding: 100px 6% 0;
+        min-height: 700px;
+        padding: 100px 7% 70px;
+
+        background-position: center center;
     }
 
     .hero-content {
-        width: 53%;
-        padding-bottom: 70px;
+        width: 58%;
     }
 
     .hero h1 {
-        font-size: clamp(58px, 6vw, 78px);
+        font-size: clamp(58px, 6vw, 80px);
     }
 
     .hero-content p {
         font-size: 16px;
         line-height: 1.9;
-        max-width: 650px;
-    }
-
-    .hero-image {
-        right: 3%;
-        width: 45vw;
-        max-width: 570px;
-    }
-
-    .hero::before {
-        width: 470px;
-        height: 470px;
-        right: -80px;
-        bottom: -70px;
     }
 }
 
@@ -295,42 +245,29 @@ a {
 @media (max-width: 900px) {
 
     .hero {
-        min-height: auto;
-        padding: 130px 7% 60px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
+        min-height: 700px;
 
-    .hero-content {
-        width: 100%;
-        max-width: 700px;
-        padding-bottom: 40px;
-    }
+        padding: 110px 7% 70px;
 
-    .hero h1 {
-        font-size: clamp(56px, 9vw, 76px);
-    }
-
-    .hero-content p {
-        max-width: 650px;
-    }
-
-    .hero-image {
-        position: relative;
-        right: auto;
-        bottom: auto;
-
-        width: min(90vw, 650px);
-        max-width: none;
-
-        align-self: center;
+        background-position: 60% center;
     }
 
     .hero::before {
-        width: 500px;
-        height: 500px;
-        right: -180px;
-        bottom: -150px;
+        background:
+            linear-gradient(
+                90deg,
+                rgba(255,255,255,.98) 0%,
+                rgba(255,255,255,.88) 55%,
+                rgba(255,255,255,.35) 100%
+            );
+    }
+
+    .hero-content {
+        width: 70%;
+    }
+
+    .hero h1 {
+        font-size: clamp(55px, 9vw, 76px);
     }
 }
 
@@ -342,38 +279,41 @@ a {
 @media (max-width: 600px) {
 
     .hero {
-        padding: 110px 6% 40px;
+        min-height: 720px;
+
+        padding: 110px 6% 60px;
+
+        background-position: 65% center;
+    }
+
+    .hero::before {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(255,255,255,.98) 0%,
+                rgba(255,255,255,.88) 65%,
+                rgba(255,255,255,.50) 100%
+            );
+    }
+
+    .hero-content {
+        width: 100%;
     }
 
     .eyebrow {
         font-size: 11px;
         letter-spacing: 4px;
-        margin-bottom: 18px;
     }
 
     .hero h1 {
-        font-size: clamp(48px, 14vw, 65px);
-        line-height: 0.95;
+        font-size: clamp(48px, 14vw, 64px);
+        line-height: .95;
         letter-spacing: -1px;
-        margin-bottom: 22px;
     }
 
     .hero-content p {
         font-size: 14px;
         line-height: 1.8;
-    }
-
-    .hero-image {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        margin-top: 15px;
-    }
-
-    .hero::before {
-        width: 360px;
-        height: 360px;
-        right: -160px;
-        bottom: -100px;
     }
 }
 
