@@ -112,98 +112,269 @@ a {
    HERO
 ========================================================= */
 
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
 .hero {
     position: relative;
-
-    min-height: 720px;
-
+    min-height: calc(100vh - 90px);
     display: flex;
     align-items: center;
-
-    padding: 150px 8% 90px;
-
     overflow: hidden;
-
-    background:
-        linear-gradient(
-            90deg,
-            #f3fbf7 0%,
-            #ffffff 70%
-        );
+    padding: 90px 8% 0;
+    box-sizing: border-box;
+    background: #ffffff;
 }
 
+/* Soft green circular background */
 .hero::before {
     content: "";
-
     position: absolute;
-
-    width: 650px;
-    height: 650px;
-
-    right: -170px;
-    top: 80px;
-
+    width: 540px;
+    height: 540px;
     border-radius: 50%;
-
-    background: #e2f4ea;
-
-    opacity: 0.65;
+    background: #eaf7f0;
+    right: -35px;
+    bottom: -80px;
+    z-index: 0;
 }
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero-content {
     position: relative;
-    z-index: 3;
-
-    width: 52%;
+    z-index: 2;
+    width: 54%;
+    max-width: 780px;
+    padding-bottom: 80px;
 }
 
 .eyebrow {
-    margin-bottom: 20px;
-
-    color: #318c5c;
-
-    font-size: 14px;
+    margin-bottom: 22px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
     font-weight: 600;
-
-    letter-spacing: 4px;
+    letter-spacing: 6px;
+    color: #318c5c;
 }
 
 .hero h1 {
-    margin-bottom: 30px;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(60px, 7vw, 100px);
-    font-weight: 600;
-
-    line-height: 0.9;
-
+    margin: 0 0 28px;
     color: #318c5c;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(62px, 6vw, 96px);
+    font-weight: 600;
+    line-height: 0.92;
+    letter-spacing: -2px;
 }
 
-.hero p {
-    max-width: 650px;
-
-    color: #34433c;
-
-    font-size: 17px;
-    line-height: 1.9;
+.hero-content p {
+    max-width: 780px;
+    margin: 0;
+    color: #18231e;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    line-height: 2.1;
 }
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
 
 .hero-image {
     position: absolute;
+    z-index: 2;
 
     right: 5%;
     bottom: 0;
 
-    width: 470px;
+    width: min(42vw, 650px);
+    aspect-ratio: 16 / 9;
 
-    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    overflow: visible;
 }
 
 .hero-image img {
-    width: 100%;
     display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    border-radius: 0;
+
+    filter: none;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1400px) {
+
+    .hero {
+        padding-left: 8%;
+        padding-right: 6%;
+    }
+
+    .hero-content {
+        width: 52%;
+    }
+
+    .hero-image {
+        right: 4%;
+        width: 43vw;
+        max-width: 610px;
+    }
+
+    .hero::before {
+        width: 510px;
+        height: 510px;
+        right: -70px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .hero {
+        min-height: 720px;
+        padding: 100px 6% 0;
+    }
+
+    .hero-content {
+        width: 53%;
+        padding-bottom: 70px;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 6vw, 78px);
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        line-height: 1.9;
+        max-width: 650px;
+    }
+
+    .hero-image {
+        right: 3%;
+        width: 45vw;
+        max-width: 570px;
+    }
+
+    .hero::before {
+        width: 470px;
+        height: 470px;
+        right: -80px;
+        bottom: -70px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: auto;
+        padding: 130px 7% 60px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 700px;
+        padding-bottom: 40px;
+    }
+
+    .hero h1 {
+        font-size: clamp(56px, 9vw, 76px);
+    }
+
+    .hero-content p {
+        max-width: 650px;
+    }
+
+    .hero-image {
+        position: relative;
+        right: auto;
+        bottom: auto;
+
+        width: min(90vw, 650px);
+        max-width: none;
+
+        align-self: center;
+    }
+
+    .hero::before {
+        width: 500px;
+        height: 500px;
+        right: -180px;
+        bottom: -150px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 110px 6% 40px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 4px;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 14vw, 65px);
+        line-height: 0.95;
+        letter-spacing: -1px;
+        margin-bottom: 22px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .hero-image {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        margin-top: 15px;
+    }
+
+    .hero::before {
+        width: 360px;
+        height: 360px;
+        right: -160px;
+        bottom: -100px;
+    }
 }
 
 
