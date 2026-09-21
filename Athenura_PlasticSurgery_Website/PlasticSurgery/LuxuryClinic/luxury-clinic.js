@@ -1,21 +1,21 @@
 /* =========================================================
-   FACIAL PROCEDURES PAGE JS
+   LUXURY CLINIC PAGE JS
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
-
 
     /* =====================================================
        SCROLL REVEAL ANIMATION
     ===================================================== */
 
     const revealElements = document.querySelectorAll(
-        ".facial-intro-content, " +
-        ".facial-section-heading, " +
-        ".facial-card, " +
-        ".facial-care-content"
+        ".luxury-intro-content, " +
+        ".luxury-section-heading, " +
+        ".luxury-card, " +
+        ".luxury-experience-image, " +
+        ".luxury-experience-content, " +
+        ".luxury-cta-content"
     );
-
 
     if ("IntersectionObserver" in window) {
 
@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         );
 
-
         revealElements.forEach(function (element) {
 
             element.classList.add("reveal");
@@ -61,27 +60,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       FACIAL PROCEDURE CARD INTERACTION
+       STAGGER LUXURY CARDS
     ===================================================== */
 
-    const facialCards =
-        document.querySelectorAll(".facial-card");
+    const luxuryCards =
+        document.querySelectorAll(".luxury-card");
 
+    luxuryCards.forEach(function (card, index) {
 
-    facialCards.forEach(function (card) {
-
-        card.addEventListener("mouseenter", function () {
-
-            card.classList.add("active");
-
-        });
-
-
-        card.addEventListener("mouseleave", function () {
-
-            card.classList.remove("active");
-
-        });
+        card.style.transitionDelay =
+            (index * 0.12) + "s";
 
     });
 
@@ -93,14 +81,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const internalLinks =
         document.querySelectorAll('a[href^="#"]');
 
-
     internalLinks.forEach(function (link) {
 
         link.addEventListener("click", function (event) {
 
             const targetId =
                 link.getAttribute("href");
-
 
             if (
                 targetId &&
@@ -109,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const target =
                     document.querySelector(targetId);
-
 
                 if (target) {
 
@@ -129,8 +114,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    /* =====================================================
+       LUXURY CARD HOVER
+    ===================================================== */
+
+    luxuryCards.forEach(function (card) {
+
+        card.addEventListener("mouseenter", function () {
+
+            card.classList.add("active");
+
+        });
+
+        card.addEventListener("mouseleave", function () {
+
+            card.classList.remove("active");
+
+        });
+
+    });
+
+
     console.log(
-        "Athenura Facial Procedures page loaded."
+        "Athenura Luxury Clinic page loaded."
     );
 
 });
