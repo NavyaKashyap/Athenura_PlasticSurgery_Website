@@ -1,76 +1,71 @@
 /* =========================================================
-   ATHENURA — BENEFITS PAGE JS
+   ATHENURA — BENEFITS PAGE JAVASCRIPT
+   Only for Benefits page interactions
 ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
        1. SCROLL REVEAL
     ===================================================== */
 
     const revealElements = document.querySelectorAll(
-        ".intro, .benefit-card, .smartlipo-image, .smartlipo-content, .area-card, .cta"
+        ".intro, .benefit-card, .smartlipo-image, .smartlipo-content, .area-card"
     );
 
-    const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
+    if ("IntersectionObserver" in window) {
 
-            entries.forEach(entry => {
+        const revealObserver = new IntersectionObserver(
+            function (entries, observer) {
 
-                if (entry.isIntersecting) {
+                entries.forEach(function (entry) {
 
-                    entry.target.classList.add("show");
+                    if (entry.isIntersecting) {
 
-                    observer.unobserve(entry.target);
-                }
+                        entry.target.classList.add("show");
 
-            });
+                        observer.unobserve(entry.target);
 
-        },
-        {
-            threshold: 0.12
-        }
-    );
+                    }
 
-    revealElements.forEach(element => {
+                });
 
-        element.classList.add("reveal");
+            },
+            {
+                threshold: 0.15
+            }
+        );
 
-        revealObserver.observe(element);
+        revealElements.forEach(function (element) {
 
-    });
+            element.classList.add("reveal");
+
+            revealObserver.observe(element);
+
+        });
+
+    } else {
+
+        /* Fallback for older browsers */
+
+        revealElements.forEach(function (element) {
+            element.classList.add("show");
+        });
+
+    }
 
 
     /* =====================================================
-       2. ACTIVE NAVIGATION
+       2. BENEFIT CARD INTERACTION
     ===================================================== */
 
-    const currentPage = window.location.pathname.split("/").pop();
+    const benefitCards = document.querySelectorAll(".benefit-card");
 
-    const navLinks = document.querySelectorAll(".nav-links a");
+    benefitCards.forEach(function (card) {
 
-    navLinks.forEach(link => {
+        card.addEventListener("click", function () {
 
-        const linkPage = link.getAttribute("href")
-            ?.split("/")
-            .pop();
-
-        if (linkPage === currentPage) {
-            link.classList.add("active");
-        }
-
-    });
-
-
-    /* =====================================================
-       3. AREA CARD CLICK
-    ===================================================== */
-
-    const areaCards = document.querySelectorAll(".area-card");
-
-    areaCards.forEach(card => {
-
-        card.addEventListener("click", () => {
-
-            areaCards.forEach(item => {
+            benefitCards.forEach(function (item) {
                 item.classList.remove("selected");
             });
 
@@ -82,59 +77,62 @@
 
 
     /* =====================================================
-       4. SMOOTH CTA
+       3. BODY AREA INTERACTION
     ===================================================== */
 
-    const consultationButton =
-        document.querySelector(".cta-button");
+    const areaCards = document.querySelectorAll(".area-card");
 
-    if (consultationButton) {
+    areaCards.forEach(function (card) {
 
-        consultationButton.addEventListener("mouseenter", () => {
-            consultationButton.classList.add("hovered");
+        card.addEventListener("click", function () {
+
+            areaCards.forEach(function (item) {
+                item.classList.remove("selected");
+            });
+
+            card.classList.add("selected");
+
         });
 
-        consultationButton.addEventListener("mouseleave", () => {
-            consultationButton.classList.remove("hovered");
-        });
-
-    }
+    });
 
 
     /* =====================================================
-       5. SCROLL TO TOP
+       4. BACK TO TOP BUTTON
     ===================================================== */
 
-    const scrollTopButton = document.createElement("button");
+    const backToTop = document.createElement("button");
 
-    scrollTopButton.className = "benefits-scroll-top";
+    backToTop.type = "button";
 
-    scrollTopButton.innerHTML = "↑";
+    backToTop.className = "benefits-scroll-top";
 
-    scrollTopButton.setAttribute(
+    backToTop.setAttribute(
         "aria-label",
-        "Scroll to top"
+        "Back to top"
     );
 
-    document.body.appendChild(scrollTopButton);
+    backToTop.innerHTML = "↑";
+
+    document.body.appendChild(backToTop);
 
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", function () {
 
         if (window.scrollY > 500) {
 
-            scrollTopButton.classList.add("visible");
+            backToTop.classList.add("visible");
 
         } else {
 
-            scrollTopButton.classList.remove("visible");
+            backToTop.classList.remove("visible");
 
         }
 
     });
 
 
-    scrollTopButton.addEventListener("click", () => {
+    backToTop.addEventListener("click", function () {
 
         window.scrollTo({
             top: 0,
@@ -143,3 +141,28 @@
 
     });
 
+
+    /* =====================================================
+       5. CTA CHECK
+       CTA itself is handled by components.js
+    ===================================================== */
+
+    document.addEventListener("click", function (event) {
+
+        const consultationButton =
+            event.target.closest("#cta a");
+
+        if (!consultationButton) return;
+
+        console.log("Consultation CTA clicked");
+
+    });
+
+
+    /* =====================================================
+       6. PAGE LOAD CHECK
+    ===================================================== */
+
+    console.log("Athenura Benefits JS loaded.");
+
+});

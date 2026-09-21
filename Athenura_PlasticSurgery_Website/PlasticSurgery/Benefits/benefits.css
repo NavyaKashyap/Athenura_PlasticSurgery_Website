@@ -850,3 +850,124 @@ footer {
     }
 
 }
+/* =========================================================
+   BENEFITS PAGE JS ANIMATIONS
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   SELECTED BENEFIT CARD
+========================================================= */
+
+.benefit-card {
+    cursor: pointer;
+}
+
+.benefit-card.selected {
+    border-color: #318c5c;
+
+    box-shadow:
+        0 20px 50px rgba(49, 140, 92, 0.15);
+
+    transform: translateY(-8px);
+}
+
+
+/* =========================================================
+   SELECTED BODY AREA
+========================================================= */
+
+.area-card {
+    cursor: pointer;
+}
+
+.area-card.selected .area-image {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(49, 140, 92, 0.20);
+}
+
+.area-card.selected h3 {
+    color: #318c5c;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.benefits-scroll-top {
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    border: 2px solid #318c5c;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #318c5c;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.benefits-scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.benefits-scroll-top:hover {
+    background: #318c5c;
+    color: #ffffff;
+}
+
+
+@media (max-width: 600px) {
+
+    .benefits-scroll-top {
+        width: 48px;
+        height: 48px;
+
+        right: 18px;
+        bottom: 18px;
+
+        font-size: 20px;
+    }
+
+}
