@@ -1,0 +1,851 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #1d2b25;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    right: 40px;
+
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-radius: 18px;
+
+    z-index: 100;
+}
+
+.logo {
+    width: 150px;
+    display: block;
+}
+
+.logo img {
+    width: 100%;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #1f2925;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #318c5c;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #318c5c;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 150px 8% 90px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f3fbf7 0%,
+            #ffffff 70%
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    right: -170px;
+    top: 80px;
+
+    border-radius: 50%;
+
+    background: #e2f4ea;
+
+    opacity: 0.65;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+
+    width: 52%;
+}
+
+.eyebrow {
+    margin-bottom: 20px;
+
+    color: #318c5c;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    margin-bottom: 30px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(60px, 7vw, 100px);
+    font-weight: 600;
+
+    line-height: 0.9;
+
+    color: #318c5c;
+}
+
+.hero p {
+    max-width: 650px;
+
+    color: #34433c;
+
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.hero-image {
+    position: absolute;
+
+    right: 5%;
+    bottom: 0;
+
+    width: 470px;
+
+    z-index: 2;
+}
+
+.hero-image img {
+    width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   COMMON SECTION LABEL
+========================================================= */
+
+.section-label {
+    margin-bottom: 15px;
+
+    color: #318c5c;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    padding: 110px 8%;
+
+    text-align: center;
+
+    background: #ffffff;
+}
+
+.intro h2 {
+    margin-bottom: 25px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(48px, 5vw, 72px);
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: #246e47;
+}
+
+.intro p {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    color: #52625a;
+
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   BENEFITS SECTION
+========================================================= */
+
+.benefits {
+    padding: 110px 8%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7fcf9 0%,
+            #ffffff 100%
+        );
+}
+
+.benefits-heading {
+    margin-bottom: 65px;
+
+    text-align: center;
+}
+
+.benefits-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(48px, 5vw, 70px);
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: #318c5c;
+}
+
+.benefit-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.benefit-card {
+    position: relative;
+
+    padding: 42px 32px;
+
+    min-height: 270px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(49, 140, 92, 0.12);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.benefit-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #318c5c;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.35s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 50px rgba(49, 140, 92, 0.12);
+}
+
+.benefit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.benefit-number {
+    margin-bottom: 12px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 46px;
+    line-height: 1;
+
+    color: #9bcfb0;
+}
+
+.benefit-card h3 {
+    margin-bottom: 15px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 31px;
+    font-weight: 600;
+
+    color: #246e47;
+}
+
+.benefit-card p {
+    color: #596860;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SMARTLIPO SECTION
+========================================================= */
+
+.smartlipo {
+    padding: 120px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background: #ffffff;
+}
+
+.smartlipo-image {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+}
+
+.smartlipo-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 80%;
+    height: 80%;
+
+    background: #e6f6ed;
+
+    border-radius: 50%;
+
+    z-index: 0;
+}
+
+.smartlipo-image img {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 560px;
+
+    border-radius: 24px;
+
+    display: block;
+}
+
+.smartlipo-content {
+    max-width: 600px;
+}
+
+.smartlipo-content h2 {
+    margin-bottom: 28px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(48px, 5vw, 72px);
+    font-weight: 600;
+
+    line-height: 0.95;
+
+    color: #318c5c;
+}
+
+.smartlipo-content p {
+    margin-bottom: 18px;
+
+    color: #52625a;
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   BODY AREAS
+========================================================= */
+
+.areas {
+    padding: 110px 8%;
+
+    background: #f1faf5;
+}
+
+.areas-heading {
+    margin-bottom: 60px;
+
+    text-align: center;
+}
+
+.areas-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(48px, 5vw, 70px);
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: #318c5c;
+}
+
+.area-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 25px;
+}
+
+.area-card {
+    text-align: center;
+}
+
+.area-image {
+    width: 180px;
+    height: 180px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 2px solid #7ed0a1;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.area-card:hover .area-image {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(49, 140, 92, 0.15);
+}
+
+.area-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.area-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 29px;
+    font-weight: 600;
+
+    color: #1d2b25;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    padding: 120px 8%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #246e47 0%,
+            #318c5c 100%
+        );
+
+    color: #ffffff;
+}
+
+.cta .section-label {
+    color: #d7f3e3;
+}
+
+.cta h2 {
+    max-width: 900px;
+
+    margin: 0 auto 20px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(50px, 6vw, 80px);
+    font-weight: 600;
+
+    line-height: 0.95;
+}
+
+.cta p {
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 16px 32px;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #246e47;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cta-button span {
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    color: #728078;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .hero-image {
+        width: 400px;
+        right: 2%;
+    }
+
+    .hero-content {
+        width: 58%;
+    }
+
+    .area-grid {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 45px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1000px
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        left: 25px;
+        right: 25px;
+    }
+
+    .nav-links {
+        gap: 22px;
+    }
+
+    .hero {
+        min-height: 800px;
+    }
+
+    .hero-content {
+        width: 62%;
+    }
+
+    .hero-image {
+        width: 350px;
+    }
+
+    .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .smartlipo {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .smartlipo-content {
+        max-width: 750px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        position: absolute;
+
+        top: 12px;
+        left: 15px;
+        right: 15px;
+
+        height: 65px;
+
+        padding: 0 20px;
+    }
+
+    .logo {
+        width: 125px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 850px;
+
+        padding: 130px 7% 30px;
+
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: 62px;
+    }
+
+    .hero p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .hero-image {
+        width: 310px;
+
+        right: 50%;
+
+        transform: translateX(50%);
+    }
+
+    .intro,
+    .benefits,
+    .smartlipo,
+    .areas {
+        padding: 80px 7%;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+        min-height: auto;
+    }
+
+    .area-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 15px;
+    }
+
+    .area-image {
+        width: 135px;
+        height: 135px;
+    }
+
+    .area-card h3 {
+        font-size: 25px;
+    }
+
+    .cta {
+        padding: 90px 7%;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 450px
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .hero {
+        min-height: 800px;
+    }
+
+    .hero h1 {
+        font-size: 53px;
+    }
+
+    .hero-image {
+        width: 270px;
+    }
+
+    .area-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .area-image {
+        width: 120px;
+        height: 120px;
+    }
+
+}
