@@ -1,12 +1,9 @@
 /* =========================================================
-   ATHENURA CLINIC — SERVICES PAGE STYLESHEET
-   Exact Athenura Brand Palette & Reference Styling
+  ATHENURA CLINIC — SERVICES PAGE STYLESHEET
    ========================================================= */
 
 :root {
-  /* Athenura Brand Palette — locked to the approved 7-color theme.
-     Every color used across this page resolves to one of these
-     seven values (or an alpha/opacity variant of one of them). */
+
   --c-green: #399966;                /* Green */
   --c-green-dark: #2F8A5C;           /* Dark Green */
   --c-white: #FFFFFF;                /* White */
@@ -87,7 +84,6 @@ body {
     #F5FAF7 50%,
     #EAF6F0 100%
   );
-  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   position: relative;
 }
@@ -209,59 +205,20 @@ ul, ol {
 }
 
 /* ---------------------------------------------------------
-   FLOATING RIGHT SIDE TABS (Contact & Direction)
---------------------------------------------------------- */
-.floating-side-tabs {
-  position: fixed;
-  right: 0;
-  top: 54%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  z-index: 990;
-}
-
-.floating-tab {
-  background-color: var(--c-brand-green);
-  color: #ffffff;
-  padding: 20px 13px;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-right: none;
-  border-radius: 6px 0 0 6px;
-  box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.2s, transform 0.2s;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.floating-tab:hover {
-  background-color: var(--c-brand-green-hover);
-  transform: translateX(-3px);
-}
-
-
-
-/* ---------------------------------------------------------
    SERVICES PAGE HERO
-   Wide, horizontal hero adapted from the homepage hero style —
-   text on one side, a single large image on the other, kept
-   compact (not tall) and fully responsive.
+
 --------------------------------------------------------- */
 .services-hero {
   background-color: var(--c-white);
   overflow: hidden;
   position: relative;
+  min-height: calc(100vh - 70px);
+  height: calc(100vh - 70px);
+  padding: 0;
+  margin: 0;
+
 }
 
-/* Decorative blobs and dot-grid removed to match the flat, bright
-   reference background — kept as empty, harmless anchors in the
-   markup in case they're wanted again later. */
 /* Hero soft background glow */
 .services-hero::before {
   content: "";
@@ -318,9 +275,6 @@ ul, ol {
   align-items: flex-start;
   gap: 40px;
   padding-top: 0;
-  /* Full-bleed hero: no page container here — text aligns with the
-     site's usual left inset, but the media column is free to run
-     all the way to the true right edge of the viewport. */
   padding-left: 120px;
   padding-right: 0;
   width: 100%;
@@ -392,27 +346,27 @@ ul, ol {
   border-color: var(--c-brand-green-hover);
 }
 
-/* Full-bleed cutout — no card, no border-radius, no shadow.
-   The person is placed directly against the page background and
-   bleeds all the way to the true right edge of the viewport, with
-   the full figure kept in frame (object-fit: contain never crops). */
 .services-hero__media {
-  flex: 1 1 60%;
-  max-width: 60%;
-  align-self: stretch;
-  position: relative;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 62%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
   z-index: 1;
-  display: block;
-  pointer-events: none;
-  overflow: hidden;
 }
 
 .services-hero__media img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position:10% center;
+  object-fit: contain;
+  object-position: center bottom;
+  margin: 0;
 }
 
 
@@ -445,18 +399,22 @@ ul, ol {
   padding-top: 0;
   padding-bottom: 0;
   align-self: flex-start;
-  margin-top: 95px;
+  margin-top: 10px;
   }
   .services-hero__media {
     flex: none;
     max-width: 100%;
     width: 100%;
-    height: 320px;
+    height: 400px;
     align-self: center;
   }
   .services-hero__media img {
-    width: 100%;
-    height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
   }
   .services-hero__desc {
     margin-left: auto;
@@ -469,7 +427,7 @@ ul, ol {
 
 @media (max-width: 600px) {
   .services-hero__inner {
-    padding-top: 32px;
+    padding-top: 0;
   }
   .services-hero__title {
     font-size: clamp(30px, 8vw, 38px);
@@ -480,6 +438,21 @@ ul, ol {
   .services-hero__actions {
     gap: 16px 22px;
   }
+}
+
+
+.services-hero::before {
+  width: 850px;
+  height: 850px;
+  right: -280px;
+  top: -200px;
+  opacity: 1;
+}
+
+.services-hero::after {
+  width: 1000px;
+  height: 650px;
+  opacity: 3;
 }
 
 /* ---------------------------------------------------------
@@ -633,11 +606,266 @@ ul, ol {
   line-height: 1.7;
 }
 
-/* ---------------------------------------------------------
-   EDITORIAL SERVICE ROWS — 1 per row, alternating zig-zag
-   (image/content swap sides every row), large premium images
-   with an overlapping content card, spacious proportions.
---------------------------------------------------------- */
+/*
+EDITORIAL SERVICE ROWS*/
+/* =========================================================
+   FULL SERVICES SECTION — FLOWING WAVE BACKGROUND
+   ADD ONLY — DO NOT REMOVE EXISTING CSS
+========================================================= */
+
+.services-section {
+  position: relative;
+  overflow: hidden;
+
+  /* Full-section base */
+  background:
+    radial-gradient(
+      ellipse 55% 70% at 50% 45%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.88) 35%,
+      rgba(255, 255, 255, 0) 72%
+    ),
+    linear-gradient(
+      135deg,
+      #dffbfb 0%,
+      #f8ffff 30%,
+      #ffffff 52%,
+      #effff7 72%,
+      #d8fafa 100%
+    );
+}
+
+
+/* =========================================================
+   LARGE FLOWING RIBBON — WHOLE SERVICES PANEL
+========================================================= */
+
+.services-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 150%;
+  height: 75%;
+
+  left: -25%;
+  top: 8%;
+
+  pointer-events: none;
+  z-index: 0;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(78, 218, 221, 0.13),
+      rgba(116, 232, 201, 0.16),
+      rgba(255, 255, 255, 0.25),
+      rgba(100, 224, 216, 0.10)
+    );
+
+  transform:
+    rotate(-8deg)
+    skewX(-10deg);
+
+  box-shadow:
+    inset 0 0 45px rgba(255, 255, 255, 0.55),
+    0 0 80px rgba(80, 220, 216, 0.08);
+}
+
+
+/* =========================================================
+   SECOND LARGE FLOWING SHAPE
+========================================================= */
+
+.services-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130%;
+  height: 65%;
+
+  right: -30%;
+  bottom: 2%;
+
+  pointer-events: none;
+  z-index: 0;
+
+  border-radius: 55% 45% 50% 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.20),
+      rgba(125, 235, 194, 0.13),
+      rgba(68, 218, 220, 0.12),
+      rgba(255, 255, 255, 0.22)
+    );
+
+  transform:
+    rotate(8deg)
+    skewX(-8deg);
+
+  box-shadow:
+    inset 0 0 50px rgba(255, 255, 255, 0.50);
+}
+
+
+/* =========================================================
+   MAKE ALL SERVICE CONTENT SIT ABOVE BACKGROUND
+========================================================= */
+
+.services-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   SOFT WAVE LINES ACROSS THE WHOLE SECTION
+========================================================= */
+
+.services-section .service-rows {
+  position: relative;
+}
+
+.services-section .service-rows::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120%;
+  height: 90%;
+
+  left: -10%;
+  top: 5%;
+
+  pointer-events: none;
+  z-index: -1;
+
+  background:
+    repeating-radial-gradient(
+      ellipse at 45% 50%,
+      transparent 0,
+      transparent 24px,
+      rgba(70, 210, 210, 0.055) 25px,
+      rgba(70, 210, 210, 0.055) 26px,
+      transparent 27px
+    );
+
+  transform: rotate(-8deg);
+
+  opacity: 0.65;
+
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 12%,
+      black 88%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 12%,
+      black 88%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   MINT LIGHT GLOW
+========================================================= */
+
+.services-section .service-rows::after {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  left: 50%;
+  top: 30%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(142, 239, 188, 0.13) 0%,
+      rgba(116, 230, 205, 0.07) 35%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+  z-index: -2;
+}
+
+
+/* =========================================================
+   VERY SUBTLE MOVEMENT
+========================================================= */
+
+.services-section::before {
+  animation: fullServicesWave 14s ease-in-out infinite alternate;
+}
+
+@keyframes fullServicesWave {
+  0% {
+    transform:
+      rotate(-8deg)
+      skewX(-10deg)
+      translateX(0);
+  }
+
+  100% {
+    transform:
+      rotate(-5deg)
+      skewX(-7deg)
+      translateX(35px);
+  }
+}
+
+
+/* =========================================================
+  MOBILE
+========================================================= */
+
+@media (max-width: 860px) {
+
+  .services-section::before {
+    width: 190%;
+    left: -45%;
+  }
+
+  .services-section::after {
+    width: 180%;
+    right: -45%;
+  }
+
+  .services-section .service-rows::before {
+    width: 180%;
+    left: -40%;
+  }
+}
+
+
+/* Disable animation for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .services-section::before {
+    animation: none;
+  }
+}
+
 .service-rows {
   display: flex;
   flex-direction: column;
@@ -668,14 +896,10 @@ ul, ol {
   transform: translateY(-4px);
 }
 
-/* Row 1 (odd): image left, content right, overlapping. Row 2
-   (even): mirrored — content left, image right. */
 .service-row:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-/* Thin vertical connector line linking each alternating service,
-   centered on the page and confined to the gap between rows. */
 .service-row + .service-row::before {
   content: '';
   position: absolute;
@@ -696,11 +920,6 @@ ul, ol {
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(47, 138, 92, 0.16);
   transition: box-shadow 0.4s ease;
-  /* Media sits flush with the row's top edge (align-items: flex-start
-     on .service-row), which naturally keeps it the "higher" element
-     while the content panel below starts partway down its height. */
-  /* Premium, more colorful Athenura-toned backdrop behind each
-     transparent cutout — teal + green glow over a warm cream base. */
   background:
     radial-gradient(circle at 28% 22%, rgba(53, 184, 181, 0.4) 0%, transparent 55%),
     radial-gradient(circle at 78% 82%, rgba(57, 153, 102, 0.38) 0%, transparent 60%),
@@ -724,9 +943,6 @@ ul, ol {
   box-shadow: 0 24px 50px rgba(47, 138, 92, 0.24);
 }
 
-/* Fine-tuned focal point per service so each cropped photo shows
-   the complete face/head — nothing cut off at the forehead, hair,
-   or chin — regardless of the source photo's original framing. */
 .service-row[data-id="rhinoplasty"] .service-row__media img { object-position: center 22%; }
 .service-row[data-id="brow-lift"] .service-row__media img { object-position: center 18%; }
 .service-row[data-id="facelift"] .service-row__media img { object-position: center 20%; }
@@ -735,12 +951,7 @@ ul, ol {
 .service-row[data-id="neck-lift"] .service-row__media img { object-position: center 18%; }
 .service-row[data-id="otoplasty"] .service-row__media img { object-position: center 20%; }
 
-/* Content panel: narrower and taller than the old side-by-side
-   panel. The row is top-aligned (align-items: flex-start), and
-   margin-top pushes this panel down to roughly the vertical
-   midpoint of the image, so it overlaps only the LOWER portion
-   of the image and extends past its bottom — never sharing the
-   same bottom line as the image. */
+/* Content panel:  */
 .service-row__content {
   flex: 0 0 var(--content-w);
   width: var(--content-w);
@@ -756,12 +967,6 @@ ul, ol {
   border-radius: var(--radius-md);
   box-shadow: 0 18px 40px rgba(47, 138, 92, 0.16);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  /* Start the panel roughly halfway down the image's height (the
-     image uses a 4:5 aspect-ratio on --media-w, so half its height
-     is --media-w * 1.25 / 2) and let its own height carry it past
-     the image's bottom edge — a clean, natural overlap where the
-     image reads as the higher element and the panel as the lower
-     one, with no shared bottom line. */
   margin-top: calc(var(--media-w) * 0.625);
 }
 
@@ -827,8 +1032,8 @@ ul, ol {
   max-width: 460px;
 }
 
-/* "Learn More" — a real, high-contrast button: solid brand green,
-   generous padding, clear hover lift + shadow (not a plain text link). */
+/* "Learn More"  */
+
 .view-details-btn {
   display: inline-flex;
   align-self: flex-start;
@@ -864,7 +1069,6 @@ ul, ol {
   transform: translateY(-1px);
 }
 
-/* Tablet: narrower media + content, reduce overlap a touch */
 @media (max-width: 1024px) {
   .service-row {
     --media-w: clamp(250px, 40vw, 320px);
@@ -879,8 +1083,6 @@ ul, ol {
   }
 }
 
-/* Mobile: stack image on top, content below, full width, no
-   overlap (the side overlap only makes sense side-by-side) */
 @media (max-width: 860px) {
   .service-row,
   .service-row:nth-child(even) {
@@ -927,7 +1129,6 @@ ul, ol {
 
   background: #e2f8e8}
 
-/* Matching soft blob accent from the hero/services sections. */
 .explorer-section::before {
   content: "";
   position: absolute;
@@ -955,8 +1156,6 @@ ul, ol {
   pointer-events: none;
 }
 
-/* Matching dot-grid accent, top-left, for full visual consistency
-   with the hero and services sections. */
 .explorer-section::after {
   content: "";
   position: absolute;
@@ -1200,9 +1399,7 @@ ul, ol {
 }
 
 /* ---------------------------------------------------------
-   CTA / "TAKE THE NEXT STEP" SECTION — full-bleed video +
-   frosted-glass content panel. Same section padding/footprint
-   as the previous compact layout.
+  CTA / "TAKE THE NEXT STEP" SECTION 
 --------------------------------------------------------- */
 .cta-section {
   background-color: var(--c-brand-green-dark);
@@ -1215,9 +1412,6 @@ ul, ol {
   isolation: isolate;
 }
 
-/* Clearly visible white horizontal divider separating the Services /
-   Treatment Finder sections above from the "Take the Next Step" CTA. */
-
 /* Full-bleed background video, filling the entire section. */
 .cta-section__video {
   position: absolute;
@@ -1229,9 +1423,6 @@ ul, ol {
   z-index: 0;
 }
 
-/* Brand-green tint over the video, mirrored so it deepens toward
-   the right where the glass panel sits (photo stays clearer on
-   the left), matching the reference composition. */
 .cta-section__overlay {
   position: absolute;
   inset: 0;
@@ -1256,8 +1447,6 @@ ul, ol {
   min-height: 320px;
 }
 
-/* Frosted-glass panel holding the copy + button — now on the
-   right, with the photo/video reading clearly on the left. */
 .cta-section__glass {
   flex: 0 1 520px;
   max-width: 520px;
@@ -1361,15 +1550,6 @@ ul, ol {
   padding: 11px 22px;
   font-size: 12px;
 }
-
-/* Pure white gap between the CTA and the footer */
-.section-gap-white {
-  height: 22px;
-  background-color: #ffffff;
-  width: 100%;
-}
-
-
 /* ---------------------------------------------------------
    SERVICE MODAL
 --------------------------------------------------------- */
@@ -1400,7 +1580,7 @@ ul, ol {
 .service-modal {
   background-color: #ffffff;
   background-image: radial-gradient(circle at 100% 0%, rgba(53, 184, 181, 0.1) 0%, transparent 45%),
-                     radial-gradient(circle at 0% 100%, rgba(57, 153, 102, 0.08) 0%, transparent 50%);
+                    radial-gradient(circle at 0% 100%, rgba(57, 153, 102, 0.08) 0%, transparent 50%);
   border-radius: var(--radius-lg);
   max-width: 600px;
   width: 100%;
@@ -1448,9 +1628,6 @@ ul, ol {
   transform: rotate(90deg);
 }
 
-/* Full photo visible, centered, uncropped — a colorful Athenura-
-   toned gradient backdrop fills any letterboxed space instead of
-   cropping into the subject. */
 .service-modal__image {
   width: calc(100% + 64px);
   margin: -32px -32px 22px;
@@ -1580,8 +1757,6 @@ ul, ol {
   transition: opacity 0.28s ease, visibility 0s linear 0s;
 }
 
-/* Premium card: soft teal/green gradient wash + floating mist
-   blobs, all within the existing Athenura palette. */
 .booking-modal {
   background-color: #ffffff;
   background-image:
@@ -1841,8 +2016,6 @@ ul, ol {
   min-width: 140px;
 }
 
-/* Fade-up + slide-in stagger for the form's own contents once the
-   modal opens — each field arrives a beat after the previous. */
 .booking-modal__header,
 .booking-form__field,
 .booking-form__row {
@@ -1904,8 +2077,9 @@ ul, ol {
   }
 }
 
-
-
+/* ---------------------------------------------------------
+   RESPONSIVE QUERIES
+--------------------------------------------------------- */
 @media (max-width: 860px) {
   .explorer-card {
     padding: 28px;
@@ -1925,29 +2099,13 @@ ul, ol {
   }
 }
 
-@media (max-width: 400px) {
-  :root {
-    --container-px: 16px;
-  }
-
-}
-
 
 /* ===========================================================
    PREMIUM ANIMATIONS & MICRO-INTERACTIONS
-   Elegant, minimal, luxury motion for a high-end aesthetic
-   clinic. Lightweight CSS transitions/keyframes + a small
-   IntersectionObserver-driven reveal system in services.js.
-   Every rule below is additive — no existing selectors above
-   this block are modified.
 =========================================================== */
 
 /* -----------------------------------------------------------
    Scroll-reveal system
-   Default state (no JS / reduced motion): fully visible.
-   JS adds `.reveal-init` only when it is safe to animate, then
-   toggles `.is-visible` via IntersectionObserver. This means
-   content is never hidden if JavaScript fails to run.
 ----------------------------------------------------------- */
 .reveal-init {
   opacity: 0;
@@ -1963,10 +2121,6 @@ ul, ol {
   transform: translateY(0);
 }
 
-/* Opacity-only variant for elements that already own their
-   `transform` property elsewhere (e.g. the hero media frame,
-   which is driven by the JS parallax) — avoids the two
-   transforms fighting for the same CSS property. */
 .reveal-fade-init {
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -1976,10 +2130,6 @@ ul, ol {
   opacity: 1;
 }
 
-/* Service rows fade, slide, and lift up individually as the
-   visitor scrolls — direction alternates with the zig-zag layout
-   (odd rows drift in from the right, even rows from the left),
-   each with its own small stagger delay set inline by JS. */
 .service-row.reveal-init {
   transform: translate(0, 36px);
 }
@@ -2102,44 +2252,6 @@ ul, ol {
   transform: translateY(-2px);
 }
 
-/* Gentle, continuous "notice me" glow on the primary
-   Book Consultation buttons — subtle, never distracting. */
-.site-header__cta-btn,
-.services-hero__actions .btn-primary {
-  animation: ctaGlow 3.2s ease-in-out infinite;
-}
-
-@keyframes ctaGlow {
-  0%, 100% { box-shadow: 0 2px 8px rgba(57, 153, 102, 0.2); }
-  50%      { box-shadow: 0 4px 18px rgba(57, 153, 102, 0.45); }
-}
-
-/* Pause the ambient glow on hover so the button's own hover
-   shadow (defined earlier) takes over cleanly, with no flicker. */
-.site-header__cta-btn:hover,
-.services-hero__actions .btn-primary:hover {
-  animation-play-state: paused;
-}
-
-/* -----------------------------------------------------------
-   Navigation link hover — underline grows from center
------------------------------------------------------------ */
-.site-header__nav-link::before {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: var(--c-brand-green);
-  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1), left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.site-header__nav-link:hover::before {
-  width: 100%;
-  left: 0;
-}
-
 /* -----------------------------------------------------------
    Service image hover zoom — refine easing for a premium feel
 ----------------------------------------------------------- */
@@ -2166,4 +2278,332 @@ ul, ol {
   .services-hero__media img {
     animation: none !important;
   }
+}
+
+/* Responsive fix */
+@media (max-width: 1024px) {
+  .services-hero__inner {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  .services-hero__content {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .services-hero__media {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    right: auto;
+    bottom: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-hero {
+    height: auto;
+    min-height: auto;
+  }
+
+  .services-hero__inner {
+    padding: 20px 15px;
+  }
+
+  .services-hero__title {
+    font-size: clamp(32px, 10vw, 48px);
+  }
+
+  .services-hero__desc {
+    font-size: 16px;
+  }
+
+  .services-hero__media {
+    height: 320px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services-hero__inner {
+    flex-direction: column;
+    padding: 25px 15px;
+  }
+
+  .services-hero__content {
+    max-width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+
+  .services-hero__media {
+    position: relative;
+    width: 100%;
+    height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-hero__media { height: 280px; }
+  .services-hero__title { font-size: 38px; }
+}
+
+
+/* Glass premium service cards */
+.service-row__content {
+  background: rgba(255,255,255,.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.75);
+  box-shadow: 0 18px 45px rgba(20,60,45,.12);
+}
+.service-row__meta {
+  border: 1px solid currentColor;
+  background: rgba(255,255,255,.25);
+}
+
+.service-row__content .btn {
+  background: linear-gradient(135deg,#087f5b,#35b8b5);
+  border-radius: 50px;
+}
+
+/* =========================================================
+   ALL SERVICE CARDS — DESCRIPTION + POINTS
+   ========================================================= */
+
+
+/* =========================================================
+   DESCRIPTION CARD
+   ========================================================= */
+
+.service-row__content {
+  background: #ffffff !important;
+  width: 100% !important;
+  max-width: 620px !important;
+  min-height: 430px !important;
+  height: auto !important;
+
+  padding: 48px 52px !important;
+  box-sizing: border-box !important;
+
+  border: none !important;
+  border-radius: 0 !important;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* =========================================================
+   DESCRIPTION TEXT
+   ========================================================= */
+
+.service-row__content p {
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  font-weight: 400 !important;
+
+  color: #555555 !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin-top: 22px !important;
+  margin-bottom: 20px !important;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.service-row__content h3 {
+  font-size: 27px !important;
+  font-weight: 400 !important;
+  line-height: 1.3 !important;
+
+  letter-spacing: 4px !important;
+
+  color: #171717 !important;
+}
+
+
+/* =========================================================
+   LINE BELOW TITLE
+   ========================================================= */
+
+.service-row__content h3::after {
+  content: "" !important;
+
+  display: block !important;
+
+  width: 62px !important;
+  height: 1px !important;
+
+  background: #222222 !important;
+
+  margin-top: 20px !important;
+}
+
+
+/* =========================================================
+   POINTS LIST
+   ========================================================= */
+
+.service-row__content ul {
+  list-style: none !important;
+
+  padding: 0 !important;
+
+  margin: 18px 0 0 0 !important;
+}
+
+
+/* =========================================================
+   EACH POINT
+   ========================================================= */
+
+.service-row__content ul li {
+  position: relative !important;
+
+  padding-left: 32px !important;
+
+  margin-bottom: 9px !important;
+
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+
+  color: #555555 !important;
+}
+
+
+/* =========================================================
+   YELLOW CIRCLE TICK
+   KEEP THIS
+   ========================================================= */
+
+.service-row__content ul li::before {
+  content: "✓" !important;
+
+  position: absolute !important;
+
+  left: 0 !important;
+  top: 3px !important;
+
+  width: 16px !important;
+  height: 16px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: transparent !important;
+
+  border: 1.5px solid rgb(7, 154, 68) !important;
+
+  border-radius: 50% !important;
+
+  color: #06a75c !important;
+
+  font-size: 12px !important;
+  font-weight: 800 !important;
+
+  line-height: 1 !important;
+}
+
+
+/* =========================================================
+   REMOVE EXTRA SECOND TICK
+   ========================================================= */
+
+.service-row__content ul li::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* =========================================================
+   REMOVE LIST MARKER
+   ========================================================= */
+
+.service-row__content ul li::marker {
+  content: "" !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .service-row__content {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    min-height: auto !important;
+    height: auto !important;
+
+    padding: 34px 28px !important;
+  }
+
+
+  .service-row__content h3 {
+    font-size: 21px !important;
+    letter-spacing: 3px !important;
+  }
+
+
+  .service-row__content p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+
+  .service-row__content ul {
+    margin-top: 18px !important;
+  }
+
+
+  .service-row__content ul li {
+    padding-left: 28px !important;
+
+    font-size: 12px !important;
+    line-height: 1.7 !important;
+
+    margin-bottom: 6px !important;
+  }
+
+
+  .service-row__content ul li::before {
+    width: 14px !important;
+    height: 14px !important;
+
+    font-size: 10px !important;
+  }
+}
+
+
+/* =========================================================
+   SERVICE PAGE — ICON COLOUR + CONTENT CARD RADIUS
+   ========================================================= */
+
+/* Use the Athenura accent palette for service-page icons.
+   This is intentionally scoped to the service page only. */
+#services-page .service-row i,
+#services-page .service-row svg,
+#services-page .service-row .icon,
+#services-page .service-row [class*="icon"] {
+  color: var(--color-primary, #8b6f47);
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+/* Rounded service content cards */
+#services-page .service-row__content {
+  border-radius: 55px;
+  overflow: hidden;
 }
